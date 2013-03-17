@@ -1,1 +1,3 @@
-Welcome to the huginn wiki!
+Welcome to the Huginn wiki!
+
+[[Agent Configuration Examples]]
