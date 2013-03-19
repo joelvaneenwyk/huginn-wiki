@@ -1,3 +1,12 @@
-Welcome to the Huginn wiki!
+# Huginn Wiki
 
-[[Agent Configuration Examples]]
+Please feel free to add to this wiki!
+
+# Using Huginn
+
+* [[Agent Configuration Examples]]
+
+# Extending Huginn
+
+* [[Creating a new Agent]]
+
