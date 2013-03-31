@@ -10,7 +10,7 @@ Please feel free to add to this wiki!
 
 * [[Deployment with Unicorn and Nginx]]
 * [[Deployment on Heroku]]
-* [[Deployment on Openshift]]
+* [[Deployment on OpenShift]]
 
 # Extending Huginn
 
