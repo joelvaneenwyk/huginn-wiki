@@ -15,4 +15,4 @@ Please feel free to add to this wiki!
 # Extending Huginn
 
 * [[Creating a new Agent]]
-* [[Agent Ideas]] - please add ideas for new Agents!
+* [[Agent Ideas]] - Please add ideas for new Agents!
