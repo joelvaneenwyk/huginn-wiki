@@ -1,11 +1,25 @@
 We have ambitions for adding native OpenShift support to huginn, but in the meantime, you can use these instructions.
 
 ## Deploying on Openshift
-All you need to do is:
 
-    $ rhc app create huginn ruby-1.9 mysql-5.1 --from-code git://github.com/ghelleks/huginn.git
+First, create a basic Rails app:
 
-Now, grab a snack while the OpenShift gear spins up and all the gems are built.
+    $ rhc app create -a huginn -t ruby-1.9
+
+Then, add a MySQL cartridge:
+
+    $ rhc cartridge add -a huginn -c mysql-5.1
+
+Now, add the openshift branch as your upstream and slurp it down:
+
+    $ git remote add upstream -m openshift git://github.com/ghelleks/huginn.git
+    $ git pull -s recursive -X theirs upstream openshift
+
+You may have to merge some things, but hopefully not. Once you're happy, push it up to OpenShift:
+
+    $ git push
+
+Now, grab a snack while all the gems are built.
 
 You will need to ssh into your gear to run the background processes, of course.
 
