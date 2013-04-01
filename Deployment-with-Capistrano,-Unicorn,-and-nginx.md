@@ -6,15 +6,15 @@ Follow these steps:
 
 * Edit your Gemfile and add the following:
 
-    group :production do
-      gem 'unicorn'
-    end
-
-    group :development do
-      gem 'capistrano'
-      gem 'capistrano-unicorn', :require => false
-      gem 'rvm-capistrano'
-    end
+        group :production do
+          gem 'unicorn'
+        end
+        
+        group :development do
+          gem 'capistrano'
+          gem 'capistrano-unicorn', :require => false
+          gem 'rvm-capistrano'
+        end
 
 * Setup a place for Huginn to run.  I recommend making a dedicated user on your server for Huginn, but this is not required.  Setup nginx or Apache to proxy pass to unicorn.  There is an example nginx script in `doc/deployment/nginx/production.conf`.
 * Setup a production database on your server for Huginn.
