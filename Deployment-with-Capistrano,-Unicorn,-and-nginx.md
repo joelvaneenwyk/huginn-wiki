@@ -4,6 +4,18 @@ Deploying Huginn with Capistrano, Unicorn, and nginx is straight forward.
 
 Follow these steps:
 
+* Edit your Gemfile and add the following:
+
+    group :production do
+      gem 'unicorn'
+    end
+
+    group :development do
+      gem 'capistrano'
+      gem 'capistrano-unicorn', :require => false
+      gem 'rvm-capistrano'
+    end
+
 * Setup a place for Huginn to run.  I recommend making a dedicated user on your server for Huginn, but this is not required.  Setup nginx or Apache to proxy pass to unicorn.  There is an example nginx script in `doc/deployment/nginx/production.conf`.
 * Setup a production database on your server for Huginn.
 * Copy `doc/deployment/unicorn/production.rb` to `config/unicorn/production.rb` and replace instances of *you* with the correct username for your server.
