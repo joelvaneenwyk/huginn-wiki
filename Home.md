@@ -8,7 +8,7 @@ Please feel free to add to this wiki!
 
 # Deploying Huginn
 
-* [[Deployment with Unicorn and Nginx]]
+* [[Deployment with Capistrano, Unicorn, and nginx]]
 * [[Deployment on Heroku]]
 * [[Deployment on OpenShift]]
 
