@@ -16,3 +16,7 @@ Please feel free to add to this wiki!
 
 * [[Creating a new Agent]]
 * [[Agent Ideas]] - Please add ideas for new Agents!
+
+# Other
+
+* [[Backing up Huginn]]
