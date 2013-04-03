@@ -22,9 +22,8 @@ Follow these steps:
 * Copy `doc/deployment/capistrano/deploy.rb` to `config/deploy.rb` and change all instances of `you` and `yourdomain` to the appropriate values for your server setup.  If you want RVM to be used and installed, uncomment the appropriate lines.
 * Run `cap deploy:setup` to create the basic Capistrano directory structure on your server.
 * Make a copy of your `.env` file, setup your production settings, create a directory called `/home/you/app/shared/config` on your server, and place your production `.env` file in this directory.
-* Run `cap deploy`.  If everything goes well, some unicorn workers on your server should be started to run the Huginn web app.
-* After deploying with capistrano, SSH into your server, go to the deployment directory, and run `RAILS_ENV=production bundle exec rake db:seed` to generate your admin user.  Immediately login to your new Huginn installation with the username of `admin` and the password of `password` and change your email and password!
-* You'll need to run `bin/schedule.rb` and `bin/twitter_stream.rb` in a daemonized way.  You can use foreman, screen sessions, or something better.
+* Make a copy of your `Procfile`, set it up for production, and place the copy in `/home/you/app/shared/config` on your server, just like you did with the `.env` file for production.
+* Run `cap deploy`.  SSH into your server, go to the deployment directory, and run `bundle exec foreman start` in a screen session.
+* Run `RAILS_ENV=production bundle exec rake db:seed` to generate your admin user.  Immediately login to your new Huginn installation with the username of `admin` and the password of `password` and change your email and password!
 
-        RAILS_ENV=production bundle exec rails runner bin/schedule.rb
-        RAILS_ENV=production bundle exec rails runner bin/twitter_stream.rb
+If you have a better config for production foreman that doesn't use a screen session, please share!  I know upstart is a good option but haven't set it up yet on my box.
