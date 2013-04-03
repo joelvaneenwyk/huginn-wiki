@@ -1,4 +1,4 @@
-_These instructions describe the behavior of the `deployments` branch at the moment._
+_These instructions describe the behavior of the `deployments` branch at the moment.  This page is a work in progress and will be finished in the next few days._
 
 Deploying Huginn with Capistrano, Unicorn, and nginx is straight forward.
 
