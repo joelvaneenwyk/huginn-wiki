@@ -1,34 +1,21 @@
-We have ambitions for adding native OpenShift support to huginn, but in the meantime, you can use these instructions.
-
 ## Deploying on Openshift
 
-First, create a basic Rails app:
+Create your app using this command line:
 
-    $ rhc app create -a huginn -t ruby-1.9
+    $ rhc app create -a huginn ruby-1.9 mysql-5.1 --from-code http://github.com/ghelleks/huginn.git
 
-Then, add a MySQL cartridge:
-
-    $ rhc cartridge add -a huginn -c mysql-5.1
-
-Now, add the openshift branch as your upstream and slurp it down:
-
-    $ git remote add upstream -m openshift git://github.com/ghelleks/huginn.git
-    $ git pull -s recursive -X theirs upstream openshift
-
-You may have to merge some things, but hopefully not. Once you're happy, push it up to OpenShift:
-
-    $ git push
-
-Now, grab a snack while all the gems are built.
+Now, grab a snack while all the gems are built. When it's complete, you should have a functioning huginn instance. Yes, it's that easy!
 
 You will need to ssh into your gear to run the background processes, of course.
+
+Once it's running, you may want to alter `.env.example.openshift` to include the correct email configuration and save it to `.env`. You'll need to push that change back up to OpenShift.
 
 ## OpenShift Considerations
 
 These are some special considerations you may need to keep in mind when running your application on OpenShift.
 
 ### Database
-Your application is configured to use your OpenShift database in Production mode.  Because it addresses these databases based on [OpenShift Environment Variables](http://red.ht/NvNoXC), you will need to change these if you want to use your application in Production mode outside of OpenShift.
+Your application is configured to use your OpenShift database in Production mode.  Because it addresses these databases based on [OpenShift Environment Variables](http://red.ht/NvNoXC), you will need to change these values in the `.env` file if you want to use your application in Production mode outside of OpenShift.
 
 ### Assets
 
