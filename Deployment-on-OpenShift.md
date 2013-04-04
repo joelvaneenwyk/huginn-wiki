@@ -8,7 +8,7 @@ Now, grab a snack while all the gems are built. When it's complete, you should h
 
 You will need to ssh into your gear to run the background processes, of course.
 
-Once it's running, you may want to alter `.env.example.openshift` to include the correct email configuration and save it to `.env`. You'll need to push that change back up to OpenShift.
+Once it's running, you may want to alter `.env.openshift` to include the correct email configuration. You'll need to push that change back up to OpenShift.
 
 ## OpenShift Considerations
 
