@@ -1,10 +1,34 @@
 ## Deploying on Openshift
 
-Create your app using this command line:
+1. Create an account at http://openshift.redhat.com/
 
-    $ rhc app create -a huginn ruby-1.9 mysql-5.1 --from-code http://github.com/ghelleks/huginn.git
+1. Create a rails application
 
-Now, grab a snack while all the gems are built. When it's complete, you should have a functioning huginn instance. Yes, it's that easy!
+    ```
+    rhc app create -a huginn -t ruby-1.9
+    ```
+
+1. Add mysql support to your application
+
+    ```
+    rhc cartridge add -a huginn -c mysql-5.1
+    ```
+
+1. Add the huginn openshift quickstart as your upstream:
+
+    ```
+    cd huginn
+    git remote add upstream -m master git://github.com/ghelleks/huginn.git
+    git pull -s recursive -X theirs upstream master
+    ```
+
+1. Push your new code
+
+    ```
+    git push
+    ```
+
+1. That's it! Enjoy Huginn!
 
 You will need to ssh into your gear to run the background processes, of course.
 
