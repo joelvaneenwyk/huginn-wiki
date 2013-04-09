@@ -1,6 +1,6 @@
 # Novice setup guide
 
-Written by a Ruby novice for those who are clueless during set up as well.
+Written by a Ruby novice for those who are clueless during set up as well.  These instructions are for Linux.
 
 ## Step 1 - Clone the repository
 Since you are on GitHub, you have probably done this step a thousand times before.
