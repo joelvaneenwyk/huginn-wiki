@@ -20,3 +20,4 @@ Please feel free to add to this wiki!
 # Other
 
 * [[Backing up Huginn]]
+* [[Novice setup guide]]
