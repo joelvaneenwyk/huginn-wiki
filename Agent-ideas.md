@@ -2,4 +2,10 @@
 
 * Naive Bayes Agent - classify events based on training data
 * Bitcoin Agent - send and receive Bitcoin payments
-* SMS Agent - send and receive SMS messages
+* Twilio agent - send and receive SMS and phone calls
+* Pushover support for sending push notification messages to Android devices. (pushover.net/api)
+* Boxcar support for sending push notification messages to iOS devices
+* Gmail OAuth2 login support
+* Generic IMAP/POP support for incoming and outgoing email
+* Dropbox OAuth support
+
