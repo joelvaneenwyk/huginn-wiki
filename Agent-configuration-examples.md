@@ -48,3 +48,20 @@ This can follow public posts of any page/person on Google+. An API key will be n
         "title": { "path": "$.items[*].title" }
       }
     }
+
+### Follow stock prices
+
+This can follow stock prices. Here we are showing Google and Apple. Replace with any other companies to get their stock updates.
+
+
+    {
+      "expected_update_period_in_days": "2",
+      "url": "http://finance.yahoo.com/webservice/v1/symbols/GOOG,AAPL/quote?format=json",
+      "type": "json",
+      "mode": "all",
+      "extract":  {
+                     "name"  : {"path": "$.list.resources[*].resource.fields.name"},
+                     "symbol": {"path": "$.list.resources[*].resource.fields.symbol"},
+                     "price" : {"path": "$.list.resources[*].resource.fields.price"}
+                   }
+    }
