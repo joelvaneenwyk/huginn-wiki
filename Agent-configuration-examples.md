@@ -56,7 +56,7 @@ This can follow stock prices. Here we are showing Google and Apple. Replace with
 
     {
       "expected_update_period_in_days": "2",
-      "url": "http://finance.yahoo.com/webservice/v1/symbols/GOOG,AAPL/quote?format=json",
+      "url" : "http://finance.yahoo.com/webservice/v1/symbols/GOOG,AAPL/quote?format=json",
       "type": "json",
       "mode": "all",
       "extract":  {
