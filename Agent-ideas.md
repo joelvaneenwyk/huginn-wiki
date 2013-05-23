@@ -8,4 +8,5 @@
 * Gmail OAuth2 login support
 * Generic IMAP/POP support for incoming and outgoing email
 * Dropbox OAuth support
-
+* Feedly support (get marked for later)
+* Pocket support ( put something into read queue)
