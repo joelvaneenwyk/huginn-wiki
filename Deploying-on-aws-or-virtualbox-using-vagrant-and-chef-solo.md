@@ -25,7 +25,7 @@ To install Huginn on AWS, edit the Vagrantfile and fill in your account details,
 
     vagrant up ec2 --provider=aws
 
-Now you can point your browser to public DNS of the EC2 server in order to access it. Huginn will be at `/home/huginn/huginn`. A new user called `huginn` will be created with username `huginn` and password `huginn`. To ssh into ec2: 
+Now you can point your browser to URL of the EC2 server in order to access it. Huginn will be at `/home/huginn/huginn`. A new user called `huginn` will be created with username `huginn` and password `huginn`. To ssh into ec2: 
 
     vagrant ssh ec2
 
