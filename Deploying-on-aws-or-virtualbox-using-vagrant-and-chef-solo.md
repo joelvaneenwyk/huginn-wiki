@@ -1,4 +1,7 @@
-Make sure you have Vagrant and Virtualbox(Not necessary, if deploying to AWS) installed.
+Make sure you have [Vagrant](http://www.vagrantup.com/) installed.  Install [VirtualBox](https://www.virtualbox.org/) if you'd like to use it for testing, and/or setup an EC2 account for deployment.
+
+Move to your Huginn directory in the Terminal.
+
 Install librarian-chef gem
 
     gem install librarian-chef
@@ -8,21 +11,21 @@ And Vagrant plugins
     vagrant plugin install vagrant-aws
     vagrant plugin install vagrant-omnibus
 
-Move to `/deployment` and run
+Install the cookbooks mentioned in the Cheffile by running:
 
-    librarian-chef install
+    cd deployment && librarian-chef install
 
-This will install all the cookbooks mentioned in Cheffile.
-
-To install Huginn on AWS, fill the Vagrantfile with your account details and run
-
-    vagrant up ec2 --provider=aws
-
-To install it on a virtualbox VM:
+To install Huginn on a VirtualBox virtual machine:
 
     vagrant up vb
 
-It'll install huginn and get the server started. You can now go to `yourserver.com/3000` to use huginn if you are in virtualbox. On ec2, pointing to public DNS will let you access huginn. Huginn will be at `/home/huginn/huginn`. A new dedicated user will be created for managing huginn with username `huginn` and password `huginn`. To ssh into ec2: 
+The second case tells Vagrant to launch a VirtualBox virtual machine and install Huginn on it. You should now be able to visit `http://localhost:3000` to use Huginn on your local computer.
+
+To install Huginn on AWS, edit the Vagrantfile and fill in your account details, then run
+
+    vagrant up ec2 --provider=aws
+
+You will need to point the EC2 server to public DNS in order to access it. Huginn will be at `/home/huginn/huginn`. A new user called `huginn` will be created with username `huginn` and password `huginn`. To ssh into ec2: 
 
     vagrant ssh ec2
 
@@ -30,16 +33,16 @@ Similarly, to ssh into VirtualBox
 
     vagrant ssh vb
     
-After ssh-ing into ec2, you can start(its already running), stop or restart huginn by
+After ssh-ing into ec2, you can start (its already running), stop, or restart Huginn with these commands:
     
     sudo start huginn
     sudo stop huginn
     sudo restart huginn
 
-To terminate ec2 instance:
+To terminate your EC2 instance:
 
     vagrant destroy ec2
 
-Similarly, to destroy VirtualBox VM
+Similarly, to destroy your VirtualBox virtual machine:
 
     vagrant destroy vb
