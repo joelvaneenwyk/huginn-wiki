@@ -1,3 +1,5 @@
+_This documentation is not yet complete.  The Vagrant and Chef setup for Huginn has not been merged into master yet._
+
 Make sure you have [Vagrant](http://www.vagrantup.com/) installed.  Install [VirtualBox](https://www.virtualbox.org/) if you'd like to use it for testing, and/or setup an EC2 account for deployment.
 
 Move to your Huginn directory in the Terminal.
