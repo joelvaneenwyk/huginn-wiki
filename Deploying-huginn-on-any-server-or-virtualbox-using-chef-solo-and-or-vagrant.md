@@ -1,20 +1,24 @@
 _This documentation is not yet complete.  The Vagrant and Chef setup for Huginn has not been merged into master yet._
 
-These are chef cookbooks to deploy huginn. Add to runlist `role[huginn_production]` to deploy huginn in production environment or `role[huginn_development]` to install it in development environment. Specifically, to deploy huginn on any server using [chef solo](http://docs.opscode.com/chef_solo.html), Install [knife-solo](http://matschaffer.github.io/knife-solo/)
+[Chef](http://www.opscode.com/chef/) cookbooks for deploying Huginn are available in `deployment`. Use the role `role[huginn_production]` to deploy Huginn to a production environment or the role `role[huginn_development]` to deploy to a development environment.
+
+Here are instructions for deploying Huginn to any server using [chef solo](http://docs.opscode.com/chef_solo.html).
+
+First, install [knife-solo](http://matschaffer.github.io/knife-solo/):
 
     gem install knife-solo
  
-It'll also install chef solo.
-Install [librarian-chef](https://github.com/applicationsonline/librarian-chef) gem
+This will also install chef solo.
+
+Next, install the [librarian-chef](https://github.com/applicationsonline/librarian-chef) gem:
 
     gem install librarian-chef
 
-Install the cookbooks mentioned in the Cheffile by running:
+Install the cookbooks listed in the Cheffile by running:
 
     cd deployment && librarian-chef install
 
-
-Now, to deploy huginn on any server, run
+Now, to deploy Huginn in _production_ mode on any server, run:
 
     knife solo bootstrap [user@]hostname -r role[huginn_production]
 
@@ -50,4 +54,3 @@ You can ssh into virtual machine or destroy it by:
 
     vagrant ssh vb
     vagrant destroy vb
-
