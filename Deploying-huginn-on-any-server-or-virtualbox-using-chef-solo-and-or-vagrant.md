@@ -22,11 +22,13 @@ Now, to deploy Huginn in _production_ mode on any server, run:
 
     knife solo bootstrap [user@]hostname -r role[huginn_production]
 
-You can provide ssh options like `-i` (identity file) and `-p` (SSH port) to knife if needed. When this finishes, Huginn should be installed and running on your server at port 80. Visit your server to check it out. A new user has been created for managing Huginn with username `huginn` and password `huginn` (please change it right away by logging in and typing `passwd`). Huginn is installed in the home directory of `huginn` at `/home/huginn`. Setup follows [Capistrano](https://github.com/capistrano/capistrano) standards, so the `current`, `shared`, and `releases` directories are present with `current` symlinked to the most recent deployment in `releases`. Nginx is running and proxy-passing to a [Unicorn](http://unicorn.bogomips.org/) server, with config files at `/etc/nginx/nginx.conf` and `/home/huginn/shared/config/unicorn.rb` respectively, which you can change according to your needs and redeploy by running above mentioned command. Before reploying, make sure that Huginn isn't already running by stopping it with `sudo stop huginn`. You can start, stop, or restart Huginn with these commands:
+You can provide ssh options like `-i` (identity file) and `-p` (SSH port) to knife if needed. When this finishes, Huginn should be installed and running on your server at port 80. Visit your server to check it out. A new user has been created for managing Huginn with username `huginn` and password `huginn` (please change it right away by logging in and typing `passwd`). Huginn is installed in the home directory of `huginn` at `/home/huginn`. Setup follows [Capistrano](https://github.com/capistrano/capistrano) standards, so the `current`, `shared`, and `releases` directories are present with `current` symlinked to the most recent deployment in `releases`. Nginx is running and proxy-passing to a [Unicorn](http://unicorn.bogomips.org/) server, with config files at `/home/huginn/shared/config/nginx.conf` and `/home/huginn/shared/config/unicorn.rb` respectively, which you can change according to your needs and redeploy by running above mentioned command. Before redeploying, make sure that Huginn isn't already running by stopping it with `sudo stop huginn`. You can start, stop, or restart Huginn with these commands:
 
     sudo start huginn
     sudo stop huginn
     sudo restart huginn
+
+If you would like to use your private huginn repo, then you will have to replace `https://github.com/cantino/huginn` with URL of your huginn private repo in `deploy` resource's `repo` attribute in file `Railsroot/deployment/site-cookbooks/huginn_production/recipes/default.rb`.
 
 You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally or even to spin up an EC2 server. First, install the following Vagrant plugins:
 
