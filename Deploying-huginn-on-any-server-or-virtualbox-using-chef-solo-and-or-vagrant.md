@@ -18,7 +18,7 @@ Install the cookbooks listed in the Cheffile by running:
 
     cd deployment && librarian-chef install
 
-Now, to deploy Huginn in _production_ mode on any server, run:
+Now, to deploy Huginn in _production_ mode on a newly created EC2 instance, run:
 
     knife solo bootstrap [user@]hostname -r role[huginn_production]
 
