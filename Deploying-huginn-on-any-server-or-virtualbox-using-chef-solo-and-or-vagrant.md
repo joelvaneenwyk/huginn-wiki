@@ -1,5 +1,7 @@
 _This documentation is not yet complete.  The Vagrant and Chef setup for Huginn has not been merged into master yet._
 
+# Deploying Huginn to EC2 with Chef
+
 [Chef](http://www.opscode.com/chef/) cookbooks for deploying Huginn are available in `deployment`. Use the role `role[huginn_production]` to deploy Huginn to a _production_ environment or the role `role[huginn_development]` to deploy to a _development_ environment.
 
 Here are instructions for deploying Huginn to any server using [chef solo](http://docs.opscode.com/chef_solo.html).
@@ -28,9 +30,11 @@ You can provide ssh options like `-i` (identity file) and `-p` (SSH port) to kni
     sudo stop huginn
     sudo restart huginn
 
-If you would like to use your private huginn repo, then you will have to replace `https://github.com/cantino/huginn` with URL of your huginn private repo in `deploy` resource's `repo` attribute in file `Railsroot/deployment/site-cookbooks/huginn_production/recipes/default.rb`.
+If you would like to use your private Huginn repo, then you will have to replace `https://github.com/cantino/huginn` with the URL of your Huginn private repo in the `deploy` resource's `repo` attribute here: `deployment/site-cookbooks/huginn_production/recipes/default.rb`.
 
-You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally or even to spin up an EC2 server. First, install the following Vagrant plugins:
+# Deploying Huginn with Vagrant
+
+You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally or even to spin up an EC2 server for experimentation. First, install the following Vagrant plugins:
 
     vagrant plugin install vagrant-aws
     vagrant plugin install vagrant-omnibus
