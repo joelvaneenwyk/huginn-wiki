@@ -12,6 +12,7 @@ Please feel free to add to this wiki!
 * [[Deployment on Heroku]]
 * [[Deployment on OpenShift]]
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
+* [[Using Huginn on predeployed Docker container]]
 
 # Extending Huginn
 
