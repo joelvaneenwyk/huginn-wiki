@@ -1,5 +1,6 @@
 To play with huginn on [docker](http://www.docker.io/), run:
 
+    docker pull rishabh/huginn
     docker run -h localhost -d -p 3000 rishabh/huginn /bin/bash -c "su huginn -c runhuginn"
 
 This will output id of newly created container. To get local ip address of container, run:
