@@ -1,4 +1,9 @@
-To play with Huginn on [docker](http://www.docker.io/), obtain a copy of docker (possibly by running `vagrant up` in the docker directory), and then run:
+
+You can play with Huginn inside of [docker](http://www.docker.io/).  Start by checking out the docker repository.
+
+*Step 1* This step is only needed if you can't run docker natively (on a Mac, for example), and so are going to run docker inside of Vagrant.  Add `config.vm.forward_port 3000, 3000` to the Vagrant file in the docker repository, then run `vagrant up`.
+
+*Step 2* Run:
 
     docker pull rishabh/huginn
     docker run -h localhost -d -p 3000 rishabh/huginn /bin/bash -c "su huginn -c runhuginn"
