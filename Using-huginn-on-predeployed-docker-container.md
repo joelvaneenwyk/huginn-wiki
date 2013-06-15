@@ -1,4 +1,4 @@
-To play with huginn on [docker](http://www.docker.io/), run:
+To play with Huginn on [docker](http://www.docker.io/), obtain a copy of docker (possibly by running `vagrant up` in the docker directory), and then run:
 
     docker pull rishabh/huginn
     docker run -h localhost -d -p 3000 rishabh/huginn /bin/bash -c "su huginn -c runhuginn"
