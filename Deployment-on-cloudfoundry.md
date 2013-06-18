@@ -8,7 +8,7 @@
 
 ```
 ~/Projects/huginn(master)]$ cf push
-Name> mrdavidlaing-huggin
+Name> <yourname>-huggin
 
 Instances> 1
 
@@ -20,9 +20,9 @@ Instances> 1
 6: 2G
 Memory Limit> 5   
 
-Creating mrdavidlaing-huggin... OK
+Creating <yourname>-huggin... OK
 
-1: mrdavidlaing-huggin
+1: <yourname>-huggin
 2: none
 Subdomain> 1                  
 
@@ -30,8 +30,8 @@ Subdomain> 1
 2: none
 Domain> 1        
 
-Creating route mrdavidlaing-huggin.cfapps.io... OK
-Binding mrdavidlaing-huggin.cfapps.io to mrdavidlaing-huggin... OK
+Creating route <yourname>-huggin.cfapps.io... OK
+Binding <yourname>-huggin.cfapps.io to <yourname>-huggin... OK
 
 Create services for application?> y
 
@@ -44,13 +44,13 @@ Create services for application?> y
 7: treasuredata n/a, via treasuredata
 What kind?> 2
 
-Name?> mrdavidlaing-huggin-mysql  
+Name?> <yourname>-huggin-mysql  
 
 1: spark: Great for getting started and developing your apps
 Which plan?> 1
 
-Creating service mrdavidlaing-huggin-mysql... OK
-Binding mrdavidlaing-huggin-mysql to mrdavidlaing-huggin... OK
+Creating service <yourname>-huggin-mysql... OK
+Binding <yourname>-huggin-mysql to <yourname>-huggin... OK
 Create another service?> n
 
 Bind other services to application?> n
@@ -58,8 +58,8 @@ Bind other services to application?> n
 Save configuration?> y
 
 Saving to manifest.yml... OK
-Uploading mrdavidlaing-huggin... OK
-Starting mrdavidlaing-huggin... OK
+Uploading <yourname>-huggin... OK
+Starting <yourname>-huggin... OK
 -----> Downloaded app package (2.1M)
 Installing ruby.
 -----> Using Ruby version: ruby-1.9.2
@@ -274,7 +274,7 @@ Installing ruby.
        Injecting rails3_serve_static_assets
 -----> Uploading staged droplet (51M)
 -----> Uploaded droplet
-Checking mrdavidlaing-huggin...
+Checking <yourname>-huggin...
 Staging in progress...
 Staging in progress...
 Staging in progress...
