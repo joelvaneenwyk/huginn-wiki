@@ -60,6 +60,6 @@ Staging in progress...
   1/1 instances: 1 running
 OK
 ```
-1. Hurrah! Browse to http://*****-huginn.cfapps.io
+1. Hurrah! Browse to http://*****-huginn.cfapps.io  (The default invitation code is: `try-huginn`
 
 1. TODO: Configure background processes...
