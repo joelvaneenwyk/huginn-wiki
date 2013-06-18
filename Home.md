@@ -10,6 +10,7 @@ Please feel free to add to this wiki!
 
 * [[Deployment with Capistrano, Unicorn, nginx, Foreman, and Upstart]]
 * [[Deployment on Heroku]]
+* [[Deployment on CloudFoundry]]
 * [[Deployment on OpenShift]]
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
 * [[Using Huginn on predeployed Docker container]]
