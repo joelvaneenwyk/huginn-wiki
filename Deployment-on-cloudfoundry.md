@@ -3,10 +3,10 @@
 1. Clone the repo - `git clone https://github.com/cloudfoundry-community/cf-demoapp-huginn.git`
 
 1. Change to the root of your working copy
-1. Copy `manifest.yml.sample` to `manifest.yml`, then edit change `name:` field
+1. Copy `manifest.yml.sample` to `manifest.yml`, then edit the `name:` field replacing CHANGEME with a unique name
 1. Install dependancies - `bundle install`
 1. Precompile assets - `rake assets:precompile`
-1. Run `cf push` - will give output similar to:
+1. Run `cf push` - this will give output similar to:
 
 ```
 [~/Projects/CloudFoundry/cf-demoapp-huginn(master)]$ cf push
