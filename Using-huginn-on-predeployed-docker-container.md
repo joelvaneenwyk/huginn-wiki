@@ -7,6 +7,7 @@ You can play with Huginn inside of [docker](http://www.docker.io/).  Start by ch
       config.vm.box_url = BOX_URI
       vb.customize ["modifyvm", :id, "--memory", "1800"]
     end
+    config.vm.forward_port 80, 3000
 
 Now you can run `vagrant up`.
 
@@ -21,8 +22,4 @@ Now you can run `vagrant up`.
 
  * Run `docker ps` to see the now-running Huginn container. Port 3000 of docker container is mapped with port 80 on your computer (or your VirtualBox machine if you did _Step 1_).  You can also run `docker inspect <containerId>` for more details.
 
- * If docker is running natively on your computer, you can now connect to the host port to use Huginn.  If you're using Vagrant, you'll need to again forward the host port (_80_), now out of the vagrant box and to your true host computer.  Edit your Vagrantfile and add something like:
-
-        config.vm.forward_port 80, 3000
-
-  Now you should be able to connect to localhost:3000 on your computer and play with Huginn.
+ * If docker is running natively on your computer, you can now connect to the host port to use Huginn.  If you're using Vagrant, Host port 80 has been forwarded to port 3000 of your computer. Now you should be able to connect to localhost:3000 on your computer and play with Huginn.
