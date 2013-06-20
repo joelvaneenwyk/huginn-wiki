@@ -1,5 +1,3 @@
-### WARNING!  This is a work in progress ####
-
 1. You will need an account with a [Cloud Foundry](http://www.cloudfoundry.com) v2 provider (eg, [run.pivotal.io](http://run.pivotal.io) or [anynines.com](http://anynines.com)), and the `cf` command line app correctly configured.
 
 1. Clone the repo - `git clone https://github.com/cloudfoundry-community/cf-demoapp-huginn.git`
@@ -62,8 +60,6 @@ OK
 ```
 1. Hurrah! Browse to http://*****-huginn=web.cfapps.io  (The default invitation code is: `try-huginn`)
 
-Your first push might fail with a "instance failed to start" message.  Since your database is migrated on first run, just wait a while and then check `cf apps` again. Try `cf start  *****-huginn-web` if marked as stopped
+## NOTES:
 
-## TODO:
-
-1.  Configure twitter stream background process
+1.  The free ClearDB plan limits you to a maximum of 4 MySQL connections, which limits the number of "agents" you can run.  See Procfile.CF for the current defaults.
