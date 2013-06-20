@@ -1,6 +1,6 @@
 ### WARNING!  This is a work in progress ####
 
-1. You will need an account with a Cloud Foundry v2 provider (eg, run.pivotal.io or anynines.com), and the `cf` command line app correctly configured.
+1. You will need an account with a [Cloud Foundry](http://www.cloudfoundry.com) v2 provider (eg, [run.pivotal.io](http://run.pivotal.io) or [anynines.com](http://anynines.com)), and the `cf` command line app correctly configured.
 
 1. Clone the repo - `git clone https://github.com/cloudfoundry-community/cf-demoapp-huginn.git`
 
