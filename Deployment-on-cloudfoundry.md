@@ -60,6 +60,7 @@ OK
 ```
 1. Hurrah! Browse to http://*****-huginn.cfapps.io  (The default invitation code is: `try-huginn`)
 
-## NOTES:
+### NOTES:
 
+1.  The initial db:migrate can take a long time, so you might need to use `cf log` to see when the migrate is done, then `cf restart`
 1.  The free ClearDB plan limits you to a maximum of 4 MySQL connections, which limits the number of "agents" you can run.  See Procfile.CF for the current defaults.
