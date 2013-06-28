@@ -9,3 +9,4 @@
 * Dropbox OAuth support
 * Feedly support (get marked for later)
 * Pocket support ( put something into read queue)
+* RescueTime support (detect/report productivity or lack thereof)
