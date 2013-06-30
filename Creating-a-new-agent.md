@@ -66,3 +66,7 @@ It's nice to be able to tell the user if their instance of your Agent is working
     def working?
       (event = event_created_within(2.days)) && event.payload.present?
     end
+
+# UI
+
+Agents can have a custom UI by defining a show view at: `app/views/agents/agent_views/<agent name>/_show.html.erb`.
