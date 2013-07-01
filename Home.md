@@ -5,6 +5,8 @@ Please feel free to add to this wiki!
 # Using Huginn
 
 * [[Agent Configuration Examples]]
+* [[Backing up Huginn]]
+* [[Novice setup guide]]
 
 # Deploying Huginn
 
@@ -19,8 +21,3 @@ Please feel free to add to this wiki!
 
 * [[Creating a new Agent]]
 * [[Agent Ideas]] - Please add ideas for new Agents!
-
-# Other
-
-* [[Backing up Huginn]]
-* [[Novice setup guide]]
