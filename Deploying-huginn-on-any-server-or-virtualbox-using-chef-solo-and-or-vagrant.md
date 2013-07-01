@@ -1,5 +1,11 @@
 _This documentation is not yet complete.  The Vagrant and Chef setup for Huginn has not been merged into master yet._
 
+[EC2 with Chef](#Deploying-Huginn-to-EC2-with-Chef)
+
+[Vagrant (locally)](#local-vagrant)
+
+[Vagrant (EC2)](#ec2-vagrant)
+
 # Deploying Huginn to EC2 with Chef
 
 [Chef](http://www.opscode.com/chef/) cookbooks for deploying Huginn are available in `deployment`. Use the role `role[huginn_production]` to deploy Huginn to a _production_ environment or the role `role[huginn_development]` to deploy to a _development_ environment.
@@ -36,21 +42,24 @@ If you would like to use your private Huginn repo, then you will have to replace
 
 You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally or even to spin up an EC2 server for experimentation. 
 
-## Locally
-
-####### Install necessary plugins
+## Local Vagrant
+###### Install necessary plugins
     vagrant plugin install vagrant-omnibus
+###### Download Huginn
+    git clone git://github.com/cantino/huginn.git
 ###### Start the VM using the Virtualbox provider
+    cd huginn/deployment
     vagrant up vb
-#### Connect to the VM with SSH
+###### Connect to the VM with SSH
     vagrant ssh
-### Disconnect from the VM
+###### Disconnect from the VM
     exit
-### Stop the VM
+###### Stop the VM
     vagrant halt
-### Destroy the VM (and anything you change while using it)
+###### Destroy the VM (and anything you change while using it)
     vagrant destroy
 
+## EC2 Vagrant
 First, install the following Vagrant plugins:
 
     vagrant plugin install vagrant-aws
