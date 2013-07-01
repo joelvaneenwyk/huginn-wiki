@@ -34,7 +34,24 @@ If you would like to use your private Huginn repo, then you will have to replace
 
 # Deploying Huginn with Vagrant
 
-You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally or even to spin up an EC2 server for experimentation. First, install the following Vagrant plugins:
+You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally or even to spin up an EC2 server for experimentation. 
+
+## Locally
+
+####### Install necessary plugins
+    vagrant plugin install vagrant-omnibus
+###### Start the VM using the Virtualbox provider
+    vagrant up vb
+#### Connect to the VM with SSH
+    vagrant ssh
+### Disconnect from the VM
+    exit
+### Stop the VM
+    vagrant halt
+### Destroy the VM (and anything you change while using it)
+    vagrant destroy
+
+First, install the following Vagrant plugins:
 
     vagrant plugin install vagrant-aws
     vagrant plugin install vagrant-omnibus
