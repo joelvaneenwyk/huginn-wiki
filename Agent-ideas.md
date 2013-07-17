@@ -11,3 +11,6 @@
 * Pocket support ( put something into read queue)
 * RescueTime support (detect/report productivity or lack thereof)
 * Readability support ( put something into read later)
+* Google Search results (changes in SERP for specified keyword and/or specified url)
+* Whois tracking (detect changes in whois details for a domain)
+* Website status monitoring (alert when website is down)
