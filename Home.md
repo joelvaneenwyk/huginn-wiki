@@ -8,6 +8,7 @@ Please feel free to add to this wiki!
 * [[Agent Configuration Examples]]
 * [[Backing up Huginn]]
 * [[Novice setup guide]]
+* [[Getting a Twitter OAuth Token]]
 
 # Deploying Huginn
 
