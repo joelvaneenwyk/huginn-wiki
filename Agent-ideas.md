@@ -14,3 +14,4 @@
 * Google Search results (changes in SERP for specified keyword and/or specified url)
 * Whois tracking (detect changes in whois details for a domain)
 * Website status monitoring (alert when website is down)
+* an mqtt subscriber/publisher, see mqtt.org
