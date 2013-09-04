@@ -53,19 +53,35 @@ If your Agent creates events, as this example from the [WeatherAgent](https://gi
 
 # Receiving Events
 
-If your Agent can receive events, define a method called `receive` that accepts an array of incoming events.  Otherwise, please call `cannot_receive_events!`
+If your Agent can receive events, define a method called `receive` that accepts an array of incoming events.  Otherwise, please annotate it with a call to `cannot_receive_events!`.
+
+# Creating Events
+
+In code, your Agent can create events with `create_event :payload => { ... }`.  If your Agent will never create events, please annotate it with a call to `cannot_create_events!`.
 
 # Memory
 
 Agents have memory that can be used to maintain state between scheduled intervals or received events.  It will be loaded and saved automatically for you and is available in `memory`.
 
+# Logging
+
+Your Agent should create AgentLogs when interesting things happen, especially errors.  Call `log` or `error` with a log message and, optionally, `:outbound_event` or `:inbound_event` to keep track of events tied to the log message.
+
 # Is it working?
 
-It's nice to be able to tell the user if their instance of your Agent is working correctly.  You should define a method called `working?` that returns true when everything seems good.
+It's nice to be able to tell the user if their instance of your Agent is working correctly.  You should define a method called `working?` that returns true when everything seems good.  Here's an example for an Agent that primarily creates events and has an `expected_update_period_in_days` option:
 
     def working?
-      (event = event_created_within(2.days)) && event.payload.present?
+      event_created_within(options[:expected_update_period_in_days]) && !recent_error_logs?
     end
+
+And here is an example for an Agent that primarily receives events and has an `expected_receive_period_in_days` option:
+
+    def working?
+      last_receive_at && last_receive_at > options[:expected_receive_period_in_days].to_i.days.ago && !recent_error_logs?
+    end
+
+You can, of course, Agent-specific code in `working?`.
 
 # UI
 
