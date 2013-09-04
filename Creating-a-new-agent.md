@@ -81,7 +81,7 @@ And here is an example for an Agent that primarily receives events and has an `e
       last_receive_at && last_receive_at > options[:expected_receive_period_in_days].to_i.days.ago && !recent_error_logs?
     end
 
-You can, of course, Agent-specific code in `working?`.
+You can, of course, write Agent-specific code in `working?`.
 
 # UI
 
