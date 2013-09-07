@@ -85,4 +85,4 @@ You can, of course, write Agent-specific code in `working?`.
 
 # UI
 
-Agents can have a custom UI by defining a show view at: `app/views/agents/agent_views/<agent name>/_show.html.erb`.  If they need to have server-side functionality, you may POST data to the `handle_details_post_agent_path` and handle it with `handle_details_post` in your Agent.  See the [ManualEventAgent](https://github.com/cantino/huginn/blob/master/app/models/agents/manual_event_agent.rb) for an example.
+Agents can have a custom UI by defining a show view at: `app/views/agents/agent_views/<agent name>/_show.html.erb`.  If they need to have server-side functionality, you may POST data to the `handle_details_post_agent_path` and handle it with `handle_details_post` in your Agent.  See the [ManualEventAgent](https://github.com/cantino/huginn/blob/master/app/models/agents/manual_event_agent.rb) and its [details view](https://github.com/cantino/huginn/blob/master/app/views/agents/agent_views/manual_event_agent/_show.html.erb) for an example.
