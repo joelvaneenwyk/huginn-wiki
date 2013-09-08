@@ -15,3 +15,4 @@
 * Whois tracking (detect changes in whois details for a domain)
 * Website status monitoring (alert when website is down)
 * an mqtt subscriber/publisher, see mqtt.org
+* github agent see https://github.com/peter-murach/github
