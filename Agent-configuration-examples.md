@@ -65,3 +65,23 @@ This can follow stock prices. Here we are showing Google and Apple. Replace with
                      "price" : {"path": "$.list.resources[*].resource.fields.price"}
                    }
     }
+
+### iTunes Trailers
+
+This Agent follows iTunes trailers from the apple.com/trailers RSS feed.
+
+    {
+      "url": "http://trailers.apple.com/trailers/home/rss/newtrailers.rss",
+      "mode": "on_change",
+      "expected_update_period_in_days": "10",
+      "extract": {
+        "title": {
+          "css": "item title",
+          "text": true
+        },
+        "url": {
+          "css": "item link",
+          "text": true
+        }
+      }
+    }
