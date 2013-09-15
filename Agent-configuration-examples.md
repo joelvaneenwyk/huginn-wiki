@@ -73,6 +73,7 @@ This Agent follows iTunes trailers from the apple.com/trailers RSS feed.
     {
       "url": "http://trailers.apple.com/trailers/home/rss/newtrailers.rss",
       "mode": "on_change",
+      "type": "xml",
       "expected_update_period_in_days": "10",
       "extract": {
         "title": {
