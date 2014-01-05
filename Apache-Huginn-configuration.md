@@ -1,3 +1,5 @@
+Oh so cleverly adapted from [this page](https://gist.github.com/MrZYX/719014). 
+
 ```
 # Make sure mod_ssl, mod_rewrite, mod_headers, mod_proxy,
 # mod_proxy_http and mod_proxy_balancer are enabled
