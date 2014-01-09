@@ -1,6 +1,6 @@
 You can play with Huginn inside of [docker](http://www.docker.io/).  Start by checking out the docker repository.
 
-*Step 1*: This step is only needed if you can't run docker natively (on a Mac, for example), and so are going to run docker inside of Vagrant.  Huginn needs a fair amount of RAM, so in the docker Vagrantfile, update `config.vm.provider :virtualbox do |vb|` like so:
+*Step 1*: This step is only needed if you can't run docker natively, and so are going to run docker inside of Vagrant. If you are using OS X you can use [docker-osx](https://github.com/noplay/docker-osx) to automate setting up and using docker through Vagrant. Huginn needs a fair amount of RAM, so in the docker Vagrantfile, update `config.vm.provider :virtualbox do |vb|` like so:
 
     config.vm.provider :virtualbox do |vb|
       config.vm.box = BOX_NAME
