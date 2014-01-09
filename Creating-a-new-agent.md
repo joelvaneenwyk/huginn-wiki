@@ -17,11 +17,11 @@ Use the `description` class method to set a Markdown description for your agent.
 Agents are configured with a JSON structure from the user, symbolized and accessible via `options`.  You should define a method called `default_options` that returns an example default configuration for your type of Agent.  Additionally, you should define a method called `validate_options` that performs Rails validation on the contents of `options`, if any fields are required.  For example:
 
     def default_options
-      { 'zipcode' => "94103" }
+      { 'zipcode' => '94103' }
     end
 
     def validate_options
-      errors.add(:base, "zipcode is required") unless options['zipcode'].present?
+      errors.add(:base, 'zipcode is required') unless options['zipcode'].present?
     end
 
 # Scheduling
