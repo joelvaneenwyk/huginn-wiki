@@ -12,4 +12,4 @@ The required website could be your personal site, or your Twitter profile URL.  
 
 On the next page, click 'Create my Access Token'.  You may need to refresh the page before the token shows up.
 
-Copy your 'Access token', 'Access token secret', 'Consumer key', and 'Consumer secret', and put them into Twitter Agents as needed.  ("Access key" and "access token" are the same thing, as are "access token secret" and "access secret".)
+Copy your 'Access token', 'Access token secret', 'Consumer key', and 'Consumer secret', and put them into Twitter Agents as needed.  ("Access key", "access token", and "oauth_token" are the same thing, as are "access token secret", "access secret", and "oauth_token_secret".)
