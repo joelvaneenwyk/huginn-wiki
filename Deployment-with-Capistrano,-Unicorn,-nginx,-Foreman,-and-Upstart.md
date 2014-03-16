@@ -13,6 +13,7 @@ Follow these steps:
           gem 'rvm-capistrano'
         end
 
+* Run `bundle` again after you do this to install `capistrano` and `rvm-capistrano`.
 * Setup a place for Huginn to run.  I recommend making a dedicated user on your server for Huginn, but this is not required.  Setup nginx or Apache to proxy pass to unicorn.  There is an example nginx script in `doc/deployment/nginx/production.conf`.
 * Setup a production database on your server for Huginn.
 * Copy `doc/deployment/unicorn/production.rb` to `config/unicorn/production.rb` and replace instances of *you* with the correct username for your server.
