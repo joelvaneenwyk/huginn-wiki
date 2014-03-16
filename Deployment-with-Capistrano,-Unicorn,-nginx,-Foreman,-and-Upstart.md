@@ -17,7 +17,7 @@ Follow these steps:
 * Setup a place for Huginn to run.  I recommend making a dedicated user on your server for Huginn, but this is not required.  Setup nginx or Apache to proxy pass to unicorn.  There is an example nginx script in `doc/deployment/nginx/production.conf`.
 * Setup a production database on your server for Huginn.
 * Copy `doc/deployment/unicorn/production.rb` to `config/unicorn/production.rb` and replace instances of *you* with the correct username for your server.
-* Copy `doc/deployment/capistrano/deploy.rb` to `config/deploy.rb` and change all instances of `you` and `yourdomain` to the appropriate values for your server setup.  If you want RVM to be used and installed, uncomment the appropriate lines.
+* Copy `doc/deployment/capistrano/deploy.rb` to `config/deploy.rb` and change all instances of `you` and `yourdomain` to the appropriate values for your server setup.  If you want RVM to be used and installed, uncomment the appropriate lines. If you use RVM in **multi-user** mode, change `set rvm_type :user` to `set rvm_type :system`.
 * Run `cap deploy:setup` to create the basic Capistrano directory structure on your server.
 * Make a copy of your `.env` file, setup your production settings, create a directory called `/home/you/app/shared/config` on your server, and place your production `.env` file in this directory.
 * Make a copy of your `Procfile`, set it up for production, and place the copy in `/home/you/app/shared/config` on your server, just like you did with the `.env` file for production.
