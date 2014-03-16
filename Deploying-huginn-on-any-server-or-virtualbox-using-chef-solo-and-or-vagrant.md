@@ -6,7 +6,7 @@ _This documentation is not yet complete.  The Vagrant and Chef setup for Huginn 
 
 [Vagrant (locally)](#local-vagrant)
 
-# <a name="chef-ec2"/>Deploying Huginn to EC2 with Chef
+# <a name="chef-ec2"/>Deploying Huginn to EC2 with Chef (warning as of 16 March 2014: may be outdated, remove this when fixed)
 
 [Chef](http://www.opscode.com/chef/) cookbooks for deploying Huginn are available in `deployment`. Use the role `role[huginn_production]` to deploy Huginn to a _production_ environment or the role `role[huginn_development]` to deploy to a _development_ environment.
 
