@@ -16,7 +16,7 @@ Now you can run `vagrant up`.
  * Run:
 
         docker pull rishabh/huginn
-        docker run -h localhost -d -p 3000:80 rishabh/huginn /bin/bash -c "su huginn -c runhuginn"
+        docker run -h localhost -d -p 80:3000 rishabh/huginn /bin/bash -c "su huginn -c runhuginn"
 
   This starts a Huginn process in a docker container with a new internal user to manage it (`huginn`/`huginn`).
 
