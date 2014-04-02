@@ -2,16 +2,10 @@
 
 1. Create an account at http://openshift.redhat.com/
 
-1. Create a rails application
+1. Create a rails application with a mysql cartridge
 
     ```
-    rhc app create -a huginn -t ruby-1.9
-    ```
-
-1. Add mysql support to your application
-
-    ```
-    rhc cartridge add -a huginn -c mysql-5.1
+    rhc app create -a huginn -t ruby-1.9 mysql-5.1
     ```
 
 1. Add the huginn openshift quickstart as your upstream:
@@ -32,7 +26,7 @@
 
 You will need to ssh into your gear to run the background processes, of course.
 
-Once it's running, you may want to alter `.env.openshift` to include the correct email configuration. You'll need to push that change back up to OpenShift.
+Once it's running, you may want to alter `.env` to include the correct email configuration. You'll need to push that change back up to OpenShift.
 
 ## OpenShift Considerations
 
