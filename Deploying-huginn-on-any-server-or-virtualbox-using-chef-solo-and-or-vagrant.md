@@ -68,6 +68,7 @@ Fill out `aws.access_key_id`, `aws.secret_access_key`, `aws.keypair_name`, and `
 ## <a name="local-vagrant"/>Local Vagrant 
 ###### Install necessary plugins
     vagrant plugin install vagrant-omnibus
+    vagrant plugin install vagrant-librarian-chef
 ###### Download Huginn
     git clone git://github.com/cantino/huginn.git
 ###### Start the VM using the Virtualbox provider
