@@ -50,6 +50,7 @@ It'll install Huginn on a newly created EC2 instance in Rails's _production_ env
 ###### Install necessary plugins
     vagrant plugin install vagrant-aws
     vagrant plugin install vagrant-omnibus
+    vagrant plugin install vagrant-librarian-chef
 ###### Download Huginn
     git clone git://github.com/cantino/huginn.git
     cd huginn/deployment
