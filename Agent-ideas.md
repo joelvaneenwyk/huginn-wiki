@@ -19,6 +19,7 @@
 * Dedicated RSS Reader agent that can accumulate unique data (The Website agent can already [handle RSS](https://github.com/cantino/huginn/wiki/Agent-configuration-examples#itunes-trailers))
 * RSS Publisher agent. Presumably Huginn itself would host the RSS. This would provide one avenue for passing information between Huginn instances.
 * http://code.google.com/p/google-diff-match-patch/ support
+* Google Spreadsheets
 * Draw inspiration from similar services
   * https://ifttt.com/channels
   * https://zapier.com/zapbook/
