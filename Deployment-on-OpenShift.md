@@ -5,7 +5,7 @@
 1. Create a rails application with a mysql cartridge
 
     ```
-    rhc app create -a huginn -t ruby-1.9 mysql-5.1
+    rhc app create -a huginn -t ruby-1.9 -t mysql-5.1
     ```
 
 1. Add the huginn openshift quickstart as your upstream:
