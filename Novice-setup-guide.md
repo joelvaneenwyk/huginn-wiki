@@ -93,4 +93,4 @@ apt-get install mysql-server
 From here on, the [Quick Start][quick-start] section of the [README][README] should be able to guide you.
 
 [quick-start]: https://github.com/cantino/huginn#quick-start
-[REDAME]: https://github.com/cantino/huginn#readme
+[README]: https://github.com/cantino/huginn#readme
