@@ -1,5 +1,3 @@
-# Private Development
-
 Follow these instructions if you wish to add private features to your version of Huginn.  GitHub doesn't make it easy to work with private forks of public repositories, so I recommend that you follow the following steps:
 
 * Make a private, empty GitHub repository called `huginn-private` and duplicate your public Huginn fork into your new private repository (via [GitHub's instructions](https://help.github.com/articles/duplicating-a-repository)):
