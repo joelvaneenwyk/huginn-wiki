@@ -8,11 +8,6 @@
     rhc app create -a huginn -t ruby-1.9 -t mysql-5.1
     ```
 
-1. Add the Foreman cartridge:
-
-   ```
-   rhc cartridge add -a huginn http://cartreflect-claytondev.rhcloud.com/reflect?github=ncdc/openshift-foreman-cartridge 
-   ```
 1. Add the huginn openshift quickstart as your upstream:
 
     ```
@@ -21,11 +16,25 @@
     git pull -s recursive -X theirs upstream master
     ```
 
-1. Push your new code
+1. Push your new code (this will take a very long time)
 
     ```
     git push
     ```
+
+1. Seed the database (anyone care to figure out why this isn't happening automatically?)
+
+   ```
+   rhc ssh huginn
+   cd $OPENSHIFT_REPO_DIR
+   bundle exec rake db:seed
+   ```
+
+1. Add the Foreman cartridge, so the background processes run properly:
+
+   ```
+   rhc cartridge add -a huginn http://cartreflect-claytondev.rhcloud.com/reflect?github=ncdc/openshift-foreman-cartridge 
+   ```
 
 1. That's it! Enjoy Huginn!
 
