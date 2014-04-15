@@ -28,6 +28,7 @@
    rhc ssh huginn
    cd $OPENSHIFT_REPO_DIR
    bundle exec rake db:seed
+   exit
    ```
 
 1. Add the Foreman cartridge, so the background processes run properly:
