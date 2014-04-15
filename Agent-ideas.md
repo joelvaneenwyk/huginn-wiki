@@ -8,6 +8,7 @@
 * Generic IMAP/POP support for incoming and outgoing email
 * Dropbox OAuth support
 * Feedly support (get marked for later)
+* PagerDuty - trigger [PagerDuty](http://developer.pagerduty.com/documentation/integration/events)incidents based on events, *or* take different actions based on incoming PagerDuty incidents.
 * Pocket support ( put something into read queue)
 * RescueTime support (detect/report productivity or lack thereof)
 * Readability support ( put something into read later)
