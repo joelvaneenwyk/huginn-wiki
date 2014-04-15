@@ -8,6 +8,11 @@
     rhc app create -a huginn -t ruby-1.9 -t mysql-5.1
     ```
 
+1. Add the Foreman cartridge:
+
+   ```
+   rhc cartridge add -a huginn http://cartreflect-claytondev.rhcloud.com/reflect?github=ncdc/openshift-foreman-cartridge 
+   ```
 1. Add the huginn openshift quickstart as your upstream:
 
     ```
@@ -23,8 +28,6 @@
     ```
 
 1. That's it! Enjoy Huginn!
-
-You will need to ssh into your gear to run the background processes, of course.
 
 Once it's running, you may want to alter `.env` to include the correct email configuration. You'll need to push that change back up to OpenShift.
 
