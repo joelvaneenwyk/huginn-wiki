@@ -12,6 +12,7 @@ Please feel free to add to this wiki!
 * [[Backing up Huginn]]
 * [[Novice setup guide]]
 * [[Getting a Twitter OAuth Token]]
+* [[Private development instructions]]
 
 # Deploying Huginn
 
