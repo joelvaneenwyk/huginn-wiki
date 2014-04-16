@@ -24,3 +24,4 @@
 * Draw inspiration from similar services
   * https://ifttt.com/channels
   * https://zapier.com/zapbook/
+* App.net support (incl. for Broadcasts and other Channels)
