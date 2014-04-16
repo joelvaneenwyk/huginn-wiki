@@ -17,7 +17,7 @@ git clone git://github.com/cantino/huginn.git
 Install [ruby][ruby] (at least version 1.9.3) and [gem][gem]. You can either download them and compile manually or install via your OS' package manager (e.g. [apt][apt]).
 
 ```shell
-apt-get install ruby1.9.3 rubygems
+apt-get install ruby1.9.3 ruby1.9.1-dev rubygems
 ```
 
 [ruby]: http://www.ruby-lang.org/en/
