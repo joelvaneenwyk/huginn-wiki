@@ -66,3 +66,20 @@ Since these quickstarts are shared code, we had to take special consideration to
     <td>Railsapp::Application.config.secret_token</td>
   </tr>
 </table>
+
+## Installing as a scalable app
+
+Installing as scalable will require 2 small gears - one for Ruby + WebProxy and one for MySQL. This works on the free OpenShift account, and the resulting app is noticeably faster (plus you have more storage for your SQL DB). 
+
+Follow the above instructions except for these slight modifications:
+* When creating the app, add the -s switch
+
+    ```
+    rhc app create -a huginn -t ruby-1.9 -t mysql-5.1 -s
+    ```
+
+* When you add the foreman cartridge, use this repo instead as I've modified the manifest to allow it to be installed on scalable apps as a domain scoped plugin.
+
+    ```
+    rhc cartridge add -a huginn http://cartreflect-claytondev.rhcloud.com/reflect?github=afro88/openshift-foreman-cartridge 
+    ```
