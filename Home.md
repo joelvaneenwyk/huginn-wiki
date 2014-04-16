@@ -11,6 +11,7 @@ Please feel free to add to this wiki!
 * [[Agent Configuration Examples]]
 * [[Backing up Huginn]]
 * [[Novice setup guide]]
+* [[Using PostgreSQL instead of MySQL]]
 * [[Getting a Twitter OAuth Token]]
 * [[Private development instructions]]
 
