@@ -5,7 +5,7 @@ This will get you up and going as fast as possible, but in production you should
 
     sudo apt-get install postgresql-9.1 postgresql-server-dev-9.1
     # allow password login
-    sudo sh -c 'echo "local all postgres md5" > /etc/postgresql/9.1/main/pg_hba.conf'
+    sudo sh -c 'echo "local all postgres md5" >> /etc/postgresql/9.1/main/pg_hba.conf'
     # by default postgres user doesn't have one.
     sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'yourpassword';"
 
