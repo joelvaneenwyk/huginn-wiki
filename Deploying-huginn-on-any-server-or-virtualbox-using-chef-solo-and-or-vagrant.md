@@ -73,6 +73,7 @@ Fill out `aws.access_key_id`, `aws.secret_access_key`, `aws.keypair_name`, and `
     git clone git://github.com/cantino/huginn.git
 ###### Start the VM using the Virtualbox provider
     cd huginn/deployment
+    librarian-chef install
     vagrant up vb
 ###### Connect to the VM with SSH
     vagrant ssh
