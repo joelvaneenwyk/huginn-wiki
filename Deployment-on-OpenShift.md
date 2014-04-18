@@ -39,7 +39,7 @@
 
 1. That's it! Enjoy Huginn!
 
-Once it's running, you may want to alter `.env` to include the correct email configuration. You'll need to push that change back up to OpenShift.
+Once it's running, you may want to alter `.env.openshift` to include the correct email configuration. You'll need to push that change back up to OpenShift.
 
 ## OpenShift Considerations
 
