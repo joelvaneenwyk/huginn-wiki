@@ -9,11 +9,10 @@ Please feel free to add to this wiki!
 * [Adding RSS Feeds to Any Site With Huginn](http://blog.andrewcantino.com/blog/2014/04/13/adding-rss-feeds-to-any-site-with-huginn/)
 * [Know when the world changes– with Huginn](http://blog.andrewcantino.com/blog/2014/03/17/know-when-the-world-changes-with-huginn/)
 * [[Agent Configuration Examples]]
-* [[Backing up Huginn]]
 * [[Novice setup guide]]
-* [[Using PostgreSQL instead of MySQL]]
 * [[Getting a Twitter OAuth Token]]
 * [[Private development instructions]]
+* [[Using PostgreSQL instead of MySQL]]
 
 ### Deploying Huginn
 
@@ -23,6 +22,7 @@ Please feel free to add to this wiki!
 * [[Deployment on OpenShift]]
 * [[Apache Huginn configuration]]
 * [[Using Huginn on predeployed Docker container]]
+* [[Backing up Huginn]]
 
 ### Extending Huginn
 
