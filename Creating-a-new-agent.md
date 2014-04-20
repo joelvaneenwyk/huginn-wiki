@@ -86,3 +86,31 @@ You can, of course, write Agent-specific code in `working?`.
 # UI
 
 Agents can have a custom UI by defining a show view at: `app/views/agents/agent_views/<agent name>/_show.html.erb`.  If they need to have server-side functionality, you may POST data to the `handle_details_post_agent_path` and handle it with `handle_details_post` in your Agent.  See the [ManualEventAgent](https://github.com/cantino/huginn/blob/master/app/models/agents/manual_event_agent.rb) and its [details view](https://github.com/cantino/huginn/blob/master/app/views/agents/agent_views/manual_event_agent/_show.html.erb) for an example.
+
+# Receiving Web Requests
+
+Your Agent can receive web requests by implementing `receive_web_request`.  The URL for your Agent will be something like `http://yourserver.com/users/:user_id/web_requests/:agent_id/:secret` where `:user_id` is a User's id, `:agent_id` is an Agent's id, and `:secret` is a token that should be user-specifiable in your Agent's configuration and checked by `receive_web_request`. It is highly recommended that every Agent verify this token whenever `receive_web_request` is called. For example, one of your Agent's options could be `secret` and you could compare this value to `params[:secret]` whenever `receive_web_request` is called on your Agent, rejecting invalid requests.
+
+Your Agent's `receive_web_request` method should return an Array containing a response, a status code, and an optional MIME type.  For example:
+
+    [{ status: "success" }, 200]
+
+or
+
+    ["not found", 404, 'text/plain']
+
+Here is an example implementation of `receive_web_request`:
+
+```ruby
+def receive_web_request(params, method, format)
+  secret = params.delete('secret')
+  return ["Please use POST requests only", 401] unless method == "post"
+  return ["Not Authorized", 401] unless secret == options['secret']
+
+  # do something with params here
+
+  ['Done!', 200, 'text/plain']
+end
+```
+
+Please see the [WebRequestsController](https://github.com/cantino/huginn/blob/master/app/controllers/web_requests_controller.rb) for more documentation, as well as the implementations of `receive_web_request` in [WebhookAgent](https://github.com/cantino/huginn/blob/master/app/models/agents/webhook_agent.rb) and [DataOutputAgent](https://github.com/cantino/huginn/blob/master/app/models/agents/data_output_agent.rb).
