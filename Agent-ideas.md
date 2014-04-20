@@ -1,5 +1,6 @@
 # Agent Ideas
 
+Contributions strongly encouraged! If you want to help out, pick one of these, [build it](https://github.com/cantino/huginn/wiki/Creating-a-new-agent) with specs, and make a pull request!
 * Naive Bayes Agent - classify events based on training data
 * Bitcoin Agent - send and receive Bitcoin payments
 * Pushover support for sending push notification messages to Android devices. (pushover.net/api)
