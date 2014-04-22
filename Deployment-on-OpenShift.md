@@ -12,6 +12,7 @@
 
     ```
     cd huginn
+    git init
     git remote add upstream -m openshift git://github.com/cantino/huginn.git
     git pull -s recursive -X theirs upstream master
     ```
