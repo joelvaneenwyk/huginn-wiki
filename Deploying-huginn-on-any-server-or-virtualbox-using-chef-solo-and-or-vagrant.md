@@ -41,31 +41,8 @@ If you would like to use your private Huginn repo, then you will have to replace
 
 # Deploying Huginn with Vagrant
 
-You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally or even to spin up an EC2 server for experimentation. 
+You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally. 
 
-## <a name="ec2-vagrant"/>EC2 Vagrant 
-
-It'll install Huginn on a newly created EC2 instance in Rails's _production_ environment mode. It uses the same chef role `role[huginn_production]` as mentioned above.
-
-###### Install necessary plugins
-    vagrant plugin install vagrant-aws
-    vagrant plugin install vagrant-omnibus
-    vagrant plugin install vagrant-librarian-chef
-###### Download Huginn
-    git clone git://github.com/cantino/huginn.git
-    cd huginn/deployment
-###### Set AWS variables
-Fill out `aws.access_key_id`, `aws.secret_access_key`, `aws.keypair_name`, and `override.ssh.private_key_path` in `deployment/Vagrantfile`
-###### Start the instance using the Virtualbox provider
-    vagrant up ec2 --provider=aws
-###### Connect to the EC2 instance with SSH
-    vagrant ssh ec2
-###### Disconnect from the instance
-    exit
-###### Stop and destroy the EC2 instance
-    vagrant destroy ec2
-
-## <a name="local-vagrant"/>Local Vagrant 
 ###### Install necessary plugins
     vagrant plugin install vagrant-omnibus
     vagrant plugin install vagrant-librarian-chef
