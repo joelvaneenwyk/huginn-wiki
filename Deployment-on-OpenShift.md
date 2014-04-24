@@ -14,7 +14,7 @@
     cd huginn
     git init
     git remote add upstream -m openshift git://github.com/cantino/huginn.git
-    git pull -s recursive -X theirs upstream master
+    git pull -s recursive -X theirs upstream openshift
     ```
 
 1. Push your new code (this will take a very long time)
