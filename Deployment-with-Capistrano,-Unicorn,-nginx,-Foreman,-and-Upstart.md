@@ -4,14 +4,17 @@ Follow these steps:
 
 * Edit your Gemfile and add the following:
 
-        group :production do
-          gem 'unicorn'
-        end
-        
-        group :development do
-          gem 'capistrano'
-          gem 'rvm-capistrano'
-        end
+```ruby
+group :production do
+  gem 'unicorn', '~> 4.6.3'
+end
+
+group :development do
+  gem 'capistrano', '~> 2.15.5'
+  gem 'capistrano-unicorn', '~> 0.1.9', :require => false
+  gem 'rvm-capistrano', '~> 1.4.1'
+end
+```
 
 * Run `bundle` again after you do this to install `capistrano` and `rvm-capistrano`.
 * Setup a place for Huginn to run.  I recommend making a dedicated user on your server for Huginn, but this is not required.  Setup nginx or Apache to proxy pass to unicorn.  There is an example nginx script in `doc/deployment/nginx/production.conf`.
