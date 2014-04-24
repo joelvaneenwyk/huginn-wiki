@@ -86,3 +86,25 @@ This Agent follows iTunes trailers from the apple.com/trailers RSS feed.
         }
       }
     }
+
+### Bitcoin Rates
+
+A Website Agent to collect Bitcoin rates.
+
+    {
+      "expected_update_period_in_days": "2",
+      "url": "http://api.bitcoincharts.com/v1/weighted_prices.json",
+      "type": "json",
+      "mode": "on_change",
+      "extract": {
+        "24h": {
+          "path": ".USD.24h"
+        },
+        "7d": {
+          "path": ".USD.7d"
+        },
+        "30d": {
+          "path": ".USD.30d"
+        }
+      }
+    }
