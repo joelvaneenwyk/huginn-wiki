@@ -49,7 +49,11 @@ You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locall
 ###### Start the VM using the Virtualbox provider
     cd huginn/deployment
     librarian-chef install
-    vagrant up vb
+    vagrant up
+###### Start the VM using the Parallels Desktop provider
+    cd huginn/deployment
+    librarian-chef install
+    vagrant up --provider=parallels
 ###### Connect to the VM with SSH
     vagrant ssh
 
