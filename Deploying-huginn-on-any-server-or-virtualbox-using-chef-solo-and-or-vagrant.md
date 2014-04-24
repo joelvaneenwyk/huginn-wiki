@@ -2,9 +2,7 @@ _This documentation is not yet complete.  The Vagrant and Chef setup for Huginn 
 
 [EC2 with Chef](#chef-ec2)
 
-[Vagrant (EC2)](#ec2-vagrant)
-
-[Vagrant (locally)](#local-vagrant)
+[local Vagrant](#local-vagrant)
 
 # <a name="chef-ec2"/>Deploying Huginn to EC2 with Chef (warning as of 16 March 2014: may be outdated, remove this when fixed)
 
@@ -40,6 +38,8 @@ To install Huginn on an EC2 instance, fill out `aws.access_key_id`, `aws.secret_
 If you would like to use your private Huginn repo, then you will have to replace `https://github.com/cantino/huginn` with the URL of your Huginn private repo in the `deploy` resource's `repo` attribute here: `deployment/site-cookbooks/huginn_production/recipes/default.rb`.
 
 # Deploying Huginn with Vagrant
+
+<a name="chef-ec2"/>
 
 You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally. 
 
