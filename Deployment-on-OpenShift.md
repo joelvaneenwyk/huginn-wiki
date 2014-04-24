@@ -40,7 +40,7 @@
 
 1. That's it! Enjoy Huginn!
 
-Once it's running, you will want to create a `.env` to include the correct email configuration. You can use `.env.example.openshift` as a guide. You'll need to push that change back up to OpenShift.
+Once it's running, you will want to create a `.env` in the root of the repo to include the correct email configuration and change the invite code. You can use `.env.example.openshift` as a guide. You'll need to push that change back up to OpenShift.
 
 ## OpenShift Considerations
 
