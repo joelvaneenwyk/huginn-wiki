@@ -108,3 +108,22 @@ A Website Agent to collect Bitcoin rates.
         }
       }
     }
+
+### Bitcoin Blockchain Watch.
+
+A Website Agent to collect current blockchain height and timestamp.
+
+    {
+      "expected_update_period_in_days": "2",
+      "url": "https://blockchain.info/latestblock",
+      "type": "json",
+      "mode": "on_change",
+      "extract": {
+        "height": {
+          "path": "$.height"
+        },
+        "timestamp": {
+          "path": "$.time"
+        }
+      }
+    }
