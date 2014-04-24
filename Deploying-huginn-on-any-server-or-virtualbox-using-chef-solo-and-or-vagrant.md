@@ -37,9 +37,7 @@ To install Huginn on an EC2 instance, fill out `aws.access_key_id`, `aws.secret_
 
 If you would like to use your private Huginn repo, then you will have to replace `https://github.com/cantino/huginn` with the URL of your Huginn private repo in the `deploy` resource's `repo` attribute here: `deployment/site-cookbooks/huginn_production/recipes/default.rb`.
 
-# Deploying Huginn with Vagrant
-
-<a name="chef-ec2"/>
+# <a name="local-vagrant"/> Deploying Huginn with Vagrant
 
 You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally. 
 
