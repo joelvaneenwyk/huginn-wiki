@@ -26,7 +26,7 @@ Agents are configured with a JSON structure from the user, symbolized and access
 
 # Scheduling
 
-Agents can be scheduled to run at certain times, or on certain intervals.  When a schedule is triggered, the `check` method in your Agent will be called.  If your agent should be schedulable, use the `default_schedule` class method to declare a default, otherwise you should call `cannot_be_scheduled!`.  Possible schedules are: `every_2m`, `every_5m`, `every_10m`, `every_30m`, `every_1h`, `every_2h`, `every_5h`, `every_12h`, `every_1d`, `every_2d`, `every_7d`, `midnight`, `1am`, `2am`, `3am`, `4am`, `5am`, `6am`, `7am`, `8am`, `9am`, `10am`, `11am`, `noon`, `1pm`, `2pm`, `3pm`, `4pm`, `5pm`, `6pm`, `7pm`, `8pm`, `9pm`, `10pm`, and `11pm`
+Agents can be scheduled to run at certain times, or on certain intervals.  When a schedule is triggered, the `check` method in your Agent will be called.  If your agent should be schedulable, use the `default_schedule` class method to declare a default, otherwise you should call `cannot_be_scheduled!`.  Possible schedules are: `every_1m`, `every_2m`, `every_5m`, `every_10m`, `every_30m`, `every_1h`, `every_2h`, `every_5h`, `every_12h`, `every_1d`, `every_2d`, `every_7d`, `midnight`, `1am`, `2am`, `3am`, `4am`, `5am`, `6am`, `7am`, `8am`, `9am`, `10am`, `11am`, `noon`, `1pm`, `2pm`, `3pm`, `4pm`, `5pm`, `6pm`, `7pm`, `8pm`, `9pm`, `10pm`, and `11pm`
 
     default_schedule "8pm"
 
