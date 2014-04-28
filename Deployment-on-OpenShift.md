@@ -84,3 +84,9 @@ Follow the above instructions except for these slight modifications:
     ```
     rhc cartridge add -a huginn http://cartreflect-claytondev.rhcloud.com/reflect?github=afro88/openshift-foreman-cartridge 
     ```
+## Manually adding email settings
+In case the application does not pick up the email settings from the ```.env``` file, the following command can be used as a workaround:
+ 
+```
+rhc env set SMTP_DOMAIN="gmail.com" SMTP_USER_NAME="johndoe@gmail.com" SMTP_PASSWORD="password" SMTP_SERVER="smtp.gmail.com" SMTP_PORT=587 SMTP_AUTHENTICATION=plain SMTP_ENABLE_STARTTLS_AUTO=true EMAIL_FROM_ADDRESS="johndoe@gmail.com" -a huginn
+```
