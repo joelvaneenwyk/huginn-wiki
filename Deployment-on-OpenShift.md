@@ -40,7 +40,7 @@
 
 1. That's it! Enjoy Huginn!
 
-Once it's running, you will want to create a `.env` in the root of the repo to include the correct email configuration and change the invite code. You can use `.env.example.openshift` as a guide. You'll need to push that change back up to OpenShift.
+Once it's running, you will want to create a `.env` in the root of the repo to include the correct email configuration and change the invite code. You can use `.env.example.openshift` as a guide. You'll need to push that change back up to OpenShift. The .env is in `.gitignore`. So add the file using `git add -f .env` and then push it to the remote repo or add it directly in the remote repo after ssh’ing.
 
 ## OpenShift Considerations
 
@@ -85,8 +85,8 @@ Follow the above instructions except for these slight modifications:
     rhc cartridge add -a huginn http://cartreflect-claytondev.rhcloud.com/reflect?github=afro88/openshift-foreman-cartridge 
     ```
 ## Manually adding email settings
-In case the application does not pick up the email settings from the ```.env``` file, the following command can be used as a workaround:
+* In case the application does not pick up the email settings from the ```.env``` file, the following command can be used as a workaround:
  
-```
-rhc env set SMTP_DOMAIN="gmail.com" SMTP_USER_NAME="johndoe@gmail.com" SMTP_PASSWORD="password" SMTP_SERVER="smtp.gmail.com" SMTP_PORT=587 SMTP_AUTHENTICATION=plain SMTP_ENABLE_STARTTLS_AUTO=true EMAIL_FROM_ADDRESS="johndoe@gmail.com" -a huginn
-```
+    ```
+    rhc env set SMTP_DOMAIN="gmail.com" SMTP_USER_NAME="johndoe@gmail.com" SMTP_PASSWORD="password" SMTP_SERVER="smtp.gmail.com" SMTP_PORT=587 SMTP_AUTHENTICATION=plain SMTP_ENABLE_STARTTLS_AUTO=true EMAIL_FROM_ADDRESS="johndoe@gmail.com" -a huginn
+    ```
