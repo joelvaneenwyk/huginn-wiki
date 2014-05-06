@@ -84,7 +84,9 @@ Follow the above instructions except for these slight modifications:
     ```
     rhc cartridge add -a huginn http://cartreflect-claytondev.rhcloud.com/reflect?github=afro88/openshift-foreman-cartridge 
     ```
+
 ## Manually adding email settings
+
 * In case the application does not pick up the email settings from the ```.env``` file, the following command can be used as a workaround:
  
     ```
