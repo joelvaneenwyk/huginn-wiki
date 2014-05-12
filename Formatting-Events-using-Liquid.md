@@ -1,5 +1,3 @@
-**WARNING:** this is still in development and not yet available in the master branch of huginn.
-
 ### Liquid
 
 Liquid is a template engine developed by [Shopify](http://shopify.com), it was designed to have a simple markup and to be non evaluating and secure. You can read more about it at it's [homepage](http://liquidmarkup.org/) or the GitHub [repository](https://github.com/Shopify/liquid/).
