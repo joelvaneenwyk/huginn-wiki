@@ -26,4 +26,3 @@ Contributions strongly encouraged! If you want to help out, pick one of these, [
   * https://zapier.com/zapbook/
 * App.net support (incl. for Broadcasts and other Channels)
 * Ability to call WSDL-defined web-service and consume response
-* Trello support (work with boards, cards, lists, etc.)
