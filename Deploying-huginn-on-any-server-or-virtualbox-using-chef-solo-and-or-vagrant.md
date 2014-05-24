@@ -1,5 +1,3 @@
-_This documentation is not yet complete.  The Vagrant and Chef setup for Huginn has not been merged into master yet._
-
 [Any Server with Chef](#chef-ec2)
 
 [local Vagrant](#local-vagrant)
