@@ -26,7 +26,7 @@ Now, to deploy Huginn in _production_ mode on a newly created Server or VPS, run
 
     knife solo bootstrap [user@]hostname -r role[huginn_production]
 
-Once you have done this once, you can redeploy by running
+In future you can redeploy by running
 
     knife solo cook [user@]hostname -r role[huginn_production]
 
