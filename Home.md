@@ -16,8 +16,8 @@ Please feel free to add to this wiki!
 
 ### Deploying Huginn
 
-* [[Deployment with Capistrano, Unicorn, nginx, Foreman, and Upstart]]
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
+* [[Deployment with Capistrano, Unicorn, nginx, Foreman, and Upstart]]
 * [[Deployment on CloudFoundry]]
 * [[Deployment on OpenShift]]
 * [[Apache Huginn configuration]]
