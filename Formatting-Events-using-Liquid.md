@@ -13,6 +13,10 @@ For a complete list of build-in filters have a look at the documentation at [Sho
 
 **uri_escape** returns a URI escaped string, useful when generating URL query strings 
 
+### Tags added by Huginn
+
+**credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there a no quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
+
 ### More complete usage example
 
 In this example a HipchatAgent will consume events emitted by an BasecampAgent.
