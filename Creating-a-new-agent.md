@@ -14,7 +14,7 @@ Use the `description` class method to set a Markdown description for your agent.
 
 # Options
 
-Agents are configured with a JSON structure from the user, accessible raw via `options` and available with [Liquid](http://liquidmarkup.org/) interpolation performed in `interpolated`.  You should define a method called `default_options` that returns an example default configuration for your type of Agent.  Additionally, you should define a method called `validate_options` that performs Rails validation on the contents of `options`, if any fields are required.  You generally don't want to look at `interpolated` within `validate_options`.  For example:
+Agents are configured with a JSON structure from the user, accessible raw via `options` and available with [Liquid](http://liquidmarkup.org/) interpolation performed in `interpolated`.  You should define a method called `default_options` that returns an example default configuration for your type of Agent.  Additionally, you should define a method called `validate_options` that performs Rails validation on the contents of `options`, if any fields are required.  You generally don't want to look at `interpolated` within `validate_options`.  Here's an example of `default_options`:
 
     def default_options
       { 'zipcode' => '94103' }
