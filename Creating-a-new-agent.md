@@ -14,7 +14,7 @@ Use the `description` class method to set a Markdown description for your agent.
 
 # Options
 
-Agents are configured with a JSON structure from the user, symbolized and accessible via `options`.  You should define a method called `default_options` that returns an example default configuration for your type of Agent.  Additionally, you should define a method called `validate_options` that performs Rails validation on the contents of `options`, if any fields are required.  For example:
+Agents are configured with a JSON structure from the user, accessible raw via `options` and available with [Liquid](http://liquidmarkup.org/) interpolation performed in `interpolated`.  You should define a method called `default_options` that returns an example default configuration for your type of Agent.  Additionally, you should define a method called `validate_options` that performs Rails validation on the contents of `options`, if any fields are required.  You generally don't want to look at `interpolated` within `validate_options`.  For example:
 
     def default_options
       { 'zipcode' => '94103' }
@@ -31,9 +31,9 @@ Agents can be scheduled to run at certain times, or on certain intervals.  When 
     default_schedule "8pm"
 
     def check
-      wunderground.forecast_for(options['zipcode'])['forecast']['simpleforecast']['forecastday'].each do |day|
+      wunderground.forecast_for(interpolated['zipcode'])['forecast']['simpleforecast']['forecastday'].each do |day|
         if is_tomorrow?(day)
-          create_event :payload => day.merge('zipcode' => options['zipcode'])
+          create_event :payload => day.merge('zipcode' => interpolated['zipcode'])
         end
       end
     end
@@ -72,13 +72,13 @@ Your Agent should create AgentLogs when interesting things happen, especially er
 It's nice to be able to tell the user if their instance of your Agent is working correctly.  You should define a method called `working?` that returns true when everything seems good.  Here's an example for an Agent that primarily creates events and has an `expected_update_period_in_days` option:
 
     def working?
-      event_created_within?(options['expected_update_period_in_days']) && !recent_error_logs?
+      event_created_within?(interpolated['expected_update_period_in_days']) && !recent_error_logs?
     end
 
 And here is an example for an Agent that primarily receives events and has an `expected_receive_period_in_days` option:
 
     def working?
-      last_receive_at && last_receive_at > options['expected_receive_period_in_days'].to_i.days.ago && !recent_error_logs?
+      last_receive_at && last_receive_at > interpolated['expected_receive_period_in_days'].to_i.days.ago && !recent_error_logs?
     end
 
 You can, of course, write Agent-specific code in `working?`.
@@ -105,7 +105,7 @@ Here is an example implementation of `receive_web_request`:
 def receive_web_request(params, method, format)
   secret = params.delete('secret')
   return ["Please use POST requests only", 401] unless method == "post"
-  return ["Not Authorized", 401] unless secret == options['secret']
+  return ["Not Authorized", 401] unless secret == interpolated['secret']
 
   # do something with params here
 
