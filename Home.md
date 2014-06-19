@@ -10,6 +10,7 @@ Please feel free to add to this wiki!
 * [Know when the world changes– with Huginn](http://blog.andrewcantino.com/blog/2014/03/17/know-when-the-world-changes-with-huginn/)
 * [[Agent Configuration Examples]]
 * [[Novice setup guide]]
+* [[Formatting Events using Liquid]]
 * [[Getting a Twitter OAuth Token]]
 * [[Private development instructions]]
 * [[Using PostgreSQL instead of MySQL]]
