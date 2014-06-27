@@ -82,7 +82,7 @@ Follow the above instructions except for these slight modifications:
 * When you add the foreman cartridge, use this repo instead as I've modified the manifest to allow it to be installed on scalable apps as a domain scoped plugin.
 
     ```
-    rhc cartridge add -a huginn http://cartreflect-claytondev.rhcloud.com/reflect?github=afro88/openshift-foreman-cartridge 
+    rhc cartridge add -a huginn "http://cartreflect-claytondev.rhcloud.com/reflect?github=afro88/openshift-foreman-cartridge" 
     ```
 
 ## Manually adding email settings
