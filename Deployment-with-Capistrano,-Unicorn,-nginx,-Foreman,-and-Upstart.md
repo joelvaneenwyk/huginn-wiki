@@ -1,6 +1,4 @@
-**Note:** This relates to Capistrano v2.x.
-
-Deploying Huginn with Capistrano, Unicorn, and nginx is straight forward.  You can read more about using Foreman and Upstart together in general [here](http://michaelvanrooijen.com/articles/2011/06/08-managing-and-monitoring-your-ruby-application-with-foreman-and-upstart/).
+Deploying Huginn with Capistrano (2.x), Unicorn, and nginx is straight forward.  You can read more about using Foreman and Upstart together in general [here](http://michaelvanrooijen.com/articles/2011/06/08-managing-and-monitoring-your-ruby-application-with-foreman-and-upstart/).
 
 Follow these steps:
 
