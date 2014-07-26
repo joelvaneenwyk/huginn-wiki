@@ -1,9 +1,11 @@
 ## You can now run Huginn for free on Heroku
 
+### Instructions
+
 * Install the [Heroku Toolbelt](https://toolbelt.heroku.com/) and then run `heroku login`
 * Go into your huginn directory and run the magic setup wizard: `bin/setup_heroku`
 
-Important things to keep in mind:
+### Important things to keep in mind
 
 * Heroku's free plan limits the number of database rows that you can have to 10,000, so you should be sure to set a low event retention schedule for your agents.
 * The `setup_heroku` command points Heroku at a special Procfile (`deployment/heroku/Procfile.heroku`) that is designed to be run on only one Heroku web worker.  If you want to run multiple workers, change the Heroku config variable `PROCFILE_PATH` with `heroku config:set PROCFILE_PATH=./Procfile` and switch back to the standard Huginn Procfile configuration.
