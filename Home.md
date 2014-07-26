@@ -17,8 +17,9 @@ Please feel free to add to this wiki!
 
 ### Deploying Huginn
 
-* [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
+* [[Run Huginn for free on Heroku]] - The quickest and easiest option.
 * [[Deployment with Capistrano, Unicorn, nginx, Foreman, and Upstart]]
+* [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
 * [[Deployment on CloudFoundry]]
 * [[Deployment on OpenShift]]
 * [[Apache Huginn configuration]]
@@ -28,4 +29,4 @@ Please feel free to add to this wiki!
 ### Extending Huginn
 
 * [[Creating a new Agent]]
-* [[Agent Ideas]] - Please add ideas for new Agents!
+* [Official Agent Suggestions Thread](https://github.com/cantino/huginn/issues/353) - Please add ideas for new Agents!
