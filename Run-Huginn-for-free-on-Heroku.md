@@ -1,4 +1,4 @@
-# Running Huginn (for free) on Heroku
+## You can now run Huginn for free on Heroku
 
 * Install the [Heroku Toolbelt](https://toolbelt.heroku.com/) and then run `heroku login`
 * Go into your huginn directory and run the magic setup wizard: `bin/setup_heroku`
