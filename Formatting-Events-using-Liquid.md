@@ -9,6 +9,34 @@ For some simple examples have a look at the [HipChat](https://github.com/cantino
 To format the output you can use filters, they basically work like UNIX pipes: {{ mixed_case | downcase }}, which will return a down case version of the provided string.
 For a complete list of build-in filters have a look at the documentation at [Shopify](http://docs.shopify.com/themes/liquid-basics/output).
 
+### Objects provided by Huginn
+
+#### Event
+
+An Event object is essentially a hash created by an upstream Agent.  There are also some special keys listed below, which are available unless the hash has keys with the same name.
+
+**agent** refers to the upstream Agent which created the Event.
+
+**created_at** refers to the timestamp of the Event.
+
+#### Agent
+
+An Agent object has the following keys (excerpt).
+
+**type** returns the type name, e.g. `"HipchatAgent"`.
+
+**name** returns the name.
+
+**options** returns the options hash.
+
+**memory** returns the memory hash.
+
+**sources** returns an array of the upstream Agents.
+
+**receivers** returns an array of the downstream Agents.
+
+**disabled** returns a boolean value that indicates if the Agent is in a disabled state.
+
 ### Filters added by Huginn
 
 **uri_escape** returns a URI escaped string, useful when generating URL query strings 
