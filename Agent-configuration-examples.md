@@ -2,23 +2,6 @@
 
 ## WebsiteAgents
 
-### Hacker News searcher
-
-Look for new Hacker News posts that mention SF or "Bay Area"
-
-    {
-      "expected_update_period_in_days": 2,
-      "url": "http://api.thriftdb.com/api.hnsearch.com/items/_search?q=francisco+OR+sf+OR+%22bay+area%22&sortby=create_ts%20desc",
-      "type": "json",
-      "mode": "on_change",
-      "extract": {
-        "item": {
-          "path": "results[*].item",
-          "attr": "src"
-        }
-      }
-    }
-
 ### Reddit Gold
 
 Generate events whenever a comment receives gold on a specified subreddit. Here r/all is demonstrated.
@@ -78,11 +61,11 @@ This Agent follows iTunes trailers from the apple.com/trailers RSS feed.
       "extract": {
         "title": {
           "css": "item title",
-          "text": true
+          "value": ".//text()"
         },
         "url": {
           "css": "item link",
-          "text": true
+          "value": ".//text()"
         }
       }
     }
