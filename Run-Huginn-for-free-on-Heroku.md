@@ -3,7 +3,7 @@
 ### Instructions
 
 * Install the [Heroku Toolbelt](https://toolbelt.heroku.com/) and then run `heroku login`
-* Go into your huginn directory and run the magic setup wizard: `bin/setup_heroku`
+* Go into your huginn directory and run `bundle`, and then the magic setup wizard: `bin/setup_heroku`
 * That's it!
 * If you make changes, you can re-run `bin/setup_heroku`, or just do `git push heroku master`.
 
