@@ -1,25 +1,11 @@
-You can play with Huginn inside of [docker](http://www.docker.io/).  Start by checking out the docker repository.
+## Running the Container
 
-*Step 1*: This step is only needed if you can't run docker natively, and so are going to run docker inside of Vagrant. If you are using OS X you can use [docker-osx](https://github.com/noplay/docker-osx) to automate setting up and using docker through Vagrant. Huginn needs a fair amount of RAM, so in the docker Vagrantfile, update `config.vm.provider :virtualbox do |vb|` like so:
+You can play with Huginn inside of [docker](http://www.docker.io/).
 
-    config.vm.provider :virtualbox do |vb|
-      config.vm.box = BOX_NAME
-      config.vm.box_url = BOX_URI
-      vb.customize ["modifyvm", :id, "--memory", "1800"]
-    end
-    config.vm.forward_port 80, 3000
+### Step 1
+Install docker. The website has [docker install instructions for most environments](https://docs.docker.com/installation/).
 
-Now you can run `vagrant up`.
+## Step 2
 
-*Step 2*:
+Follow the [Quick Start instructions](https://registry.hub.docker.com/u/andrewcurioso/huginn/) on the docker hub registry.
 
- * Run:
-
-        docker pull rishabh/huginn
-        docker run -h localhost -d -p 80:3000 rishabh/huginn /bin/bash -c "su huginn -c runhuginn"
-
-  This starts a Huginn process in a docker container with a new internal user to manage it (`huginn`/`huginn`).
-
- * Run `docker ps` to see the now-running Huginn container. Port 3000 of docker container is mapped with port 80 on your computer (or your VirtualBox machine if you did _Step 1_).  You can also run `docker inspect <containerId>` for more details.
-
- * If docker is running natively on your computer, you can now connect to the host port to use Huginn.  If you're using Vagrant, Host port 80 has been forwarded to port 3000 of your computer. Now you should be able to connect to localhost:3000 on your computer and play with Huginn.
