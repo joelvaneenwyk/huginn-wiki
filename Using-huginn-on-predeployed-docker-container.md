@@ -7,7 +7,7 @@ Getting Huginn up and running using docker is quick and painless once you have d
 ## Running the Container
 
 ### Step 1: Install Docker
-The website has [docker install instructions for most environments](https://docs.docker.com/installation/).
+The website has [docker install instructions for most environments](https://docs.docker.com/installation/).  If you already have Docker installed, you'll need to upgrade to something recentish - 0.10.0 was too old, but 1.1.2 worked fine.
 
 ### Step 2: Launch the container
 
