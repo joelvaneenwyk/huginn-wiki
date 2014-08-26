@@ -1,3 +1,6 @@
+**Warning** if you are using a recent huginn version (2014-08-27 or newer) this information is outdated and you should look at [Configuring OAuth applications](https://github.com/cantino/huginn/wiki/Configuring-OAuth-applications)
+
+
 In order to use the Twitter Agent, you'll need some special Twitter credentials for OAuth.
 
 If you don't have a Twitter Application yet, please visit the following URL:
