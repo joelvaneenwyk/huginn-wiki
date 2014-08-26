@@ -1,5 +1,3 @@
-**Warning: ** This feature is still in development.
-
 To use the new Services integration you first need to set up OAuth applications for the external services you would like to use.
 
 ## Twitter
