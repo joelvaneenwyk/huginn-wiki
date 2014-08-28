@@ -39,7 +39,17 @@ An Agent object has the following keys (excerpt).
 
 ### Filters added by Huginn
 
-**uri_escape** returns a URI escaped string, useful when generating URL query strings 
+**uri_escape** returns a URI escaped string, useful when generating URL query strings.
+<!-- Liquid 3 will have url_encode which is equivalent to this -->
+
+**to_xpath** returns an XPath literal or expression that evaluates to the original string for use in WebsiteAgent.
+
+For example, suppose you are making a WebsiteAgent that receives an event with a `word` to look up on a glossary web page to create a new event.
+It would have to dynamically build an XPath expression like this:
+
+    //dl/dt[text()={{word | to_xpath}}][1]/following-sibling::dd[1]/text()
+
+It is more robust to use the filter here than to put `'{{word}}'` or `"{{word}}"` in that it wouldn't blow up the whole expression even if `word` contained the apostrophe, quotation mark, or both.
 
 ### Tags added by Huginn
 
