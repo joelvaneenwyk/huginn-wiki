@@ -16,7 +16,7 @@ git clone git://github.com/cantino/huginn.git
 ## Step 2 - Install ruby and gem
 Install [ruby][ruby] (at least version 2.0.0) and [gem][gem]. You can either download them and compile manually or install via your OS' package manager (e.g. [apt][apt]).
 
-Edit: Not sure this will work since I don't think 2.0.0 is packaged..? ~ alias1
+(Edit: Not sure this will work since I don't think 2.0.0 is packaged..? Try [rbenv](https://github.com/sstephenson/rbenv) or [rvm](http://rvm.io/) ?~ alias1)
 ```shell
 apt-get install ruby2.0.0 ruby2.0.0-dev rubygems
 ```
