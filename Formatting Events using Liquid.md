@@ -15,6 +15,8 @@ For a complete list of build-in filters have a look at the documentation at [Sho
 
 An Event object is essentially a hash created by an upstream Agent.  There are also some special keys listed below, which are available unless the hash has keys with the same name.
 
+**\_location_** contains location information bound to the event, which has the following keys: `latitude` (alias `lat`), `longitude` (alias `lng`), `radius`, `course` and `speed`.  This is set by some agents that deal with location.
+
 **agent** refers to the upstream Agent which created the Event.
 
 **created_at** refers to the timestamp of the Event.
