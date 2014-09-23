@@ -7,6 +7,7 @@
 * Now, run the magic setup wizard: `bin/setup_heroku`
 * That's it!
 * If you make changes, you can re-run `bin/setup_heroku`, or just do `git push heroku master`.
+* Signup for a free [Pingdom](https://www.pingdom.com/free/) account and have it ping your Huginn URL instance on Heroku. This should help keep your Heroku instance awake and watching the world.
 
 ### Important things to keep in mind
 
