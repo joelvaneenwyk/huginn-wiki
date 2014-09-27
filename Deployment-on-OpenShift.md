@@ -4,17 +4,16 @@
 
 1. Install the [rhc](https://developers.openshift.com/en/getting-started-client-tools.html) command line tool (could be as simple as `gem install rhc`) and then run `rhc setup`.
 
-1. Create a rails application with a mysql cartridge
+1. Create a ruby application with a mysql cartridge (this will make a new directory called `huginn`)
 
     ```
-    rhc app create -a huginn -t ruby-1.9 -t mysql-5.1
+    rhc app create huginn ruby-2.0 mysql-5.5
     ```
 
-1. Add the huginn openshift quickstart as your upstream:
+1. Add the public Huginn OpenShift quickstart as your upstream:
 
     ```
     cd huginn
-    git init
     git remote add upstream -m openshift git://github.com/cantino/huginn.git
     git pull -s recursive -X theirs upstream openshift
     ```
