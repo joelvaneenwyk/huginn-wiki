@@ -2,6 +2,8 @@
 
 1. Create an account at http://openshift.redhat.com/
 
+1. Install the [rhc](https://developers.openshift.com/en/getting-started-client-tools.html) command line tool.
+
 1. Create a rails application with a mysql cartridge
 
     ```
