@@ -1,16 +1,30 @@
-## huginn + sysvinit + unicorn + mysql + nginx can be at your service on: Raspberry Pi Model A 256 MB RAM @ 900 MHz
+It is possible to run Huginn on low end hardware such as single core ARM boards or older x86 hardware. The minimum requirements are yet to be specified.
+Serving only a single user for an example:  huginn + sysvinit + unicorn + mysql + nginx can be at your service on: **Raspberry Pi 256 MB RAM, 4GB SD @ 900 MHz**
 
+Before deploying Huginn  make sure you use a suitable OS distribution for your "lightweight" server.
+Also remove all unnecessary packages and services and tweak the system to free as much RAM & CPU.
 Please help improve these instructions - the mysql and nginx settings are experimental and for using huginn to serve only to one or a "few" users - 
 please share your experience.
 
-### Disable all unnecessary Agents in your Gemfile
+### Tuning Huginn for low Memory usage
 
-### Set a static IP and remove DHCP-Client
+To free up memory disable any unused optional Agent in huginn/Gemfile (read the inside comments for instructions). It is also possible to lower the refresh activity of huginn/lib/huginn_scheduler.rb - by default the frequency is set to 0.3s. You can change and experiment by adding (frequency: 3) to the Scheduler.new 
+
+```
+def initialize
+  @rufus_scheduler = Rufus::Scheduler.new(frequency: 3)
+  self.mutex = Mutex.new
+end
+```
+
+
+
+### Assign and setup a static IP for your server and disable the DHCP entries from 
 for faster startup, memory and cpu savings
 
 ### Use Init Script instead of Upstart on Debian
 
-If you want to deploy via the Capistrano Tutorial but want to use Init Script to skip on upstart then 
+If you want to deploy via the Capistrano Tutorial but want to use SysVinitt instead of upstart - then 
 include the following foreman export gem in your Gemfile.
 ```
 gem 'foreman-export-initscript'
@@ -18,6 +32,9 @@ gem 'foreman-export-initscript'
 
 and then also adjust the deploy.rb file to make changes from upstart to initscript to the namespace :foreman do section
 ```
+..
+..
+..
 namespace :foreman do
   desc "Export the Procfile to Ubuntu's upstart scripts"
   task :export, :roles => :app do
@@ -40,6 +57,9 @@ namespace :foreman do
     run "sudo service #{application} start || sudo service #{application} restart"
   end
 end
+..
+..
+..
 ```
 
 
@@ -238,5 +258,3 @@ http {
 
 ### Disable OpenSSH Server and enable Dropbear
 (instructions comming soon)
-
-
