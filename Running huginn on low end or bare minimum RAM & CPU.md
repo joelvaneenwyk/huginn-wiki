@@ -7,6 +7,9 @@ please share your experience.
 ```
 /you/huginn/Gemfile
 ```
+### Set a static IP and remove DHCP-Client
+for faster startup, less ram ++ cpu
+
 ### Use Init Script instead of Upstart on Debian
 
 If you want to deploy via the Capistrano Tutorial but want to use Init Script to skip on upstart then 
