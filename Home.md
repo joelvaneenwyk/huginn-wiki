@@ -15,7 +15,7 @@ Please feel free to add to this wiki!
 * [[Getting a Twitter OAuth Token]]
 * [[Private development instructions]]
 * [[Using PostgreSQL instead of MySQL]]
-* [Running Huginn on low end bare minimum RAM & CPU e.g. Raspberry-Pi](https://github.com/cantino/huginn/wiki/Running-Huginn-on-minimal-systems-with-low-RAM-%26-CPU-e.g.-Raspberry-Pi)
+* [[Running Huginn on minimal systems with low RAM & CPU e.g. Raspberry Pi]]
 ### Deploying Huginn
 
 * [[Run Huginn for free on Heroku]] - The quickest and easiest option.
