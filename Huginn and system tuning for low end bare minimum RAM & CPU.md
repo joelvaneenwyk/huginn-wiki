@@ -1,7 +1,9 @@
+**While this works, the resulting system is VERY SLOW (1-5 sec response time)**
+
 It is possible to run Huginn on low end hardware such as single core ARM boards or older x86 hardware. The minimum requirements are yet to be specified.
 Serving only a single user for an example:  huginn + sysvinit + unicorn + mysql + nginx can be at your service on: **Raspberry Pi 256 MB RAM, 4GB SD @ 900 MHz**
 
-Before deploying Huginn make sure you use a suitable "lightweight" OS distribution for your minimal server. For the RPi Raspbian works with 1 - 2 sec response time after some optimization.
+Before deploying Huginn make sure you use a suitable "lightweight" OS distribution for your minimal server. For the RPi Raspbian works quite responsive after some optimization.
 Also remove all unnecessary packages and services and tweak the system to free as much RAM & CPU.
 Please help improve these instructions - the mysql and nginx settings are experimental and for using huginn to serve only to one or a "few" users - 
 please share your experience.
