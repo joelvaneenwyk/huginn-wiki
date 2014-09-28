@@ -8,7 +8,7 @@ please share your experience.
 /you/huginn/Gemfile
 ```
 ### Set a static IP and remove DHCP-Client
-for faster startup, less ram ++ cpu
+for faster startup, memory and cpu savings
 
 ### Use Init Script instead of Upstart on Debian
 
@@ -49,6 +49,7 @@ end
 The following is used as a mysql bare minimum for a single user huginn deployment set inside the /etc/mysql/my.cnf
 taken from /usr/share/doc/mysql-server-5.5/examples/my-small.cnf
 please make improvements and explanations
+someone could also use a script like MySQLTuner or similar.
 
 Example MySQL config file for minimal systems `etc/mysql/my.cnf`
 ```
