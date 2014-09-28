@@ -1,7 +1,47 @@
-## huginn + sysvinit + unicorn + mysql + nginx can be at service on a: Raspberry Pi Model A 256 MB RAM @ 900 MHz
+## huginn + sysvinit + unicorn + mysql + nginx can be at your service on: Raspberry Pi Model A 256 MB RAM @ 900 MHz
 
-these settings are experimental and for using huginn to serve only to one or a "few" users - 
-please share your experience
+Please help improve these instructions - the mysql and nginx settings are experimental and for using huginn to serve only to one or a "few" users - 
+please share your experience.
+
+### Disable all unnecessary Agents in your Gemfile
+```
+/you/huginn/Gemfile
+```
+### Use Init Script instead of Upstart 
+
+If you want to deploy via the Capistrano Tutorial but want to use Init Script to skip on upstart then 
+include the following foreman export gem in your Gemfile.
+```
+gem 'foreman-export-initscript'
+```
+
+and then also adjust the deploy.rb file to make changes from upstart to initscript to the namespace :foreman do section
+```
+namespace :foreman do
+  desc "Export the Procfile to Ubuntu's upstart scripts"
+  task :export, :roles => :app do
+    run "cd #{latest_release} && sudo bundle exec foreman export initscript /etc/init.d -a #{application} -u #{user} -l #{deploy_to}/init_logs"
+    run "sudo chmod +x /etc/init.d/huginn"
+  end
+
+  desc 'Start the application services'
+  task :start, :roles => :app do
+    sudo "sudo service #{application} start"
+  end
+
+  desc 'Stop the application services'
+  task :stop, :roles => :app do
+    sudo "sudo service #{application} stop"
+  end
+
+  desc 'Restart the application services'
+  task :restart, :roles => :app do
+    run "sudo service #{application} start || sudo service #{application} restart"
+  end
+end
+```
+
+
 ### Optimizing Mysql
 The following is used as a mysql bare minimum for a single user huginn deployment set inside the /etc/mysql/my.cnf
 taken from /usr/share/doc/mysql-server-5.5/examples/my-small.cnf
@@ -192,3 +232,9 @@ http {
 #}
 
 ```
+
+
+### Disable OpenSSH Server and enable Dropbear
+(instructions comming soon)
+
+
