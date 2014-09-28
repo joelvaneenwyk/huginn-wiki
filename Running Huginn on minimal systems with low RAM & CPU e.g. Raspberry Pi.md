@@ -10,7 +10,7 @@ please share your experience.
 
 ### Tuning Huginn for low Memory usage
 
-To free up memory disable any unused optional Agent in huginn/Gemfile (read the inside comments for instructions). It is also possible to lower the refresh activity of huginn/lib/huginn_scheduler.rb - by default the frequency is set to 0.3s. You can change and experiment by adding (frequency: x) to the Scheduler.new (make link to comment by knu)
+To free up memory disable any unused optional Agent in huginn/Gemfile (read the inside comments for instructions). It is also possible to lower the refresh activity of huginn/lib/huginn_scheduler.rb - by default the frequency is set to 0.3s. You can change and experiment by adding (frequency: x) to the Scheduler.new [hint at where to decrease the huginn activity](https://github.com/cantino/huginn/issues/534#issuecomment-56652152)
 
 On the RPi a value of 3 is working well.
 
