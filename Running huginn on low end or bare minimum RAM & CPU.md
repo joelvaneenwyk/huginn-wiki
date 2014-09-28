@@ -4,9 +4,7 @@ Please help improve these instructions - the mysql and nginx settings are experi
 please share your experience.
 
 ### Disable all unnecessary Agents in your Gemfile
-```
-/you/huginn/Gemfile
-```
+
 ### Set a static IP and remove DHCP-Client
 for faster startup, memory and cpu savings
 
