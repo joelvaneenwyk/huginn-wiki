@@ -7,7 +7,7 @@ please share your experience.
 ```
 /you/huginn/Gemfile
 ```
-### Use Init Script instead of Upstart 
+### Use Init Script instead of Upstart on Debian
 
 If you want to deploy via the Capistrano Tutorial but want to use Init Script to skip on upstart then 
 include the following foreman export gem in your Gemfile.
