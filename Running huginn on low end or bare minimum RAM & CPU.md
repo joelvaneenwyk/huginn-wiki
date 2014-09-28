@@ -67,8 +67,8 @@ default-storage-engine = myisam
 skip-external-locking
 key_buffer_size = 16K
 max_allowed_packet = 1M
-#How many tables do we need cached for huginn?
-table_open_cache = 4
+#huginn is using 12 tables do we need to cache them all?
+table_open_cache = 12
 sort_buffer_size = 64K
 read_buffer_size = 256K
 read_rnd_buffer_size = 256K
