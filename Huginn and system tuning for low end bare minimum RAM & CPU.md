@@ -1,7 +1,7 @@
 It is possible to run Huginn on low end hardware such as single core ARM boards or older x86 hardware. The minimum requirements are yet to be specified.
 Serving only a single user for an example:  huginn + sysvinit + unicorn + mysql + nginx can be at your service on: **Raspberry Pi 256 MB RAM, 4GB SD @ 900 MHz**
 
-Before deploying Huginn  make sure you use a suitable OS distribution for your "lightweight" server.
+Before deploying Huginn make sure you use a suitable "lightweight" OS distribution for your minimal server. For the RPi Raspbian works well after some optimization.
 Also remove all unnecessary packages and services and tweak the system to free as much RAM & CPU.
 Please help improve these instructions - the mysql and nginx settings are experimental and for using huginn to serve only to one or a "few" users - 
 please share your experience.
@@ -69,63 +69,25 @@ end
 ```
 
 
-### Optimizing Mysql
-The following is used as a mysql bare minimum for a single user huginn deployment set inside the /etc/mysql/my.cnf
-taken from /usr/share/doc/mysql-server-5.5/examples/my-small.cnf
-please make improvements and explanations
-someone could also use a script like MySQLTuner or similar.
+### Optimizing Mysql - Switch to MyIsam + Tuning Option
 
-Example MySQL config file for minimal systems `etc/mysql/my.cnf`
+Use /usr/share/doc/mysql-server-5.5/examples/my-small.cnf  to replace (make backup beforehand) /etc/mysql/my.cnf and add/edit the following to switch to MyIsam. Do this before you run any deploy, rake db scripts on your server.
+
 ```
-[client]
-port            = 3306
-socket          = /var/run/mysqld/mysqld.sock
-
-#Here follows entries for some specific programs
-
-#The MySQL server
-[mysqld]
-port            = 3306
-socket          = /var/run/mysqld/mysqld.sock
-
 #Disable InnoDB and switch to MyISAM to save RAM
 skip-innodb
 default-storage-engine = myisam
 
-skip-external-locking
-key_buffer_size = 16K
-max_allowed_packet = 1M
-#huginn is using 12 tables do we need to cache them all?
-table_open_cache = 12
-sort_buffer_size = 64K
-read_buffer_size = 256K
-read_rnd_buffer_size = 256K
-net_buffer_length = 2K
-thread_stack = 128K
-query_cache_type = 1
-query_cache_limit = 256
-#going low on the query_cache_size value - how do we find the right values?
-query_cache_size = 1M
-server-id       = 1
-
-[mysqldump]
-quick
-max_allowed_packet = 16M
-
-[mysql]
-no-auto-rehash
-#Remove the next comment character if you are not familiar with SQL
-#safe-updates
-
-[myisamchk]
-key_buffer_size = 8M
-sort_buffer_size = 8M
-
-[mysqlhotcopy]
-interactive-timeout
 ```
 
-## Optimizing Nginx
+After this restart your mysql server
+'''
+sudo service mysql restart
+'''
+
+Now you can deploy / create the database for your huginn installation. It is possible to fine tune the database using e.g. a script like [MySQLTuner](https://github.com/major/MySQLTuner-perl),  or [MySQL Performance Tuning Primer Script](http://www.day32.com/MySQL/). These scripts will help you determine possible optimizations for your database. **These scripts will read the database usage history and therefor it is best to leave the freshly replaced my.cnf + MyIsam  as is and do the fine tuning after huginn has been running for some time. e.g. 1-2 days** Mysql tuning should be repeated after a period of time and depending on the amount of Agents and data usage such scripts will keep you updated on possible optimizations. This is a [nice collection](http://helidigizen.com/blog/mysql-server-optimization-blogshot/) of Mysql optimization information
+
+### Optimizing Nginx
 This is a bare minimum configuration for a single user huginn deployment set inside the /etc/nginx/conf.d/default.conf and /etc/nginx/nginx.conf and using unicorn as the upstream
 please adjust to your needs and share updates - the goal is to get the most out of low end boxes
 
@@ -209,7 +171,7 @@ http {
 
         #gzip_vary on;
         #gzip_proxied any;
-        #gzip_comp_level 3;
+        #gzip_comp_level 6;
         #gzip_buffers 16 8k;
         #gzip_http_version 1.1;
         #gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
@@ -263,4 +225,4 @@ http {
 
 
 ### Disable OpenSSH Server and enable Dropbear
-(instructions comming soon)
+so far OpenSSH Server is used for deployment but once huginn is running it can be disabled and e.g. Dropbear + openssh-client used as a "lightweight" replacement freeing up to 10MB RAM. If you want to redeploy then you just enable OpenSSH + disable Dropbear temporarily.
