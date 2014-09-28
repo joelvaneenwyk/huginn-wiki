@@ -25,8 +25,21 @@ end
 
 
 
-### Assign and setup a static IP for your server and disable the DHCP entries from 
-for faster startup, memory and cpu savings
+### Assign and setup a static IP for your server and disable the DHCP entries 
+for faster startup, memory and cpu savings edit your /etc/network/interfaces
+e.g.:
+````
+auto lo
+iface lo inet loopback
+iface eth0 inet static
+address 192.168.1.20
+gateway 192.168.1.1
+netmask 255.255.255.0
+network 192.168.1.0
+broadcast 192.168.1.255
+```
+
+
 
 ### Use Init Script instead of Upstart on Raspbian (Debian)
 
