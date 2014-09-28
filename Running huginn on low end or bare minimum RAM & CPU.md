@@ -8,13 +8,19 @@ please share your experience.
 
 ### Tuning Huginn for low Memory usage
 
-To free up memory disable any unused optional Agent in huginn/Gemfile (read the inside comments for instructions). It is also possible to lower the refresh activity of huginn/lib/huginn_scheduler.rb - by default the frequency is set to 0.3s. You can change and experiment by adding (frequency: 3) to the Scheduler.new 
+To free up memory disable any unused optional Agent in huginn/Gemfile (read the inside comments for instructions). It is also possible to lower the refresh activity of huginn/lib/huginn_scheduler.rb - by default the frequency is set to 0.3s. You can change and experiment by adding (frequency: x) to the Scheduler.new (make link to comment by knu)
+
+On the RPi a value of 3 is working well.
 
 ```
+.
+.
 def initialize
   @rufus_scheduler = Rufus::Scheduler.new(frequency: 3)
   self.mutex = Mutex.new
 end
+.
+.
 ```
 
 
@@ -22,7 +28,7 @@ end
 ### Assign and setup a static IP for your server and disable the DHCP entries from 
 for faster startup, memory and cpu savings
 
-### Use Init Script instead of Upstart on Debian
+### Use Init Script instead of Upstart on Raspbian (Debian)
 
 If you want to deploy via the Capistrano Tutorial but want to use SysVinitt instead of upstart - then 
 include the following foreman export gem in your Gemfile.
@@ -30,16 +36,16 @@ include the following foreman export gem in your Gemfile.
 gem 'foreman-export-initscript'
 ```
 
-and then also adjust the deploy.rb file to make changes from upstart to initscript to the namespace :foreman do section
+and then also adjust the deploy.rb file to make changes from upstart to initscript to the namespace :foreman do section accordingly
 ```
-..
-..
-..
+.
+.
+.
 namespace :foreman do
-  desc "Export the Procfile to Ubuntu's upstart scripts"
+  desc "Export the Procfile to init scripts"
   task :export, :roles => :app do
     run "cd #{latest_release} && sudo bundle exec foreman export initscript /etc/init.d -a #{application} -u #{user} -l #{deploy_to}/init_logs"
-    run "sudo chmod +x /etc/init.d/huginn"
+   run "sudo chmod +x /etc/init.d/huginn"
   end
 
   desc 'Start the application services'
@@ -57,9 +63,9 @@ namespace :foreman do
     run "sudo service #{application} start || sudo service #{application} restart"
   end
 end
-..
-..
-..
+.
+.
+.
 ```
 
 
