@@ -45,7 +45,7 @@ broadcast 192.168.1.255
 
 ### Use Init Script instead of Upstart on Raspbian (Debian)
 
-If you want to deploy via the [Capistrano Tutorial](https://github.com/cantino/huginn/wiki/Deployment-with-Capistrano,-Unicorn,-nginx,-Foreman,-and-Upstart) but want to use SysVinitt instead of upstart - then 
+If you want to deploy via the [Capistrano Tutorial](https://github.com/cantino/huginn/wiki/Deployment-with-Capistrano,-Unicorn,-nginx,-Foreman,-and-Upstart) but want to use SysVinit instead of upstart - then 
 include the following foreman export gem in your Gemfile.
 ```
 gem 'foreman-export-initscript'
