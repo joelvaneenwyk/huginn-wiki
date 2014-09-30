@@ -88,7 +88,7 @@ end
 
 
 ### Optimizing Mysql - Switch to MyIsam + using Tuning Scripts
-
+On MySQL 5.5 you can do the following:
 Use /usr/share/doc/mysql-server-5.5/examples/my-small.cnf  to replace (make backup beforehand) /etc/mysql/my.cnf and add/edit the following to switch to MyIsam. Do this before you run any deploy, rake db scripts on your server.
 
 ```
@@ -106,8 +106,8 @@ sudo service mysql restart
 Now you can deploy / create the database for your huginn installation. It is possible to fine tune the database using e.g. a script like [MySQLTuner](https://github.com/major/MySQLTuner-perl),  or [MySQL Performance Tuning Primer Script](http://www.day32.com/MySQL/). These scripts will help you determine possible optimizations for your database. **These scripts will read the database usage history and therefor it is best to leave the freshly replaced my.cnf + MyIsam  as is and do the fine tuning after huginn has been running for some time (recommended >= 48 hours)** Mysql tuning should be regularly repeated after a period of time and depending on the amount of Agents and data usage such scripts will keep you updated on possible optimizations. This is a [nice collection](http://helidigizen.com/blog/mysql-server-optimization-blogshot/) of Mysql optimization information
 
 ### Optimizing Nginx
-This is a bare minimum configuration for a single user huginn deployment set inside the /etc/nginx/conf.d/default.conf and /etc/nginx/nginx.conf and using unicorn as the upstream
-please adjust to your needs and share updates - the goal is to get the most out of low end boxes
+This is supposed to be a bare minimum configuration for a single user huginn deployment set inside the /etc/nginx/conf.d/default.conf and /etc/nginx/nginx.conf and using unicorn as the upstream
+please adjust to your needs and share updates - the goal is to get the most out of low end boxes.
 
 change you into your user name and adjust  server_name and the root accordingly in file
  /etc/nginx/conf.d/default.conf
