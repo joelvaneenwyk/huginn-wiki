@@ -89,7 +89,7 @@ end
 
 ### Optimizing Mysql - Switch to MyIsam + using Tuning Scripts
 On MySQL 5.5 you can do the following:
-Use /usr/share/doc/mysql-server-5.5/examples/my-small.cnf  to replace (make backup beforehand) /etc/mysql/my.cnf and add/edit the following to switch to MyIsam. Do this before you run any deploy, rake db scripts on your server.
+Use /usr/share/doc/mysql-server-5.5/examples/my-small.cnf  to replace (make backup beforehand) /etc/mysql/my.cnf and add/edit the following to disable InnoDB and switch to MyIsam. Do this before you run any deploy, rake db scripts on your server.
 
 ```
 #Disable InnoDB and switch to MyISAM to save RAM
