@@ -1,16 +1,19 @@
 **While this works, the resulting system is VERY SLOW (1-5 sec response time)**
 
-It is possible to run Huginn on low end hardware such as single core ARM boards or older x86 hardware. The minimum requirements are yet to be specified.
-Serving only a single user for an example:  huginn + sysvinit + unicorn + mysql + nginx can be at your service on: **Raspberry Pi 256 MB RAM, 4GB SD @ 900 MHz**
+It is possible to run Huginn on lower performance hardware such as small ARM boards or older x86 hardware. The minimum requirements are yet to be specified.
+Serving only a single user for an example:  huginn + sysvinit + unicorn + mysql + nginx can be at your service on e.g. a Raspberry Pi - model B - revision 2 - 256 MB RAM - 4GB SDHC class 10 - overclocked @900 MHz
 
 Before deploying Huginn make sure you use a suitable "lightweight" OS distribution for your minimal server. For the RPi Raspbian works quite responsive after some optimization.
 Also remove all unnecessary packages and services and tweak the system to free as much RAM & CPU.
-Please help improve these instructions - the mysql and nginx settings are experimental and for using huginn to serve only to one or a "few" users - 
+Please help improve these instructions. The goal for use on such minimum machines - the mysql and nginx settings are experimental and for using huginn to serve only to one or a "few" users - 
 please share your experience.
 
-### Tuning Huginn for low Memory usage
+### Tuning Huginn for low out of the box Memory usage
 
-To free up memory disable any unused optional Agent in huginn/Gemfile (read the inside comments for instructions). It is also possible to lower the refresh activity of huginn/lib/huginn_scheduler.rb - by default the frequency is set to 0.3s. You can change and experiment by adding (frequency: x) to the Scheduler.new [hint at where to decrease the huginn activity](https://github.com/cantino/huginn/issues/534#issuecomment-56652152)
+To free up memory disable any unused optional Agent in huginn/Gemfile (read the inside comments for instructions). 
+
+### Reducing the agents activity rate
+It is also possible to lower the refresh activity of huginn/lib/huginn_scheduler.rb - by default the frequency is set to 0.3s. You can change and experiment by adding (frequency: x) to the Scheduler.new ([hint at where to decrease the huginn activity](https://github.com/cantino/huginn/issues/534#issuecomment-56652152))
 
 On the RPi a value of 3 is working well.
 
