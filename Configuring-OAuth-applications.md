@@ -30,8 +30,8 @@ In the "Redirect URI" text field enter the following and replace `<your-huginn-d
 
 After you create your application you should see your "Client ID" and "Client Secret". As with Twitter above, do the following:
 
-* If you're hosting Huginn yourself, open your Huginn `.env` file and set `37SIGNALS_OAUTH_KEY` to the `Client ID` and `37SIGNALS_OAUTH_SECRET` to the `Client Secret`.
-* If you're using Heroku, set the necessary environment variables with `heroku config:set 37SIGNALS_OAUTH_KEY=YOUR-CLIENT-ID` and `heroku config:set 37SIGNALS_OAUTH_SECRET=YOUR-CLIENT-SECRET`.
-* If you're using OpenShift, set the necessary environment variables with `rhc env set 37SIGNALS_OAUTH_KEY=YOUR-CLIENT-ID` and `rhc env set 37SIGNALS_OAUTH_SECRET=YOUR-CLIENT-SECRET`.
+* If you're hosting Huginn yourself, open your Huginn `.env` file and set `THIRTY_SEVEN_SIGNALS_OAUTH_KEY` to the `Client ID` and `THIRTY_SEVEN_SIGNALS_OAUTH_SECRET` to the `Client Secret`.
+* If you're using Heroku, set the necessary environment variables with `heroku config:set THIRTY_SEVEN_SIGNALS_OAUTH_KEY=YOUR-CLIENT-ID` and `heroku config:set THIRTY_SEVEN_SIGNALS_OAUTH_SECRET=YOUR-CLIENT-SECRET`.
+* If you're using OpenShift, set the necessary environment variables with `rhc env set THIRTY_SEVEN_SIGNALS_OAUTH_KEY=YOUR-CLIENT-ID` and `rhc env set THIRTY_SEVEN_SIGNALS_OAUTH_SECRET=YOUR-CLIENT-SECRET`.
 
 After your restarted your Huginn instance you should be able to authenticate with 37signals via the Services page.
