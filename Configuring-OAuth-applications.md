@@ -10,7 +10,11 @@ The required website could be your personal site, or your Twitter profile URL.
 
 The Callback URL is important, you need to set it to the following: `http://<your-huginn-domain.com>/auth/twitter/callback`, replace `<your-huginn-domain.com>` with your domain name. 
 
-On the "API Keys" page you need your "API Key" and "API Secret". Open your Huginn `.env` file and set `TWITTER_OAUTH_KEY` to the `API Key` and `TWITTER_OAUTH_SECRET` to the `API Secret`.
+On the "API Keys" page you need to note down your "API Key" and "API Secret", and then:
+
+* If you're hosting Huginn yourself, open your Huginn `.env` file and set `TWITTER_OAUTH_KEY` to the `API Key` and `TWITTER_OAUTH_SECRET` to the `API Secret`.
+* If you're using Heroku, set the necessary environment variables with `heroku config:set TWITTER_OAUTH_KEY=YOUR-KEY` and `heroku config:set TWITTER_OAUTH_SECRET=YOUR-SECRET`.
+* If you're using OpenShift, set the necessary environment variables with `rhc env set TWITTER_OAUTH_KEY=YOUR-KEY` and `rhc env set TWITTER_OAUTH_SECRET=YOUR-SECRET`.
 
 After your restarted your Huginn instance you should be able to authenticate with Twitter via the Services page.
 
@@ -24,6 +28,10 @@ In the "Integration" section you need to enable "Basecamp", the other 37signals 
 
 In the "Redirect URI" text field enter the following and replace `<your-huginn-domain.com>` with the domain of your huginn instance `http://<your-huginn-domain.com>/auth/37signals/callback`
 
-After you created your application you should see your "Client ID" and "Client Secret". Open your Huginn `.env` file and set `37SIGNALS_OAUTH_KEY` to the `Client ID` and `37SIGNALS_OAUTH_SECRET` to the `Client Secret`.
+After you create your application you should see your "Client ID" and "Client Secret". As with Twitter above, do the following:
+
+* If you're hosting Huginn yourself, open your Huginn `.env` file and set `37SIGNALS_OAUTH_KEY` to the `Client ID` and `37SIGNALS_OAUTH_SECRET` to the `Client Secret`.
+* If you're using Heroku, set the necessary environment variables with `heroku config:set 37SIGNALS_OAUTH_KEY=YOUR-CLIENT-ID` and `heroku config:set 37SIGNALS_OAUTH_SECRET=YOUR-CLIENT-SECRET`.
+* If you're using OpenShift, set the necessary environment variables with `rhc env set 37SIGNALS_OAUTH_KEY=YOUR-CLIENT-ID` and `rhc env set 37SIGNALS_OAUTH_SECRET=YOUR-CLIENT-SECRET`.
 
 After your restarted your Huginn instance you should be able to authenticate with 37signals via the Services page.
