@@ -2,6 +2,8 @@
 
 Huginn's Agents can create and receive events, and can be scheduled to run code at certain times or intervals.  Creating a new Huginn Agent is not difficult, you simply create a new subclass of Agent which defines a set of required methods.
 
+Agents are stored in `app/models/agents`, with RSpec specs in `spec/models/agents`.
+
 # Description
 
 Use the `description` class method to set a Markdown description for your agent.  For example:
