@@ -1,5 +1,7 @@
 **While this works, the resulting system is VERY SLOW (1-5 sec response time)**
 
+**Be aware that `bundle install` can take several hours!**
+
 It is possible to run Huginn on lower performance hardware such as small ARM boards or older x86 hardware. The minimum requirements are yet to be specified.
 For example, you can serve a single user with:  huginn + sysvinit + unicorn + mysql + nginx can be at your service on e.g. a Raspberry Pi - model B - revision 2 - 256 MB RAM - 4GB SDHC class 10 - overclocked @900 MHz
 
