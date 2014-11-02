@@ -19,6 +19,7 @@ Please feel free to add to this wiki!
 ### Deploying Huginn
 
 * [[Run Huginn for free on Heroku]] - The quickest and easiest option.
+* [[Run Huginn for free on OpenShift]]
 * [[Try out Huginn on Terminal.com|http://www.terminal.com/snapshot/2ba043d6f8911851bab65fa6eea489c0ce4c288c39deb0a908f0f2562a8493fa]]
 * [[Deployment with Capistrano, Unicorn, nginx, Foreman, and Upstart]]
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
