@@ -28,6 +28,10 @@ heroku config:set SMTP_SERVER=smtp.gmail.com
 heroku config:set EMAIL_FROM_ADDRESS=from_address@gmail.com
 ```
 
+### Backing up your data
+
+See: https://devcenter.heroku.com/articles/heroku-postgres-import-export
+
 ### Example output from `bin/setup_heroku`
 
 ```
