@@ -39,7 +39,7 @@ Once you've run `bin/setup_heroku`, you should have 'cantino/huginn' as a remote
 ```sh
 git fetch origin
 git merge origin/master
-git push heroku master
+git push -f heroku master # note: this will wipe out any code changes that only exist on Heroku!
 ```
 
 ### Example output from `bin/setup_heroku`
