@@ -37,7 +37,8 @@ See: https://devcenter.heroku.com/articles/heroku-postgres-import-export
 Once you've run `bin/setup_heroku`, you should have 'cantino/huginn' as a remote in git.  (Check with `git remote -v`.)  Now, you can update your Heroku installation with the following commands:
 
 ```sh
-git pull origin/master
+git fetch origin
+git merge origin/master
 git push heroku master
 ```
 
