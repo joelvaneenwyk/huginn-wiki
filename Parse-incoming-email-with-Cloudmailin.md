@@ -1,5 +1,3 @@
-Parse incoming messages with Cloudmailin
-
 * Generate a new UUID and copy it to your clipboard. Mac users, you can type `uuidgen | pbcopy` in your terminal to do this.
 * Create a new Webhook agent, paste in the UUID as your secret and set the payload path to `.`
 * In your new agent's summary, you'll see a URL like `https://YOUR_DOMAIN/users/1/web_requests/15/YOUR_SECRET`, copy that to your clipboard
