@@ -16,6 +16,7 @@ Please feel free to add to this wiki!
 * [[Private development instructions]]
 * [[Using PostgreSQL instead of MySQL]]
 * [[Running Huginn on minimal systems with low RAM & CPU e.g. Raspberry Pi]]
+* [[Parse incoming email with Cloudmailin]]
 
 ### Deploying Huginn
 
