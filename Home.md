@@ -18,6 +18,7 @@ Please feel free to add to this wiki!
 * [[Running Huginn on minimal systems with low RAM & CPU e.g. Raspberry Pi]]
 * [[Parse incoming email with Cloudmailin]]
 * [[Using the ManualEventAgent]]
+* [Using Huginn with Gmail](http://blog.terminal.com/how-to-set-up-huginn-with-gmail/) - One fix to a common problem
 
 ### Deploying Huginn
 
