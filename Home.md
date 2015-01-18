@@ -22,7 +22,6 @@ Please feel free to add to this wiki!
 
 ### Deploying Huginn
 
-* [Try Huginn Free on Terminal.com](http://blog.terminal.com/huginn-on-terminal-com/) - 99% Complete, Just enter your SMTP credentials
 * [[Run Huginn for free on Heroku]]
 * [[Run Huginn for free on OpenShift]]
 * [[Deployment with Capistrano, Unicorn, nginx, Foreman, and Upstart]]
@@ -30,6 +29,7 @@ Please feel free to add to this wiki!
 * [[Apache Huginn configuration]]
 * [[Using Huginn on predeployed Docker container]]
 * [[Backing up Huginn]]
+* [Try Huginn Free on Terminal.com](http://blog.terminal.com/huginn-on-terminal-com/) - 99% Complete, Just enter your SMTP credentials
 
 ### Extending Huginn
 
