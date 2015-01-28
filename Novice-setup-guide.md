@@ -14,29 +14,24 @@ git clone git://github.com/cantino/huginn.git
 ```
 
 ## Step 2 - Install ruby and gem
-Install [ruby][ruby] (at least version 2.0.0) and [gem][gem]. You can either download them and compile manually or install via your OS' package manager (e.g. [apt][apt]).
-
-(Edit: Not sure this will work since I don't think 2.0.0 is packaged..? Try [rbenv](https://github.com/sstephenson/rbenv) or [rvm](http://rvm.io/) ?~ alias1)
-```shell
-apt-get install ruby2.0.0 ruby2.0.0-dev rubygems
-```
+Install [ruby][ruby] (2+ recommended but 1.9.3 should work) and [gem][gem]. You can either download them and compile manually or install via your OS' package manager (e.g. [apt][apt]).  We recommend using [rvm](http://rvm.io/) or [rbenv](https://github.com/sstephenson/rbenv).
 
 [ruby]: http://www.ruby-lang.org/en/
 [gem]: http://rubygems.org/
 [apt]: http://linux.die.net/man/8/apt-get
 
-## Step 3 - Install rake and bundle
-Now that we have [gem][gem] installed, we can install [rake][rake], the ruby build utility, and [bundle][bundle], the ruby gem dependency manager.
+## Step 3 - Install rake and bundler
+Now that we have [gem][gem] installed, we can install [rake][rake], the ruby build utility, and [bundler][bundler], the ruby gem dependency manager.  You shouldn't need to do this step if you're using rvm or rbenv.
 
 ```shell
-gem install rake bundle
+gem install rake bundler
 ```
 
 [rake]: http://rake.rubyforge.org/
-[bundle]: http://gembundler.com/
+[bundler]: http://gembundler.com/
 
 ## Step 4 - Install local dependencies
-As mentioned, [bundle][bundle] helps to manage dependencies. Verify you are in the cloned `huginn` directory. Run `bundle` to install `huginn's` dependencies.
+As mentioned, [bundler][bundler] helps to manage dependencies. Verify you are in the cloned `huginn` directory. Run `bundle` to install Huginn's dependencies.
 
 ```shell
 bundle
@@ -70,7 +65,7 @@ checking for mysql_query() in -lmysqlclient... no
 *** extconf.rb failed ***
 ```
 
-You must install the [proper dependencies][mysql2-deps] for [mysql2][mysql2]. One of the following commands will install them (not all commands will run/find a package):
+You must install the [proper dependencies][mysql2-deps] for [mysql2][mysql2]. One of the following commands will install them on Ubuntu (not all commands will run/find a package):
 
 ```shell
 apt-get install libmysqlclient-dev
