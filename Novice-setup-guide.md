@@ -14,11 +14,12 @@ git clone git://github.com/cantino/huginn.git
 ```
 
 ## Step 2 - Install ruby and gem
-Install [ruby][ruby] (2+ recommended but 1.9.3 should work) and [gem][gem]. You can either download them and compile manually or install via your OS' package manager (e.g. [apt][apt]).  We recommend using [rvm](http://rvm.io/) or [rbenv](https://github.com/sstephenson/rbenv).
+Install [ruby][ruby] (2+ recommended but 1.9.3 should work) and [gem][gem]. You can either download them and compile manually or install via your OS' package manager (e.g. [homebrew][homebrew] for Mac OS X or [apt][apt] for Ubuntu).  We recommend using [rvm](http://rvm.io/) or [rbenv](https://github.com/sstephenson/rbenv).  You will also need MySQL or Postgres, both of which can also be installed via your package manager.
 
 [ruby]: http://www.ruby-lang.org/en/
 [gem]: http://rubygems.org/
 [apt]: http://linux.die.net/man/8/apt-get
+[homebrew]: http://brew.sh
 
 ## Step 3 - Install rake and bundler
 Now that we have [gem][gem] installed, we can install [rake][rake], the ruby build utility, and [bundler][bundler], the ruby gem dependency manager.  You shouldn't need to do this step if you're using rvm or rbenv.
