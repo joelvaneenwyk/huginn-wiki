@@ -12,5 +12,5 @@ Follow these instructions if you wish to add private features to your version of
 
         git remote add public git@github.com:you/huginn.git
 
-* Run the steps from *Quick Start* in the README to configure your copy of Huginn.
+* Run the steps from [*Quick Start*](https://github.com/cantino/huginn#quick-start) in the README to configure your copy of Huginn.
 * When you want to contribute patches, do a remote push from your private repository to your public fork of the relevant commits, then make a pull request to this repository.
