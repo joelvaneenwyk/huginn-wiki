@@ -114,3 +114,28 @@ A Website Agent to collect current blockchain height and timestamp.
 ## Webhook Agents
 
 [[Parse incoming email with Cloudmailin]]
+
+## PostAgents
+
+### Bookmark with GimmeBar
+
+As of 2015-02-20 you can replicate adding a page to Gimme Bar without API access by extracting the relevant cookies/fields from a `POST` request to `https://gimmebar.com/bookmarklet/capture`. Load a page you're going to bookmark, fire up a network inspector (e.g. Chromium's Developer Tools - Network tab) and use the Extension/Bookmarklet to add the page to your gimmebar. You should extract cookies: `gimmebookmarklet` and `gimmebar.session`, and the post field `_csrf`. With these you can setup a PostAgent:
+
+    {
+      "post_url": "https://gimmebar.com/bookmarklet/capture",
+      "expected_receive_period_in_days": "1",
+      "content_type": "form",
+      "method": "post",
+      "payload": {
+        "source": "{{url}}",
+        "url": "{{url}}",
+        "title": "{{title}}",
+        "private": "0",
+        "use_prev": "0",
+        "_csrf": "REPLACE_ME"
+      },
+      "headers": {
+        "Cookie": "gimmebookmarklet=REPLACE_ME; gimmebar.session=REPLACE_ME"
+      },
+      "disable_ssl_verification": "true"
+    }
