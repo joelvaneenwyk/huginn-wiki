@@ -1,9 +1,10 @@
-So you've written an awesome agent that generates an event whenever a meteorite is scheduled to hit Earth. But meteorite strikes are relatively rare, so how do you go about testing your agent to see if it's actually working? Here are some tips:
+So you've written an awesome agent that generates an event whenever a meteorite hits the Earth. But last time a meteorite struck, something went wrong. Your agent didn't generate any events! What's the best way to debug, especially if you don't want to wait for another strike?
 
-* Take a look at `huginn/log/development.log` for **[what in particular gets logged here?]**
-* From the web interface, run the agent manually (Actions -> Run) and look **[where for output?]**
-* The Logs tab of each agent shows you everything the agent outputs **[via log? [like this?](https://github.com/cantino/huginn/blob/master/app/models/agents/imap_folder_agent.rb#L294)]**, including errors **[is this true in general?]**
-* Use a ManualEvent agent to craft an event by hand and force your network of agents to run
+If you think your agent has a bug, try inserting a useful `log()` or `errors.add()` statement (either will do). Then use the web interface to run your agent manually (Actions -> Run), and check its Logs tab for messages (Actions -> Show -> Logs).
+
+You can also use a ManualEvent agent to craft an event by hand and force an entire network of agents to run.
+
+Finally, an accumulation of all logged messages and errors can be found in `huginn/log/development.log`, but this is usually harder to sift through than the Logs tab of an individual agent.
 
 TODO:
-* Say something about the logging conventions and tools (e.g. what's the difference between `log` and `errors.add()`?)
+* Explain the difference between `log()` and `errors.add()`
