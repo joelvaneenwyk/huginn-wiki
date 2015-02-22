@@ -1,4 +1,4 @@
-*Please note: Huginn's API is evolving and at some point Agents will likely be extracted into Ruby Gems.  We'd very much like your input into how this should work and what should be changed in this API.*
+*Please note: Huginn's API is evolving and at some point Agents will likely be extracted into Ruby Gems.  We'd very much like your input into how this should work and what should be changed in this API. See [#60](https://github.com/cantino/huginn/issues/60) and [#293](https://github.com/cantino/huginn/issues/293).*
 
 Huginn's Agents can create and receive events, and can be scheduled to run code at certain times or intervals.  Creating a new Huginn Agent is not difficult, you simply create a new subclass of Agent which defines a set of required methods.
 
