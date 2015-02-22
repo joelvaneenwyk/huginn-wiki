@@ -34,4 +34,5 @@ Please feel free to add to this wiki!
 ### Extending Huginn
 
 * [[Creating a new Agent]]
+* [[Debugging an agent]]
 * [Official Agent Suggestions Thread](https://github.com/cantino/huginn/issues/353) - Please add ideas for new Agents!
