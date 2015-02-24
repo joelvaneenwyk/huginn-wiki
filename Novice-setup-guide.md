@@ -13,6 +13,13 @@ Verify you have [git][git] installed on your machine, go to a directory where yo
 git clone git://github.com/cantino/huginn.git
 ```
 
+### Troubleshooting
+If you fail to clone the repository because of environment issue to block git protocol, retry it again after '.gitconfig in your home folder' is changed
+```shell
+[url "https://github.com"]
+      insteadof = git://github.com
+```
+
 ## Step 2 - Install ruby and gem
 Install [ruby][ruby] (2+ recommended but 1.9.3 should work) and [gem][gem]. You can either download them and compile manually or install via your OS' package manager (e.g. [homebrew][homebrew] for Mac OS X or [apt][apt] for Ubuntu).  We recommend using [rvm](http://rvm.io/) or [rbenv](https://github.com/sstephenson/rbenv).  You will also need MySQL or Postgres, both of which can also be installed via your package manager.
 
