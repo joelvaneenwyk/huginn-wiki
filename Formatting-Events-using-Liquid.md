@@ -63,7 +63,9 @@ It is more robust to use the filter here than to put `'{{word}}'` or `"{{word}}"
 
 ### Tags added by Huginn
 
-**credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there a no quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
+**credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there are no back-quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
+
+**line_break** evaluates to a literal line break in the text, i.e. a \n character.  Usage: `{% line_break %}`; note that there are no quotes or back ticks around the tag.
 
 ### More complete usage example
 
