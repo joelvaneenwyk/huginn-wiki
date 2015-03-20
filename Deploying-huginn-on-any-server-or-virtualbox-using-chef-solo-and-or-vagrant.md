@@ -47,9 +47,11 @@ If you would like to use your private Huginn repo, then you will have to replace
 
 You can also use [Vagrant](http://www.vagrantup.com/) to play with Huginn locally. 
 
-###### Install necessary plugins
+###### Install necessary Vagrant plugins
     vagrant plugin install vagrant-omnibus
     vagrant plugin install vagrant-librarian-chef
+###### Install the [librarian-chef](https://github.com/applicationsonline/librarian-chef) gem
+    gem install librarian-chef
 ###### Download Huginn
     git clone git://github.com/cantino/huginn.git
 ###### Start the VM using the Virtualbox provider
