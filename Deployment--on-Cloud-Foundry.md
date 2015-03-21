@@ -1,66 +1,73 @@
-1. You will need an account with a [Cloud Foundry](http://www.cloudfoundry.com) v2 provider (eg, [run.pivotal.io](http://run.pivotal.io) or [anynines.com](http://anynines.com)), and the `cf` command line app correctly configured.
+1. You will need an account with a [Cloud Foundry](http://www.cloudfoundry.com) v2 provider (eg, [run.pivotal.io](http://run.pivotal.io), [IBM Bluemix](https://console.ng.bluemix.net/) or [anynines.com](http://anynines.com)), and the `cf` command line app correctly configured.
 
-1. Clone the repo - `git clone https://github.com/cloudfoundry-community/cf-demoapp-huginn.git`
+1. Clone the repo - `git clone https://github.com/cantino/huginn.git`
 
 1. Change to the root of your working copy
-1. Copy `manifest.yml.sample` to `manifest.yml`, then edit the `name:` field replacing CHANGEME with a unique name
-1. Install dependancies - `bundle install`
-1. Precompile assets - `rake assets:precompile`
+1. Copy `manifest.yml.sample` to `manifest.yml`, then edit the `name:` field replacing huginn with a unique name
+1. Update `url:` field accordingly to your cloudfoundry provider.
+1. Create database service (e.g. mysql) with name `huginn-db`
 1. Run `cf push` - this will give output similar to:
 
 ```
-[~/Projects/CloudFoundry/cf-demoapp-huginn(master)]$ cf push
+[~/Projects/CloudFoundry/cf-demoapp-huginn(master)]$ cf push -f manifest.yml
 Using manifest file manifest.yml
 
-Creating *****-huginn... OK
-
-1: *****-huginn
-2: none
-Subdomain> *****-huginn
-
-1: cfapps.io
-2: none
-Domain> cfapps.io
-
-Binding *****-huginn.cfapps.io to *****-huginn... OK
-Binding *****-huginn-mysql to *****-huginn... OK
-Uploading *****-huginn... OK
-Starting *****-huginn... OK
------> Downloaded app package (2.1M)
-Installing ruby.
------> Using Ruby version: ruby-1.9.2
------> Installing dependencies using Bundler version 1.3.2
-       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin --deployment
-       Fetching gem metadata from https://rubygems.org/.......
-       Fetching gem metadata from https://rubygems.org/..
-       Fetching https://github.com/wok/delayed_job
-       Installing rake (10.0.4)
-       Installing i18n (0.6.1)
-       ...snip...
-       Post-install message from httparty:
-       When you HTTParty, you must party hard!
-       Cleaning up the bundler cache.
------> Writing config/database.yml to read from DATABASE_URL
------> Rails plugin injection
-       Injecting rails_log_stdout
-       Injecting rails3_serve_static_assets
------> Uploading staged droplet (51M)
------> Uploaded droplet
-Checking *****-huginn...
-Staging in progress...
-Staging in progress...
-...snip...
-Staging in progress...
-  0/1 instances: 1 starting
-  0/1 instances: 1 starting
-  ...snip...
-  0/1 instances: 1 starting
-  1/1 instances: 1 running
+Updating app huginn in org test@test.com / space dev as test@test.com...
 OK
+
+Uploading huginn...
+Uploading app files from: .
+Uploading 3.3M, 880 files
+Done uploading               
+OK
+Binding service huginn-db to app huginn in org test@test.com / space dev as test@test.com...
+OK
+
+Stopping app huginn in org test@test.com / space dev as test@test.com...
+OK
+
+Starting app huginn in org test@test.com / space dev as test@test.com...
+-----> Downloaded app package (4.4M)
+
+...
+
+-----> Preparing app for Rails asset pipeline
+       Cleaning assets
+       Running: rake assets:clean
+###### WARNING:
+       You have not declared a Ruby version in your Gemfile.
+       ruby '2.0.0'
+       # See https://devcenter.heroku.com/articles/ruby-versions for more information.
+
+
+0 of 1 instances running, 1 starting
+0 of 1 instances running, 1 starting
+0 of 1 instances running, 1 starting
+0 of 1 instances running, 1 starting
+1 of 1 instances running
+
+App started
+
+
+OK
+
+App huginn was started using this command `nohup foreman start --procfile Procfile.CF`
+
+Showing health and status for app huginn in org test@test.com / space dev as test@test.com...
+OK
+
+requested state: started
+instances: 1/1
+usage: 512M x 1 instances
+urls: test.mybluemix.net
+last uploaded: Sat Mar 21 10:44:26 +0000 2015
+
+     state     since                    cpu    memory           disk   
+#0   running   2015-03-21 11:46:27 AM   0.2%   375.2M of 512M   240.9M of 1G   
 ```
-1. Hurrah! Browse to http://*****-huginn.cfapps.io  (The default invitation code is: `try-huginn`)
+1. Hurrah! Browse to http://<url>  (The default invitation code is: `try-huginn`)
 
 ### NOTES:
 
 1.  The initial db:migrate can take a long time, so you might need to use `cf log` to see when the migrate is done, then `cf restart`
-1.  The free ClearDB plan limits you to a maximum of 4 MySQL connections, which limits the number of "agents" you can run.  See Procfile.CF for the current defaults.
+
