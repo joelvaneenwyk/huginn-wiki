@@ -1,1 +1,2 @@
-* Ripple Labs is using Huginn for analytics and continual monitoring of the public ledger.
+* [Mavenlink](https://www.mavenlink.com) is using Huginn to build an integrations platform.
+* [Ripple Labs](https://www.ripplelabs.com/) is using Huginn for analytics and continual monitoring of the public ledger.
