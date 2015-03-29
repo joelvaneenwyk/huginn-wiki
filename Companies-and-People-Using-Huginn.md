@@ -7,3 +7,4 @@
 # Personal Use
 
 * [Andrew Cantino](http://andrewcantino.com) uses Huginn to monitor the weather, to watch Twitter for interesting events in real time (earthquakes, new movies, scientific discoveries, etc.), to watch security advisories, send me daily news summaries, and much more.
+* [The Doctor](http://drwho.virtadpt.net/) uses Huginn to monitor weather and Air Quality Indices, patrol Twitter and several dozen newswires for evolving situations around the world (politics, natural disasters, human rights, earthquakes), follow select Twitter feeds so he doesn't have to filter signal from noise personally, monitor stock market and cryptocurrency blockchain metrics to advise his investments, and monitor several dozen blogs for developments in other fields he's interested in.
