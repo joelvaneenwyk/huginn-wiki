@@ -11,11 +11,11 @@ The website has [docker install instructions for most environments](https://docs
 
 ### Step 2: Launch the container
 
-Follow the [Quick Start instructions](https://registry.hub.docker.com/u/cantino/huginn/) on the docker hub registry.
+Follow the [Quick Start instructions](https://registry.hub.docker.com/u/cantino/huginn/) on the docker hub registry.  https://registry.hub.docker.com/u/cantino/huginn/
 
 ### Other options:
 
 Other Docker options:
 
-* https://registry.hub.docker.com/u/andrewcurioso/huginn/
+* If you don't want to use the official repo, see also: https://registry.hub.docker.com/u/andrewcurioso/huginn/
 * If you'd like to run Huginn's web process and job worker process in separate containers, another option is https://github.com/hackedu/huginn-docker. It also uses Unicorn as the web server and serves precompiled assets.
