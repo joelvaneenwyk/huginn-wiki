@@ -4,6 +4,8 @@
 
 1. Install the [rhc](https://developers.openshift.com/en/getting-started-client-tools.html) command line tool (could be as simple as `gem install rhc`) and then run `rhc setup`.
 
+1. Checkout the [openshift](https://github.com/cantino/huginn/tree/openshift) Huginn branch.  **Note**: Huginn's master branch does not currently work on OpenShift due to their supported version of the `rack` gem.  You should checkout the openshift branch, then merge in master to have the newest code.
+
 1. Run our OpenShift setup script!
 
     ```
