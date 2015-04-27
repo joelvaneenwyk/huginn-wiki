@@ -35,3 +35,22 @@ After you create your application you should see your "Client ID" and "Client Se
 * If you're using OpenShift, set the necessary environment variables with `rhc env set THIRTY_SEVEN_SIGNALS_OAUTH_KEY=YOUR-CLIENT-ID` and `rhc env set THIRTY_SEVEN_SIGNALS_OAUTH_SECRET=YOUR-CLIENT-SECRET`.
 
 After your restarted your Huginn instance you should be able to authenticate with 37signals via the Services page.
+
+
+## Wunderlist
+
+If you do not have a Wunderlist Application yet, visit https://developer.wunderlist.com/applications and click 'Create new Application'.
+
+You need to choose a name for your application and an App URL (can be your huginn instance or anything else).
+
+In the "Authorization Callback URL" field you need to enter the following and replace `<your-huginn-domain.com>` with the domain of your huginn instance `http://<your-huginn-domain.com>/auth/wunderlist/callback`
+
+After you create your application you should see your "Client ID" and "Client Secret". As with Twitter above, do the following:
+
+* If you're hosting Huginn yourself, open your Huginn `.env` file and set `WUNDERLIST_OAUTH_KEY` to the `Client ID` and `WUNDERLIST_OAUTH_SECRET` to the `Client Secret`.
+* If you're using Heroku, set the necessary environment variables with `heroku config:set WUNDERLIST_OAUTH_KEY=YOUR-CLIENT-ID` and `heroku config:set WUNDERLIST_OAUTH_SECRET=YOUR-CLIENT-SECRET`.
+* If you're using OpenShift, set the necessary environment variables with `rhc env set WUNDERLIST_OAUTH_KEY=YOUR-CLIENT-ID` and `rhc env set WUNDERLIST_OAUTH_SECRET=YOUR-CLIENT-SECRET`.
+
+After your restarted your Huginn instance you should be able to authenticate with Wunderlist via the Services page.
+
+
