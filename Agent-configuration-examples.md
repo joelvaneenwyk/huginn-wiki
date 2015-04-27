@@ -139,3 +139,14 @@ As of 2015-02-20 you can replicate adding a page to Gimme Bar without API access
       },
       "disable_ssl_verification": "true"
     }
+
+## Wunderlist Agent
+
+Make sure you set up a [Wunderlist OAuth Application](https://github.com/cantino/huginn/wiki/Configuring-OAuth-applications#wunderlist). Then authenticate against Wunderlist in the `Services` section of your huginn installation.
+
+### XKCD to Wunderlist
+
+In your huginn instance go to `Services` -> `Import Scenario` and enter https://dl.dropboxusercontent.com/u/62784372/xkcd-to-wunderlist.json as the public scenario URL. Select the Wunderlist account you want to use, and confirm that you want to import that scenario.
+
+**Important**: After the import you need to edit the `XKCD Publisher (Wunderlist Agent)`. Click on `Actions` -> `Edit agent` and select the `List` you want to use to store new XKCD Comics.
+
