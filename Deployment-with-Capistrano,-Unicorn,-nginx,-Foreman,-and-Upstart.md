@@ -10,9 +10,9 @@ group :production do
 end
 
 group :development do
-  gem 'capistrano', '~> 2.15.5'
+  gem 'capistrano', '~> 2.15.5', :require => false
   gem 'capistrano-unicorn', '~> 0.1.9', :require => false
-  gem 'rvm-capistrano', '~> 1.4.1'
+  gem 'rvm-capistrano', '~> 1.4.1', :require => false
 end
 ```
 
