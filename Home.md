@@ -12,7 +12,7 @@ Please feel free to add to this wiki!
 * [[Agent Configuration Examples]]
 * [[Novice setup guide]]
 * [[Formatting Events and Options using Liquid|Formatting Events using Liquid]]
-* [[Configuring OAuth applications]]
+* [[Configuring OAuth applications]] (such as Twitter, Basecamp, Dropbox, Tumblr, etc.)
 * [[Private development instructions]]
 * [[Using PostgreSQL instead of MySQL]]
 * [[Running Huginn on minimal systems with low RAM & CPU e.g. Raspberry Pi]]
