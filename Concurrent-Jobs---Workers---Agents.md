@@ -1,4 +1,3 @@
-# Concurrent Jobs / Workers / Agents
 
 This Page is a **rough** documentation with a focus on parallelized delay_job workers.
 
