@@ -30,6 +30,7 @@ Please feel free to add to this wiki!
 * [[Using Huginn on predeployed Docker container]]
 * [[Backing up Huginn]]
 * [Try Huginn Free on Terminal.com](http://blog.terminal.com/huginn-on-terminal-com/) - 99% Complete, Just enter your SMTP credentials
+* [[Running Many Job Workers]]
 
 ### Extending Huginn
 
