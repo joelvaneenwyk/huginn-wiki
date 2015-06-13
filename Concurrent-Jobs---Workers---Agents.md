@@ -6,7 +6,7 @@ With the default config, only one `delayed_job` worker is running, which limits 
 
 ## Resources
 
-After testing out various combination on how many delayed_jobs to run, I found a good ratio is 2 delayed_job workers per (virtual) core.
+After testing out various combination on how many delayed_jobs to run, @K1773R found a good ratio is 2 delayed_job workers per (virtual) core.
 
 One worker needs around 187-203 MB, which is quite a lot. Don't run so many workers that you need to swap RAM!
 
@@ -30,7 +30,7 @@ The Procfile I'm using has the following content
     twitter: bundle exec rails runner bin/twitter_stream.rb
     #dj: bundle exec script/delayed_job run
 
-Note that I've commented out the threaded jobs process and enabled the "old version", with only web, schedule, and twitter (if you want it).
+Note that this has commented out the threaded jobs process and enabled the "old version", with only web, schedule, and twitter enabled.  (You can disable twitter too if you don't want to use any TwitterStreamAgents.)
 
 Run
 
@@ -44,7 +44,7 @@ That's it, you have are now capable to run multiple agents the same time.
 
 ## Scripts/MISC
 
-I've created a bash script as I'm too lazy to do this manually, according to the current amount of CPU's. Just a simple script for use in /etc/rc.local which runs huginn inside screen and as another user.
+@K1773R: I created a bash script as I'm too lazy to do this manually, according to the current amount of CPU's. Just a simple script for use in /etc/rc.local which runs huginn inside screen and as another user.
 
     #!/bin/bash
     cd /home/k1773r/git/huginn
