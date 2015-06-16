@@ -6,7 +6,9 @@ Liquid is a template engine developed by [Shopify](http://shopify.com), it was d
 
 For some simple examples have a look at the [HipChat](https://github.com/cantino/huginn/blob/07243cee345060316ff2b27530e20e38e72d7713/app/models/agents/hipchat_agent.rb) or [Pushbullet](https://github.com/cantino/huginn/blob/07243cee345060316ff2b27530e20e38e72d7713/app/models/agents/pushbullet_agent.rb) agents. Given the payload of the event your agents consumes is a hash with just one key named `message` you would just need to write `{{message}}` to dynamically use the value of this key.
 
-To format the output you can use filters, they basically work like UNIX pipes: {{ mixed_case | downcase }}, which will return a down case version of the provided string.
+To format the output you can use filters, they basically work like UNIX pipes:  
+{{ 'hello' | [replace: 'hello', 'hi'](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#replace) | [upcase](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#upcase) }} would output 'HI'.
+
 For a complete list of build-in filters have a look at the documentation at [Shopify](http://docs.shopify.com/themes/liquid-basics/output).
 
 ### Objects provided by Huginn
