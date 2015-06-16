@@ -48,9 +48,10 @@ An Agent object has the following keys (excerpt).
 
 A URI object will have the following properties: `scheme`, `userinfo`, `host`, `port`, `registry`, `path`, `opaque`, `query`, and `fragment`.  You'll have to "assign" the result to a variable in order to access these properties.
 
-e.g.
+**uri_expand** returns the destination URL of a given URL by recursively following redirects, up to 5 times in a row.
+If a given string is not a valid absolute HTTP URL, or any error occurs while following redirects, the original string is returned.
 
-    {% assign uri = relative_uri | to_uri:base_url %}The query part is: {% if uri.query != null %}?{{uri.query}}{% endif %}
+e.g. When a variable `short_url` contains a URL "https://goo.gl/tfDrI", `{{ short_url | uri_expand }}` expands to "https://github.com/cantino/huginn".
 
 **to_xpath** returns an XPath literal or expression that evaluates to the original string for use in WebsiteAgent.
 
