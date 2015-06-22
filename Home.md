@@ -20,6 +20,7 @@ Please feel free to add to this wiki!
 * [[Using the ManualEventAgent]]
 * [Using Huginn with Gmail](http://blog.terminal.com/how-to-set-up-huginn-with-gmail/) - One fix to a common problem
 * [[Generating a filtered full text RSS feed]]
+* [[Using the Twilio Agent]]
 
 ### Deploying Huginn
 
