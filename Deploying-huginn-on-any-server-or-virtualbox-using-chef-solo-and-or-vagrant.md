@@ -8,15 +8,17 @@
 
 Here are instructions for deploying Huginn to any server using [chef solo](http://docs.opscode.com/chef_solo.html).
 
-First, install [knife-solo](http://matschaffer.github.io/knife-solo/):
+First, install the [ChefDK](https://downloads.chef.io/chef-dk/).
 
-    gem install knife-solo
+Next, install [knife-solo](http://matschaffer.github.io/knife-solo/):
+
+    chef gem install knife-solo
  
 This will also install chef solo.
 
 Next, install the [librarian-chef](https://github.com/applicationsonline/librarian-chef) gem:
 
-    gem install librarian-chef
+    chef gem install librarian-chef
 
 Install the cookbooks listed in the Cheffile by running:
 
