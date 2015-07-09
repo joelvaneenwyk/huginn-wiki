@@ -2,6 +2,9 @@
 
 Written by a Ruby novice for those who are clueless during set up as well.  These instructions are for Linux.
 
+Note: It's *much* easier to get the project setup and going on Linux than Windows. If you're on Windows, grab a [Linux VM ](http://www.osboxes.org/) for [VMWare Player](https://www.vmware.com/products/player) or [Virtual Box](https://www.virtualbox.org/) and follow the instructions below.
+
+
 ## Step 1 - Clone the repository
 Since you are on GitHub, you have probably done this step a thousand times before.
 
