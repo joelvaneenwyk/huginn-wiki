@@ -65,6 +65,10 @@ It would have to dynamically build an XPath expression like this:
 
 It is more robust to use the filter here than to put `'{{word}}'` or `"{{word}}"` in that it wouldn't blow up the whole expression even if `word` contained the apostrophe, quotation mark, or both.
 
+**regex_replace** & **regex_replace_first** replaces all/first regex matching strings with a substring. Very similar to the [built in replace](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#replace). 
+
+For example, if `foobar` contains the string "foobaz foobaz", then `{{ foobar | regex_replace_all: '(\S+)baz', 'qux\1' }}` would result in "quxfoo quxfoo". You can use any regex supported by the Ruby `Regexp` class. 
+
 ### Tags added by Huginn
 
 **credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there are no back-quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
