@@ -99,3 +99,7 @@ Now we generate a nice HTML formatted message using Liquid. This is the HipchatA
   'color' => 'yellow',
 }
 ```
+
+### More Examples
+
+Removing newlines from a string: `{{foo | strip_newlines}}`
