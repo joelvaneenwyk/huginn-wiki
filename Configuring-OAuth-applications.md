@@ -69,3 +69,8 @@ After you create your application you should see your "Client ID" and "Client Se
 
 After your restarted your Huginn instance you should be able to authenticate with Dropbox via the Services page.
 
+# Debugging Twitter
+
+## Twitter error: Invalid Status code 420
+
+You may get 420 errors when you use the same Twitter credentials locally and in production, or if you're accidentally running multiple instances of the threaded worker, or perhaps if the threaded worker did not shut down properly (again causing many copies to be running).
