@@ -18,6 +18,8 @@ On the "API Keys" page you need to note down your "API Key" and "API Secret", an
 
 After your restarted your Huginn instance you should be able to authenticate with Twitter via the Services page.
 
+If you're having issues, see the [debugging section](https://github.com/cantino/huginn/wiki/Configuring-OAuth-applications#debugging-twitter) below.
+
 ## 37signals (Basecamp)
 
 If you do not have a 37signals Application yet, visit https://integrate.37signals.com/ and create a new one.
@@ -69,8 +71,10 @@ After you create your application you should see your "Client ID" and "Client Se
 
 After your restarted your Huginn instance you should be able to authenticate with Dropbox via the Services page.
 
-# Debugging Twitter
+# Debugging OAuth Applications
 
-## Twitter error: Invalid Status code 420
+## Debugging Twitter
+
+### Twitter error: Invalid Status code 420
 
 You may get 420 errors when you use the same Twitter credentials locally and in production, or if you're accidentally running multiple instances of the threaded worker, or perhaps if the threaded worker did not shut down properly (again causing many copies to be running).
