@@ -67,7 +67,7 @@ It is more robust to use the filter here than to put `'{{word}}'` or `"{{word}}"
 
 **regex_replace** & **regex_replace_first** replaces all/first regex matching strings with a substring. Very similar to the [built in replace](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#replace). 
 
-For example, if `foobar` contains the string "foobaz foobaz", then `{{ foobar | regex_replace_all: '(\S+)baz', 'qux\1' }}` would result in "quxfoo quxfoo". You can use any regex supported by the Ruby `Regexp` class. 
+For example, if `foobar` contains the string "foobaz foobaz", then `{{ foobar | regex_replace_all: '(\S+)baz', 'qux\1' }}` would result in "quxfoo quxfoo". You can use any regex supported by the Ruby `Regexp` class, as documented [here](http://ruby-doc.org/core/doc/regexp_rdoc.html). 
 
 ### Tags added by Huginn
 
