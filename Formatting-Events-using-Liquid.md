@@ -69,6 +69,10 @@ It is more robust to use the filter here than to put `'{{word}}'` or `"{{word}}"
 
 For example, if `foobar` contains the string "foobaz foobaz", then `{{ foobar | regex_replace_all: '(\S+)baz', 'qux\1' }}` would result in "quxfoo quxfoo". You can use any regex supported by the Ruby `Regexp` class, as documented [here](http://ruby-doc.org/core/doc/regexp_rdoc.html). 
 
+You can use escape sequences in both the regex and the replacement parameters of these filter functions, such as `\r`, `\n`, `\xXX` and `\u{XXXX}`.  In the replacement parameter, numbered capture groups `\1`..`\9` are supported, as well as named capture groups `\k<name>`, `\&`, `` \` ``, `\'`, etc.
+
+Beware that Liquid itself does not have the concept of backslash escaping, so you cannot escape quote characters like `"\""`.  Instead, use `\x22` when you need to put the double quote character in a double quoted string literal, such as `{{ text | regex_replace: "\x22(.*?)\x22", "\1" }}`.
+
 ### Tags added by Huginn
 
 **credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there are no back-quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
