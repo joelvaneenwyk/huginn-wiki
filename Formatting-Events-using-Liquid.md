@@ -56,6 +56,8 @@ If any network/protocol error occurs while following redirects, the last URL fol
 
 e.g. When a variable `short_url` contains a URL "https://goo.gl/tfDrI", `{{ short_url | uri_expand }}` expands to "https://github.com/cantino/huginn".
 
+**unescape** unescapes (basic) HTML entities in a string.  This currently decodes the following entities only: `&apos;`, `&quot;`, `&lt;`, `&gt;`, `&amp;`, `&#dd;` and `&#xhh;`.
+
 **to_xpath** returns an XPath literal or expression that evaluates to the original string for use in WebsiteAgent.
 
 For example, suppose you are making a WebsiteAgent that receives an event with a `word` to look up on a glossary web page to create a new event.
