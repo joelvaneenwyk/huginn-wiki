@@ -11,10 +11,16 @@ This will get you up and going as fast as possible, but in production you should
 
 ### Change Compilation Dependencies from MySQL to PostgreSQL ###
 
+Option 1:
+
 In the `Gemfile`, disable `mysql2` and add the `pg` gem.
 
     #gem 'mysql2'
     gem 'pg'
+
+Option 2:
+
+Always run with `ON_HEROKU=true` set in your environment, which switches the Gemfile to use `pg`.  For example, once you've made the `.env` change explained below, you'd do `ON_HEROKU=true bundle` and then `ON_HEROKU=true foreman start`.
 
 ### Update Environment with Postgres Connection Info ###
 
