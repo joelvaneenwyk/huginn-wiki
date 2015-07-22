@@ -1,4 +1,4 @@
-## You can now run Huginn for free on Heroku
+## You can now (sort of) run Huginn for free on Heroku
 
 ### Instructions
 
