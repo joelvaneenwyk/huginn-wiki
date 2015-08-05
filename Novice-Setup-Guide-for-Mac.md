@@ -102,15 +102,20 @@ Run `bundle exec rake db:create`, `bundle exec rake db:migrate`, and then `bundl
 ### Troubleshooting
 If after running `bundle exec rake db:migrate`, you receive an error like the one below:
 
-```shell
+```
 Devise.secret_key was not set. Please add the following to your Devise initializer:
 
-  config.secret_key = '7e24f39f2e8dc9af2d339afe55955c711162fa0bed3ea9529f404cf03fe2212a090271c01bdfd06385b033515ef5619ba1744a471f94a126305cb96ce87b8ee0'
+config.secret_key = '7e24f39f2e8dc9af2d339afe55955c711162fa0bed3ea9529f404cf03fe2212a090271c01bdfd06385b033515ef5619ba1744a471f94a126305cb96ce87b8ee0'
 
 Please ensure you restarted your application after installing Devise or setting the key.
 ```
 
-This mean you will need to rename the `.env.example` file to `.env` and modify to include your secret key on line 4.
+This mean you will need to rename the `.env.example` file to `.env` and modify to include your secret key on line 4. Once you do that, you'll want to restart the server by running:
+
+```shell
+mysql.server stop
+mysql.server start
+```
 
 From here on, the [Quick Start][quick-start] section of the [README][README] should be able to guide you from the instructions at "Run `bundle exec foreman start`..." 
 
