@@ -96,8 +96,23 @@ Start the server
 mysql.server start
 ```
 
-## Step 6 - Follow the rest of Quick Start
-From here on, the [Quick Start][quick-start] section of the [README][README] should be able to guide you from the instruction just after "Run `bundle` to install dependencies."
+## Step 6 - Create Development MySQL Database
+Run `bundle exec rake db:create`, `bundle exec rake db:migrate`, and then `bundle exec rake db:seed` to create a development MySQL database with some example Agents.
+
+### Troubleshooting
+If after running `bundle exec rake db:migrate`, you receive an error like the one below:
+
+```shell
+Devise.secret_key was not set. Please add the following to your Devise initializer:
+
+  config.secret_key = '7e24f39f2e8dc9af2d339afe55955c711162fa0bed3ea9529f404cf03fe2212a090271c01bdfd06385b033515ef5619ba1744a471f94a126305cb96ce87b8ee0'
+
+Please ensure you restarted your application after installing Devise or setting the key.
+```
+
+This mean you will need to rename the `.env.example` file to `.env` and modify to include your secret key on line 4.
+
+From here on, the [Quick Start][quick-start] section of the [README][README] should be able to guide you from the instructions at "Run `bundle exec foreman start`..." 
 
 [quick-start]: https://github.com/cantino/huginn#quick-start
 [README]: https://github.com/cantino/huginn#readme
