@@ -1,8 +1,9 @@
-# Novice setup guide
+# Novice Setup Guide
 
 Written by a Ruby novice for those who are clueless during set up as well.  These instructions are for Linux.
 
 Note: It's *much* easier to get the project setup and going on Linux than Windows. If you're on Windows, grab a [Linux VM ](http://www.osboxes.org/) for [VMWare Player](https://www.vmware.com/products/player) or [Virtual Box](https://www.virtualbox.org/) and follow the instructions below.
+If you're on a Mac, view revised guide [here](https://github.com/cantino/huginn/wiki/Novice-Setup-Guide-for-Mac).
 
 
 ## Step 1 - Clone the repository
@@ -81,13 +82,6 @@ You must install the [proper dependencies][mysql2-deps] for [mysql2][mysql2]. On
 ```shell
 apt-get install libmysqlclient-dev
 apt-get install mysql-devel
-```
-
-If you are on a Mac OS X and use Homebrew, mysql is a dependency and should be installed:
-
-```shell
-brew install mysql
-brew update
 ```
 
 [mysql2-deps]: https://github.com/brianmario/mysql2#installing
