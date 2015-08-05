@@ -1,4 +1,4 @@
-# Novice setup guide
+# Novice Setup Guide for Mac
 
 Written by a Ruby novice for those who are clueless during set up as well.  These instructions have been modified for Mac. See the original [Linux version here](https://github.com/cantino/huginn/wiki/Novice-setup-guide)
 
