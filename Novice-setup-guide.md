@@ -83,6 +83,13 @@ apt-get install libmysqlclient-dev
 apt-get install mysql-devel
 ```
 
+If you are on a Mac OS X and use Homebrew, mysql is a dependency and should be installed:
+
+```shell
+brew install mysql
+brew update
+```
+
 [mysql2-deps]: https://github.com/brianmario/mysql2#installing
 
 Once you have installed the dependencies, you can install [mysql2][mysql2] individually via `gem install mysql2`. After it installs, re-run `bundle`.
