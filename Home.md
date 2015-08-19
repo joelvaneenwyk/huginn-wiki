@@ -25,15 +25,15 @@ Please feel free to add to this wiki!
 
 ### Deploying Huginn
 
-* [[Run Huginn for free on Heroku]]
-* [[Run Huginn for free on OpenShift]]
-* [[Deployment with Capistrano, Unicorn, nginx, Foreman, and Upstart]]
+* [Installation guide for Ubuntu/Debian](https://github.com/cantino/huginn/tree/master/doc/manual)
+* [Run Huginn for free on Heroku](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md)
+* [Deployment with Capistrano](https://github.com/cantino/huginn/blob/master/doc/manual/capistrano.md)
+* [Using Huginn on predeployed Docker container](https://github.com/cantino/huginn/blob/master/doc/docker/install.md)
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
 * [[Apache Huginn configuration]]
-* [[Using Huginn on predeployed Docker container]]
 * [[Backing up Huginn]]
 * [Try Huginn Free on Terminal.com](http://blog.terminal.com/huginn-on-terminal-com/) - 99% Complete, Just enter your SMTP credentials
-* [[Running Many Job Workers]]
+* [Running Many Job Workers](https://github.com/cantino/huginn/blob/master/Procfile#L33-L50)
 
 ### Extending Huginn
 
