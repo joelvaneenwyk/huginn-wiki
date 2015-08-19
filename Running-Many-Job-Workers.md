@@ -1,3 +1,5 @@
+# The recommended way to run multiple DelayedJob workers is now documented in the [Procfile](https://github.com/cantino/huginn/blob/master/Procfile#L33-L50)
+  
 This Page is a **rough** documentation with a focus on parallelized delay_job workers.
 
 ## Background
