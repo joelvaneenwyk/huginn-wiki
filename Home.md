@@ -26,7 +26,7 @@ Please feel free to add to this wiki!
 ### Deploying Huginn
 
 * [Installation guide for Ubuntu/Debian](https://github.com/cantino/huginn/tree/master/doc/manual)
-* [Run Huginn for free on Heroku](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md)
+* [Run Huginn on Heroku](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md)
 * [Deployment with Capistrano](https://github.com/cantino/huginn/blob/master/doc/manual/capistrano.md)
 * [Using Huginn on predeployed Docker container](https://github.com/cantino/huginn/blob/master/doc/docker/install.md)
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
