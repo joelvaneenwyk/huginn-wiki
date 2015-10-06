@@ -2,7 +2,7 @@
 
 ## On your own installation
 
-Checkout `doc/deployment/backup/example_backup.rb` for an example script that you can use with the Backup gem.
+Checkout [`doc/deployment/backup/example_backup.rb`](https://github.com/cantino/huginn/blob/master/doc/deployment/backup/example_backup.rb) for an example script that you can use with the Backup gem.
 
 ## On Heroku
 
