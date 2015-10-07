@@ -10,7 +10,7 @@ __Solution__: Use Huginn to create an RSS feed that has filtered full-text conte
 > 3. __WebsiteAgent__ - to fetch full text for feed item
 > 4. __DataOutputAgent__ - to output RSS
 
-Examples based on [النيلين](http://www.alnilin.com/category/الاخبار/feed/)
+Examples based on [Adventures of Business Cat](http://www.businesscat.happyjar.com/)
 
 ## 1. RssAgent
 
@@ -20,7 +20,7 @@ _Name_: Example RSS In
 {
   "expected_update_period_in_days": "14",
   "clean": "false",
-  "url": "http://www.alnilin.com/category/الاخبار/feed/"
+  "url": "http://www.businesscat.happyjar.com/feed/"
 }
 ```
 
