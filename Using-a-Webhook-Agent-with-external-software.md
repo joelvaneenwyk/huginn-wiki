@@ -10,7 +10,7 @@ A few things to remember about the Webhook Agent:
 * You can also write code which runs on the same host as Huginn and not have to worry about HTTP auth: **http://localhost:3000/users/1/web_requests/948/neverGonnaRunAroundAndDesertYou**
 
 Webhook Agent currently supports the following HTTP methods:
-* POST (the default)N
+* POST (the default)
 * GET
 
 Information POSTed into a Webhook Agent must be correctly formatted JSON.  All HTTP requests made to a Webhook Agent must have the **Content-Type: application/json** HTTP header, otherwise you'll get bizarre results.
