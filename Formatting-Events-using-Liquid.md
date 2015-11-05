@@ -114,7 +114,7 @@ Now we generate a nice HTML formatted message using Liquid. This is the HipchatA
 
 Removing newlines from a string: `{{foo | strip_newlines}}`
 
-Dates in Liquid: Dates are stored as the number of seconds since the epoch (1st Jan 1970) and can be handled as an integer using Filters. 
+Handling dates in Liquid: Dates are stored as the number of seconds since the epoch (1st Jan 1970) and can be handled as an integer using Filters. 
 
 For example, an integer variable dateVar which stores the date in milliseconds can be output as a formatted date string by first dividing by 1000, and then using Liquid's date formatting Filter as follows:
 
