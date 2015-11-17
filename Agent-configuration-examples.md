@@ -153,7 +153,7 @@ In your huginn instance go to `Services` -> `Import Scenario` and enter https://
 ##Event Formatting Agent - Replace emails in event hash with URL
 
 Easy way to filter and replace content in event using regexp_replace
-
+<code>
 {
   "instructions": {
     "message": "{{ content | regex_replace: '(\\S+)@(\\S+).(\\S+)', ' ' }}  ",
@@ -163,3 +163,4 @@ Easy way to filter and replace content in event using regexp_replace
   ],
   "mode": "clean"
 } 
+</code>
