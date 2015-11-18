@@ -156,6 +156,6 @@ Easy way to filter and replace content in event using regexp_replace
 
     {
       "instructions": {
-        "message": "{{ content | regex_replace: '(\\S+)@(\\S+).(\\S+)', '{{url}} ' }}",
+        "message": "{{ content | regex_replace: '(\\S+)@(\\S+).(\\S+)', '{{url}} ' }}"
       }
     } 
