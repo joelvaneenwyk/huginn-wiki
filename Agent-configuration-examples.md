@@ -154,11 +154,8 @@ In your huginn instance go to `Services` -> `Import Scenario` and enter https://
 
 Easy way to filter and replace content in event using regexp_replace
 
-      {
-          "instructions": {
-           "message": "{{ content | regex_replace: '(\\S+)@(\\S+).(\\S+)', '{{url}} ' }}  ",
-       },
-           "matchers": [
-                       ],
-           "mode": "clean"
-        } 
+    {
+      "instructions": {
+        "message": "{{ content | regex_replace: '(\\S+)@(\\S+).(\\S+)', '{{url}} ' }}",
+      }
+    } 
