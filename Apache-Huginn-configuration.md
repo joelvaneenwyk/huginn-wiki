@@ -46,7 +46,7 @@ Oh so cleverly adapted from [this page](https://gist.github.com/MrZYX/719014).
 </VirtualHost>
 ```
 
-# Important:
+## Important:
 In Apache 2.4 there are few changes do be done in .htaccess or VirtualHost setting. You need to replace Allow from and Deny from options with Require all granted and Require all denied as given below.
 
 From
