@@ -45,3 +45,33 @@ Oh so cleverly adapted from [this page](https://gist.github.com/MrZYX/719014).
     SSLCertificateChainFile /path/to/chain_file
 </VirtualHost>
 ```
+
+# Important:
+In Apache 2.4 there are few changes do be done in .htaccess or VirtualHost setting. You need to replace Allow from and Deny from options with Require all granted and Require all denied as given below.
+
+From
+```
+    <Proxy *>
+        Order allow,deny
+        Allow from all
+    </Proxy>
+
+    <Directory /path/to/huginn/public>
+        Allow from all
+        AllowOverride all
+        Options -MultiViews
+    </Directory>
+```
+to
+```
+    <Proxy *>
+         Require all granted
+    </Proxy>
+
+    <Directory /path/to/huginn/public>
+        Require all granted
+        AllowOverride all
+        Options -MultiViews
+    </Directory>
+```
+More Information here: http://tecadmin.net/authz-core-error-client-denied-by-server-configuration/
