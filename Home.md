@@ -30,6 +30,7 @@ Please feel free to add to this wiki!
 * [Run Huginn on Heroku](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md)
 * [Deployment with Capistrano](https://github.com/cantino/huginn/blob/master/doc/manual/capistrano.md)
 * [Using Huginn on predeployed Docker container](https://github.com/cantino/huginn/blob/master/doc/docker/install.md)
+* [Guided VirtualBox installation using shell scripts and Vagrant](https://github.com/m0nty/huginn-vagrant)
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
 * [[Apache Huginn configuration]]
 * [[Backing up Huginn]]
