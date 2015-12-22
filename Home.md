@@ -36,6 +36,7 @@ Please feel free to add to this wiki!
 * [[Backing up Huginn]]
 * [Try Huginn Free on Terminal.com](http://blog.terminal.com/huginn-on-terminal-com/) - 99% Complete, Just enter your SMTP credentials
 * [Running Many Job Workers](https://github.com/cantino/huginn/blob/master/Procfile#L33-L50)
+* [[Mini Tutorial for installing huginn on dokku]]
 
 ### Extending Huginn
 
