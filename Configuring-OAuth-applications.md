@@ -13,7 +13,7 @@ The Callback URL is important, you need to set it to the following: `http://<you
 On the "API Keys" page you need to note down your "API Key" and "API Secret", and then:
 
 * If you're hosting Huginn yourself, open your Huginn `.env` file and set `TWITTER_OAUTH_KEY` to the `API Key` and `TWITTER_OAUTH_SECRET` to the `API Secret`.
-* If you're using a Docker container use `HUGINN_TWITTER_OAUTH_KEY` for the `API Key` and `HUGINN_TWITTER_OAUTH_SECRET` for the `API Secret`. [More variable environment here.](https://hub.docker.com/r/cantino/huginn/)
+* If you're using a Docker container use `HUGINN_TWITTER_OAUTH_KEY` for the `API Key` and `HUGINN_TWITTER_OAUTH_SECRET` for the `API Secret`. [More environment variables here.](https://hub.docker.com/r/cantino/huginn/)
 * If you're using Heroku, set the necessary environment variables with `heroku config:set TWITTER_OAUTH_KEY=YOUR-KEY` and `heroku config:set TWITTER_OAUTH_SECRET=YOUR-SECRET`.
 * If you're using OpenShift, set the necessary environment variables with `rhc env set TWITTER_OAUTH_KEY=YOUR-KEY` and `rhc env set TWITTER_OAUTH_SECRET=YOUR-SECRET`.
 
