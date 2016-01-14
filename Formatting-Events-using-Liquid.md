@@ -67,7 +67,7 @@ It would have to dynamically build an XPath expression like this:
 
 It is more robust to use the filter here than to put `'{{word}}'` or `"{{word}}"` in that it wouldn't blow up the whole expression even if `word` contained the apostrophe, quotation mark, or both.
 
-**regex_replace** & **regex_replace_first** replaces all/first regex matching strings with a substring. Very similar to the [built in replace](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#replace). 
+**regex_replace** & **regex_replace_first** replace all/first regex matching strings with a substring. Very similar to the [built in replace](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#replace). 
 
 For example, if `foobar` contains the string "foobaz foobaz", then `{{ foobar | regex_replace: '(\S+)baz', 'qux\1' }}` would result in "quxfoo quxfoo". You can use any regex supported by the Ruby `Regexp` class, as documented [here](http://ruby-doc.org/core/doc/regexp_rdoc.html). 
 
@@ -80,6 +80,29 @@ Beware that Liquid itself does not have the concept of backslash escaping, so yo
 **credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there are no back-quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
 
 **line_break** evaluates to a literal line break in the text, i.e. a \n character.  Usage: `{% line_break %}`; note that there are no quotes or back ticks around the tag.
+
+**regex_replace** & **regex_replace_first** replace every occurrence of a given regex pattern in the first "in" block with the result of the "with" block in which the variable `match` is set for each iteration, which can be used as follows:
+
+- `match[0]` or just `match`: the whole matching string
+- `match[1]`..`match[n]`: strings matching the numbered capture groups
+- `match.size`: total number of the elements above (n+1)
+- `match.names`: array of names of named capture groups
+- `match[name]`..: strings matching the named capture groups
+- `match.pre_match`: string preceding the match
+- `match.post_match`: string following the match
+- `match.***`: equivalent to `match['***']` unless it conflicts with the existing methods above
+
+If named captures (`(?<name>...)`) are used in the pattern, they are also made accessible as variables.  Note that if numbered captures are used mixed with named captures, you could get unexpected results.
+
+Example usage:
+
+    {% regex_replace "\w+" in %}Use me like this.{% with %}{{ match | capitalize }}{% endregex_replace %}
+    {% assign fullname = "Doe, John A." %}
+    {% regex_replace_first "\A(?<name1>.+), (?<name2>.+)\z" in %}{{ fullname }}{% with %}{{ name2 }} {{ name1 }}{% endregex_replace_first %}
+
+    Use Me Like This.
+
+    John A. Doe
 
 ### More complete usage example
 
