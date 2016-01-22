@@ -4,7 +4,7 @@ Mini-Tutorial for installing huginn on dokku
 
 # Prerequisites
 
-* dokku version v0.4.6
+* dokku version >= v0.4.9
 * http://dokku.viewdocs.io/dokku/installation/
 
 # Create the app
@@ -46,7 +46,7 @@ ssh -t root@dokku.me dokku config:set huginn RAILS_SERVE_STATIC_FILES=true
 
 ```
 git push dokku master
-ssh -t root@dokku.me dokku run bundle exec rake db:migrate
-ssh -t root@dokku.me dokku run bundle exec rake db:seed
+ssh -t root@dokku.me dokku run huginn bundle exec rake db:migrate
+ssh -t root@dokku.me dokku run huginn bundle exec rake db:seed
 ssh -t root@dokku.me dokku ps:restart huginn
 ```
