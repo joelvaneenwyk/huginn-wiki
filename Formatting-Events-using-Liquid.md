@@ -79,7 +79,7 @@ Beware that Liquid itself does not have the concept of backslash escaping, so yo
 
 **credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there are no back-quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
 
-**line_break** evaluates to a literal line break in the text, i.e. a \n character.  Usage: `{% line_break %}`; note that there are no quotes or back ticks around the tag.
+**line_break** evaluates to a literal line break in the text, i.e. a \n character.  Usage: `{% line_break %}`; note that there are no quotes or back ticks around the tag.  (Note: for HTML emails, you may want to use `<br>` instead.)
 
 **regex_replace** & **regex_replace_first** replace every occurrence of a given regex pattern in the first "in" block with the result of the "with" block in which the variable `match` is set for each iteration, which can be used as follows:
 
