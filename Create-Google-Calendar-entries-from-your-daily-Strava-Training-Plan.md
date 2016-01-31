@@ -31,4 +31,14 @@ I use the IMAP Folder agent to check several times a day for a new mail from Str
   }
 }
 
+This agent generates an event with the data of the fetched mail: subject and body. The problem is that the important information is inside the body text of the mail
+
 ````
+
+### Step 02 - Extract the information out of the body and create a google calendar message
+
+Now the things become nasty. The information about the training is in the body of the mail. And in the body is the date of next training date. I have to extract the information via regular expressions and needed to create a message structure, which is consumable from the Google Calendar Api. 
+
+#### First Idea, using a trigger agent, failed :-1: 
+
+My first idea failed.
