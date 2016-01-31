@@ -12,4 +12,20 @@ Scenario:
 
 ![Training Plan as scenario](https://farm2.staticflickr.com/1569/24101494863_a87afba574_o.png)
 
-### Search my gmail account for a new training plan.
+### Step 01: Check my gmail account for a new training plan.
+
+I use the IMAP Folder agent to check several times a day for a new mail from Strava:
+
+`{`
+  `"expected_update_period_in_days": "1",`
+  `"host": "imap.gmail.com",`
+  `"ssl": true,`
+  `"username": "{% credential google_username %}",`
+  `"password": "{% credential google_password %}",`
+  `"folders": [`
+    `"INBOX"`
+  `],`
+  `"conditions": {`
+    `"subject": "Strava Trainingsplan - Woche \\d+ Tag \\d+"`
+  `}`
+`}`
