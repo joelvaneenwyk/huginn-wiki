@@ -110,7 +110,9 @@ I needed a long time, to get the following configuration working. Gently hint: P
   }
 }
 ````
+### Finally - Every training day I have an event scheduled in my Google Calendar made by _Huginn_
 
+![Event in Google Calendar](https://farm2.staticflickr.com/1482/24635867331_74fd3a8fb9_o.png)
 
 
 
