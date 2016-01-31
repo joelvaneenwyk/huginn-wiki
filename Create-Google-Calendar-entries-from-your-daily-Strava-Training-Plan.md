@@ -1,20 +1,20 @@
 ### New Year Resolutions: Participate at a marathon and automate my life.
 
-Ok, this sound silly and maybe it is, but I want to use my (poor) coding skills to automate things as far as possible and I want to participate at a marathon this year. Oh and by the way, I am not the youngest person on earth anymore :-)
+Ok, this sound silly and maybe it is, but I want to use my (poor) coding skills to automate things as far as possible and I also want to participate at a marathon this year. Oh and by the way, I am not the youngest person on earth anymore :-)
 
-To prepare for the marathon I started a training plan on [Strava](https://www.strava.com), a platform for fitness enthusiasts. Strava send me a daily instruction for my training via email. But I want the instructions as a google calendar entry, where I organize my life. So I started dealing with Huginn, to gain experience in automating things.
+For preparation for my marathon I started a training plan on [Strava](https://www.strava.com), a platform for fitness enthusiasts. Strava send me a daily instruction for my training via email. But I want the instructions as a google calendar entry, where I organize all things through a day. So I started dealing with _Huginn_, to gain experience in automating things.
 
 I created in Huginn a workflow like this:
 
 ![My workflow](https://farm2.staticflickr.com/1551/24360536849_bf3d68b7e7_o.png)
 
-Scenario:
+And combined the needed agents in one scenario:
 
 ![Training Plan as scenario](https://farm2.staticflickr.com/1569/24101494863_a87afba574_o.png)
 
-### Step 01: Check my gmail account for a new training plan.
+### Step 01: Check regularly my Gmail account for a new training plan.
 
-I use the IMAP Folder agent to check several times a day for a new mail from Strava:
+I use the IMAP Folder agent to check gmail several times a day for a new mail from Strava:
 
 ````
 {
@@ -31,21 +31,23 @@ I use the IMAP Folder agent to check several times a day for a new mail from Str
   }
 }
 
-This agent generates an event with the data of the fetched mail: subject and body. The problem is that the important information is inside the body text of the mail
+This agent generates an event payload with the important data of the fetched mail: subject and body.
 
 ````
 
 ### Step 02 - Extract the information out of the body and create a google calendar message
 
-Now the things become nasty. The information about the training is in the body of the mail. And in the body is the date of next training date. I have to extract the information via regular expressions and needed to create a message structure, which is consumable from the Google Calendar Api. 
+Now the things become somewhat nasty. The needed information about the training is buried in the body of the mail. I have to extract the information via regular expressions and must create a message structure, which is consumable from the [Google Calendar Api](https://developers.google.com/google-apps/calendar/v3/reference/events/insert) 
 
 #### First Idea, using a trigger agent, failed :-1: 
 
-My first idea failed. I want to use the Trigger Agent to extract and reformat data. Unfortunately, the needed date was formatted in a long german version and the Google Calendar Publisher Agent needs a date formatted in RFC 3339.  Here is room for improvement.
+My first idea failed. I want to use the Trigger Agent to extract and reformat data. Unfortunately, the needed date was formatted as long german text and the Google Calendar Publisher Agent needs a date formatted in RFC 3339.  I would have needed some very special liquid filter functions to achieve this way.
 
 ### Second try: JavaScript.
 
-But _Huginn_ has a nice JavaScript agent, a swiss knife for all more complex requirements. The solution looks like this:
+But _Huginn_ has a nice JavaScript agent, a swiss knife for all more complex requirements. 
+
+The JavaScript looks like this:
 
 ````
 function ISODateString(d){
@@ -91,6 +93,8 @@ Agent.receive = function() {
 }
 ````
 
+This code fetches the data out of the body of the email and create a data structure consumable from the Google Calendar Publisher Agent. By the way, I love the log statement in JavaScript. This made debugging the script very comfortable. 
+
 ### Step 3 - Publish the calendar entry with the Google Calendar Publisher Agent
 
 I have to admit. The Google Calendar Publisher Agent is a tiny shell about the Google Calendar Api. You have to create a message structure with an agent (usually trigger agent) and the Google Publisher send it with your api token to the google interface:
@@ -113,6 +117,4 @@ I needed a long time, to get the following configuration working. Gently hint: P
 ### Finally - Every training day I have an event scheduled in my Google Calendar made by _Huginn_
 
 ![Event in Google Calendar](https://farm2.staticflickr.com/1482/24635867331_74fd3a8fb9_o.png)
-
-
 
