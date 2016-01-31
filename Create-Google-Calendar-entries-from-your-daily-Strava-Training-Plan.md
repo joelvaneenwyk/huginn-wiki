@@ -16,16 +16,19 @@ Scenario:
 
 I use the IMAP Folder agent to check several times a day for a new mail from Strava:
 
-`{`
-  `"expected_update_period_in_days": "1",`
-  `"host": "imap.gmail.com",`
-  `"ssl": true,`
-  `"username": "{% credential google_username %}",`
-  `"password": "{% credential google_password %}",`
-  `"folders": [`
-    `"INBOX"`
-  `],`
-  `"conditions": {`
-    `"subject": "Strava Trainingsplan - Woche \\d+ Tag \\d+"`
-  `}`
-`}`
+````
+{
+  "expected_update_period_in_days": "1",
+  "host": "imap.gmail.com",
+  "ssl": true,
+  "username": "{% credential google_username %}",
+  "password": "{% credential google_password %}",
+  "folders": [
+    "INBOX"
+  ],
+  "conditions": {
+    "subject": "Strava Trainingsplan - Woche \\d+ Tag \\d+"
+  }
+}
+
+````
