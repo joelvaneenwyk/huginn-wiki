@@ -8,5 +8,8 @@ I created in Huginn a workflow like this:
 
 ![My workflow](https://farm2.staticflickr.com/1551/24360536849_bf3d68b7e7_o.png)
 
-### Search my gmail account for a new training plan.
+Scenario:
 
+![Training Plan as scenario](https://farm2.staticflickr.com/1569/24101494863_a87afba574_o.png)
+
+### Search my gmail account for a new training plan.
