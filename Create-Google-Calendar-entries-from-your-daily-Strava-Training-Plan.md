@@ -57,36 +57,21 @@ function ISODateString(d){
       + pad(d.getUTCMinutes())+':'
       + pad(d.getUTCSeconds())+'Z'}
 
-var monthArray = [
-  "Januar",
-  "Februar",
-  "März",
-  "April",
-  "Mai",
-  "Juni",
-  "Juli",
-  "August",
-  "September",
-  "Oktober",
-  "November",
-  "Dezember"
-  ]
+var monthArray = [ "Januar", "Februar", "März", "April", "Mai",
+  "Juni", "Juli", "August", "September", "Oktober",
+  "November", "Dezember" ]
 
-Agent.receive = function() {
-  
+Agent.receive = function() { 
    var events = this.incomingEvents();
-  for(var i = 0; i < events.length; i++) {
+   for(var i = 0; i < events.length; i++) {
     var body = events[i].payload['body']
     var summary = events[i].payload['subject']
-    // var findDateExpression = new RegExp("\\w+, (\\d+. \\w+ \\d+)")
-    // var germanDate = findDateExpression.exec(body)
     var germanDate = body.match(/\w+, (\d+). (\w+) (\d+)/)
     var day = germanDate[1]
     var month = monthArray.indexOf(germanDate[2])
     var year = germanDate[3]
     var startDate = new Date(year, month, day, 18, 0, 0, 0)
     var endDate = new Date(year, month, day, 21, 0, 0, 0)
-
     
     this.createEvent(
       { 'message': 
