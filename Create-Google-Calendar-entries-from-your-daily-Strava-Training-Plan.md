@@ -6,5 +6,4 @@ To prepare for the marathon I started a training plan on [Strava](https://www.st
 
 I created in Huginn a workflow like this:
 
-![My workflow](https://www.flickr.com/photos/8156714@N04/shares/452nc7)
-
+![My workflow](https://farm2.staticflickr.com/1551/24360536849_bf3d68b7e7_o.png)
