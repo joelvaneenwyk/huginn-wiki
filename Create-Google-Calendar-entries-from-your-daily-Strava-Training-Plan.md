@@ -91,4 +91,23 @@ Agent.receive = function() {
 }
 ````
 
+### Step 3 - Publish the calendar entry with the Google Calendar Publisher Agent
+
+I have to admit. The Google Calendar Publisher Agent is a tiny shell about the Google Calendar Api. You have to create a message structure with an agent (usually trigger agent) and the Google Publisher send it with your api token to the google interface:
+
+Unfortunately, this Agent doesn't support liquid, so I couldn't separate my credentials from the logic:
+
+I needed a long time, to get the following configuration working. Gently hint: Please authorize the google service email account for modifying your calendar. 
+
+{
+  "expected_update_period_in_days": "10",
+  "calendar_id": "joe@gmail.com",
+  "google": {
+    "key_file": "/home/huginn/Huginn-en453454343.p12",
+    "key_secret": "notasecret",
+    "service_account_email": "hugin-443@huginn-43434.iam.gserviceaccount.com"
+  }
+}
+
+
 
