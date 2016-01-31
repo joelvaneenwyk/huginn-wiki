@@ -1,4 +1,4 @@
-# New Year Resolutions: Make a marathon and automate my life.
+### New Year Resolutions: Participate at a marathon and automate my life.
 
 Ok, this sound silly and maybe it is, but I want to use my (poor) coding skills to automate things as far as possible and I want to participate at a marathon this year. Oh and by the way, I am not the youngest person on earth anymore :-)
 
@@ -7,3 +7,6 @@ To prepare for the marathon I started a training plan on [Strava](https://www.st
 I created in Huginn a workflow like this:
 
 ![My workflow](https://farm2.staticflickr.com/1551/24360536849_bf3d68b7e7_o.png)
+
+### Search my gmail account for a new training plan.
+
