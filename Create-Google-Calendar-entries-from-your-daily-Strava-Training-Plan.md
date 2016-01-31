@@ -1,3 +1,9 @@
-I want to participate on a marathon this year. To prepare for this event, I started a training plan on [Strava](https://www.strava.com), a platform for fitness enthusiasts.
+# New Year Resolutions: Make a marathon and automate my life.
+
+Ok, this sound silly and maybe it is, but I want to use my (poor) coding skills to automate things as far as possible and I want to participate at a marathon this year. Oh and by the way, I am not the youngest person on earth anymore :-)
+
+To prepare for the marathon I started a training plan on [Strava](https://www.strava.com), a platform for fitness enthusiasts. Strava send me a daily instruction for my training via email. But I want the instructions as a google calendar entry, where I organize my life. So I started dealing with Huginn, to gain experience in automating things.
+
+I created in Huginn a workflow like this:
 
 
