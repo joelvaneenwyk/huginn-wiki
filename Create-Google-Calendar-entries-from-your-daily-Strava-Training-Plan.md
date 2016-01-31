@@ -99,6 +99,7 @@ Unfortunately, this Agent doesn't support liquid, so I couldn't separate my cred
 
 I needed a long time, to get the following configuration working. Gently hint: Please authorize the google service email account for modifying your calendar. 
 
+````
 {
   "expected_update_period_in_days": "10",
   "calendar_id": "joe@gmail.com",
@@ -108,6 +109,8 @@ I needed a long time, to get the following configuration working. Gently hint: P
     "service_account_email": "hugin-443@huginn-43434.iam.gserviceaccount.com"
   }
 }
+````
+
 
 
 
