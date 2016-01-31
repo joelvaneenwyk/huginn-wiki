@@ -159,3 +159,9 @@ Easy way to filter and replace content in event using regexp_replace
         "message": "{{ content | regex_replace: '(\\S+)@(\\S+).(\\S+)', '{{url}} ' }}"
       }
     } 
+
+## Google Calendar Publisher Agent in Conjunction with the JavaScript Agent.
+
+The following (very) long text described a solution, where google calendar entries where created out of data of an email:
+
+[[Create Google Calendar entries from your daily Strava Training Plan]]
