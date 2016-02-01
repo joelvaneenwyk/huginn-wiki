@@ -1,3 +1,5 @@
+This usage example was written by @Chaosspeeder.
+
 ### New Year Resolutions: Participate at a marathon and automate my life.
 
 Ok, this sound silly and maybe it is, but I want to use my (poor) coding skills to automate things as far as possible and I also want to participate at a marathon this year. Oh and by the way, I am not the youngest person on earth anymore :-)
