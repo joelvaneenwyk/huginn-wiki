@@ -1,4 +1,4 @@
-`{
+{
   "schema_version": 1,
   "name": "Flyertalk Mileage Run Alert",
   "description": "No description provided",
@@ -68,4 +68,4 @@
   "control_links": [
  
   ]
-}`
+}
