@@ -1,4 +1,4 @@
-`
+
     {
 	  "schema_version": 1,
 	  "name": "Flyertalk Premium Fares",
@@ -70,4 +70,3 @@
 
 	  ]
 	}
-`
