@@ -165,3 +165,9 @@ Easy way to filter and replace content in event using regexp_replace
 The following (very) long text described a solution, where google calendar entries where created out of data of an email:
 
 [[Create Google Calendar entries from your daily Strava Training Plan]]
+
+## Flyertalk RSS to Email Alerts
+
+Captures a new post, filters and sends via email:
+
+[[Flyertalk RSS to Email Scenario]]
