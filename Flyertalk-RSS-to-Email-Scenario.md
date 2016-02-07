@@ -1,7 +1,7 @@
 
     {
 	  "schema_version": 1,
-	  "name": "Flyertalk Premium Fares",
+	  "name": "Flyertalk Mileage Run Fare Deals",
 	  "description": "No description provided",
 	  "source_url": false,
 	  "guid": "e2582e979bc1b93044dc59fb82d1b152",
