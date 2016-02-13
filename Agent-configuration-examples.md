@@ -160,11 +160,11 @@ Easy way to filter and replace content in event using regexp_replace
       }
     } 
 
-## Google Calendar Publisher Agent in Conjunction with the JavaScript Agent.
+## Google Calendar Publisher Agent in conjunction with the JavaScript Agent.
 
 The following (very) long text described a solution, where google calendar entries where created out of data of an email:
 
-[[Create Google Calendar entries from your daily Strava Training Plan]]
+[Medium: Automate my marathon training with Huginn](https://medium.com/@chaosspeeder/automate-my-marathon-training-with-huginn-805586cd2d04#.vtvgddonz)
 
 ## Flyertalk RSS to Email Alerts
 
