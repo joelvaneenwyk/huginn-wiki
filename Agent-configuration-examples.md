@@ -166,6 +166,9 @@ The following (very) long text described a solution, where google calendar entri
 
 [Medium: Automate my marathon training with Huginn](https://medium.com/@chaosspeeder/automate-my-marathon-training-with-huginn-805586cd2d04#.vtvgddonz)
 
+The next example shows a workflow, of creating various Google Calendar entries based on a schedule:
+
+[Medium: Planning my gaming evening with Huginn](https://medium.com/@chaosspeeder/dear-robot-create-my-evening-gaming-plan-b0dd08e596dd#.q3uw7lw1d)
 ## Flyertalk RSS to Email Alerts
 
 Captures a new post, filters and sends via email:
