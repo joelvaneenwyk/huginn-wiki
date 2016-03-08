@@ -75,6 +75,8 @@ You can use escape sequences in both the regex and the replacement parameters of
 
 Beware that Liquid itself does not have the concept of backslash escaping, so you cannot escape quote characters like `"\""`.  Instead, use `\x22` when you need to put the double quote character in a double quoted string literal, such as `{{ text | regex_replace: "\x22(.*?)\x22", "\1" }}`.
 
+**json** takes the object provided and serializes it into a JSON string: `{{ data | json}}`
+
 ### Tags added by Huginn
 
 **credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there are no back-quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
