@@ -174,3 +174,9 @@ The next example shows a workflow, of creating various Google Calendar entries b
 Captures a new post, filters and sends via email:
 
 [[Flyertalk RSS to Email Scenario]]
+
+## Daily updates from Github commits
+
+Get an email digest of commits. Ugly formatting, so please feel free to improve!
+
+[[Daily Update of Huginn Commits on Github]]
