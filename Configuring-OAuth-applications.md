@@ -72,6 +72,24 @@ After you create your application you should see your "Client ID" and "Client Se
 
 After your restarted your Huginn instance you should be able to authenticate with Dropbox via the Services page.
 
+## Tumblr
+
+To enable Tumblr integration you'll need to install the OAuth key and secret in the huginn/.env file.  To acquire the OAuth keys isn't self-evident, so here's an attempt at documenting the process.
+
+First, if you have Huginn behind a web server like Apache or Nginx with HTTP basic auth restricting access (and you should), you must use the htpasswd utility to create a username and password to provide access to the callback URLs: `sudo htpasswd -m /path/to/.htpasswd callback`
+
+Log into your Tumblr dashboard and access your account settings.  Click on "Apps".  Scroll to the bottom of the page and click the Register link (https://www.tumblr.com/oauth/apps).  Click the "+ Register application" button.
+
+Enter the name for the application registration ("Huginn" works).  Enter a description for your application; this can be freeform but please be descriptive so that Tumblr's owners don't decide to unilaterally ban Huginn from their service.  The Default Callback URL is the problem because it's not documented in Huginn anywhere.  It's supposed to look like this: `https://huginn.example.com/auth/tumblr/callback`
+
+However, due to the fact that you have HTTP basic auth in front of Huginn you'll need to supply the username and password so that their OAuth implementation can reach the callback URL.  Put this into the Default Callback URL field: `callback:password@https://huginn.example.com/auth/tumblr/callback`
+
+If you feel like it, upload an icon and an application page icon for your Huginn integration.  Solve the CAPTCHA.  Click the Register button.  You will be presented with your OAuth key and secret.  Edit your huginn/.env file and plug these values into the `TUMBLR_OAUTH_KEY` and `TUMBLR_OAUTH_SECRET` fields, then restart Huginn.
+
+Log into Huginn normally and click on Services.  Click the "Authenticate with Tumblr" button and follow the prompts.  You'll be returned to Huginn's services page and when you instantiate a Tumblr Publish Agent you will see that the Service field will be populated, and you will be able to configure it normally.
+
+I recommend opening [Tumblr's API documentation](https://www.tumblr.com/docs/en/api/v2#posting) in another tab to assist in configuring the Tumblr Publish Agent.  By default, every possible configuration option is present in a new Tumblr Publish Agent.  There are several kinds of posts that can be made on Tumblr but not all of them require the same options; the presence of some options may cause the Agent to not save properly.  So, delete the configuration options that are unnecessary; when in doubt, go with the bare minimum.
+
 # Debugging OAuth Applications
 
 ## Debugging Twitter
