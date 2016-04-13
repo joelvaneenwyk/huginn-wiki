@@ -37,7 +37,8 @@ Please feel free to add to this wiki!
 * [Try Huginn Free on Terminal.com](http://blog.terminal.com/huginn-on-terminal-com/) - 99% Complete, Just enter your SMTP credentials
 * [Running Many Job Workers](https://github.com/cantino/huginn/blob/master/Procfile#L33-L50)
 * [[Mini Tutorial for installing huginn on dokku]]
-
+* [Installation Guide for Huginn on C9 or Cloud 9](https://github.com/cantino/huginn/wiki/Deploying-Huginn-on-C9-or-Cloud-9)
+ 
 ### Extending Huginn
 
 * [[Creating a new Agent]]
