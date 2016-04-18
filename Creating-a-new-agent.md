@@ -115,4 +115,11 @@ def receive_web_request(params, method, format)
 end
 ```
 
+If you need more parameters from the request object, you can also define `receive_web_request` like this:
+
+```
+def receive_web_request(request)
+end
+```
+
 Please see the [WebRequestsController](https://github.com/cantino/huginn/blob/master/app/controllers/web_requests_controller.rb) for more documentation, as well as the implementations of `receive_web_request` in [WebhookAgent](https://github.com/cantino/huginn/blob/master/app/models/agents/webhook_agent.rb) and [DataOutputAgent](https://github.com/cantino/huginn/blob/master/app/models/agents/data_output_agent.rb).
