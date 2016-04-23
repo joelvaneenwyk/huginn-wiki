@@ -10,6 +10,13 @@
       gem 'resque-pool'
     end
 
+### Procfile
+    web: bundle exec unicorn -p $PORT -c ./deployment/heroku/unicorn.rb
+    schedule: bundle exec rails runner bin/schedule.rb
+    twitter: bundle exec rails runner bin/twitter_stream.rb
+    resque_pool_01: bundle exec resque-pool
+    resque_pool_02: bundle exec resque-pool
+
 ### WorkerStatusController
 Display jobs queue and failed counts on the navigation bar.
 
@@ -83,6 +90,10 @@ Make the top of the routes file look like this:
       resources :agents do
       ...
 
+### config/environments/production.rb
+Add this line:
+    
+    config.active_job.queue_adapter = :resque
 
 ### config/initializers/resque.rb
     if Rails.env.production?
@@ -91,11 +102,3 @@ Make the top of the routes file look like this:
 
 ### config/initializers/resque-pool.rb
     WORKER_CONCURRENCY = Integer(ENV["WORKER_CONCURRENCY"] || 2)
-
-### Procfile
-    web: bundle exec unicorn -p $PORT -c ./deployment/heroku/unicorn.rb
-    schedule: bundle exec rails runner bin/schedule.rb
-    twitter: bundle exec rails runner bin/twitter_stream.rb
-    resque_pool_01: bundle exec resque-pool
-    resque_pool_02: bundle exec resque-pool
-
