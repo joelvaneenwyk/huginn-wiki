@@ -64,6 +64,8 @@ With this
     '*': <%= WORKER_CONCURRENCY %>
 
 ### config/routes.rb
+Replace huginn job queue with `resque-web` gem. TODO: update huginn job queue so that it is resque compatible.
+
 Make the top of the routes file look like this:
 
     require "resque_web" if Rails.env.production?
