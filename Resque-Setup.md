@@ -65,6 +65,7 @@ With this
 
 ### config/routes.rb
 Make the top of the routes file look like this:
+
     require "resque_web" if Rails.env.production?
     Huginn::Application.routes.draw do
 
