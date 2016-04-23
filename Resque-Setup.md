@@ -1,4 +1,4 @@
-**Note: These are simply notes from a successful setup, not exact instructions**
+**Note: These are simply notes from a multiple worker per dyno setup on Heroku, not exact instructions**
 
 ### Gemfile
     group :production do
@@ -38,3 +38,23 @@ With this
       events_url: events_url,
       compute_time: Time.now - start
     }
+
+
+### resque.rake
+    require 'resque/tasks' if Rails.env.production?
+    require 'resque/pool/tasks' if Rails.env.production?
+
+    # this task will get called before resque:pool:setup
+    # and preload the rails environment in the pool manager
+    task "resque:setup" => :environment do
+      # generic worker setup, e.g. Hoptoad for failed jobs
+    end
+
+    task "resque:pool:setup" do
+      # close any sockets or files in pool manager
+      ActiveRecord::Base.connection.disconnect!
+      # and re-open them in the resque worker parent
+      Resque::Pool.after_prefork do |job|
+        ActiveRecord::Base.establish_connection
+      end
+    end
