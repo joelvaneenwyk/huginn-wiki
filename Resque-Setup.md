@@ -1,7 +1,14 @@
 **Note: These are simply notes from a successful setup, not exact instructions**
 
 ### Gemfile
-
+    group :production do
+      gem 'rack', '> 1.5.0'
+      gem 'unicorn', '~> 4.9.0'
+      gem 'redis'
+      gem 'resque'
+      gem 'resque-web', require: 'resque_web'
+      gem 'resque-pool'
+    end
 
 ### WorkerStatusController
 Display jobs queue and failed counts on the navigation bar.
