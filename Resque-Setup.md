@@ -64,10 +64,10 @@ With this
     '*': <%= WORKER_CONCURRENCY %>
 
 ### config/routes.rb
+Make the top of the routes file look like this:
     require "resque_web" if Rails.env.production?
     Huginn::Application.routes.draw do
 
-      # Begin Resque
       get '/jobs', to: redirect('/resque_web')
       resque_web_constraint = lambda do |request|
         current_user = request.env['warden'].user
@@ -76,10 +76,9 @@ With this
       constraints resque_web_constraint do
         mount ResqueWeb::Engine => "/resque_web"
       end
-      # End Resque
 
-    resources :agents do
-    ...
+      resources :agents do
+      ...
 
 
 ### config/initializers/resque.rb
