@@ -40,7 +40,7 @@ With this
     }
 
 
-### resque.rake
+### lib/resque.rake
     require 'resque/tasks' if Rails.env.production?
     require 'resque/pool/tasks' if Rails.env.production?
 
@@ -58,3 +58,16 @@ With this
         ActiveRecord::Base.establish_connection
       end
     end
+
+### config/resque-pool.yml
+    ---
+    '*': <%= WORKER_CONCURRENCY %>
+
+
+### config/initializers/resque.rb
+    if Rails.env.production?
+      Resque.redis = ENV["REDIS_URL"]
+    end
+
+### config/initializers/resque-pool.rb
+    WORKER_CONCURRENCY = Integer(ENV["WORKER_CONCURRENCY"] || 2)
