@@ -11,6 +11,8 @@
     end
 
 ### Procfile
+Change `web` process if not using heroku.
+
     web: bundle exec unicorn -p $PORT -c ./deployment/heroku/unicorn.rb
     schedule: bundle exec rails runner bin/schedule.rb
     twitter: bundle exec rails runner bin/twitter_stream.rb
