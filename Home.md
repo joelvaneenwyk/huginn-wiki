@@ -22,6 +22,7 @@ Please feel free to add to this wiki!
 * [[Generating a filtered full text RSS feed]]
 * [[Using the Twilio Agent]]
 * [[Companies and People using Huginn]]
+* [[Huginn-as-a-Service]] - hosted instances of Huginn
 * [[Using a Webhook Agent with external software]]
 
 ### Deploying Huginn
