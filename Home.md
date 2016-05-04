@@ -24,6 +24,7 @@ Please feel free to add to this wiki!
 * [[Companies and People using Huginn]]
 * [[Huginn-as-a-Service]] - hosted instances of Huginn
 * [[Using a Webhook Agent with external software]]
+* [[Browser Emulation Using PhantomJS Cloud]]
 
 ### Deploying Huginn
 
