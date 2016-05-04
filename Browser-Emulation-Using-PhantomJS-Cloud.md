@@ -4,14 +4,32 @@
 
 **Solution:** Use [PhantomJs Cloud](https://phantomjscloud.com/) to emulate the browser and return a rendered DOM. The workflow to fetch the page is as follows:
 
+> 0. **Credentials** - provide API key
 > 1. **RssAgent** - provides example urls to fetch
 > 2. **EventFormattingAgent** - to set up PhantomJs Cloud options
 > 3. **JavascriptAgent** - to properly encode the [REQUEST-JSON] using encodeURIComponent()
 > 4. **WebsiteAgent** - to fetch the page using PhantomJs Cloud
 > 5. **DataOutputAgent** - to output RSS
 
-Note: You'll need to sign up to get an API key  
-Full scenario can be found [here](http://pastebin.com/Ym1ytk4h)
+Full scenario can be found [here](http://pastebin.com/baRFN44H)
+
+## 0. Credentials
+
+1. Sign up for an account at https://phantomjscloud.com/
+2. Copy your API key
+3. Add to huginn credentials
+
+``` json
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "credential_name": "phantomjs_cloud",
+    "credential_value": "YOUR-KEY",
+    "mode": "text"
+  }
+]
+```
 
 ## 1. RssAgent
 
@@ -72,7 +90,7 @@ _Propagate immediately_: Yes
 ``` json
 {
   "expected_update_period_in_days": "2",
-  "url_from_event": "https://PhantomJsCloud.com/api/browser/v2/YOUR-KEY/?request={{url}}",
+  "url_from_event": "https://PhantomJsCloud.com/api/browser/v2/{%credential phantomjs_cloud%}/?request={{url}}",
   "type": "html",
   "mode": "on_change",
   "extract": {
