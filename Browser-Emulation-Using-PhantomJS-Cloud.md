@@ -106,7 +106,6 @@ _Propagate immediately_: Yes
 }
 ```
 
-> __Note__: Replace `YOUR-KEY` with your PhantomJs Cloud API key
 
 ## 5. DataOutputAgent 
 
