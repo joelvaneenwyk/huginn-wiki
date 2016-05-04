@@ -5,3 +5,6 @@ If you don't want to set up and maintain your own copy of Huginn, there are a of
 - Plans start at $7/month
 - Access to immediate event propagation
 - Updates from cantino/master about every 7-10 days to get you the latest features and fixes
+
+## Others...?
+List your service here!
