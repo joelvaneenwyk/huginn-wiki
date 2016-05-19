@@ -49,7 +49,7 @@ With this
     }
 
 
-### lib/resque.rake
+### lib/tasks/resque.rake
     require 'resque/tasks' if Rails.env.production?
     require 'resque/pool/tasks' if Rails.env.production?
 
