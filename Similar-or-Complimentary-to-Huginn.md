@@ -4,10 +4,27 @@ Decided there should be a place to track interesting things related or complimen
 
 Feel free to add new things, but let's try and keep them in some kind of alphabetized order.
 
-## Things
+## Systems
 
-* [Netflix Scumblr](https://github.com/Netflix/Scumblr)
+* [Netflix Scumblr](https://github.com/Netflix/Scumblr) ([#1522](https://github.com/cantino/huginn/issues/1522)) - Scumblr is a web application that allows performing periodic searches and storing / taking actions on the identified results. 
+* [Node-RED](http://nodered.org/) ([#1296](https://github.com/cantino/huginn/issues/1296)) - Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways.
+* [PicoLab Pico-Enginer](https://github.com/Picolab/pico-engine) - A (WIP) next-gen implementation of Phil Windley's pico concepts.
+* [Welcomer Framework](https://github.com/welcomer/framework/) - The Welcomer framework supports building microservices to flexibly automate your online tasks, putting control of your personal data back in your hands.
+
+## SaaS
+
+* [Microsoft Flow](https://flow.microsoft.com/en-us/)
+* [IFTTT](https://ifttt.com/)
+* [Zapier](https://zapier.com/)
 
 ## Components
 
-* [Netflix Workflowable](https://github.com/Netflix/Workflowable)
+* [Netflix Workflowable](https://github.com/Netflix/Workflowable) ([#1522](https://github.com/cantino/huginn/issues/1522)) - Workflowable is a Ruby gem that allows adding flexible workflow functionality to Ruby on Rails Applications. Workflowable provides an admin interface for configuring workflows, adding stages, triggering automatic actions, etc.
+
+## Concepts
+
+* Phil Windley, et al ([#653](https://github.com/cantino/huginn/issues/653)) - Wrote the book on evented cloud based systems, literally.
+  * [Phil Windley's Blog](http://www.windley.com/)
+  * [Pico Labs](http://picolabs.io/) - Pico Labs is reponsible for Picos, an actor-based programming system that supports people-centric, reactive programming on the Internet of Things.
+  * [Evented API](http://www.eventedapi.org/) - We envision a world where applications integrate multiple products and services as equals based on event-driven interactions. Event APIs following the form described in this document enable building such applications.
+  * [The Live Web](http://smile.amazon.com/The-Live-Web-Event-Based-Connections/dp/1133686680?sa-no-redirect=1)
