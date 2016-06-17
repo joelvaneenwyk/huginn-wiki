@@ -100,5 +100,5 @@ apt-get install mysql-server
 ## Step 6 - Follow the rest of Quick Start
 From here on, the [Getting Started][getting-started] section of the [README][README] should be able to guide you.
 
-[quick-start]: https://github.com/cantino/huginn#quick-start
+[getting-started]: https://github.com/cantino/huginn#getting-started
 [README]: https://github.com/cantino/huginn#readme
