@@ -1903,7 +1903,7 @@ Save the file and close leafpad
 Go back to the terminal window you were just working in and enter:
 
 
-sudo service mysql restart
+`sudo service mysql restart`
 
 
 (If prompted, enter your root password and <hit enter>)
