@@ -1891,7 +1891,7 @@ Now enter:
 `gnomesu leafpad /etc/my.cnf`
 
 
-(Enter your root password in the popup and <hit enter>)
+(Enter your root password in the popup and hit enter)
 
 
 Locate the line that starts with "# socket     =" and delete the # at the very beginning of the line.
@@ -1906,7 +1906,7 @@ Go back to the terminal window you were just working in and enter:
 `sudo service mysql restart`
 
 
-(If prompted, enter your root password and <hit enter>)
+(If prompted, enter your root password and hit enter)
 
 
 `bundle exec rake db:create`
