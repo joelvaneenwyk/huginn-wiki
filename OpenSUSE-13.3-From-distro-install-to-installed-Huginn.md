@@ -6,6 +6,9 @@ Couple of other notes:
 
 2) The narrative of this guide is very informal. The guide is long enough. Until it gets refined down to a very short-order process I've chosen to keep it light and easy to read. That mentioned, I tried to keep the description of the steps as EXACT as possible so it may over time be tiring to read. This is a delicate balance and again, I'm expecting the community to kind've take up the reigns and help on refining this bear.
 
+3) There are areas where the steps in this guide can be locked down tighter. One (at least) area to look into is the using of the root password when installing MySQL (MariaDB). While the root password would be needed for system file access (setting up init scripts, installing libraries, etc.), running it as root -- not only seems like a terrible idea -- may not be necessary especially since MySQL is outside of the "well-known" port range. 
+
+
 Anyhow, without further adieu... Let's begin.
 
 
