@@ -610,33 +610,1345 @@ _hit enter_
 
 
 Now enter:
-/usr/bin/mysql_secure_installation
-<hit enter>
+
+`/usr/bin/mysql_secure_installation`
+
+_hit enter_
+
+
 You'll see something like this:
 
-	NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
-	      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
-	
-	In order to log into MariaDB to secure it, we'll need the current
-	password for the root user.  If you've just installed MariaDB, and
-	you haven't set the root password yet, the password will be blank,
-	so you should just press enter here.
-	
-	Enter current password for root (enter for none):
-<hit enter>
+
+	> NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+
+> 	      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+> 	
+> 	In order to log into MariaDB to secure it, we'll need the current
+
+> 	password for the root user.  If you've just installed MariaDB, and
+
+> 	you haven't set the root password yet, the password will be blank,
+
+> 	so you should just press enter here.
+
+> 	
+> 	Enter current password for root (enter for none):
+
+
+_hit enter_
+
+
 You'll see:
+
+
 	OK, successfully used password, moving on...
+
 	
 	Setting the root password ensures that nobody can log into the MariaDB
+
 	root user without the proper authorisation.
+
 	
 	Set root password? [Y/n]
-Type the letter y and <hit enter>
-enter your new database's root password (Make sure it's a GOOD password! Uppercase, Lowercase, Numbers, Symbols, and try for something like 12 characters, longer is better! One note: DO NOT use a $ symbol for the password, it will through the bundle exec rake db:create task off much much later on in the process!!!!)
-when you've typed in the password you've choosen <hit enter>
-reenter that password again
-<hit enter>
+
+
+_Type the letter y_
+
+_hit enter_
+
+
+_enter your new database's root password_ (**Make sure it's a GOOD password! Uppercase, Lowercase, Numbers, Symbols, and try for something like 12 characters, longer is better! One note: DO NOT use a $ symbol for the password, it will throw the bundle exec rake db:create task off much much later on in the process!!!!**)
+
+
+_hit enter_
+
+
+_reenter that password again_
+
+
+_hit enter_
+
+
 You'll now see:
-Password updated successfully!
-Reloading privilege tables..
- ... Success!
+
+
+> Password updated successfully!
+
+> Reloading privilege tables..
+
+>  ... Success!
+
+
+> By default, a MariaDB installation has an anonymous user, allowing anyone
+
+> to log into MariaDB without having to have a user account created for
+
+> them.  This is intended only for testing, and to make the installation
+
+> go a bit smoother.  You should remove them before moving into a
+
+> production environment.
+
+
+> Remove anonymous users? [Y/n]
+
+
+_type the letter y_
+
+_hit enter_
+
+
+You'll now see:
+
+
+>  ... Success!
+
+> Normally, root should only be allowed to connect from 'localhost'.  This
+> ensures that someone cannot guess at the root password from the network.
+
+> Disallow root login remotely? [Y/n] 
+
+
+NOTE: disallowing root connections is strongly recommended, however if you are installing this on a remote machine, not having a remote admin ability can be one of the most obnoxious things to deal with when troubleshooting or doing development work that will be using the same database because you then have to fight (maybe they've made it easier since I last remember) MySQL to allow remote root connection. That said, securing a remote root login ability can be challenging, and having it enabled presents a -MAJOR- security risk, so if you know you'll be able to function without it
+
+
+__type the letter y__
+
+_hit enter_
+
+
+You should then see:
+
+
+> ... Success!
+
+> By default, MariaDB comes with a database named 'test' that anyone can access.  This is also intended only for testing, and should be removed before moving into a production environment.
+
+> Remove test database and access to it? [Y/n]
+
+
+_Type the letter y_
+
+_hit enter_
+
+
+Next, you'll see:
+
+>  - Dropping test database...
+
+>  ... Success!
+
+>  - Removing privileges on test database...
+
+>  ... Success!
+
+
+> Reloading the privilege tables will ensure that all changes made so far
+
+> will take effect immediately.
+
+
+> Reload privilege tables now? [Y/n]
+
+
+_Type the letter y_
+_hit enter_
+
+
+You'll now see:
+
+
+>  ... Success!
+
+
+> Cleaning up...
+
+
+> All done!  If you've completed all of the above steps, your MariaDB
+
+> installation should now be secure.
+
+
+> Thanks for using MariaDB!
+
+
+##Install MySQL2
+
+###Install the libmysqlclient-dev
+
+
+At the terminal window enter the following:
+
+
+`sudo zypper install libmysqlclient-dev`
+
+
+_hit enter_
+
+
+_hit enter_
+
+
+
+###Install the MySQL2 gem
+
+
+At the terminal window enter the following:
+
+
+`gem install mysql2 -v '0.3.20'`
+
+
+_hit enter_
+
+
+You'll see:
+
+> 	Building native extensions.  This could take a while...
+
+> 	Successfully installed mysql2-0.3.20
+
+> 	Parsing documentation for mysql2-0.3.20
+
+> 	Installing ri documentation for mysql2-0.3.20
+
+> 	Done installing documentation for mysql2 after 0 seconds
+
+> 	1 gem installed
+
+
+(Despite it saying it could take a while, it really actually didn't; at least for me)
+
+
+
+##Setting up your Ruby environment (using rvm)
+
+
+This is where things get dicey. At this point, ruby IS actually already installed on your system. For OpenSUSE 13.2, as of 07/05/2016 at 11:03PM EDT, even with online repositories enabled during install of the distro, it is NOT at the version you need to be at. The novice guide says Ruby 2+, while the distro has Ruby at a version 2+, it is not sufficient.
+
+
+Enter the following:
+
+`ruby --version`
+
+_hit enter_
+
+
+You should see the following:
+
+
+> ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-linux-gnu]
+
+
+Now do the same for but for gem
+
+Enter the following:
+
+`gem --version`
+
+_hit enter_
+
+
+You should see the following:
+
+> 2.2.2
+
+
+(we shouldn't need to upgrade Gem though -- this is just for "thoroughness")
+
+
+
+Brief terminology reference:
+
+Ruby is a language
+
+Gems are Ruby packages (think of them as like libraries)
+
+gem (first letter lowercase and no 's' on the end) is a package manager (technically it's called RubyGems, but you use the gem command to use it) used to install Gems
+
+bundler is the name of the program/utility you use to build packages
+
+bundle is the command used to build packages
+
+
+
+Two ways of proceeding:
+
+1 - A system wide install of an updated Ruby version
+
+2 - (Recommended): RVM (Ruby Version Management) - Many community members go this route; thus, it is recommended as individuals are more likely to have direct experience troubleshooting issues specific with dealing with RVM than system-wide installs that can vary.
+
+	From the RVM site: "RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems."
+
+
+
+###If you want to install a system-wide updated version of Ruby
+
+Download Ruby source
+
+At the terminal prompt enter:
+
+
+`mkdir Downloads`
+
+_hit enter_
+
+`cd Downloads`
+
+_hit enter_
+
+
+The file can be found at: http://www.ruby-lang.org/en/downloads/
+
+The direct link is: https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.1.tar.gz
+
+
+Either download into your downloads folder (which should be ~/<your username here>/Downloads) using your web browser
+
+or you can shortcut loading the window by entering the following into the terminal window:
+
+
+`wget https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.1.tar.gz`
+
+
+_hit enter_
+
+
+Regardless of whether you ran downloaded using the browser or you used wget enter the following into the terminal window:
+
+`openssl dgst -sha256 ruby-2.3.1.tar.gz`
+
+
+_hit enter_
+
+
+the hexadecimal string that is output from this command should match the listing on the web page; if it doesn't something's wrong. Try redownloading it and reperforming this step again.
+
+
+Presently at 07/06/2016 2:39AM EDT my output shows: SHA256(ruby-2.3.1.tar.gz)= b87c738cb2032bf4920fef8e3864dc5cf8eae9d89d8d523ce0236945c5797dcd
+
+(but you should verify it yourself though anyway)
+
+if it matches proceed.
+
+
+Enter the following:
+
+
+`tar xzvf ./ruby-2.3.1.tar.gz`
+
+_hit enter_
+
+
+wait for it to unpack
+
+
+
+Next enter:
+
+
+`cd ruby-2.3.1`
+
+
+_hit enter_
+
+
+
+Now enter:
+
+
+`make`
+
+
+_hit enter_
+
+
+wait for that to finish then enter:
+
+
+`sudo make install`
+
+
+_hit enter_
+
+
+(if prompted, type in your root password and hit enter)
+
+
+
+
+###If you are going the rvm route
+
+
+You can get the latest commands to install rvm the "secure" way by visiting [https://rvm.io/rvm/security](https://rvm.io/rvm/security) in a web browser
+
+
+As of 07/06/2016 at 2:47AM EDT the commands are as follows:
+
+(Due to the nature that there is a key involved, it is HIGHLY recommended you get this key DIRECTLY from their site)
+
+In your terminal window, enter the following:
+
+
+`gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`
+
+
+_hit enter_
+
+
+`pwd`
+
+
+_hit enter_
+
+
+Confirm your present working directory is ~/<your username>
+
+(if not, enter cd ~/ and hit enter)
+
+
+Next enter:
+
+
+`\curl -O https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer`
+
+
+_hit enter_
+
+
+wait until this finishes then enter:
+
+
+`\curl -O https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer.asc`
+
+
+_hit enter_
+
+
+wait until this finishes then enter:
+
+
+`gpg --verify rvm-installer.asc &&`
+
+
+_hit enter_
+
+
+you will now see a > prompt (that's fine) now enter the following:
+
+
+`bash rvm-installer stable`
+
+
+_hit enter_
+
+
+if you see the error: gpg: Signature made Thu 21 Jan 2016 02:38:21 PM EST using RSA key ID BF04FF17
+
+gpg: Can't check signature: No public key
+
+then enter the following:
+
+
+`curl -sSL https://rvm.io/mpapis.asc | gpg --import -`
+
+(yes the - at the end is meant to be there)
+
+
+
+Now reenter the following:
+
+
+`gpg --verify rvm-installer.asc && bash rvm-installer stable`
+
+
+_hit enter_
+
+
+You will likely see it say the certificate is expired. I suppose that's fine. It is kind've weird though their certificate 
+is expired...
+
+
+After the validation of the key, you should see the following right after it:
+
+
+> Installing RVM to /home/<your username>/.rvm/
+
+>     Adding rvm PATH line to /home/<your username>/.profile /home/<your username>/.mkshrc /home/<your username>/.bashrc /home/<your username>/.zshrc.
+
+>     Adding rvm loading line to /home/<your username>/.profile /home/<your username>/.bash_profile /home/<your username>/.zlogin.
+
+> Installation of RVM in /home/<your username>/.rvm/ is almost complete:
+
+
+>   * To start using RVM you need to run `source /home/<your username>/.rvm/scripts/rvm`
+
+>     in all your open shell windows, in rare cases you need to reopen all shell windows.
+
+
+> # <your username>,
+
+> #
+
+> #   Thank you for using RVM!
+
+> #   We sincerely hope that RVM helps to make your life easier and more enjoyable!!!
+
+> #
+
+> # ~Wayne, Michal & team.
+
+
+> In case of problems: https://rvm.io/help and https://twitter.com/rvm_io
+
+
+
+
+Now enter the following:
+
+
+`source /home/<your username>/.rvm/scripts/rvm`
+
+
+_hit enter_
+
+
+You need to do this because rvm is being defined as a Bash function, and without the function in place you'll get the error:
+
+
+	> If 'rvm' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+
+>     		cnf rvm
+
+
+So go ahead and run it.
+
+
+You will need to reopen a new shell so close out the existing shell terminal you have open, and reopen a new one.
+
+
+Next enter the following:
+
+
+`rvm install 2.3.1`
+
+
+_hit enter_
+
+
+You should see something to the effect of:
+
+	> Searching for binary rubies, this might take some time.
+
+> 	No binary rubies available for: opensuse/13.2/x86_64/ruby-2.3.1.
+
+> 	Continuing with compilation. Please read 'rvm help mount' to get more information on binary rubies.
+
+> 	Checking requirements for opensuse.
+
+> 	Installing requirements for opensuse.
+
+> 	Updating systemroot password required for 'zypper --gpg-auto-import-keys refresh': ..-
+
+> 	..
+
+> 	Installing required packages: patch, automake, bison, libtool, m4, make, patch, gdbm-devel, glibc-devel, libffi-devel, libopenssl-devel, readline-devel, zlib-devel, libdb-4_5, sqlite3-devel, gcc, gcc-c++, libyaml-devel...............
+
+> 	Requirements installation successful.
+
+> 	Installing Ruby from source to: /home/<your username>/.rvm/rubies/ruby-2.3.1, this may take a while depending on your cpu(s)...
+
+> 	ruby-2.3.1 - #downloading ruby-2.3.1, this may take a while depending on your connection...
+
+> 	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+
+>         	                         Dload  Upload   Total   Spent    Left  Speed
+
+> 	100 13.7M  100 13.7M    0     0   843k      0  0:00:16  0:00:16 --:--:-- 2341k
+
+> 	No checksum for downloaded archive, recording checksum in user configuration.
+
+> 	ruby-2.3.1 - #extracting ruby-2.3.1 to /home/<your username>/.rvm/src/ruby-2.3.1....
+
+> 	ruby-2.3.1 - #configuring..........................................................
+
+> 	ruby-2.3.1 - #post-configuration..
+
+> 	ruby-2.3.1 - #compiling.................................................................................
+
+> 	ruby-2.3.1 - #installing..............
+
+> 	ruby-2.3.1 - #making binaries executable..
+
+> 	Installed rubygems 2.5.1 is newer than 2.4.8 provided with installed ruby, skipping installation, use --force to force installation.
+
+> 	ruby-2.3.1 - #gemset created /home/<your username>/.rvm/gems/ruby-2.3.1@global
+
+> 	ruby-2.3.1 - #importing gemset /home/<your username>/.rvm/gemsets/global.gems...............................................
+
+> 	ruby-2.3.1 - #generating global wrappers........
+
+> 	ruby-2.3.1 - #gemset created /home/<your username>/.rvm/gems/ruby-2.3.1
+
+> 	ruby-2.3.1 - #importing gemsetfile /home/<your username>/.rvm/gemsets/default.gems evaluated to empty gem list
+
+> 	ruby-2.3.1 - #generating default wrappers........
+
+> 	ruby-2.3.1 - #adjusting #shebangs for (gem irb erb ri rdoc testrb rake).
+
+> 	Install of ruby-2.3.1 - #complete 
+
+> 	Ruby was built without documentation, to build it run: rvm docs generate-ri
+
+
+
+(NOTE: On the line that says: Updating systemroot password required for 'zypper --gpg-auto-import-keys refresh': ..-
+
+
+The 7th line down. You may need to enter your password. I say may because I'm not sure, and I'm not sure, because the line 
+breaking got messed up. I entered mine and it didn't echo which means I must've been in a password text input mode/field.
+
+I suspect if you literally just entered your root password seconds ago, it may report it needs the password but execute 
+because it's within the few seconds that the root authentication window is still open)
+
+
+wait for that to finish
+
+
+Next enter:
+
+
+`rvm use 2.3.1 --default`
+
+
+_hit enter_
+
+
+`rvm list`
+
+
+`hit enter`
+
+
+You should see:
+
+
+	> RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+
+> 	you can ignore these warnings with 'rvm rvmrc warning ignore /home/<your username>/huginn/Gemfile'.
+
+> 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+
+> 	
+> 	Unknown ruby interpreter version (do not know how to handle): [2.0.0,RUBY_VERSION].max.
+
+> 	
+> 	rvm rubies
+
+> 	
+> 	=* ruby-2.3.1 [ x86_64 ]
+
+> 	
+> 	# => - current
+
+> 	# =* - current && default
+
+> 	#  * - default
+
+
+
+Next enter:
+
+
+`ruby --version`
+
+
+_hit enter_
+
+
+You should see:
+
+
+	> ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+
+
+This confirms that our Ruby environment is pointed at our local setup for our current user and the particular version of Ruby!
+
+
+
+Coming down to the home stretch!
+
+
+Now enter:
+
+
+`gem install rake bundler`
+
+
+(You should NOT need root for this since it is our own user's Ruby environment not the system-wide one. If you need root password, you likely did something wrong; go back and check the commands.)
+
+
+_hit enter_
+
+
+`gem install mysql2 -v '0.3.20'`
+
+
+_hit enter_
+
+
+`cd ~/`
+
+
+_hit enter_
+
+
+`cd huginn*`
+
+
+_hit enter_
+
+
+`bundle`
+
+
+_hit enter_
+
+
+You should see:
+
+
+> Fetching gem metadata from https://rubygems.org/
+
+> Fetching version metadata from https://rubygems.org/
+
+> Fetching dependency metadata from https://rubygems.org/
+
+> Resolving dependencies.......
+
+> Using rake 10.5.0
+
+> Using ace-rails-ap 2.0.1
+
+> Using i18n 0.7.0
+
+> Using json 1.8.3
+
+> Using minitest 5.8.4
+
+> Using thread_safe 0.3.5
+
+> Using builder 3.2.2
+
+> Using erubis 2.7.0
+
+> Using mini_portile2 2.1.0
+
+> Using pkg-config 1.1.7
+
+> Using rack 1.6.4
+
+> Using mime-types 2.99.1
+
+> Using arel 6.0.3
+
+> Using addressable 2.3.8
+
+> Using extlib 0.9.16
+
+> Using multi_json 1.11.2
+
+> Using jmespath 1.1.3
+
+> Using bcrypt 3.1.10
+
+> Using coderay 1.1.0
+
+> Using debug_inspector 0.0.2
+
+> Using bundler 1.12.5
+
+> Using thor 0.19.1
+
+> Using concurrent-ruby 1.0.1
+
+> Using buftok 0.2.0
+
+> Using byebug 8.2.5
+
+> Using colorize 0.7.7
+
+> Using net-ssh 2.9.2
+
+> Using rspec-support 3.2.2
+
+> Using diff-lcs 1.2.5
+
+> Using chronic 0.10.2
+
+> Using cliver 0.3.2
+
+> Using coffee-script-source 1.10.0
+
+> Using execjs 2.6.0
+
+> Using cookiejar 0.3.2
+
+> Using unf_ext 0.0.7.1
+
+> Using netrc 0.10.3
+
+> Using docile 1.1.5
+
+> Using simplecov-html 0.9.0
+
+> Using tins 1.10.1
+
+> Using safe_yaml 1.0.4
+
+> Using daemons 1.1.9
+
+> Using database_cleaner 1.5.3
+
+> Using orm_adapter 0.5.0
+
+> Using dotenv 2.0.1 from source at `vendor/gems/dotenv-2.0.1`
+
+> Using hashie 2.0.5
+
+> Using oauth 0.4.7
+
+> Using eventmachine 1.0.7
+
+> Using http_parser.rb 0.6.0
+
+> Using equalizer 0.0.11
+
+> Using polyglot 0.3.5
+
+> Using ffi 1.9.10
+
+> Using evernote-thrift 1.25.1
+
+> Using multipart-post 2.0.0
+
+> Using hpricot 0.8.6
+
+> Using simple-rss 1.3.1
+
+> Using sass 3.4.14
+
+> Using formatador 0.2.5
+
+> Using jwt 1.4.1
+
+> Using retriable 2.0.2
+
+> Using uuidtools 2.1.5
+
+> Using rb-fsevent 0.9.7
+
+> Using lumberjack 1.0.10
+
+> Using nenv 0.2.0
+
+> Using shellany 0.0.1
+
+> Using method_source 0.8.2
+
+> Using slop 3.6.0
+
+> Using guard-compat 1.2.1
+
+> Using haversine 0.3.0
+
+> Using multi_xml 0.5.5
+
+> Using mimemagic 0.3.1
+
+> Using kgio 2.9.3
+
+> Using kramdown 1.3.3
+
+> Using libv8 3.16.14.13
+
+> Using liquid 3.0.6
+
+> Using systemu 2.6.4
+
+> Using mini_magick 4.2.3
+
+> Using mqtt 0.3.1
+
+> Using mysql2 0.3.20
+
+> Using naught 1.0.0
+
+> Using net-ftp-list 3.2.8
+
+> Using websocket-extensions 0.1.2
+
+> Using raindrops 0.13.0
+
+> Using ref 2.0.0
+
+> Using rr 1.1.2
+
+> Using tilt 1.4.1
+
+> Using simple_oauth 0.3.1
+
+> Using slack-notifier 1.0.0
+
+> Using string-scrub 0.0.5
+
+> Using vcr 2.9.2
+
+> Using xmpp4r 0.5.6
+
+> Using tzinfo 1.2.2
+
+> Using memoizable 0.4.2
+
+> Using nokogiri 1.6.8
+
+> Using rack-test 0.6.3
+
+> Using warden 1.2.4
+
+> Using rack-livereload 0.3.16
+
+> Using mail 2.6.3
+
+> Using launchy 2.4.2
+
+> Using autoparse 0.3.3
+
+> Using geokit 1.8.5
+
+> Using jsonpath 0.5.7
+
+> Using aws-sdk-core 2.2.15
+
+> Using better_errors 1.1.0
+
+> Using binding_of_caller 0.7.2
+
+> Using huginn_agent 0.4.0
+
+> Using select2-rails 3.5.9.3
+
+> Using sprockets 3.5.2
+
+> Using net-scp 1.2.1
+
+> Using rspec-core 3.2.1
+
+> Using rspec-expectations 3.2.0
+
+> Using rspec-mocks 3.2.1
+
+> Using delorean 2.1.0
+
+> Using coffee-script 2.4.1
+
+> Using uglifier 2.7.2
+
+> Using unf 0.1.4
+
+> Using simplecov 0.9.2
+
+> Using term-ansicolor 1.3.2
+
+> Using crack 0.4.2
+
+> Using dotenv-rails 2.0.1 from source at `vendor/gems/dotenv-2.0.1`
+
+> Using foreman 0.63.0
+
+> Using omniauth 1.2.2
+
+> Using dropbox-api 0.4.2
+
+> Using em-socksify 0.3.0
+
+> Using em-websocket 0.5.1
+
+> Using http 0.6.4
+
+> Using treetop 1.5.3
+
+> Using ethon 0.7.1
+
+> Using rb-inotify 0.9.5
+
+> Using evernote_oauth 0.2.3
+
+> Using faraday 0.9.1
+
+> Using feed-normalizer 1.5.2
+
+> Using font-awesome-sass 4.3.2.1
+
+> Using twilio-ruby 3.11.6
+
+> Using notiffany 0.0.8
+
+> Using pry 0.10.3
+
+> Using httparty 0.13.7
+
+> Using macaddr 1.7.1
+
+> Installing websocket-driver 0.6.3 with native extensions
+
+> Installing unicorn 4.9.0 with native extensions
+
+> Installing therubyracer 0.12.2 with native extensions
+
+> Using twitter-stream 0.1.15 from git://github.com/cantino/twitter-stream.git (at huginn@f7e7edb)
+
+> Installing activesupport 4.2.5.2
+
+> Installing rufus-scheduler 3.0.9
+
+> Installing loofah 2.0.3
+
+> Installing xpath 2.0.0
+
+> Installing letter_opener 1.4.1
+
+> Installing sshkit 1.7.1
+
+> Installing rspec-collection_matchers 1.1.2
+
+> Installing rspec 3.2.0
+
+> Installing domain_name 0.5.24
+
+> Installing webmock 1.17.4
+
+> Installing omniauth-oauth 1.0.1
+
+> Installing em-http-request 1.1.2
+
+> Installing erector 0.10.0
+
+> Installing typhoeus 0.6.9
+
+> Installing listen 3.0.5
+
+> Using faraday_middleware 0.10.0 from git://github.com/lostisland/faraday_middleware.git (at master@c5836ae)
+
+> Installing forecast_io 2.0.0
+
+> Installing signet 0.5.1
+
+> Installing oauth2 0.9.4
+
+> Installing twitter 5.14.0
+
+> Installing pry-byebug 3.3.0
+
+> Installing pry-rails 0.3.4
+
+> Installing hipchat 1.2.0
+
+> Installing httmultiparty 0.3.16
+
+> Installing wunderground 1.2.0
+
+> Installing uuid 2.3.7
+
+> Installing rails-deprecated_sanitizer 1.0.3
+
+> Installing globalid 0.3.6
+
+> Installing activemodel 4.2.5.2
+
+> Installing delayed_job 4.1.1
+
+> Installing shoulda-matchers 3.0.0
+
+> Installing rails-html-sanitizer 1.0.3
+
+> Installing capybara 2.6.2
+
+> Installing capistrano 3.4.0
+
+> Installing rspec-html-matchers 0.7.0
+
+> Installing http-cookie 1.0.2
+
+> Installing omniauth-dropbox 0.2.0
+
+> Installing omniauth-evernote 1.2.1
+
+> Installing omniauth-tumblr 1.1
+
+> Installing omniauth-twitter 1.0.1
+
+> Installing guard 2.13.0
+
+> Using tumblr_client 0.8.5 from git://github.com/tumblr/tumblr_client.git (at master@0c59b04)
+
+> Installing google-api-client 0.7.1
+
+> Installing omniauth-oauth2 1.1.2
+
+> Installing hypdf 1.0.10
+
+> Installing ruby-growl 4.1
+
+> Installing rails-dom-testing 1.0.7
+
+> Installing activejob 4.2.5.2
+
+> Installing activerecord 4.2.5.2
+
+> Installing protected_attributes 1.0.8
+
+> Installing capybara-select2 1.0.1
+
+> Installing poltergeist 1.8.1
+
+> Installing capistrano-bundler 1.1.4
+
+> Installing rest-client 1.8.0
+
+> Installing guard-livereload 2.5.1
+
+> Installing guard-rspec 4.6.4
+
+> Installing omniauth-37signals 1.0.5
+
+> Using omniauth-wunderlist 0.0.1 from git://github.com/wunderlist/omniauth-wunderlist.git (at d0910d0@d0910d0)
+
+> Installing actionview 4.2.5.2
+
+> Using delayed_job_active_record 4.1.0 from git://github.com/collectiveidea/delayed_job_active_record.git (at 
+> master@61e688e)
+
+> Installing capistrano-rails 1.1.3
+
+> Installing coveralls 0.7.12
+
+> Installing rturk 2.12.1
+
+> Using weibo_2 0.1.7 from git://github.com/cantino/weibo_2.git (at master@00e57d2)
+
+> Installing actionpack 4.2.5.2
+
+> Installing actionmailer 4.2.5.2
+
+> Installing kaminari 0.16.1
+
+> Installing railties 4.2.5.2
+
+> Installing sprockets-rails 3.0.3
+
+> Installing coffee-rails 4.1.1
+
+> Installing responders 2.1.1
+
+> Installing jquery-rails 3.1.3
+
+> Installing letter_opener_web 1.3.0
+
+> Installing quiet_assets 1.1.0
+
+> Installing rspec-rails 3.2.1
+
+> Installing spectrum-rails 1.3.4
+
+> Installing rails 4.2.5.2
+
+> Installing sass-rails 5.0.3
+
+> Installing devise 3.5.4
+
+> Installing bootstrap-kaminari-views 0.0.5
+
+> Installing geokit-rails 2.0.1
+
+> Bundle complete! 104 Gemfile dependencies, 222 gems now installed.
+
+> Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+> Post-install message from rufus-scheduler:
+
+
+> ***
+
+
+> Thanks for installing rufus-scheduler 3.0.9
+
+
+> It might not be 100% compatible with rufus-scheduler 2.x.
+
+
+> If you encounter issues with this new rufus-scheduler, especially
+
+> if your app worked fine with previous versions of it, you can
+
+
+> A) Forget it and peg your Gemfile to rufus-scheduler 2.0.24
+
+
+> and / or
+
+
+> B) Take some time to carefully report the issue at
+
+>    https://github.com/jmettraux/rufus-scheduler/issues
+
+
+> For general help about rufus-scheduler, ask via:
+
+> http://stackoverflow.com/questions/ask?tags=rufus-scheduler+ruby
+
+
+> Cheers.
+
+
+> ***
+
+>     Post-install message from capistrano:
+
+> Capistrano 3.1 has some breaking changes. Please check the CHANGELOG: http://goo.gl/SxB0lr
+
+
+> If you're upgrading Capistrano from 2.x, we recommend to read the upgrade guide: http://goo.gl/4536kB
+
+
+> The `deploy:restart` hook for passenger applications is now in a separate gem called capistrano-passenger.  Just add it to your Gemfile and require it in your Capfile.
+
+
+(this will take a WHILE. Get a cup of coffee, put the TV on, relax a little; take a breather --you've earned it! Yeah -THAT- long :P )
+
+
+
+Wait for it to finish then enter:
+
+
+`cp .env.example .env`
+
+
+_hit enter_
+
+
+`rake secret`
+
+
+_hit enter_
+
+
+Select the string of hexadecimals and copy it to your clipboard
+
+
+Now enter
+
+
+`leafpad .env`
+
+
+_hit enter_
+
+
+locate the line that says APP_SECRET_TOKEN=REPLACE_ME_NOW!
+
+highlight the text REPLACE_ME_NOW! and overwrite it with the string of hexadecimals you copied to your clipboard
+
+also locate the line that say "DATABASE_PASSWORD" under the Database Setup section and add the database's root account 
+password between the quotes
+
+
+Next locate the line that says "DATABASE_SOCKET=/tmp/mysql.sock" (also under the "Database Setup" section) and
+
+either replace the part that says: /tmp/mysql.sock
+
+	with: /var/run/mysql/mysql.sock
+
+	or duplicate the line, comment out the original (by putting a # at the begining of the original line) and modify the duplicated line to the requested changes
+
+
+Next locate the line that says "#DATABASE_ENCODING=utf8mb4" and remove the # at the begining of the line
+
+
+Save the file and close leafpad
+
+
+(Note: Get familiar with this .env file, you will likely be making many changes and tweaks as you continue to use Huginn and your needs change or develop)
+
+
+Go back to the terminal window you were just working in
+
+
+Now enter:
+
+
+`gnomesu leafpad /etc/my.cnf`
+
+
+(Enter your root password in the popup and <hit enter>)
+
+
+Locate the line that starts with "# socket     =" and delete the # at the very beginning of the line.
+
+
+Save the file and close leafpad
+
+
+Go back to the terminal window you were just working in and enter:
+
+
+sudo service mysql restart
+
+
+(If prompted, enter your root password and <hit enter>)
+
+
+`bundle exec rake db:create`
+
+
+_hit enter_
+
+
+##Provide the MySQL (MariaDB) database root password
+
+
+_hit enter_
+
+
+`bundle exec rake db:migrate`
+
+
+_hit enter_
+
+
+`bundle exec rake db:seed`
+
+
+_hit enter_
+
+
+*drum roll...*
+
+
+now to actually cause it to run enter:
+
+
+`bundle exec foreman start`
+
+
+_hit enter_
+
+
+Open a web browser and type in http://localhost:3000
+
+log in with the username of admin and the password of password
+
+
+
+Hopefully that completes your install. I don't know about you but I'm exhausted.
