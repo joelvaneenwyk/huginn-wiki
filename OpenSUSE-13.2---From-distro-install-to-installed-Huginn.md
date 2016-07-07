@@ -1140,65 +1140,35 @@ _hit enter_
 You should see something to the effect of:
 
 	> Searching for binary rubies, this might take some time.
-
 > 	No binary rubies available for: opensuse/13.2/x86_64/ruby-2.3.1.
-
 > 	Continuing with compilation. Please read 'rvm help mount' to get more information on binary rubies.
-
 > 	Checking requirements for opensuse.
-
 > 	Installing requirements for opensuse.
-
 > 	Updating systemroot password required for 'zypper --gpg-auto-import-keys refresh': ..-
-
 > 	..
-
 > 	Installing required packages: patch, automake, bison, libtool, m4, make, patch, gdbm-devel, glibc-devel, libffi-devel, libopenssl-devel, readline-devel, zlib-devel, libdb-4_5, sqlite3-devel, gcc, gcc-c++, libyaml-devel...............
-
 > 	Requirements installation successful.
-
 > 	Installing Ruby from source to: /home/<your username>/.rvm/rubies/ruby-2.3.1, this may take a while depending on your cpu(s)...
-
 > 	ruby-2.3.1 - #downloading ruby-2.3.1, this may take a while depending on your connection...
-
 > 	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-
 >         	                         Dload  Upload   Total   Spent    Left  Speed
-
 > 	100 13.7M  100 13.7M    0     0   843k      0  0:00:16  0:00:16 --:--:-- 2341k
-
 > 	No checksum for downloaded archive, recording checksum in user configuration.
-
 > 	ruby-2.3.1 - #extracting ruby-2.3.1 to /home/<your username>/.rvm/src/ruby-2.3.1....
-
 > 	ruby-2.3.1 - #configuring..........................................................
-
 > 	ruby-2.3.1 - #post-configuration..
-
 > 	ruby-2.3.1 - #compiling.................................................................................
-
 > 	ruby-2.3.1 - #installing..............
-
 > 	ruby-2.3.1 - #making binaries executable..
-
 > 	Installed rubygems 2.5.1 is newer than 2.4.8 provided with installed ruby, skipping installation, use --force to force installation.
-
 > 	ruby-2.3.1 - #gemset created /home/<your username>/.rvm/gems/ruby-2.3.1@global
-
 > 	ruby-2.3.1 - #importing gemset /home/<your username>/.rvm/gemsets/global.gems...............................................
-
 > 	ruby-2.3.1 - #generating global wrappers........
-
 > 	ruby-2.3.1 - #gemset created /home/<your username>/.rvm/gems/ruby-2.3.1
-
 > 	ruby-2.3.1 - #importing gemsetfile /home/<your username>/.rvm/gemsets/default.gems evaluated to empty gem list
-
 > 	ruby-2.3.1 - #generating default wrappers........
-
 > 	ruby-2.3.1 - #adjusting #shebangs for (gem irb erb ri rdoc testrb rake).
-
 > 	Install of ruby-2.3.1 - #complete 
-
 > 	Ruby was built without documentation, to build it run: rvm docs generate-ri
 
 
