@@ -1,7 +1,7 @@
 I've detailed this out from the very start of the installation (minus most of the installation options except the ones that I think might matter; I did this because I don't want to potentially run into the issue of someone saying they are missing a dependency because the list I gave was based on stuff I had installed and they had not. Certain "creature comforts" were installed by me to ease the burden of an already, imho, an extremely taxing install. But fear not, that's what this guide is for :)
 
 
-Couple of other notes:
+A few notes:
 
 
 1) The guide is by no stretch of the imagination refined to exactly JUST the steps you need, afterall I start from the very beginning of the distro's install and start choosing window managers and as such will see LibreOffice packages installed. Obviously that is DEFINITELY not needed for the installing/deploying of Huginn :) This means the dependency list is bigger than it should be. This is an area for refinement.
