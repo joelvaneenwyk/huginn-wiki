@@ -1915,7 +1915,7 @@ Go back to the terminal window you were just working in and enter:
 _hit enter_
 
 
-##Provide the MySQL (MariaDB) database root password
+Provide the MySQL (MariaDB) database root password
 
 
 _hit enter_
