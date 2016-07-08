@@ -15,7 +15,7 @@ Anyhow, without further adieu... Let's begin.
 **A(/some) note(s) about option(s) used during installation:**
 * Add Online Repositories Before Installation - Checked
 
-In the future there will(/may?) be separate sections for the different window manager choices (____if that section continue to stay____)
+In the future there will(/may?) be separate sections for the different window manager choices (if that section continue to stay)
 
 ## Enlightenment Window Manager
 ### Install packages to make GDM work so Enlightenment can be used
