@@ -1,4 +1,4 @@
-I've detailed this out from the very start of the installation (minus most of the installation options except the ones that I think might matter; I did this because I don't want to potentially run into the issue of someone saying they are missing a dependency because the list I gave was based on stuff I had installed and they had not. Certain "creature comforts" were installed by me to ease the burden of an already, imho, an extremely taxing install. But fear not, that's what this guide is for :)
+I've detailed this out from the very start of the installation (minus most of the installation options -- except the ones that I think might matter); I did this because I don't want to potentially run into the issue of someone saying they are missing a dependency because the list I gave was based on stuff I had installed and they had not. Certain "creature comforts" were installed by me to ease the burden of an already, imho, an extremely taxing install. But fear not, that's what this guide is for :)
 
 
 A few notes:
@@ -8,7 +8,7 @@ A few notes:
 (sorry... I'm just not dealing with a seriously ugly desktop while I do this :) Maybe I'll clone it again and run through it via a full blown terminal screen quickly for non-gui stuff; the default desktop REALLY IS that gross looking!)
 
 
-2) The narrative of this guide is very informal. The guide is long enough. Until it gets refined down to a very short-order process I've chosen to keep it light and easy to read. That mentioned, I tried to keep the description of the steps as EXACT as possible so it may over time be tiring to read. This is a delicate balance and again, I'm expecting the community to kind've take up the reigns and help on refining this bear.
+2) The narrative of this guide is very informal. The guide is long enough. Until it gets refined down to a very short-order process I've chosen to keep it light and easy to read. That mentioned, I tried to keep the description of the steps as EXACT as possible since it may over time be tiring to read. This is a delicate balance and again, I'm expecting the community to kind've take up the reigns and help on refining this bear.
 
 
 3) There are areas where the steps in this guide can be locked down tighter. One (at least) area to look into is the using of the root password when installing MySQL (MariaDB). While the root password would be needed for system file access (setting up init scripts, installing libraries, etc.), running it as root -- not only seems like a terrible idea -- may not be necessary especially since MySQL is outside of the "well-known" port range. 
