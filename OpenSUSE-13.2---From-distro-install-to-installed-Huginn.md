@@ -304,7 +304,7 @@ _click that_
 
 In the newly created terminal screen enter:
 
-_sudo zypper install git_
+`sudo zypper install git`
 
 (if prompted, type in your root password and hit enter)
 
@@ -404,19 +404,19 @@ _hit enter again_ to confirm
 Enter the following
 
 
-> cd ~/
+`cd ~/`
 
 
 _hit enter_
 
 
-> git clone git://github.com/cantino/huginn.git
+`git clone git://github.com/cantino/huginn.git`
 
 
 _hit enter_
 
 
-> cd ..
+`cd ..`
 
 
 _hit enter_
@@ -439,7 +439,7 @@ questions such as:
 Now enter the following:
 
 
-> sudo zypper install mysql
+`sudo zypper install mysql`
 
 (if prompted, type in your root password and hit enter)
 
