@@ -448,155 +448,155 @@ _hit enter_
 
 You should now see something along the lines of:
 
-`Retrieving repository 'openSUSE-13.2-Update' metadata `
-`..........................................................................................................................`
-`...................................[done]`
+> Retrieving repository 'openSUSE-13.2-Update' metadata 
+> ..........................................................................................................................
+> ...................................[done]
 
-`Building repository 'openSUSE-13.2-Update' cache `
-`..........................................................................................................................`
-`........................................[done]`
+> Building repository 'openSUSE-13.2-Update' cache 
+> ..........................................................................................................................
+> ........................................[done]
 
-`Loading repository data...`
+> Loading repository data...
 
-`Reading installed packages...`
+> Reading installed packages...
 
-`'mysql' not found in package names. Trying capabilities.`
+> 'mysql' not found in package names. Trying capabilities.
 
-`Resolving package dependencies...`
+> Resolving package dependencies...
 
-	
-`The following 9 NEW packages are going to be installed:`
+> 	
+> The following 9 NEW packages are going to be installed:
 
-`libjemalloc1 libmysqlclient18 libmysqlclient_r18 libmysqlcppconn6 libreadline5 libreoffice-base-drivers-mysql mariadb mariadb-client mariadb-errormessages `
+> libjemalloc1 libmysqlclient18 libmysqlclient_r18 libmysqlcppconn6 libreadline5 libreoffice-base-drivers-mysql mariadb mariadb-client mariadb-errormessages 
 
 
-`9 new packages to install.`
+> 9 new packages to install.
 
-`Overall download size: 11.2 MiB. Already cached: 0 B  After the operation, additional 107.0 MiB will be used.`
+> Overall download size: 11.2 MiB. Already cached: 0 B  After the operation, additional 107.0 MiB will be used.
 
-`Continue? [y/n/? shows all options] (y):`
+> Continue? [y/n/? shows all options] (y):
 
 
 _hit enter_
 
 
-You may eventually see something like this:
+> You may eventually see something like this:
 
 
-`Retrieving package libjemalloc1-3.6.0-2.1.2.x86_64                                 (1/9), 105.4 KiB (266.8 KiB unpacked)`
+> Retrieving package libjemalloc1-3.6.0-2.1.2.x86_64                                 (1/9), 105.4 KiB (266.8 KiB unpacked)
 
-`Retrieving: libjemalloc1-3.6.0-2.1.2.x86_64.rpm ...................................................................................................................................................................[done]`
+> Retrieving: libjemalloc1-3.6.0-2.1.2.x86_64.rpm ...................................................................................................................................................................[done]
 
-`Retrieving package libmysqlcppconn6-1.1.2-6.2.2.x86_64                             (2/9), 165.0 KiB (668.6 KiB unpacked)`
+> Retrieving package libmysqlcppconn6-1.1.2-6.2.2.x86_64                             (2/9), 165.0 KiB (668.6 KiB unpacked)
 
-`Retrieving: libmysqlcppconn6-1.1.2-6.2.2.x86_64.rpm ...............................................................................................................................................................[done]`
+> Retrieving: libmysqlcppconn6-1.1.2-6.2.2.x86_64.rpm ...............................................................................................................................................................[done]
 
-`Retrieving package libreadline5-5.2-133.1.2.x86_64                                 (3/9),  96.6 KiB (295.8 KiB unpacked)`
+> Retrieving package libreadline5-5.2-133.1.2.x86_64                                 (3/9),  96.6 KiB (295.8 KiB unpacked)
 
-`Retrieving: libreadline5-5.2-133.1.2.x86_64.rpm ...................................................................................................................................................................[done]`
+> Retrieving: libreadline5-5.2-133.1.2.x86_64.rpm ...................................................................................................................................................................[done]
 
-`Retrieving package libmysqlclient18-10.0.25-2.24.1.x86_64                          (4/9), 557.1 KiB (  3.3 MiB unpacked)`
+> Retrieving package libmysqlclient18-10.0.25-2.24.1.x86_64                          (4/9), 557.1 KiB (  3.3 MiB unpacked)
 
-`Retrieving: libmysqlclient18-10.0.25-2.24.1.x86_64.rpm ............................................................................................................................................................[done]`
+> Retrieving: libmysqlclient18-10.0.25-2.24.1.x86_64.rpm ............................................................................................................................................................[done]
 
-`Retrieving package mariadb-errormessages-10.0.25-2.24.1.x86_64                     (5/9), 184.5 KiB (  1.9 MiB unpacked)`
+> Retrieving package mariadb-errormessages-10.0.25-2.24.1.x86_64                     (5/9), 184.5 KiB (  1.9 MiB unpacked)
 
-`Retrieving: mariadb-errormessages-10.0.25-2.24.1.x86_64.rpm .......................................................................................................................................................[done]`
+> Retrieving: mariadb-errormessages-10.0.25-2.24.1.x86_64.rpm .......................................................................................................................................................[done]
 
-`Retrieving package libmysqlclient_r18-10.0.25-2.24.1.x86_64                        (6/9),  31.7 KiB (    0 B unpacked)`
+> Retrieving package libmysqlclient_r18-10.0.25-2.24.1.x86_64                        (6/9),  31.7 KiB (    0 B unpacked)
 
-`Retrieving: libmysqlclient_r18-10.0.25-2.24.1.x86_64.rpm ..........................................................................................................................................................[done]`
+> Retrieving: libmysqlclient_r18-10.0.25-2.24.1.x86_64.rpm ..........................................................................................................................................................[done]
 
-`Retrieving package mariadb-client-10.0.25-2.24.1.x86_64                            (7/9), 874.2 KiB ( 19.9 MiB unpacked)`
+> Retrieving package mariadb-client-10.0.25-2.24.1.x86_64                            (7/9), 874.2 KiB ( 19.9 MiB unpacked)
 
-`Retrieving: mariadb-client-10.0.25-2.24.1.x86_64.rpm ..............................................................................................................................................................[done]`
+> Retrieving: mariadb-client-10.0.25-2.24.1.x86_64.rpm ..............................................................................................................................................................[done]
 
-`Retrieving package libreoffice-base-drivers-mysql-5.0.6.3-31.3.x86_64              (8/9), 388.5 KiB (857.5 KiB unpacked)`
+> Retrieving package libreoffice-base-drivers-mysql-5.0.6.3-31.3.x86_64              (8/9), 388.5 KiB (857.5 KiB unpacked)
 
-`Retrieving: libreoffice-base-drivers-mysql-5.0.6.3-31.3.x86_64.rpm ................................................................................................................................................[done]`
+> Retrieving: libreoffice-base-drivers-mysql-5.0.6.3-31.3.x86_64.rpm ................................................................................................................................................[done]
 
-`Retrieving package mariadb-10.0.25-2.24.1.x86_64                                   (9/9),   8.8 MiB ( 79.8 MiB unpacked)`
+> Retrieving package mariadb-10.0.25-2.24.1.x86_64                                   (9/9),   8.8 MiB ( 79.8 MiB unpacked)
 
-`Retrieving: mariadb-10.0.25-2.24.1.x86_64.rpm .........................................................................................................................................................[done (2.3 MiB/s)]`
+> Retrieving: mariadb-10.0.25-2.24.1.x86_64.rpm .........................................................................................................................................................[done (2.3 MiB/s)]
 
-`Checking for file conflicts: ......................................................................................................................................................................................[done]`
+> Checking for file conflicts: ......................................................................................................................................................................................[done]
 
-`(1/9) Installing: libjemalloc1-3.6.0-2.1.2 ........................................................................................................................................................................[done]`
+> (1/9) Installing: libjemalloc1-3.6.0-2.1.2 ........................................................................................................................................................................[done]
 
-`(2/9) Installing: libmysqlcppconn6-1.1.2-6.2.2 ....................................................................................................................................................................[done]`
+> (2/9) Installing: libmysqlcppconn6-1.1.2-6.2.2 ....................................................................................................................................................................[done]
 
-`(3/9) Installing: libreadline5-5.2-133.1.2 ........................................................................................................................................................................[done]`
+> (3/9) Installing: libreadline5-5.2-133.1.2 ........................................................................................................................................................................[done]
 
-`(4/9) Installing: libmysqlclient18-10.0.25-2.24.1 .................................................................................................................................................................[done]`
+> (4/9) Installing: libmysqlclient18-10.0.25-2.24.1 .................................................................................................................................................................[done]
 
-`(5/9) Installing: mariadb-errormessages-10.0.25-2.24.1 ............................................................................................................................................................[done]`
+> (5/9) Installing: mariadb-errormessages-10.0.25-2.24.1 ............................................................................................................................................................[done]
 
-`(6/9) Installing: libmysqlclient_r18-10.0.25-2.24.1 ...............................................................................................................................................................[done]`
+> (6/9) Installing: libmysqlclient_r18-10.0.25-2.24.1 ...............................................................................................................................................................[done]
 
-`(7/9) Installing: mariadb-client-10.0.25-2.24.1 ...................................................................................................................................................................[done]`
+> (7/9) Installing: mariadb-client-10.0.25-2.24.1 ...................................................................................................................................................................[done]
 
-`Additional rpm output:`
+> Additional rpm output:
 
-`usermod: no changes`
-
-
-`(8/9) Installing: libreoffice-base-drivers-mysql-5.0.6.3-31.3 .....................................................................................................................................................[done]`
-
-`(9/9) Installing: mariadb-10.0.25-2.24.1 ..........................................................................................................................................................................[done]`
-
-`Additional rpm output:`
-
-`usermod: no changes`
+> usermod: no changes
 
 
-`Update notifications were received from the following packages:`
+> (8/9) Installing: libreoffice-base-drivers-mysql-5.0.6.3-31.3 .....................................................................................................................................................[done]
 
-`mariadb-10.0.25-2.24.1.x86_64 (/var/adm/update-messages/mariadb-10.0.25-2.24.1)`
+> (9/9) Installing: mariadb-10.0.25-2.24.1 ..........................................................................................................................................................................[done]
 
-`View the notifications now? [y/n] (n):`
+> Additional rpm output:
+
+> usermod: no changes
+
+
+> Update notifications were received from the following packages:
+
+> mariadb-10.0.25-2.24.1.x86_64 (/var/adm/update-messages/mariadb-10.0.25-2.24.1)
+
+> View the notifications now? [y/n] (n):
 
 
 You can type the letter y and <hit enter> if you like. If you do, you'll likely see something like this:
 (Use arrows or pgUp/pgDown keys to scroll the text by lines or pages.)
 	
-`Message from package mariadb:`
-	
-	
-`You just installed MySQL server for the first time.`
+> Message from package mariadb:
+> 	
+> 	
+> You just installed MySQL server for the first time.
 
-	
-`You can start it using:`
+> 	
+> You can start it using:
 
-`rcmysql start`
+> rcmysql start
 
-	
-`During first start empty database will be created for your automatically.`
+> 	
+> During first start empty database will be created for your automatically.
 
-	
-`PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !`
+> 	
+> PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
 
-`To do so, start the server, then issue the following commands:`
+> To do so, start the server, then issue the following commands:
 
-	
-`'/usr/bin/mysqladmin' -u root password 'new-password'`
+> 	
+> '/usr/bin/mysqladmin' -u root password 'new-password'
 
-`'/usr/bin/mysqladmin' -u root -h <hostname> password 'new-password'`
+> '/usr/bin/mysqladmin' -u root -h <hostname> password 'new-password'
 
-	
-`Alternatively you can run:`
+> 	
+> Alternatively you can run:
 
-`'/usr/bin/mysql_secure_installation'`
+> '/usr/bin/mysql_secure_installation'
 
-	
-`which will also give you the option of removing the test`
+> 	
+> which will also give you the option of removing the test
 
-`databases and anonymous user created by default. This is`
+> databases and anonymous user created by default. This is
 
-`strongly recommended for production servers.`
+> strongly recommended for production servers.
 
-	
-	
-`-----------------------------------------------------------------------------`
+> 	
+> 	
+> -----------------------------------------------------------------------------`
 
 
 ###Start the newly installed MySQL (MariaDB) service
