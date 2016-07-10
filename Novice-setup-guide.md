@@ -5,9 +5,7 @@ Written by a Ruby novice for those who are clueless during set up as well.  Thes
 Note: It's *much* easier to get the project setup and going on Linux than Windows. If you're on Windows, grab a [Linux VM ](http://www.osboxes.org/) for [VMWare Player](https://www.vmware.com/products/player) or [Virtual Box](https://www.virtualbox.org/) and follow the instructions below.
 If you're on a Mac, view revised guide [here](https://github.com/cantino/huginn/wiki/Novice-Setup-Guide-for-Mac).
 
-OpenSUSE 13.2 install guide (from distro install to logging into huginn from web browser) here:
-[https://github.com/cantino/huginn/wiki/OpenSUSE-13.2---From-distro-install-to-installed-Huginn](https://github.com/cantino/huginn/wiki/OpenSUSE-13.2---From-distro-install-to-installed-Huginn)
-(caution: it is VERY verbose and thus very long)
+There is also a (very verbose) [OpenSUSE 13.2 install guide](https://github.com/cantino/huginn/wiki/OpenSUSE-13.2---From-distro-install-to-installed-Huginn).
 
 ## Step 1 - Clone the repository
 Since you are on GitHub, you have probably done this step a thousand times before.
