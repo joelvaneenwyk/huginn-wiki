@@ -281,10 +281,7 @@ _Select the graphical checkboxes_ according to your system specifications/prefer
 _click the "Next" button_
 
 
-Next,
-
-
-ensure the "Enable Taskbar" option is checked
+Next, ensure the "Enable Taskbar" option is checked
 
 
 _click the "Next" button_
