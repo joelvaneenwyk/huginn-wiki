@@ -621,7 +621,7 @@ _hit enter_
 You'll see something like this:
 
 
-	> NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+>	 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
 
 > 	      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
 
@@ -644,15 +644,15 @@ _hit enter_
 You'll see:
 
 
-	OK, successfully used password, moving on...
+> 	OK, successfully used password, moving on...
 
-	
-	Setting the root password ensures that nobody can log into the MariaDB
+> 	
+> 	Setting the root password ensures that nobody can log into the MariaDB
 
-	root user without the proper authorisation.
+> 	root user without the proper authorisation.
 
-	
-	Set root password? [Y/n]
+> 	
+> 	Set root password? [Y/n]
 
 
 _Type the letter y_
