@@ -1221,6 +1221,12 @@ wait for that to finish
 Next enter:
 
 
+`/bin/bash --login`
+
+
+_hit enter_
+
+
 `rvm use 2.3.1 --default`
 
 
