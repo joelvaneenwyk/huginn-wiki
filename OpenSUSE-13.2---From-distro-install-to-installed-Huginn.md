@@ -1960,3 +1960,221 @@ log in with the username of admin and the password of password
 
 
 Hopefully that completes your install. I don't know about you but I'm exhausted.
+
+
+***
+
+
+As an added bonus (perhaps this should be added to its own wiki, but for now I don't think there's really enough here to necessitate an entire wiki page -- if/when it does I'll move it out; unless someone thinks it should already?)
+
+
+Some generic troubleshooting with huginn
+
+
+Scenario: You power on your huginn server/workstation/vm from cold and you use ruby --version and you get something that states you're using ruby version 2.1.3 (NOT 2.3.1)
+
+Fix: This is a pretty simply fix. in your terminal window enter the following:
+
+
+`/bin/bash --login`
+
+
+_hit enter_
+
+
+`rvm --use 2.3.1 --default`
+
+
+_hit enter_
+
+
+`ruby --version`
+
+
+_hit enter_
+
+
+It should report you now using 2.3.1
+
+
+Scenario: You are all set to run huginn but when you run it you get a callback trace error -- something along the lines of this:
+
+
+Short snippet:
+
+
+> 20:25:33 web.1  | [2016-07-12 17:25:33] INFO  ruby 2.3.1 (2016-04-26) [x86_64-linux]
+
+> 20:25:33 web.1  | [2016-07-12 17:25:33] INFO  WEBrick::HTTPServer#start: pid=7027 port=3000
+
+> 20:25:33 jobs.1 | /home/<your_username>/huginn/app/models/agents/twitter_stream_agent.rb:135:in `map': undefined method `strip' for {"filter1"=>["passwords", "leaked"]}:ActiveSupport::HashWithIndifferentAccess (NoMethodError)
+
+> 20:25:33 jobs.1 |       from /home/<your_username>/huginn/app/models/agents/twitter_stream_agent.rb:135:in `block in setup_worker'
+
+> 20:25:33 jobs.1 |       from /home/<your_username>/huginn/app/models/agents/twitter_stream_agent.rb:128:in `each'
+
+> 20:25:33 jobs.1 |       from /home/<your_username>/huginn/app/models/agents/twitter_stream_agent.rb:128:in `map'
+
+> 20:25:33 jobs.1 |       from /home/<your_username>/huginn/app/models/agents/twitter_stream_agent.rb:128:in `setup_worker'
+
+> 20:25:33 jobs.1 |       from /home/<your_username>/huginn/lib/agent_runner.rb:94:in `block (2 levels) in load_workers'
+
+> 20:25:33 jobs.1 |       from /home/<your_username>/huginn/lib/agent_runner.rb:62:in `block in with_connection'
+
+
+leaving you back at the bash prompt.
+
+Investigation: First, don't panic! 
+
+Scroll up to where you typed in the command to start huginn (bundle exec foreman start) and look just after that line. Somewhere (don't know how many lines down from it) you may see some kind of error. You should see something that definitely, when read into indicates some sort of problem. In this case, I've had this happen to me just fiddling around with specifying a Twitter agent filter. Obviously, my filter is messed up and it looks like the parsing of the filter is crashing huginn (bug?) and you wouldn't be expected to figure that out, but this line:
+
+
+> home/<your_username>/huginn/app/models/agents/twitter_stream_agent.rb:135:in `map': undefined method `strip' for {"filter1"=>["passwords", "leaked"]}:ActiveSupport::HashWithIndifferentAccess (NoMethodError)
+
+
+should definitely clue you in that something is seriously wrong with the password filter. Look again at the line, you also see the error is occurring in twitter_stream_agent. It's a likely bet you have a Twitter Stream Agent that is using the mentioned filter. No it's not a problem with the code (though perhaps the code should skip agents that have bad filters?). It's having a hard time dealing with what is likely an agent you created that has a malformed filter. So what? How do we deal with this? Well, the way I dealt with it, and it may not be suitable for you is to wipe out that particular agent. (REAL glad I decided to use separate Twitter Stream Agents for different sets of content searches -- otherwise one bad line would force me to wipe out the whole thing).
+
+
+Solution 1) Wipe out that particular agent from your MySQL (MariaDB) table. Let's do this now.
+
+
+While it may be easier and MUCH more tempting to use the MySQL Workbench or other utility; I'm going to force you to use the command line by not walking through a GUI-based DB manager. Yes it's more painful, but there's no substitution for learning at least the basic SQL commands. Not only is knowing SQL useful and a great skill to improve upon, it's also an incredible valuable skillset! Again, this is only the bare basics.
+
+
+Drop to a terminal window if you're not already there.
+
+
+Make sure MySQL is already started, you can do this by entering the following:
+
+
+`ps aux | grep mysql`
+
+
+_hit enter_
+
+
+If it's already running, you should see something like (not EXACTLY, but LIKE) this:
+
+
+> mysql     1913  0.0  5.7 705732 118752 ?       Ssl  20:02   0:02 /usr/sbin/mysqld --defaults-file=/etc/my.cnf --user=mysql
+
+
+If you see this, continue on. If not, enter the following:
+
+`sudo service mysql start`
+
+_hit enter_
+
+(if prompted, enter your root password and hit enter)
+
+
+
+now type:
+
+`sudo mysql --socket=/var/run/mysql/mysql.sock -u root -p`
+
+_hit enter_
+
+_type in the database's root password_
+
+_hit enter_
+
+
+
+Now, at the MySQL shell
+
+
+If you don't remember the names of your agents, you can enter:
+
+`SELECT * FROM <_database_table_> WHERE type=<_agent type_>;`
+
+
+So, FOR ME, the entire line was:
+
+`SELECT * FROM huginn_development WHERE type="Agents::TwitterStreamAgent";`
+
+
+From what I've seen it looks as though all types start with "Agents::"
+
+
+
+Next enter:
+
+`SELECT * FROM <_database_table_> WHERE name=<_name_of_the_bad_agent_>;`
+
+_hit enter_
+
+
+You're telling the databasing engine (MySQL/MariaDB) to present you a handle to all (the * in the SELECT statement) records in the particular database table where the name field is equal to what you tell it.
+
+
+replace <database_table> with the table the agent is sitting in; for me it was huginn_development.agents
+
+
+replace <name_of_the_bad_agent> with the name of the agent that is causing the crash. For me I saw the filter listed in the crash when huginn started and saw it stated password and leak. This is part of my Twitter Stream Agent - password.
+
+
+So, to recap, FOR ME the entire command was:
+
+`SELECT * FROM huginn_development.agents WHERE name="Twitter Stream Agent - password";`
+
+
+You should see it say something like:
+
+
+> 1 row in set (0.00 sec)
+
+
+Next enter (type **VERY** carefully the next line and double check the entry!):
+
+
+`DELETE FROM <database_table> WHERE name=<name_of_the_bad_agent>;`
+
+
+_hit enter_
+
+
+You should see something like:
+
+
+> Query OK, 1 row affected (<some time here...>)
+
+
+So, FOR ME, it would've been:
+
+`DELETE FROM huginn_development.agents WHERE name="Twitter Stream Agent - password";`
+
+
+
+Next, you want to flush the changes so the modifications get made to the table
+
+Do this by entering the following:
+
+
+`FLUSH TABLES <_database_table_>;`
+
+
+_hit enter_
+
+
+If nothing has the database open, you should see:
+
+
+> Query OK, 0 rows affected (0.00 sec)
+
+
+now enter:
+
+
+`quit`
+
+
+_hit enter_
+
+
+
+Solution 2) Surgically replace or null out the filter field. (Coming soon? -- Trying not to burn myself out)
+
+
+
+Next try restarting huginn and it should start.
