@@ -42,7 +42,7 @@ After your restarted your Huginn instance you should be able to authenticate wit
 
 ## Wunderlist
 
-If you do not have a Wunderlist Application yet, visit https://developer.wunderlist.com/applications and click 'Create new Application'.
+If you do not have a Wunderlist Application yet, visit https://developer.wunderlist.com/ and click 'Register Your App'.
 
 You need to choose a name for your application and an App URL (can be your huginn instance or anything else).
 
