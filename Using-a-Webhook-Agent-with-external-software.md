@@ -8,6 +8,7 @@ A few things to remember about the Webhook Agent:
 * Every instance of Webhook Agent has a configuration field called _secret_, which is basically an API key to authenticate whatever contacts it from the outside.  This really should be different for every Webhook Agent to minimize potential impact of it being compromised, and should be treated like a password.  (See also <a href="https://github.com/cantino/huginn/issues/1070">ticket #1070</a>.)
 * If you have a web server in front of Huginn acting as a reverse proxy and implementing HTTP auth, **and** your Webhook Agent needs to be accessible from the public Net, you'll have to set up an HTTP auth account which can be used to log in from outside (see also <a href="https://github.com/cantino/huginn/issues/815">ticket #815</a>).  Then your URLs will look like this: **[https://webhookuser:webhookpassword@huginn.example.com/users/1/web_requests/948/neverGonnaLetYouDown](https://webhookuser:webhookpassword@huginn.example.com/users/1/web_requests/948/neverGonnaLetYouDown)**
 * You can also write code which runs on the same host as Huginn and not have to worry about HTTP auth: **http://localhost:3000/users/1/web_requests/948/neverGonnaRunAroundAndDesertYou**
+* More information and implementation details about Webhooks can be found [here](https://github.com/cantino/huginn/blob/133af9c69696b4b8863a3bc1d51c6b131202d9dc/app/controllers/web_requests_controller.rb).
 
 Webhook Agent currently supports the following HTTP methods:
 * POST (the default)
