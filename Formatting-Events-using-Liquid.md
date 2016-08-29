@@ -137,13 +137,11 @@ Now we generate a nice HTML formatted message using Liquid. This is the HipchatA
 
 ### More Examples
 
-Removing newlines from a string: `{{foo | strip_newlines}}`
+* Removing newlines from a string: `{{foo | strip_newlines}}`
+* Handling dates in Liquid: Dates are stored as the number of seconds since the epoch (1st Jan 1970) and can be handled as an integer using Filters. For example, an integer variable dateVar which stores the date in milliseconds can be output as a formatted date string by first dividing by 1000, and then using Liquid's date formatting Filter as follows:
 
-Handling dates in Liquid: Dates are stored as the number of seconds since the epoch (1st Jan 1970) and can be handled as an integer using Filters. 
+        {{ dateVar |divided_by: 1000 |date: \"%c\" }}
 
-For example, an integer variable dateVar which stores the date in milliseconds can be output as a formatted date string by first dividing by 1000, and then using Liquid's date formatting Filter as follows:
-
-    {{ dateVar |divided_by: 1000 |date: \"%c\" }}
-
-Other readable date output formats are available, see the reference page:
-https://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date 
+  Other readable date output formats are available, see the reference page:
+https://docs.shopify.com/themes/liquid-documentation/filters/additional-filters#date
+* See [this comment](https://github.com/cantino/huginn/issues/1589#issuecomment-234781489) for an example of extracting data in a loop.
