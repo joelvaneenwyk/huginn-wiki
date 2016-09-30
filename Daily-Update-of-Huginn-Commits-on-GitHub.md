@@ -1,4 +1,4 @@
-{
+    {
     "expected_update_period_in_days": "90",
     "url": [
       "https://www.amazon.co.uk/HP-Original-LaserJet-Cartridge-C9733A/dp/B000077CF6/",
@@ -16,4 +16,4 @@
         "value": "."
       }
     }
-  }
+    }
