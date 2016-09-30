@@ -1,4 +1,4 @@
-{
+    {
     "schema_version": 1,
     "name": "Github Updates For Huginn",
     "description": "No description provided",
@@ -45,4 +45,4 @@
     "control_links": [
 
     ]
-  }
+    }
