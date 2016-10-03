@@ -1,3 +1,4 @@
+## Works on US site as well - just update links and currency symbol and color spelling
     {
         "schema_version": 1,
         "name": "Amazon Toner",
