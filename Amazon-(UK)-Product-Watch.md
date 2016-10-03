@@ -1,6 +1,6 @@
 `
     {
-      "schema_version": 1,
+       "schema_version": 1,
       "name": "Amazon Toner",
       "description": "No description provided",
       "source_url": false,
