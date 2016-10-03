@@ -3,7 +3,7 @@
 * [Mavenlink](https://www.mavenlink.com) is using Huginn to build an integrations platform.
 * [Ripple](https://ripple.com/) is using Huginn for analytics and continual monitoring of the public ledger.
 * [The New York Times](https://github.com/newsdev/) is using Huginn to automate internal e-mails and repeated scraping tasks.
-# [somatic](https://somatic.io/) uses Huggin for data collection,processing, and monitoring.
+* [somatic](https://somatic.io/) uses Huggin for data collection,processing, and monitoring.
 * [City of Philadelphia](https://github.com/CityOfPhiladelphia) is using Huginn to sanitize PII & post website feedback from citizens to Slack.
 
 # Personal Use
