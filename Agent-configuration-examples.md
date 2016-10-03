@@ -180,3 +180,9 @@ Captures a new post, filters and sends via email:
 Get an email digest of commits. Ugly formatting, so please feel free to improve!
 
 [[Daily Update of Huginn Commits on Github]]
+
+## Amazon Pricewatch
+
+Get an email whenever something drops below a certain price on Amazon
+
+[[Amazon (UK) Product Watch]]
