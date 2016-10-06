@@ -15,7 +15,8 @@ Feel free to add new things, but let's try and keep them in some kind of alphabe
 ## SaaS
 
 * [Cloudpipes](https://www.cloudpipes.com/)
-* [Microsoft Flow](https://flow.microsoft.com/en-us/)
+* [CloudWork](https://cloudwork.com/)
+* Microsoft [Flow](https://flow.microsoft.com/)
 * [IFTTT](https://ifttt.com/)
 * [Zapier](https://zapier.com/)
 
