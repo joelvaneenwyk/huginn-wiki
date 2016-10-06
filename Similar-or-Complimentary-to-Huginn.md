@@ -16,6 +16,7 @@ Feel free to add new things, but let's try and keep them in some kind of alphabe
 * [Microsoft Flow](https://flow.microsoft.com/en-us/)
 * [IFTTT](https://ifttt.com/)
 * [Zapier](https://zapier.com/)
+* [Cloudpipes](https://www.cloudpipes.com/)
 
 ## Components
 
