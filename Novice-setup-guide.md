@@ -26,7 +26,7 @@ If you fail to clone the repository because of environment issue to block git pr
 ```
 
 ## Step 2 - Install ruby and gem
-Install [ruby][ruby] (2+ recommended but 1.9.3 should work) and [gem][gem]. You can either download them and compile manually or install via your OS' package manager (e.g. [homebrew][homebrew] for Mac OS X or [apt][apt] for Ubuntu).  We recommend using [rvm](http://rvm.io/) or [rbenv](https://github.com/sstephenson/rbenv).  You will also need MySQL or Postgres, both of which can also be installed via your package manager.
+Install [ruby][ruby] (2.2.x or 2.3.x) and [gem][gem]. You can either download them and compile manually or install via your OS' package manager (e.g. [homebrew][homebrew] for Mac OS X or [apt][apt] for Ubuntu).  We recommend using [rvm](http://rvm.io/) or [rbenv](https://github.com/sstephenson/rbenv).  You will also need MySQL or Postgres, both of which can also be installed via your package manager.
 
 [ruby]: http://www.ruby-lang.org/en/
 [gem]: http://rubygems.org/
