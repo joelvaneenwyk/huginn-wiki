@@ -181,6 +181,12 @@ Get an email digest of commits. Ugly formatting, so please feel free to improve!
 
 [[Daily Update of Huginn Commits on Github]]
 
+## Get today's date in Liquid Formatting
+
+This is useful for the subject line in Daily EmailDigestAgent agents
+
+    {% assign current_date = 'now' | date: '%s' %} {{current_date | date: \"%a, %b %d, %Y\" }}
+
 ## Amazon Pricewatch
 
 Get an email whenever something drops below a certain price on Amazon
