@@ -181,6 +181,12 @@ Get an email digest of commits. Ugly formatting, so please feel free to improve!
 
 [[Daily Update of Huginn Commits on Github]]
 
+## Else-If loops & formatting strings as numbers
+
+Numbers are extracted as strings often and cause issues with comparators. One can either use multiply:1 to cast them as integers or otherwise use string length depending on the goal. Combined with if/elsif/else here:
+
+     {% if total.size >= 7 %}${{total | divided_by:1000000 }}M{% elsif total.size >=6 %}${{round_raised | divided_by:1000}}K{% else %}below $100,000{% endif %}
+
 ## Get today's date in Liquid Formatting
 
 This is useful for the subject line in Daily EmailDigestAgent agents
