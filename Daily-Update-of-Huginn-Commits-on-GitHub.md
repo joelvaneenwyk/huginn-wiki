@@ -15,7 +15,7 @@
           "disabled": false,
           "guid": "0f405e2af0861e16b75a0564125bec71",
           "options": {
-            "subject": "Latest Huginn Updates from GitHub",
+            "subject": "Daily Huginn Updates from GitHub for {% assign current_date = 'now' | date: '%s' %} {{current_date | date: \"%a, %b %d, %Y\" }}",
             "headline": "Latest commits:",
             "expected_receive_period_in_days": "2"
           },
