@@ -77,6 +77,26 @@ Beware that Liquid itself does not have the concept of backslash escaping, so yo
 
 **json** takes the object provided and serializes it into a JSON string: `{{ data | json}}`
 
+**as_object** Returns a Ruby object
+
+It can be used as a JSONPath replacement for Agents that only support Liquid:
+
+```
+Event:   {"something": {"nested": {"data": 1}}}
+Liquid:  {{something.nested | as_object}}
+Returns: {"data": 1}
+```
+
+Splitting up a string with Liquid filters and return the Array:
+
+```
+Event:   {"data": "A,B,C"}}
+Liquid:  {{data | split: ',' | as_object}}
+Returns: ['A', 'B', 'C']
+```
+
+`as_object` ALWAYS has be the last filter in a Liquid expression!
+
 ### Tags added by Huginn
 
 **credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there are no back-quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
