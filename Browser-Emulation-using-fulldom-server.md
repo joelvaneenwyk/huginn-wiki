@@ -33,6 +33,8 @@ Note the part where it says it's listening on port 8000 on all interfaces (that'
 
 If you want, you can have it listen only on localhost, on a different port, etc. How to do so is thoroughly documented [in the README][readme-config] and in `fulldom-server(1)`, which you can access by executing `man fulldom-server`.
 
+**IMPORTANT:** be sure to properly restrict access to fulldom-server. At the moment, its design leaves it somewhat vulnerable to denial-of-service attacks, so please bear that in mind. See [the README][dos-warning] for details.
+
 ## Step 2b - running fulldom-server all the time
 
 You probably want to have fulldom-server running all the time, so you don't have to keep your terminal open running it in order for your agents to work. How to do so will vary by init system. On a systemd system, for example, you might put the following at `/etc/systemd/system/fulldom.service`:
@@ -66,6 +68,7 @@ However, this isn't quite enough. fulldom-server needs a hint to help it guess w
  [fulldom-server]: https://github.com/strugee/fulldom-server
  [phantomjs-cloud]: https://github.com/cantino/huginn/wiki/Browser-Emulation-Using-PhantomJS-Cloud
  [readme-config]: https://github.com/strugee/fulldom-server#running
+ [dos-warning]: https://github.com/strugee/fulldom-server#warning
  [percent-encoding]: https://en.wikipedia.org/wiki/Percent-encoding
  [encoding-tool]: http://www.url-encode-decode.com/
  [slash-issue]: https://github.com/cantino/huginn/issues/1735
