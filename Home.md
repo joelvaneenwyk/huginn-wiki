@@ -26,6 +26,7 @@ Please feel free to add to this wiki!
 * [[Huginn-as-a-Service]] - hosted instances of Huginn
 * [[Using a Webhook Agent with external software]]
 * [[Browser Emulation Using PhantomJS Cloud]]
+* [[Browser Emulation using fulldom-server]] (easier, but requires a server with shell access)
 
 ### Deploying Huginn
 
