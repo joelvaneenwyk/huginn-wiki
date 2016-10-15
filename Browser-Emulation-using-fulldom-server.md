@@ -46,6 +46,7 @@ After=network.target
 Type=simple
 ExecStart=/usr/bin/fulldom-server
 Environment=NODE_ENV=production
+User=nobody
 
 [Install]
 WantedBy=multi-user.target
@@ -58,7 +59,7 @@ Then have it start immediately as well as during boot with:
 
 ## Step 3 - configuring WebsiteAgent
 
-Last, you need to configure WebsiteAgent to use fulldom-server. Doing so is easy: all you do is [percent-encode your URLs][percent-encoding] - here's [a decent tool][encoding-tool] for this - then in your WebsiteAgent, put the URL to your fulldom-server instance, then `/`, then your percent-encoded URL.
+Last, you need to configure WebsiteAgent to use fulldom-server. Doing so is easy: all you do is [percent-encode your URLs][percent-encoding] - here's [a decent tool][encoding-tool] for this - then in your WebsiteAgent, put the URL to your fulldom-server instance (e.g. `http://localhost:8000` if you're running fulldom-server with the defaults and on the same box as Huginn), then `/`, then your percent-encoded URL.
 
 However, this isn't quite enough. fulldom-server needs a hint to help it guess when the page is finished loading. So just append `?selector=` and whatever selector you're scraping to the end of the URL, ~~and you're done!~~ and you should be done, but this doesn't actually work due to [this issue][slash-issue]. Soon though!
 
