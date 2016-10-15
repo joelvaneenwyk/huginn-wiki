@@ -11,6 +11,8 @@
 > 4. **WebsiteAgent** - to fetch the page using PhantomJs Cloud
 > 5. **DataOutputAgent** - to output RSS
 
+Note: if you have a server with shell access, you can accomplish the above with only one WebsiteAgent by [using fulldom-server](https://github.com/cantino/huginn/wiki/Browser-Emulation-using-fulldom-server).
+
 Full scenario can be found [here](http://pastebin.com/baRFN44H)
 
 ## 0. Credentials
