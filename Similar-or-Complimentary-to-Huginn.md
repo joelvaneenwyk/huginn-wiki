@@ -11,6 +11,7 @@ Feel free to add new things, but let's try and keep them in some kind of alphabe
 * [PicoLab Pico-Engine](https://github.com/Picolab/pico-engine) - A (WIP) next-gen implementation of Phil Windley's pico concepts.
 * [Trigger Happy](https://github.com/foxmask/django-th) - "opensource clone of IFTTT, a bridge between your internet services"
 * [Welcomer Framework](https://github.com/welcomer/framework/) - The Welcomer framework supports building microservices to flexibly automate your online tasks, putting control of your personal data back in your hands.
+* [Riemann](https://github.com/riemann/riemann) - "A network event stream processing system, in Clojure. Riemann aggregates events from your servers and applications with a powerful stream processing language."
 
 ## SaaS
 
