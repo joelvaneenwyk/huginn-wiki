@@ -71,11 +71,11 @@ It is more robust to use the filter here than to put `'{{word}}'` or `"{{word}}"
 
 For example, if `foobar` contains the string "foobaz foobaz", then `{{ foobar | regex_replace: '(\S+)baz', 'qux\1' }}` would result in "quxfoo quxfoo". You can use any regex supported by the Ruby `Regexp` class, as documented [here](http://ruby-doc.org/core/doc/regexp_rdoc.html). 
 
-You can use escape sequences in both the regex and the replacement parameters of these filter functions, such as `\r`, `\n`, `\xXX` and `\u{XXXX}`.  In the replacement parameter, numbered capture groups `\1`..`\9` are supported, as well as named capture groups `\k<name>`, `\&`, `` \` ``, `\'`, etc.
+You can use escape sequences in both the regex and the replacement parameters of these filter functions, such as `\t`, `\r`, `\n`, `\xXX` and `\u{XXXX}`.  In the replacement parameter, numbered capture groups `\1`..`\9` are supported, as well as named capture groups `\k<name>`, `\&`, `` \` ``, `\'`, etc.
 
-Beware that Liquid itself does not have the concept of backslash escaping, so you cannot escape quote characters like `"\""`.  Instead, use `\x22` when you need to put the double quote character in a double quoted string literal, such as `{{ text | regex_replace: "\x22(.*?)\x22", "\1" }}`.
+Beware that Liquid itself does not have the concept of backslash escaping, so you cannot escape quote characters like `"\""`.  Instead, use `\x22` when you need to put the double quote character in a double quoted string literal, e.g. `{{ text | regex_replace: "\x22(.*?)\x22", "\1" }}`.
 
-**json** takes the object provided and serializes it into a JSON string: `{{ data | json}}`
+**json** takes the object provided and serializes it into a JSON string: `{{ data | json }}`
 
 **as_object** Returns a Ruby object
 
@@ -95,7 +95,7 @@ Liquid:  {{data | split: ',' | as_object}}
 Returns: ['A', 'B', 'C']
 ```
 
-`as_object` ALWAYS has be the last filter in a Liquid expression!
+`as_object` ALWAYS has to be the last filter in a Liquid expression!
 
 ### Tags added by Huginn
 
