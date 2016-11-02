@@ -50,6 +50,8 @@ An Agent object has the following keys (excerpt).
 
 A URI object will have the following properties: `scheme`, `userinfo`, `host`, `port`, `registry`, `path`, `opaque`, `query`, and `fragment`.  You'll have to "assign" the result to a variable in order to access these properties.
 
+**rebase_hrefs** takes a fragment of HTML/XML and replaces all relative URL references in it with their abosulte URLs, using a given URL as base.  A typical use case is in the `template` option of a WebsiteAgent, where it takes an extracted HTML fragment to resolve relative references in it like this: `{{ content | rebase_hrefs: _request_.url }}`
+
 **uri_expand** returns the destination URL of a given URL by recursively following redirects, up to 5 times in a row.
 If a given string is not a valid absolute HTTP URL or in case of too many redirects, the original string is returned.
 If any network/protocol error occurs while following redirects, the last URL followed is returned.
