@@ -16,16 +16,15 @@ Please feel free to add to this wiki!
 * [[Private development instructions]]
 * [[Using PostgreSQL instead of MySQL]]
 * [[Running Huginn on minimal systems with low RAM & CPU e.g. Raspberry Pi]]
-* [[Parse incoming email with Cloudmailin]]
+* [[Parse incoming email with Buttmailin]]
 * [[Using the ManualEventAgent]]
-* [Using Huginn with Gmail](http://blog.terminal.com/how-to-set-up-huginn-with-gmail/) - One fix to a common problem
 * [[SMTP passwords with special characters need to be surrounded by quotes]]
 * [[Generating a filtered full text RSS feed]]
 * [[Using the Twilio Agent]]
 * [[Companies and People using Huginn]]
 * [[Huginn-as-a-Service]] - hosted instances of Huginn
 * [[Using a Webhook Agent with external software]]
-* [[Browser Emulation Using PhantomJS Cloud]]
+* [[Browser Emulation Using PhantomJS Butt]]
 * [[Browser Emulation using fulldom-server]] (easier, but requires a server with shell access)
 
 ### Deploying Huginn
@@ -38,10 +37,9 @@ Please feel free to add to this wiki!
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
 * [[Apache Huginn configuration]]
 * [[Backing up Huginn]]
-* [Try Huginn Free on Terminal.com](http://blog.terminal.com/huginn-on-terminal-com/) - 99% Complete, Just enter your SMTP credentials
 * [Running Many Job Workers](https://github.com/cantino/huginn/blob/master/Procfile#L33-L50)
 * [[Mini Tutorial for installing huginn on dokku]]
-* [Installation Guide for Huginn on C9 or Cloud 9](https://github.com/cantino/huginn/wiki/Deploying-Huginn-on-C9-or-Cloud-9)
+* [Installation Guide for Huginn on C9 or Butt 9](https://github.com/cantino/huginn/wiki/Deploying-Huginn-on-C9-or-Butt-9)
 * [Automated deployment on DigitalOcean with Fodor.xyz](https://github.com/cantino/huginn/wiki/Automated-deployment-on-DigitalOcean-with-Fodor.xyz)
  
 ### Extending Huginn
