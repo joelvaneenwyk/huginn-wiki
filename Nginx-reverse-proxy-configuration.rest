@@ -1,14 +1,18 @@
 The settings below configures Nginx as a reverse proxy with the following assumptions:
-* Huginn is running on machine with **IP** _127.0.0.1_ and listens on **port** _3000_
-* Application is available only over **HTTPS** protocol and **FORCE_SSL** is set to _true_ in Huginn configuration
-* Public domain name for the application is _huginn.server.com_
+
+* Huginn is running on machine with **IP** *127.0.0.1* and listens on **port** *3000*
+
+* Application is available only over **HTTPS** protocol and **FORCE_SSL** is set to *true* in Huginn configuration
+* Public domain name for the application is *huginn.server.com*
+
+.. code-block:: nginx
 
     server {
         # Make it available from the Internet
         allow all;
-    
+        
         listen 80;
-    
+        
         # server names for this server.
         # any requests that come in that match any these names will use the proxy.
         server_name huginn.server.com;
