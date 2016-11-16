@@ -1,3 +1,8 @@
+This guide intended to be used for **Huginn running in Docker**. If you don't use Docker or want a more customised configuration, see the sample configuration in the application repository at https://github.com/cantino/huginn/tree/master/deployment/nginx/.
+
+Configuration
+-------------
+
 The settings below configures Nginx as a reverse proxy with the following assumptions:
 
 * Huginn is running on machine with **IP** *127.0.0.1* and listens on **port** *3000*
