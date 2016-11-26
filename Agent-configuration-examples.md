@@ -198,3 +198,10 @@ This is useful for the subject line in Daily EmailDigestAgent agents
 Get an email whenever something drops below a certain price on Amazon
 
 [[Amazon (UK) Product Watch]]
+
+## Aftership - utomatic detection of courier of the tracking number.
+
+{
+  "api_key": "5fc988d0-9d08-4a5f-88a6-4h4j4j5j5j59",
+  "path": "trackings/499552045343999"
+}
