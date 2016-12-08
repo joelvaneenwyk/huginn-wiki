@@ -1,7 +1,7 @@
 Deploying Huginn on C9 or Cloud 9 
 ------------------------------------------------
 
-1- Create a cloud 9 ( [c9.io](c9.io) ) rails workspace and enter the following command one by one:
+1- Create a cloud 9 ( [c9.io](https//c9.io) ) rails workspace and enter the following command one by one:
 
 ```
 
