@@ -6,7 +6,7 @@
 
 There are two ways to generate URLS for PhantomJs Cloud:
 
-1. PhantomJs Cloud Agent
+1. PhantomJs Cloud Agent (simpler but limited)
 2. Manually
 
 ## Credentials
@@ -27,6 +27,8 @@ Before you begin, you will need to sign up for an account at https://phantomjscl
 
 
 ## Option 1: PhantomJs Cloud Agent
+
+` ** This agent only provides a limited subset of the most commonly used options.`
 
 The workflow to fetch the page is as follows:
 
