@@ -1,3 +1,13 @@
+# Go to Huginn installation folder
+cd /home/huginn/huginn
+sudo -u huginn -H editor config/unicorn.rb
+
+change: 
+listen "#{wd}/tmp/sockets/unicorn.socket"in config/unicorn.rb 
+      to 
+listen "127.0.0.1:3000"
+
+
 Oh so cleverly adapted from [this page](https://gist.github.com/MrZYX/719014). 
 
 ```
