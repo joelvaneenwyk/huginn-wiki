@@ -1,7 +1,8 @@
 Go to Huginn installation folder
+'''
 cd /home/huginn/huginn
 sudo -u huginn -H editor config/unicorn.rb
-
+'''
 change: 
 listen "#{wd}/tmp/sockets/unicorn.socket"in config/unicorn.rb 
       to 
