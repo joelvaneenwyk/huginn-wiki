@@ -92,7 +92,7 @@ Returns: {"data": 1}
 Splitting up a string with Liquid filters and return the Array:
 
 ```
-Event:   {"data": "A,B,C"}}
+Event:   {"data": "A,B,C"}
 Liquid:  {{data | split: ',' | as_object}}
 Returns: ['A', 'B', 'C']
 ```
@@ -138,35 +138,37 @@ Basecamp events will look like this (trimmed down for better readability):
   "creator": {
     "name": "Dominik Sander",
   },
- "excerpt": "test test",
- "summary": "commented on whaat",
- "action": "commented on",
- "target": "whaat",
- "html_url": "https://basecamp.com/12456/projects/76454545-explore-basecamp/messages/76454545-whaat#comment_76454545"
+  "excerpt": "test test",
+  "summary": "commented on whaat",
+  "action": "commented on",
+  "target": "whaat",
+  "html_url": "https://basecamp.com/12456/projects/76454545-explore-basecamp/messages/76454545-whaat#comment_76454545"
 }
 ```
 Now we generate a nice HTML formatted message using Liquid. This is the HipchatAgent options hash:
 ```
 {
-  'auth_token': 'token',
-  'room_name': 'test',
-  'username': "{{creator.name}}",
-  'message': '{{summary}}<br>{{excerpt}}<br><a href="{{html_url}}">View it on Basecamp</a>',
-  'notify': false,
-  'color': 'yellow'
+  "auth_token": "token",
+  "room_name": "test",
+  "username": "{{creator.name}}",
+  "message": "{{summary}}<br>{{excerpt}}<br><a href='{{html_url}}'>View it on Basecamp</a>",
+  "notify": false,
+  "color": "yellow"
 }
 ```
 
 ### More Examples
 
 * Removing newlines from a string: `{{foo | strip_newlines}}`
-* Handling dates in Liquid: Dates are stored as the number of seconds since the epoch (1st Jan 1970) and can be handled as an integer using Filters. For example, an integer variable dateVar which stores the date in milliseconds can be output as a formatted date string by first dividing by 1000, and then using Liquid's date formatting Filter as follows:
-
-        {{ dateVar |divided_by: 1000 |date: "%c" }}
+* Handling dates in Liquid: Dates are stored as the number of seconds since the epoch (1st Jan 1970) and can be handled as an integer using Filters. For example, an integer variable `dateVar` which stores the date in milliseconds can be output as a formatted date string by first dividing by 1000, and then using Liquid's date formatting Filter as follows:
+  ```
+  {{ dateVar | divided_by: 1000 | date: "%c" }}
+  ```
 
   To insert the current date and time:
-
-        {{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}
+  ```
+  {{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}
+  ```
 
   Other readable date output formats are available, see the reference page: http://shopify.github.io/liquid/filters/date/
 * See [this comment](https://github.com/cantino/huginn/issues/1589#issuecomment-234781489) for an example of extracting data in a loop.
