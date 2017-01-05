@@ -148,12 +148,12 @@ Basecamp events will look like this (trimmed down for better readability):
 Now we generate a nice HTML formatted message using Liquid. This is the HipchatAgent options hash:
 ```
 {
-  'auth_token' => 'token',
-  'room_name' => 'test',
-  'username' => "{{creator.name}}",
-  'message' => '{{summary}}<br>{{excerpt}}<br><a href="{{html_url}}">View it on Basecamp</a>',
-  'notify' => false,
-  'color' => 'yellow',
+  'auth_token': 'token',
+  'room_name': 'test',
+  'username': "{{creator.name}}",
+  'message': '{{summary}}<br>{{excerpt}}<br><a href="{{html_url}}">View it on Basecamp</a>',
+  'notify': false,
+  'color': 'yellow'
 }
 ```
 
@@ -164,7 +164,7 @@ Now we generate a nice HTML formatted message using Liquid. This is the HipchatA
 
         {{ dateVar |divided_by: 1000 |date: "%c" }}
 
-  To Insert the current date and time:
+  To insert the current date and time:
 
         {{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}
 
