@@ -1968,7 +1968,185 @@ Hopefully that completes your install. I don't know about you but I'm exhausted.
 As an added bonus (perhaps this should be added to its own wiki, but for now I don't think there's really enough here to necessitate an entire wiki page -- if/when it does I'll move it out; unless someone thinks it should already?)
 
 
-Some generic troubleshooting with huginn
+Some generic troubleshooting with Huginn
+
+
+[This scenario entered on: 01/24/2016 12:46PM EST]
+scenario: You attempt to start Huginn again and for whatever reason you get something along the lines of:
+
+14:25:51 jobs.1 | /home/[username]/.rvm/gems/ruby-2.3.1/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:293:in `require': incompatible library version - /home/[username]/.rvm/gems/ruby-2.3.1/gems/eventmachine-1.0.7/lib/rubyeventmachine.so (LoadError)
+
+[...]
+
+14:26:17 web.1  | exited with code 1
+14:26:17 system | sending SIGTERM to all processes
+14:26:17 jobs.1 | exited with code 1
+
+
+It's possible you did a bundle update since you've last had Huginn running successfully, and because the Gemfile doesn't specify version numbers, breakage is most likely going to occur as time progresses and the many many dependencies Huginn uses gets updated over time. Either way, the culprit of this problem is, the Gemfile does not specify the version that Huginn needs and thus if an update is done then it just grabs the latest version. 
+
+
+Type in:
+gem uninstall activesupport
+<hit enter>
+
+Type in:
+bundler exec foreman start
+<hit enter>
+
+You should see a line that says something to the extent of:
+
+"Could not find activesupport-5.0.0.1 in any of the sources"
+
+Type in:
+bundle install
+<hit enter>
+
+You should see a line in the output that says:
+
+"Installing activesupport 5.0.0.1"
+
+A dependency set to just grab the latest copy blindly.
+
+You can try bringing all the other dependencies up to current version but you could wind up creating more breakage. If you want to chance it you can type in:
+
+bundle update
+<hit enter>
+
+You should see a bunch of the packages say Installing <gem name> <version> (was <previously installed version>)
+
+try running foreman again by typing:
+bundler exec foreman start
+<hit enter>
+
+In that output you should see a message along the lines of:
+
+04:23:40 web.1  | /home/[username]/.rvm/gems/ruby-2.3.1/gems/bundler-1.14.2/lib/bundler/runtime.rb:91:in `require': cannot load such file -- google/api_client (LoadError)
+
+Where I went when working through this was I uninstalled bundler and reinstalled it to grab the latest version (I suppose there is an update command for the specific gem?)
+
+Type in:
+gem uninstall bundler
+
+You'll get an output of a ton of gems that depend on bundler. That's fine, we're reinstalling it in a sec. anyhow.
+so when you see:
+"If you remove this gem, these dependencies will not be met.
+Continue with Uninstall? [yN]"
+
+Type in:
+y
+<hit enter>
+
+Then you'll see:
+"Remove executables:
+        bundle, bundler
+
+in addition to the gem? [Yn]"
+
+Type in:
+y
+<hit enter>
+
+Then you'll see something along the lines of:
+
+"Removing bundle
+Removing bundler
+Successfully uninstalled bundler-1.14.2"
+
+
+Now type in:
+gem install bundler
+<hit enter>
+
+Now try running Huggin again by typing:
+bundler exec foreman start
+<hit enter>
+
+You'll likely still see the error about google-api-clients
+
+If you go here and look at the comment:
+https://github.com/gimite/google-drive-ruby/issues/167#issuecomment-147483919
+
+You'll see there appears to be some breakage with the newer version.
+
+If you go here:
+https://github.com/google/google-api-ruby-client
+
+You'll see this blurb:
+"Migrating from 0.8.x
+
+Version 0.9 is not compatible with previous versions. See MIGRATING for additional details on how to migrate to the latest version."
+
+confirming it. If you go here:
+https://github.com/google/google-api-ruby-client/blob/master/MIGRATING.md
+
+You'll see this blurb:
+"Migrating from version 0.8.x to 0.9
+
+Many changes and improvements have been made to the google-api-ruby-client library to bring it to 0.9. If you are starting a new project or haven't used this library before version 0.9, see the README to get started as you won't need to migrate anything.
+
+Code written against the 0.8.x version of this library will not work with the 0.9 version without modification."
+
+Oh boy; that's some pretty strong verbiage. We're not just talking small changes... Notice the word Many and the outright strong statement that previous code will not work without modification.
+
+So type in:
+gem uninstall google-api-client
+<hit enter>
+
+remove each version that is above 0.8.x
+
+Now, technically, it should work. But I'm going to have you modify your gemfile so it's forced to the latest version that still works.
+
+Go into your Huginn's root folder and open the file titled Gemfile in your favorite text editor and locate the line that states:
+gem "google-api-client", require: 'google/api_client'
+
+make the line:
+#gem "google-api-client", require: 'google/api_client'
+
+and, to that section, add the line:
+gem 'google-api-client', '0.8.2', require: 'google/api_client'
+
+Now save the file and exit
+
+Now type in:
+bundler update
+<hit enter>
+
+
+In my output of issuing that command I saw the line:
+Installing google-api-client 0.8.2 (was 0.9.23)
+
+You should see something similar.
+
+Now try running Huginn again by typing:
+bundler exec foreman start
+<hit enter>
+
+In that output, you will probably see the line:
+04:51:46 web.1  | /home/[username]/.rvm/gems/ruby-2.3.1/gems/binding_of_caller-0.7.2/lib/binding_of_caller/mri2.rb:21:in `callers': uninitialized constant RubyVM::DebugInspector (NameError)
+
+*sigh* this is endless... A few lines down you see mention of better_errors, you can try uninstalling that -- that's what I did but it didn't fix it. I believe it wasn't until I focused on DebugInspector that was the final bit of the fix.
+
+So type in:
+gem uninstall debug_inspector
+
+Say y to removing the gem, and say y to continue with uninstall, you know the drill by now...
+
+Now type in:
+bundle
+<hit enter>
+
+In that output you should see something alongs the lines of:
+"Installing debug_inspector 0.0.2 with native extensions"
+
+Now try running Huginn again by typing:
+bundler exec foreman start
+<hit enter>
+
+Huginn should now start... yay. 
+
+01/24/2016 12:46PM EST: Formatting for this scenario needs to be done
+
 
 
 Scenario: You power on your huginn server/workstation/vm from cold and you use ruby --version and you get something that states you're using ruby version 2.1.3 (NOT 2.3.1)
