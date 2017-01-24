@@ -1972,6 +1972,7 @@ Some generic troubleshooting with Huginn
 
 
 [This scenario entered on: 01/24/2016 12:46PM EST]
+
 scenario: You attempt to start Huginn again and for whatever reason you get something along the lines of:
 
 14:25:51 jobs.1 | /home/[username]/.rvm/gems/ruby-2.3.1/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:293:in `require': incompatible library version - /home/[username]/.rvm/gems/ruby-2.3.1/gems/eventmachine-1.0.7/lib/rubyeventmachine.so (LoadError)
