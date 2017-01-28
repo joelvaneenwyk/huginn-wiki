@@ -60,14 +60,13 @@ e.g. When a variable `short_url` contains a URL "https://goo.gl/tfDrI", `{{ shor
 
 **unescape** unescapes (basic) HTML entities in a string.  This currently decodes the following entities only: `&apos;`, `&quot;`, `&lt;`, `&gt;`, `&amp;`, `&#dd;` and `&#xhh;`.
 
-**to_xpath** returns an XPath literal or expression that evaluates to the original string for use in WebsiteAgent.
+**to_xpath** returns an XPath literal or expression that evaluates to the original string for use in a WebsiteAgent.
 
-For example, suppose you are making a WebsiteAgent that receives an event with a `word` to look up on a glossary web page to create a new event.
-It would have to dynamically build an XPath expression like this:
+For example, suppose you are making a WebsiteAgent that receives an event with a `word` to look up on a glossary web page to create a new event. It would have to dynamically build an XPath expression like this:
 
     //dl/dt[text()={{word | to_xpath}}][1]/following-sibling::dd[1]/text()
 
-It is more robust to use the filter here than to put `'{{word}}'` or `"{{word}}"` in that it wouldn't blow up the whole expression even if `word` contained the apostrophe, quotation mark, or both.
+It is more robust to use the filter here than to put `'{{word}}'` or `"{{word}}"`, in that it wouldn't blow up the whole expression even if `word` contained the apostrophe, quotation mark, or both. You can also use this with the `_response_` object to do extract and escape some header, such as `{{ _response_.headers.Content-Type | to_xpath }}`.
 
 **regex_replace** & **regex_replace_first** replace all/first regex matching strings with a substring. Very similar to the [built in replace](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#replace). 
 
