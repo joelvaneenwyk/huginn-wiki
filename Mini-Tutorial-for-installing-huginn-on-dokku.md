@@ -5,7 +5,7 @@ Mini-Tutorial for installing huginn on dokku
 # Prerequisites
 
 * dokku version >= v0.4.9
-* http://dokku.viewdocs.io/dokku/installation/
+* http://dokku.viewdocs.io/dokku/getting-started/installation/
 
 # Create the app
 
