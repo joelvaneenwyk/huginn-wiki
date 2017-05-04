@@ -85,7 +85,7 @@ To be able to use this Agent you need to authenticate with Tumblr in the Service
 
 
 ## Weibo User Agent
-The Weibo User Agent follows the timeline of a specified Weibo user. It uses this endpoint: http://open.weibo.com/wiki/2/statuses/user_timeline/en
+The Weibo User Agent follows the timeline of a specified Weibo user. It uses this endpoint: `http://open.weibo.com/wiki/2/statuses/user_timeline/en`
 
 
 ## Pushover Agent
@@ -174,7 +174,7 @@ Visit Evernote to set up an Evernote app and receive an api key and secret. Stor
 The Twilio Receive Text Agent receives text messages from Twilio and emits them as events.
 In order to create events with this agent, configure Twilio to send POST requests to:
 
-https://localhost:3000/users/1/web_requests/:id/sms-endpoint
+`https://localhost:3000/users/1/web_requests/:id/sms-endpoint`
 
 The placeholder symbols above will be replaced by their values once the agent is saved.
 
@@ -241,7 +241,7 @@ HITs can be created in response to events, or on a schedule. Set trigger_on to e
 
 ## Stubhub Agent
 The StubHub Agent creates an event for a given StubHub Event.
-It can be used to track how many tickets are available for the event and the minimum and maximum price. All that is required is that you paste in the url from the actual event, e.g. https://www.stubhub.com/outside-lands-music-festival-tickets/outside-lands-music-festival-3-day-pass-san-francisco-golden-gate-park-polo-fields-8-8-2014-9020701/
+It can be used to track how many tickets are available for the event and the minimum and maximum price. All that is required is that you paste in the url from the actual event, e.g. `https://www.stubhub.com/outside-lands-music-festival-tickets/outside-lands-music-festival-3-day-pass-san-francisco-golden-gate-park-polo-fields-8-8-2014-9020701/`
 
 
 ## Website Agent
