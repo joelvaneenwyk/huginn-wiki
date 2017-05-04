@@ -1,12 +1,12 @@
 ## CSV Agent
-The 'CsvAgent' parses or serializes CSV data. When parsing, events can either be emitted for the entire CSV, or one per row.
-Set mode to parse to parse CSV from incoming event, when set to serialize the agent serilizes the data of events to CSV.
+The `CsvAgent` parses or serializes CSV data. When parsing, events can either be emitted for the entire CSV, or one per row.
+Set `mode` to `parse` to parse CSV from incoming event, when set to `serialize` the agent serilizes the data of events to CSV.
 
 
 ## Webhook Agent
 The Webhook Agent will create events by receiving webhooks from any source. In order to create events with this agent, make a POST request to:
 
-https://localhost:3000/users/1/web_requests/:id/:secret
+`https://localhost:3000/users/1/web_requests/:id/:secret`
 
 The placeholder symbols above will be replaced by their values once the agent is saved.
 
@@ -31,7 +31,7 @@ The Dropbox Watch Agent watches the given dir_to_watch and emits events with the
 
 ## Aftership Agent
 The Aftership agent allows you to track your shipment from aftership and emit them into events.
-To be able to use the Aftership API, you need to generate an API Key. You need a paying plan to use their tracking feature.
+To be able to use the Aftership API, you need to generate an `API Key`. You need a paying plan to use their tracking feature.
 You can use this agent to retrieve tracking data.
 
 
@@ -50,8 +50,8 @@ The Attribute Difference Agent receives events and emits a new event with the di
 
 ## JSON Parse Agent
 The JSON Parse Agent parses a JSON string and emits the data in a new event
-data is the JSON to parse. Use Liquid templating to specify the JSON string.
-data_key sets the key which contains the parsed JSON data in emitted events
+`data` is the JSON to parse. Use Liquid templating to specify the JSON string.
+`data_key` sets the key which contains the parsed JSON data in emitted events
 
 
 ## Jabber Agent
@@ -64,8 +64,7 @@ The De-duplication Agent receives a stream of events and remits the event if it 
 
 ## Google Translation Agent
 The Translation Agent will attempt to translate text between natural languages.
-
-Services are provided using Google Translate. You can sign up to get 'google_api_key' which is required to use this agent. The service is **not free**.
+Services are provided using Google Translate. You can sign up to get `google_api_key` which is required to use this agent. The service is **not free**.
 
 
 ## Data output Agent
@@ -77,7 +76,7 @@ The Data Output Agent outputs received events as either RSS or JSON. Use it to o
 
 
 ## Email Digest Agent
-The Email Digest Agent collects any Events sent to it and sends them all via email when scheduled. The number of used events also relies on the Keep events option of the emitting Agent, meaning that if events expire before this agent is scheduled to run, they will not appear in the email.
+The Email Digest Agent collects any Events sent to it and sends them all via email when scheduled. The number of used events also relies on the `Keep events` option of the emitting Agent, meaning that if events expire before this agent is scheduled to run, they will not appear in the email.
 
 
 ## The Tumblr Publish Agent 
@@ -98,7 +97,7 @@ The S3Agent can watch a bucket for changes or emit an event for every file in th
 
 
 ## Post Agent
-A Post Agent receives events from other agents (or runs periodically), merges those events with the Liquid-interpolated contents of payload, and sends the results as POST (or GET) requests to a specified url. To skip merging in the incoming event, but still send the interpolated payload, set no_merge to true.
+A Post Agent receives events from other agents (or runs periodically), merges those events with the Liquid-interpolated contents of `payload`, and sends the results as POST (or GET) requests to a specified url. To skip merging in the incoming event, but still send the interpolated payload, set `no_merge` to `true`.
 
 
 ## Twitter Action Agent
@@ -145,7 +144,7 @@ mode determines if the agent is emitting events for (changed) files or writing r
 
 
 ## User Location Agent
-The User Location Agent creates events based on WebHook POSTS that contain a latitude and longitude. You can use the POSTLocation or PostGPS iOS app to post your location to https://localhost:3000/users/1/update_location/:secret where :secret is specified in your options.
+The User Location Agent creates events based on WebHook POSTS that contain a `latitude` and `longitude`. You can use the POSTLocation or PostGPS iOS app to post your location to `https://localhost:3000/users/1/update_location/:secret` where `:secret` is specified in your options.
 
 
 ## Wunderlist Agent
@@ -189,7 +188,7 @@ The Commander Agent is triggered by schedule or an incoming event, and commands 
 
 
 ## Peak Detector Agent
-The Peak Detector Agent will watch for peaks in an event stream. When a peak is detected, the resulting Event will have a payload message of message.
+The Peak Detector Agent will watch for peaks in an event stream. When a peak is detected, the resulting Event will have a payload message of `message`.
 
 
 ## Dropbox File URL Agent
@@ -201,14 +200,14 @@ The Liquid Output Agent outputs events through a Liquid template you provide. Us
 
 
 ## Read File Agent
-The ReadFileAgent takes events from FileHandling agents, reads the file, and emits the contents as a string.
+The ReadFileAgent takes events from `FileHandling` agents, reads the file, and emits the contents as a string.
 
 
 ## Change Detector Agent
 The Change Detector Agent receives a stream of events and emits a new event when a property of the received event changes.
 
 ## Witai Agent
-The wit.ai agent receives events, sends a text query to your wit.ai instance and generates outcome events.
+The `wit.ai` agent receives events, sends a text query to your `wit.ai` instance and generates outcome events.
 
 
 ## Public Transport Agent
@@ -228,7 +227,7 @@ Sign up to get an api key, and add it in Huginn credentials.
 
 ## Digest Agent
 The Digest Agent collects any Events sent to it and emits them as a single event.
-The resulting Event will have a payload message of message. You can use liquid templating in the message, have a look at the Wiki for details.
+The resulting Event will have a payload message of `message`. You can use liquid templating in the `message`, have a look at the Wiki for details.
 
 
 ## PDF Info Agent
@@ -250,7 +249,7 @@ The Website Agent scrapes a website, XML document, or JSON feed and creates Even
 
 
 ## Sentiment Agent
-The Sentiment Agent generates good-bad (psychological valence or happiness index), active-passive (arousal), and strong-weak (dominance) score. It will output a value between 1 and 9. It will only work on English content.
+The Sentiment Agent generates `good-bad` (psychological valence or happiness index), `active-passive` (arousal), and `strong-weak` (dominance) score. It will output a value between 1 and 9. It will only work on English content.
 
 
 ## Gap Detector Agent
@@ -265,12 +264,12 @@ By default, the email body will contain an optional headline, followed by a list
 
 ## Boxcar Agent
 The Boxcar agent sends push notifications to iPhone.
-To be able to use the Boxcar end-user API, you need your Access Token. The access token is available on general “Settings” screen of Boxcar iOS app or from Boxcar Web Inbox settings page.
+To be able to use the Boxcar end-user API, you need your `Access Token`. The access token is available on general “Settings” screen of Boxcar iOS app or from Boxcar Web Inbox settings page.
 
 
 ## FTPSite Agent
 The Ftp Site Agent checks an FTP site and creates Events based on newly uploaded files in a directory. When receiving events it creates files on the configured FTP server.
-mode must be present and either read or write, in read mode the agent checks the FTP site for changed files, with write it writes received events to a file on the server.
+`mode` must be present and either `read` or `write`, in `read` mode the agent checks the FTP site for changed files, with `write` it writes received events to a file on the server.
 
 
 ## Scheduler Agent
@@ -279,13 +278,13 @@ The Scheduler Agent periodically takes an action on target Agents according to a
 
 ## Pushbullet Agent
 The Pushbullet agent sends pushes to a pushbullet device
-To authenticate you need to either the api_key or create a pushbullet_api_key credential, you can find yours at your account page:
-https://www.pushbullet.com/account
+To authenticate you need to either the `api_key` or create a `pushbullet_api_key` credential, you can find yours at your account page:
+`https://www.pushbullet.com/account`
 
 
 ## Trigger Agent
 The Trigger Agent will watch for a specific value in an Event payload.
-The rules array contains hashes of path, value, and type. The path value is a dotted path through a hash in JSONPaths syntax. For simple events, this is usually just the name of the field you want, like ‘text’ for the text key of the event.
+The rules array contains hashes of `path`, `value`, and `type`. The `path` value is a dotted path through a hash in JSONPaths syntax. For simple events, this is usually just the name of the field you want, like ‘text’ for the text key of the event.
 
 
 ## Jira Agent
@@ -311,7 +310,7 @@ To be able to use this Agent you need to authenticate with 37signals in the Serv
 
 
 ## Weather Agent
-The Weather Agent creates an event for the day’s weather at a given location.
+The Weather Agent creates an event for the day’s weather at a given `location`.
 
 
 ## Slack Agent
