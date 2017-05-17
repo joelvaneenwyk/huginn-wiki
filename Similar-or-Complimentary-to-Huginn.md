@@ -4,6 +4,10 @@ Decided there should be a place to track interesting things related or complimen
 
 Feel free to add new things, but let's try and keep them in some kind of alphabetized order.
 
+## Posts
+
+* [An Attempt to cover state of web automation in 2017 | peterdemin](https://github.com/peterdemin/web-automation-2017)
+
 ## Systems
 
 * [Netflix Scumblr](https://github.com/Netflix/Scumblr) ([#1522](https://github.com/cantino/huginn/issues/1522)) - Scumblr is a web application that allows performing periodic searches and storing / taking actions on the identified results. 
