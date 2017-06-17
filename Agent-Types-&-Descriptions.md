@@ -17,8 +17,7 @@ To be able to use this Agent you need to authenticate with Tumblr in the Service
 
 
 ## Twilio agent
-The Tumblr Likes Agent checks for liked Tumblr posts from a specific blog.
-To be able to use this Agent you need to authenticate with Tumblr in the Services section first.
+The Twilio Agent receives and collects events and sends them via text message (up to 160 characters) or gives you a call when scheduled.
 
 
 ## Javascript Agent
