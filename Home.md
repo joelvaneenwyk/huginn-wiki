@@ -42,6 +42,7 @@ Please feel free to add to this wiki!
 * [[Mini Tutorial for installing huginn on dokku]]
 * [Installation Guide for Huginn on C9 or Cloud 9](https://github.com/cantino/huginn/wiki/Deploying-Huginn-on-C9-or-Cloud-9)
 * [Automated deployment on DigitalOcean with Fodor.xyz](https://github.com/cantino/huginn/wiki/Automated-deployment-on-DigitalOcean-with-Fodor.xyz)
+* [Running Huginn under a Docker Swarm Mode cluster](https://geek-cookbook.funkypenguin.co.nz/recipies/huginn/)
  
 ### Extending Huginn
 
