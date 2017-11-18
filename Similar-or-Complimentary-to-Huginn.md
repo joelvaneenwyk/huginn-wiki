@@ -6,7 +6,7 @@ Feel free to add new things, but let's try and keep them in some kind of alphabe
 
 ## Posts
 
-* [An Attempt to cover state of web automation in 2017 | peterdemin](https://github.com/peterdemin/web-automation-2017)
+* [An Attempt to cover state of web automation in 2017 | peterdemin](https://github.com/gitter-badger/web-automation-2017)
 
 ## Systems
 
