@@ -14,6 +14,7 @@ Feel free to add new things, but let's try and keep them in some kind of alphabe
 * [Kibitzr](https://kibitzr.github.io/) Get notified when important things happen
 * [Netflix Scumblr](https://github.com/Netflix/Scumblr) ([#1522](https://github.com/cantino/huginn/issues/1522)) - Scumblr is a web application that allows performing periodic searches and storing / taking actions on the identified results. 
 * [Node-RED](http://nodered.org/) ([#1296](https://github.com/cantino/huginn/issues/1296)) - Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways.
+* [NoFlo](https://NoFlojs.org) Flow-Based Programming for JavaScript
 * [PicoLab Pico-Engine](https://github.com/Picolab/node-pico-engine) - A prototype implementation of the pico-engine written in node.js
 * [Trigger Happy](https://github.com/foxmask/django-th) - "opensource clone of IFTTT, a bridge between your internet services"
 * [Welcomer Framework](https://github.com/welcomer/framework/) - The Welcomer framework supports building microservices to flexibly automate your online tasks, putting control of your personal data back in your hands.
