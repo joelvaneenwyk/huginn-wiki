@@ -173,13 +173,8 @@ Now we generate a nice HTML formatted message using Liquid. This is the HipchatA
 * See [this comment](https://github.com/cantino/huginn/issues/1589#issuecomment-234781489) for an example of extracting data in a loop.
 * Limit the description of an RSS feed to 500 characters with the following code for the EventFormattingAgent: 
   ```
-  {
-    "instructions": {
+  {"instructions": {
       "title": "<a href=\"{{url}}\">{{title}}<\/a>",
       "description": "{{description | truncate: 500 }}"
-    },
-    "matchers": [
-    ],
-    "mode": "clean"
-  }
+    }, "matchers": [], "mode": "clean"}
   ```
