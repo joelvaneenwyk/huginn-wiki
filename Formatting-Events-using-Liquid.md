@@ -172,15 +172,14 @@ Now we generate a nice HTML formatted message using Liquid. This is the HipchatA
   Other readable date output formats are available, see the reference page: http://shopify.github.io/liquid/filters/date/
 * See [this comment](https://github.com/cantino/huginn/issues/1589#issuecomment-234781489) for an example of extracting data in a loop.
 * Limit the description of an RSS feed to 500 characters with the following code for the EventFormattingAgent: 
-
- ```
-{
-  "instructions": {
-    "title": "<a href=\"{{url}}\">{{title}}<\/a>",
-    "description": "{{description | truncate: 500 }}"
-  },
-  "matchers": [
-  ],
-  "mode": "clean"
-}
-```
+  ```
+  {
+    "instructions": {
+      "title": "<a href=\"{{url}}\">{{title}}<\/a>",
+      "description": "{{description | truncate: 500 }}"
+    },
+    "matchers": [
+    ],
+    "mode": "clean"
+  }
+  ```
