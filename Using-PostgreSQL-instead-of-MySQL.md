@@ -20,7 +20,7 @@ In the `Gemfile`, disable `mysql2` and add the `pg` gem.
 
 Option 2:
 
-Always run with `ON_HEROKU=true` set in your environment, which switches the Gemfile to use `pg`.  For example, once you've made the `.env` change explained below, you'd do `ON_HEROKU=true bundle` and then `ON_HEROKU=true foreman start`.
+Set `DATABASE_ADAPTER=postgresql` in your `.env` file, which switches the Gemfile to use `pg`.
 
 ### Update Environment with Postgres Connection Info ###
 
