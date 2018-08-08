@@ -3,7 +3,7 @@ This is an addendum to the [Novice setup guide][novice-setup-guide] so that you 
 ### Install PostgreSQL ###
 This will get you up and going as fast as possible, but in production you shouldn't run your application under the `postgres` user. But out of the box it's the user that can run the create scripts on application launch.
 
-    sudo apt-get install postgresql-9.1 postgresql-server-dev-9.1
+    sudo apt-get install postgresql
     # allow password login
     sudo sh -c 'echo "local all postgres md5" >> /etc/postgresql/9.1/main/pg_hba.conf'
     # by default postgres user doesn't have one.
