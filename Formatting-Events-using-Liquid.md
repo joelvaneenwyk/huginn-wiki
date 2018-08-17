@@ -98,7 +98,7 @@ Returns: ['A', 'B', 'C']
 
 `as_object` ALWAYS has to be the last filter in a Liquid expression!
 
-Note that `as_object` can also be used to explicitly cast an integer without the quotes. For example if in JSON you need to return an object in format ```{ "id": 123 }``` you would likely need to use as_object like ```{ "id": {{item | as_object }```
+Note that `as_object` will explicitly cast an integer without the quotes when input that way, whereas normally integers would be output as strings by Liquid formatting. For example if in JSON you need to return an object in format ```{ "id": 123 }``` you would likely need to use as_object like ```{ "id": {{item | as_object }} }```. Using ```{ "id": {{item}} }``` would change the result to ```{ "id": "123" }``` perhaps unexpectedly.
 
 ### Tags added by Huginn
 
