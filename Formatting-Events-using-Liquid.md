@@ -98,6 +98,8 @@ Returns: ['A', 'B', 'C']
 
 `as_object` ALWAYS has to be the last filter in a Liquid expression!
 
+Note that `as_object` can also be used to explicitly cast an integer without the quotes. For example if in JSON you need to return an object in format ```{ "id": 123 }``` you would likely need to use as_object like ```{ "id": {{item | as_object }```
+
 ### Tags added by Huginn
 
 **credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there are no back-quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
