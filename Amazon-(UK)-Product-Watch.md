@@ -1,4 +1,9 @@
-## Works on US site as well - just update links and currency symbol and color spelling
+## Works on on other sites, too
+
+- US site: update links and currency symbol and color spelling
+- DE site: update links and replace `\"£\"` with `\"EUR \"`
+
+```json
     {
         "schema_version": 1,
         "name": "Amazon Toner",
@@ -150,3 +155,4 @@
 
         ]
     }
+````
