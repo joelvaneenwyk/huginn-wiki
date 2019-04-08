@@ -15,7 +15,7 @@ Please feel free to add to this wiki!
 * [[Configuring OAuth applications]] (such as Twitter, Basecamp, Dropbox, Tumblr, etc.)
 * [[Private development instructions]]
 * [[Using PostgreSQL instead of MySQL]]
-* [[https://github.com/huginn/huginn/wiki/Running-Huginn-on-minimal-systems-with-low-RAM-&-CPU-e.g.-Raspberry-Pi]]
+* [Running Huginn on minimal systems with low RAM & CPU e.g. Raspberry Pi](https://github.com/huginn/huginn/wiki/Running-Huginn-on-minimal-systems-with-low-RAM-&-CPU-e.g.-Raspberry-Pi)
 * [[Parse incoming email with Cloudmailin]]
 * [[Using the ManualEventAgent]]
 * [[SMTP passwords with special characters need to be surrounded by quotes]]
