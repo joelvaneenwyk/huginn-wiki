@@ -100,6 +100,20 @@ Returns: ['A', 'B', 'C']
 
 Note that `as_object` will explicitly cast an integer without the quotes when input that way, whereas normally integers would be output as strings by Liquid formatting. For example if in JSON you need to return an object in format ```{ "id": 123 }``` you would likely need to use as_object like ```{ "id": {{item | as_object }} }```. Using ```{ "id": {{item}} }``` would change the result to ```{ "id": "123" }``` perhaps unexpectedly.
 
+**group_by** groups an array of items by a a property (analogous to `array.group_by(&:property_name)` in ruby)
+
+Example usage:
+
+```liquid
+{% assign posts_by_author = site.posts | group_by: "author" %}
+{% for author in posts_by_author %}
+  <dt>{{author.name}}</dt>
+  {% for post in author.items %}
+    <dd><a href="{{post.url}}">{{post.title}}</a></dd>
+  {% endfor %}
+{% endfor %}
+```
+
 ### Tags added by Huginn
 
 **credential** returns the stored user credential for the given credential name. Usage: `{% credential USER_CREDENTIAL_NAME %}`, note there are no back-quotes around the credential name; the name is case sensitive and has to match the store user credential name exactly.
