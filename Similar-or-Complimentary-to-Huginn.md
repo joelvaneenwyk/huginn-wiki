@@ -18,6 +18,7 @@ Feel free to add new things, but let's try and keep them in some kind of alphabe
 * [NoFlo](https://NoFlojs.org) - A JavaScript implementation of Flow-Based Programming (FBP). Separating the control flow of software from the actual software logic. Helping you organize large applications easier than traditional OOP paradigms, especially when importing and modifying large data sets.
 * [Pico-Engine](https://github.com/Picolab/pico-engine/) - A prototype implementation of the pico-engine written in node.js
 * [Riemann](https://github.com/riemann/riemann) - "A network event stream processing system, in Clojure. Riemann aggregates events from your servers and applications with a powerful stream processing language."
+* [RSS-Bridge](https://github.com/RSS-Bridge/rss-bridge) - A PHP application offering a wide selection of feeds for popular and niche services. This includes several services where queries are involved, such as translating Twitter accounts or searches into atom/JSON feeds. Possibly a valuable source of easy data for simpler Huginn scenarios.
 * [Trigger Happy](https://github.com/foxmask/django-th) - "opensource clone of IFTTT, a bridge between your internet services"
 * [Welcomer Framework](https://github.com/welcomer/framework) - Supports building microservices to flexibly automate your online tasks, putting control of your personal data back in your hands.
 
