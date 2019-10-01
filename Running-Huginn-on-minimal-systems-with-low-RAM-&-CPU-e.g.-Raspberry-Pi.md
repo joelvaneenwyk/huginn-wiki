@@ -35,7 +35,7 @@ end
 ### Assign and setup a static IP for your server and disable the DHCP entries 
 for faster startup, memory and cpu savings edit your /etc/network/interfaces
 e.g.:
-````
+```
 auto lo
 iface lo inet loopback
 iface eth0 inet static
