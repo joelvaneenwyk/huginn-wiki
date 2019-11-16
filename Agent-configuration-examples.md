@@ -204,4 +204,10 @@ Get an email whenever something drops below a certain price on Amazon
     {
       "api_key": "5fc988d0-9d08-4a5f-88a6-4h4j4j5j5j59",
       "path": "trackings/499552045343999"
-    } 
+    }
+
+## Dell Firmware Update Notifier
+
+Retrieves current firmware lists from Dell in json format and filters for new BIOS changes.
+
+[[Dell Firmware Update Notifier]]
