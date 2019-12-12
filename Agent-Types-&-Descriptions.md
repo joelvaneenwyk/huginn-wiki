@@ -1,3 +1,5 @@
+In addition to the Agents below, you can find [Agents distributed as RubyGems](https://github.com/huginn/huginn_agent).
+
 ## CSV Agent
 The `CsvAgent` parses or serializes CSV data. When parsing, events can either be emitted for the entire CSV, or one per row.
 Set `mode` to `parse` to parse CSV from incoming event, when set to `serialize` the agent serilizes the data of events to CSV.
