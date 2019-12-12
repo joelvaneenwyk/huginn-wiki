@@ -1,4 +1,4 @@
-These are the Agents distributed with Huginn. In addition, you can find [Agents distributed as RubyGems](https://github.com/huginn/huginn_agent).
+These are the Agents distributed with Huginn. In addition, you can find [Agents distributed as RubyGems](https://rubygems.org/gems/huginn_agent/reverse_dependencies) which use [huginn_agent](https://github.com/huginn/huginn_agent).
 
 ## CSV Agent
 The `CsvAgent` parses or serializes CSV data. When parsing, events can either be emitted for the entire CSV, or one per row.
