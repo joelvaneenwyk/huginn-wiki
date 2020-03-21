@@ -41,3 +41,14 @@ Everything else should continue as normal.
 
 [novice-setup-guide]: https://github.com/cantino/huginn/wiki/Novice-setup-guide
 [postgresql]: http://www.postgresql.org/
+
+If you are developing new agent gem, after installation and subsequently when creating a new agent you may get following error:
+
+Agent#8: Exception during check. PG::NotNullViolation: ERROR:  null value in column "id" violates not-null constraint
+
+In this case you need to run following to auto increment id assuming you have no agents in the table:
+    CREATE SEQUENCE agents_id_seq OWNED BY agents.id;
+    ALTER SEQUENCE agents_id_seq RESTART WITH 1 INCREMENT BY 1;
+    ALTER TABLE agents ALTER COLUMN id SET DEFAULT nextval('agents_id_seq');
+
+Similarly you have to run for delayed_jobs, agent_logs and event table.
