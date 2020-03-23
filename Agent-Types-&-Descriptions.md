@@ -73,7 +73,7 @@ The Data Output Agent outputs received events as either RSS or JSON. Use it to o
 
 
 ## Adioso Agent
-The Data Output Agent outputs received events as either RSS or JSON. Use it to output a public or private stream of Huginn data.
+The Adioso Agent will tell you the minimum airline prices between a pair of cities, and within a certain period of time.
 
 
 ## Email Digest Agent
