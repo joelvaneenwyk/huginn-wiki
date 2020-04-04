@@ -2,7 +2,7 @@ To use the new Services integration you first need to set up OAuth applications 
 
 ## Twitter
 
-If you don't have a Twitter Application yet, please visit the following URL: https://apps.twitter.com
+If you don't have a Twitter Application yet, please visit the following URL: https://developer.twitter.com/en/apps
 
 You'll need to name your application.  Perhaps something like: `John's Huginn`
 You'll also need a description, which could be: `John's personal Huginn system (http://github.com/cantino/huginn)`.
