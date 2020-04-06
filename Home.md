@@ -48,3 +48,4 @@ Please feel free to add to this wiki!
 * [[Creating a new Agent]]
 * [[Debugging an agent]]
 * [Official Agent Suggestions Thread](https://github.com/cantino/huginn/issues/353) - Please add ideas for new Agents!
+* [Scenarios Sharing Subreddit](https://www.reddit.com/r/youragents/) - Please share your scenarios!
