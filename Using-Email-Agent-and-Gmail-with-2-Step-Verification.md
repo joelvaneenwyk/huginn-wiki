@@ -1,0 +1,1 @@
+If you'd like to use the Email Agent with Gmail but your account has 2-Step-Verification enabled, you'll need to [create an App Password](https://support.google.com/accounts/answer/185833) and set SMTP_PASSWORD to the generated value.
