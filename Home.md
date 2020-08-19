@@ -25,7 +25,7 @@ Please feel free to add to this wiki!
 * [[Using a Webhook Agent with external software]]
 * [[Browser Emulation Using PhantomJS Cloud]]
 * [[Browser Emulation using fulldom-server]] (easier, but requires a server with shell access)
-* [[Browser Emulation using browserless.io]] (self hosted)
+* [[Browser Emulation using browserless]] (self hosted)
 * [[Dealing with Deleted Agent Types]]
 * [Using Email Agent and Gmail with 2 Step Verification](https://github.com/huginn/huginn/wiki/Using-Email-Agent-and-Gmail-with-2-Step-Verification)
 
