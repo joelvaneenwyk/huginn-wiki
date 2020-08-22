@@ -44,6 +44,8 @@ Please feel free to add to this wiki!
 * [Installation Guide for Huginn on C9 or Cloud 9](https://github.com/cantino/huginn/wiki/Deploying-Huginn-on-C9-or-Cloud-9)
 * [Automated deployment on DigitalOcean with Fodor.xyz](https://github.com/cantino/huginn/wiki/Automated-deployment-on-DigitalOcean-with-Fodor.xyz)
 * [Running Huginn under a Docker Swarm Mode cluster](https://geek-cookbook.funkypenguin.co.nz/recipies/huginn/)
+* [Deploying Huginn with Docker on Google Cloud Platform](https://jiayiliu.me/post/2020-08-21-huginn-docker-tmux-gcp/)
+
  
 ### Extending Huginn
 
