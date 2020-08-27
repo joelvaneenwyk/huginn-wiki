@@ -1,6 +1,6 @@
 **Problem**: Certain sites have ugly source code and/or render the page using JavaScript, making it next to impossible to use the **Website Agent**. (Described in issue [#888](https://github.com/cantino/huginn/issues/888))
 
-**Solution**: Use [browserless](https://www.browserless.io/) to emulate the browser and return a fully rendered DOM. This allows the **Website Agent** to then properly scrape dynamic content from JavaScript-heavy pages.
+**Solution**: Use the **Post Agent** as the source for a **Website Agent** to scrape data from these sites. Use [browserless](https://www.browserless.io/) to emulate the browser and return a fully rendered DOM. The **Post Agent** will use the *browserless* API to get the rendered html of the site and send this to the **Website Agent**. This allows the **Website Agent** to then properly scrape dynamic content from JavaScript-heavy pages.
 
 In order to use *browserless*, deploy an own instance first. See https://github.com/browserless/chrome for more installation instructions (Docker image available at https://hub.docker.com/r/browserless/chrome).
 
