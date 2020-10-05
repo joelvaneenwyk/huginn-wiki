@@ -10,6 +10,7 @@ Feel free to add new things, but let's try and keep them in some kind of alphabe
 
 ## Systems
 
+* [Actionsflow](https://github.com/actionsflow/actionsflow) - Automate your workflows based on Github actions
 * [Beehive](https://github.com/muesli/beehive) - A flexible event/agent & automation system with lots of bees
 * [DataFire](https://github.com/DataFire/DataFire) - An open source framework for building and integrating APIs. Each integration provides a set of composable actions. New actions can be built by combining existing actions, JavaScript, and external libraries. They are driven by JavaScript Promises, and can be triggered by a URL, on a schedule, or manually.
 * [Kibitzr](https://kibitzr.github.io) - Get notified when important things happen
