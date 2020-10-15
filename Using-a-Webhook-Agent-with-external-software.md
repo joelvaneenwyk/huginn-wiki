@@ -14,7 +14,7 @@ Webhook Agent currently supports the following HTTP methods:
 * POST (the default)
 * GET
 
-Information POSTed into a Webhook Agent must be correctly formatted JSON.  All HTTP requests made to a Webhook Agent must have the **Content-Type: text/json** HTTP header, otherwise you'll get bizarre results.
+Information POSTed into a Webhook Agent must be correctly formatted JSON.  All HTTP requests made to a Webhook Agent must have the **Content-Type: application/json** HTTP header, otherwise you'll get bizarre results.
 
 Usage Example:
 
