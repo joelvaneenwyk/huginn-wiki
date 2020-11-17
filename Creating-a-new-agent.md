@@ -69,6 +69,8 @@ Agents have memory that can be used to maintain state between scheduled interval
 
 Your Agent should create AgentLogs when interesting things happen, especially errors.  Call `log` or `error` with a log message and, optionally, `:outbound_event` or `:inbound_event` to keep track of events tied to the log message.
 
+_Note:_ Attempting to call `log` or `error` from `validate_options` will cause an error, as the log message will attempt to associate itself in the database as a child of the agent, which does not yet exist during creation. Instead, use `errors.add` (see Options header above.)
+
 # Is it working?
 
 It's nice to be able to tell the user if their instance of your Agent is working correctly.  You should define a method called `working?` that returns true when everything seems good.  Here's an example for an Agent that primarily creates events and has an `expected_update_period_in_days` option:
