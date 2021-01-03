@@ -150,7 +150,7 @@ In your huginn instance go to `Services` -> `Import Scenario` and enter https://
 
 **Important**: After the import you need to edit the `XKCD Publisher (Wunderlist Agent)`. Click on `Actions` -> `Edit agent` and select the `List` you want to use to store new XKCD Comics.
 
-##Event Formatting Agent - Replace emails in event hash with URL
+## Event Formatting Agent - Replace emails in event hash with URL
 
 Easy way to filter and replace content in event using regexp_replace
 
