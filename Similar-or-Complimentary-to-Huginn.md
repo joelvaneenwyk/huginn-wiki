@@ -14,6 +14,7 @@ Feel free to add new things, but let's try and keep them in some kind of alphabe
 * [Beehive](https://github.com/muesli/beehive) - A flexible event/agent & automation system with lots of bees
 * [DataFire](https://github.com/DataFire/DataFire) - An open source framework for building and integrating APIs. Each integration provides a set of composable actions. New actions can be built by combining existing actions, JavaScript, and external libraries. They are driven by JavaScript Promises, and can be triggered by a URL, on a schedule, or manually.
 * [Kibitzr](https://kibitzr.github.io) - Get notified when important things happen
+* [n8n.io](https://n8n.io/) Extendable workflow automation developed in TypeScript (Typed JavaScript) with an Apache 2.0 license.
 * [Netflix Scumblr](https://github.com/Netflix/Scumblr) ([#1522](https://github.com/cantino/huginn/issues/1522)) - A web application that allows performing periodic searches and storing / taking actions on the identified results. 
 * [Node-RED](http://nodered.org) ([#1296](https://github.com/cantino/huginn/issues/1296)) - A tool for wiring together hardware devices, APIs, and online services in new and interesting ways.
 * [NoFlo](https://NoFlojs.org) - A JavaScript implementation of Flow-Based Programming (FBP). Separating the control flow of software from the actual software logic. Helping you organize large applications easier than traditional OOP paradigms, especially when importing and modifying large data sets.
