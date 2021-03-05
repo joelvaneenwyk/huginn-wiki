@@ -85,7 +85,7 @@ unescapes (basic) HTML entities in a string.  This currently decodes the followi
 returns an XPath literal or expression that evaluates to the original string for use in a WebsiteAgent.
 
 For example, suppose you are making a WebsiteAgent that receives an event with a `word` to look up on a glossary web page to create a new event. It would have to dynamically build an XPath expression like this:
-```liquid
+```xpath
 //dl/dt[text()={{word | to_xpath}}][1]/following-sibling::dd[1]/text()
 ```
 
@@ -135,10 +135,10 @@ Example usage:
 ```liquid
 {% assign posts_by_author = site.posts | group_by: "author" %}
 {% for author in posts_by_author %}
-<dt>{{author.name}}</dt>
-{% for post in author.items %}
-    <dd><a href="{{post.url}}">{{post.title}}</a></dd>
-{% endfor %}
+    <dt>{{author.name}}</dt>
+    {% for post in author.items %}
+        <dd><a href="{{post.url}}">{{post.title}}</a></dd>
+    {% endfor %}
 {% endfor %}
 ```
 
@@ -220,11 +220,11 @@ Now we generate a nice HTML formatted message using Liquid. This is the HipchatA
     Other readable date output formats are available, see the reference page: http://shopify.github.io/liquid/filters/date/
 - See [this comment](https://github.com/cantino/huginn/issues/1589#issuecomment-234781489) for an example of extracting data in a loop.
 - Limit the description of an RSS feed to 500 characters with the following code for the EventFormattingAgent:
-    ```liquid
+    ```json
     {
         "instructions": {
-        "title": "<a href=\"{{url}}\">{{title}}<\/a>",
-        "description": "{{description | truncate: 500 }}"
+            "title": "<a href=\"{{url}}\">{{title}}<\/a>",
+            "description": "{{description | truncate: 500 }}"
         },
         "matchers": [],
         "mode": "clean"
