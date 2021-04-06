@@ -1,6 +1,8 @@
 # Liquid
 
-Liquid is a template engine developed by [Shopify](http://shopify.com), it was designed to have a simple markup and to be non evaluating and secure. You can read more about it at it's [homepage](http://liquidmarkup.org/) or the GitHub [repository](https://github.com/Shopify/liquid/).
+Liquid is a template engine developed by [Shopify](http://shopify.com), it was designed to have a simple markup and to be non evaluating and secure. You can read more about it at it's [homepage](https://shopify.github.io/liquid) or the GitHub [repository](https://github.com/Shopify/liquid/).
+
+https://shopify.dev/docs/themes/liquid
 
 ### Basic usage of Liquid
 
