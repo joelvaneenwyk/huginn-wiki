@@ -54,7 +54,7 @@ An Agent object has the following keys (excerpt).
 | `unescape` | unescapes (basic) HTML entities in a string.  This currently decodes the following entities only: `&apos;`, `&quot;`, `&lt;`, `&gt;`, `&amp;`, `&#dd;` and `&#xhh;`. |
 | `to_xpath` | returns an XPath literal or expression that evaluates to the original string for use in a WebsiteAgent. |
 | `regex_replace` & `regex_replace_first` | replace all/first regex matching strings with a substring. Very similar to the [built in replace](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#replace).  |
-| `json` | takes the object provided and serializes it into a JSON string: `{{ data | json }}` |
+| `json` | takes the object provided and serializes it into a JSON string: `{{ data \| json }}` |
 | `as_object` | Returns a Ruby object |
 | `group_by` | groups an array of items by a a property (analogous to `array.group_by(&:property_name)` in ruby) |
 
