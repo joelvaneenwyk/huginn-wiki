@@ -33,7 +33,7 @@ Please feel free to add to this wiki!
 
 * [Installation guide for Ubuntu/Debian](https://github.com/cantino/huginn/tree/master/doc/manual)
 * [Run Huginn on Heroku](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md)
-* [Run Huginn on GCP](https://blog.colinarms.com/posts/huginn-slack-gcp-automation/)
+* [Run Huginn on GCP](https://blog.colinarms.com/personal-automation-with-huginn-using-slack-docker-and-gcp)
 * [Deployment with Capistrano](https://github.com/cantino/huginn/blob/master/doc/manual/capistrano.md)
 * [Using Huginn on predeployed Docker container](https://github.com/cantino/huginn/blob/master/doc/docker/install.md)
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
