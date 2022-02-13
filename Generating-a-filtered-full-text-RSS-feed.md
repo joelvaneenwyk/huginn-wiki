@@ -51,7 +51,7 @@ _Propagate immediately_: Yes
 
 > __Notes__:
 > - "keep_event": "true" helps pass on original parsed item elements to next agent
-> - the regex value matches any url containing the word strip, which is all of our comic strip items
+> - the `regex` `value` matches any `url` containing the word "strip", which for us means comic strip items
 
 
 ## 3. WebsiteAgent
@@ -86,9 +86,9 @@ _Propagate immediately_: Yes
 > __Notes__: 
 > - "mode": "merge" helps pass on original parsed item elements to next agent
 > - use "Dry Run" here to confirm you are getting the same, correct number of each element
-> - we want the string value of the element with the class `comic-title-name`
-> - we want the `data-total` attribute of the DIV with the class `comic-rating`
-> - we want the src attribute of the image located at the given `xpath`
+> - we want the `string` value of the element with the class `comic-title-name`
+> - we want the `data-total` attribute of the `div` with the class `comic-rating`
+> - we want the `src` attribute of the image located at the given `xpath`
 > - the "xpath" is obtained using the browser web inspector, as follows:
 >   1. open web inspector
 >   1. in the html source, find the element you are interested in
