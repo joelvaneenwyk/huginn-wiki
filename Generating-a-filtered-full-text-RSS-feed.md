@@ -135,6 +135,7 @@ _Propagate immediately_: Yes
 > - we're ordering by the "id" field, which is a date "string", and not sorting in reverse "false"
 > - we write a small amount of HTML for the body/description of the item containing the `comictitle`, `comicrating`, and the `comicimageurl` wrapped in a link to `url` the comic page
 > - to ensure all items are correctly dated we set both `date_published` and `pubDate` to the `last_updated` value which is present in the original feed
+> - __bonus__: if the time we had was not formatted correctly we could do something like: `"pubDate": "{{timestamp | date: '%a, %d %b %Y %H:%M:%S %z'}}"` to get from a Unix timestamp to the date format expected in an RSS feed.
 
 
 ## Scenario
