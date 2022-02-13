@@ -140,5 +140,5 @@ _Propagate immediately_: Yes
 
 ## Scenario
 
-This json file can be imported directly into Huginn: [dilbert-full-feed.json.txt](https://github.com/huginn/huginn/files/8056832/dilbert-full-feed.json.txt)
+This json file can be imported directly into Huginn: [dilbert-full-feed.json](https://github.com/huginn/huginn/files/8056832/dilbert-full-feed.json.txt)
  
