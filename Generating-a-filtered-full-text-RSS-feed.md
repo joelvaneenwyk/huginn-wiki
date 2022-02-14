@@ -22,7 +22,7 @@ _Name_: 1.Download Dilbert limited feed
 {
   "expected_update_period_in_days": "1",
   "clean": "false",
-  "url": "https://dilbert.com/feed.rss"
+  "url": "https://dilbert.com/feed"
 },
 ```
 
