@@ -5,7 +5,7 @@
 In order to use *browserless*, deploy an own instance first. See https://github.com/browserless/chrome for more installation instructions (Docker image available at https://hub.docker.com/r/browserless/chrome).
 
 In Huginn, the **Post Agent** will request the rendered html from *browserless* for a given url through an API call (https://docs.browserless.io/docs/content.html). These are the values to set in the **Post Agent**
-* `post_url` - set to *browserless_url/content* (where *browserless_url* is wherever the instance is hosted)
+* `post_url` - set to *browserless_url/content* (where *browserless_url* is wherever the instance is hosted, if using docker this will be a URL outside of both the Browserless and Huginn containers)
 * `content_type` - usually set to *json*
 * `method` - set to *post*
 * `payload` - set to `{url: site_url}` where *site_url* is the url of the site that should be rendered
