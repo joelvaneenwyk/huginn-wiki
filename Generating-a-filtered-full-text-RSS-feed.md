@@ -68,11 +68,11 @@ _Propagate immediately_: Yes
   "mode": "merge",
   "extract": {
     "comictitle": {
-      "css": ".comic-title-name",
+      "css": ".comic-item-container .comic-title-name",
       "value": "string(.)"
     },
     "comicrating": {
-      "css": "div.comic-rating",
+      "css": ".comic-item-container div.comic-rating",
       "value": "@data-total"
     },
     "comicimgurl": {
@@ -136,9 +136,3 @@ _Propagate immediately_: Yes
 > - we write a small amount of HTML for the body/description of the item containing the `comictitle`, `comicrating`, and the `comicimageurl` wrapped in a link to `url` the comic page
 > - to ensure all items are correctly dated we set both `date_published` and `pubDate` to the `last_updated` value which is present in the original feed
 > - __bonus__: if the time we had was not formatted correctly we could do something like: `"pubDate": "{{timestamp | date: '%a, %d %b %Y %H:%M:%S %z'}}"` to get from a Unix timestamp to the date format expected in an RSS feed.
-
-
-## Scenario
-
-This json file can be imported directly into Huginn: [dilbert-full-feed.json](https://github.com/huginn/huginn/files/8056832/dilbert-full-feed.json.txt)
- 
