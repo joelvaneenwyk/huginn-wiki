@@ -317,6 +317,3 @@ The Weather Agent creates an event for the day’s weather at a given `location`
 ## Slack Agent
 The Slack Agent lets you receive events and send notifications to Slack.
 
-## Google Flights Agent
-The GoogleFlightsAgent will tell you the minimum airline prices between a pair of cities.
-
