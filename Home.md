@@ -45,6 +45,7 @@ Please feel free to add to this wiki!
 * [Automated deployment on DigitalOcean with Fodor.xyz](https://github.com/cantino/huginn/wiki/Automated-deployment-on-DigitalOcean-with-Fodor.xyz)
 * [Running Huginn under a Docker Swarm Mode cluster](https://geek-cookbook.funkypenguin.co.nz/recipies/huginn/)
 * [Deploying Huginn with Docker on Google Cloud Platform](https://jiayiliu.me/post/2020-08-21-huginn-docker-tmux-gcp/)
+* [Huginn one-click install on alwaysdata](https://www.alwaysdata.com/en/marketplace/huginn/)
 
  
 ### Extending Huginn
