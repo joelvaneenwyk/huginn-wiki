@@ -28,6 +28,7 @@ Please feel free to add to this wiki!
 * [[Browser Emulation using browserless]] (self hosted)
 * [[Dealing with Deleted Agent Types]]
 * [Using Email Agent and Gmail with 2 Step Verification](https://github.com/huginn/huginn/wiki/Using-Email-Agent-and-Gmail-with-2-Step-Verification)
+* [[Merge Events from Multiple Feeds]]
 
 ### Deploying Huginn
 
