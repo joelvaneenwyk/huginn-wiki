@@ -1,0 +1,184 @@
+## Background
+One approach to merging the data from events coming from multiple feeds is to use "[Credentials as a form of shared memory](https://github.com/huginn/huginn/issues/1022)", or global variables.  The Java Script agent can be used to read data from one event stream, and to store a selection of that data to a credential.  Note that the credential has nothing to do with authorization of authentication in this usage, it is merely used as a place to write data to and read data from.  A second Java Script agent can be used to read data from a credential, and [create event data](https://github.com/huginn/huginn/issues/2166) in a second event stream.
+
+The example scenario reads deals from a Slickdeals RSS feed, as well as from the European Central Bank's (ECB) feed of Euro to US dollar exchange rates.  The output feed that is desired will show the title (including USD price) of Slickdeals deal items, as well as the most recent EUR/USD rate.  In effect the output feed provides "for each deal in Slickdeals, include last night's EUR/USD rate".  This is similar to an approach to using a [a static list of items to iterate over](https://github.com/huginn/huginn/issues/2469), but might allow for additional flexibility.  The task of multiplying the deal price by the exchange rateto determine if the item is, in fact, a deal is left to the reader ;)
+
+![image](https://user-images.githubusercontent.com/3229013/169708241-ba0ba00d-6616-458a-a418-45ad623895f8.png)
+
+## Prerequisite
+The scenario requires that the credential ecb_rate exists before running.
+
+![image](https://user-images.githubusercontent.com/3229013/169708253-7d56258c-60f0-4238-85e7-01dc634807ed.png)
+
+## Accessing Credentials via Java Script
+The first stream gets the most recent ECB rate via RSS, extracts the data of interest via an Event Formatting Agent, which is passed to a Java Script Agent that uses `this.credential('ecb_rate', events[i].payload.ecb_rate);` to **set** the value of ecb_rate arriving as event data to a credential of the same name.
+
+The second stream gets Slickdeals feed items, passed to a second Java Script Agent to **get** the value of the credential that was set by the first Java Script Agent, and add a key to the event with the retrieved value via `events[i].payload.ecb_rate = this.credential('ecb_rate');`.
+
+## Scenario Code
+```
+{
+  "schema_version": 1,
+  "name": "Slickdeals EU JS Merge",
+  "description": "No description provided",
+  "source_url": false,
+  "guid": "c00681ea0e2c4246033893f05b4a9ed7",
+  "tag_fg_color": "#ffffff",
+  "tag_bg_color": "#eef218",
+  "icon": "film",
+  "exported_at": "2022-05-22T18:07:51Z",
+  "agents": [
+    {
+      "type": "Agents::RssAgent",
+      "name": "RSS ECB EU to USD Daily",
+      "disabled": false,
+      "guid": "011840b48158b2162e1d287edab6970e",
+      "options": {
+        "expected_update_period_in_days": "5",
+        "clean": "false",
+        "url": "https://www.ecb.europa.eu/rss/fxref-usd.html",
+        "events_order": [
+          [
+            "{{date_published}}",
+            "time",
+            true
+          ],
+          [
+            "{{last_updated}}",
+            "time"
+          ]
+        ],
+        "max_events_per_run": 1
+      },
+      "schedule": "every_1d",
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EventFormattingAgent",
+      "name": "Format ECB EU Extract Keys",
+      "disabled": false,
+      "guid": "5f79526e2c643fc945cf297025c31eae",
+      "options": {
+        "instructions": {
+          "ecb_rate": "{{title}}"
+        },
+        "matchers": [
+
+        ],
+        "mode": "clean"
+      },
+      "keep_events_for": 0,
+      "propagate_immediately": false
+    },
+    {
+      "type": "Agents::RssAgent",
+      "name": "RSS Slickdeals",
+      "disabled": false,
+      "guid": "6387e959bcc9e71aa4b3eb82cb859963",
+      "options": {
+        "expected_update_period_in_days": "5",
+        "clean": "false",
+        "url": "https://feeds.feedburner.com/SlickdealsnetFP?format=rss"
+      },
+      "schedule": "every_1d",
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EventFormattingAgent",
+      "name": "Format Slickdeals ECB Combine Values From Feeds",
+      "disabled": false,
+      "guid": "9321f0c4e9d7c5f8dae821f780235246",
+      "options": {
+        "instructions": {
+          "title": "{{title}}",
+          "ecb_rate": "{{ecb_rate}}"
+        },
+        "matchers": [
+
+        ],
+        "mode": "clean"
+      },
+      "keep_events_for": 0,
+      "propagate_immediately": false
+    },
+    {
+      "type": "Agents::DataOutputAgent",
+      "name": "Output ECB Slickdeals",
+      "disabled": false,
+      "guid": "983995be8030209e417b6bce6e74fd24",
+      "options": {
+        "secrets": [
+          "rssfeed"
+        ],
+        "expected_receive_period_in_days": 2,
+        "template": {
+          "title": "Slickdeaks ECB Feed",
+          "description": "This is a feed generated by Huginn",
+          "item": {
+            "title": "{{title}}",
+            "ecb_rate": "{{ecb_rate}}"
+          },
+          "link": "{{link}}"
+        },
+        "ns_media": "true"
+      },
+      "propagate_immediately": false
+    },
+    {
+      "type": "Agents::JavaScriptAgent",
+      "name": "JS ECB Get Variables and Add Keys to Events",
+      "disabled": false,
+      "guid": "babe1e9d7c9c9366ccd928c6b67ad5aa",
+      "options": {
+        "language": "JavaScript",
+        "code": "Agent.receive = function() {\r\n\r\n  var events = this.incomingEvents();\r\n  for(var i = 0; i < events.length; i++) {\r\n      //add a key ex. 'ecb_rate' with value of Credential ex. ecb_rate'\r\n      events[i].payload.ecb_rate = this.credential('ecb_rate');\r\n      \r\n      this.createEvent(events[i].payload);\r\n  }\r\n}",
+        "expected_receive_period_in_days": "2",
+        "expected_update_period_in_days": "2"
+      },
+      "schedule": "never",
+      "keep_events_for": 0,
+      "propagate_immediately": false
+    },
+    {
+      "type": "Agents::JavaScriptAgent",
+      "name": "JS ECB Set Variables",
+      "disabled": false,
+      "guid": "c993ef776df990af4dcc91ec86d7ca9b",
+      "options": {
+        "language": "JavaScript",
+        "code": "Agent.receive = function() {\r\n\r\n  var events = this.incomingEvents();\r\n  for(var i = 0; i < events.length; i++) {\r\n      //write the key's value to a credential\r\n      this.log(events[i].payload.ecb_rate);\r\n      this.credential('ecb_rate', events[i].payload.ecb_rate);\r\n  }\r\n}",
+        "expected_receive_period_in_days": "2",
+        "expected_update_period_in_days": "2"
+      },
+      "schedule": "never",
+      "keep_events_for": 0,
+      "propagate_immediately": false
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "receiver": 1
+    },
+    {
+      "source": 1,
+      "receiver": 6
+    },
+    {
+      "source": 2,
+      "receiver": 5
+    },
+    {
+      "source": 3,
+      "receiver": 4
+    },
+    {
+      "source": 5,
+      "receiver": 3
+    }
+  ],
+  "control_links": [
+
+  ]
+}
+```
