@@ -148,10 +148,6 @@ mode determines if the agent is emitting events for (changed) files or writing r
 The User Location Agent creates events based on WebHook POSTS that contain a `latitude` and `longitude`. You can use the POSTLocation or PostGPS iOS app to post your location to `https://localhost:3000/users/1/update_location/:secret` where `:secret` is specified in your options.
 
 
-## Wunderlist Agent
-The WunderlistAgent creates new Wunderlist tasks based on the incoming event.
-
-
 ## Weibo Publish Agent
 The Weibo Publish Agent publishes tweets from the events it receives.
 You must first set up a Weibo app and generate an access_token for the user that will be used for posting status updates.
