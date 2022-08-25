@@ -1,6 +1,7 @@
 Retrieves current firmware lists from Dell in json format and filters for new BIOS changes.
 Update URL/ProductCode to suit your product
-````{
+```json
+{
   "schema_version": 1,
   "name": "Dell Firmware Update",
   "description": "Check Dell Support for Updated BIOS Files",
@@ -96,4 +97,5 @@ Update URL/ProductCode to suit your product
   "control_links": [
 
   ]
-}````
+}
+```
