@@ -9,6 +9,7 @@ Please feel free to add to this wiki!
 * [Adding RSS Feeds to Any Site With Huginn](http://blog.andrewcantino.com/blog/2014/04/13/adding-rss-feeds-to-any-site-with-huginn/)
 * [Know when the world changes– with Huginn](http://blog.andrewcantino.com/blog/2014/03/17/know-when-the-world-changes-with-huginn/)
 * [Using Huginn Scenarios to Save Money](http://blog.andrewcantino.com/blog/2014/09/13/using-huginn-scenarios-to-save-money/)
+* [Online courses](https://skillcombo.com/)
 * [[Agent Configuration Examples]]
 * [[Novice setup guide]]
 * [[Formatting Events and Options using Liquid|Formatting Events using Liquid]]
