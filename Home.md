@@ -36,7 +36,7 @@ Please feel free to add to this wiki!
 * [Run Huginn on Heroku](https://github.com/cantino/huginn/blob/master/doc/heroku/install.md)
 * [Run Huginn on GCP](https://blog.colinarms.com/personal-automation-with-huginn-using-slack-docker-and-gcp)
 * [Deployment with Capistrano](https://github.com/cantino/huginn/blob/master/doc/manual/capistrano.md)
-* [Using Huginn on predeployed Docker container](https://iplogger.com/2OKny2)
+* [Using Huginn on predeployed Docker container](https://github.com/huginn/huginn/blob/master/doc/docker/install.md)
 * [[Deploying huginn on any server or virtualbox using chef solo and/or vagrant]]
 * [[Apache Huginn configuration]]
 * [[Backing up Huginn]]
