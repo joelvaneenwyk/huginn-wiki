@@ -10,9 +10,9 @@ For some simple examples have a look at the [HipChat](https://github.com/cantino
 
 To format the output you can use filters, they basically work like UNIX pipes:  
 `{{ 'hello' | replace: 'hello', 'hi' | upcase }}` would output `HI`.  
-(See docs for [replace](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#replace), and [upcase](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#upcase).)
+(See docs for [replace](https://shopify.github.io/liquid/filters/replace/), and [upcase](https://shopify.github.io/liquid/filters/upcase/).)
 
-For a complete list of build-in filters have a look at the documentation at [Shopify](http://docs.shopify.com/themes/liquid-basics/output).
+For a complete list of build-in filters have a look at the documentation at [Shopify](https://shopify.github.io/liquid/basics/introduction/).
 
 
 ## Objects provided by Huginn
@@ -54,7 +54,7 @@ An Agent object has the following keys (excerpt).
 | `unescape` | unescapes (basic) HTML entities in a string.  This currently decodes the following entities only: `&apos;`, `&quot;`, `&lt;`, `&gt;`, `&amp;`, `&#dd;` and `&#xhh;`. |
 | `to_xpath` | returns an XPath literal or expression that evaluates to the original string for use in a WebsiteAgent. |
 | `regex_extract` | extract a matching substring found in a string.  It takes a regex pattern followed by an optional group index.  e.g. To capture a version number from a phrase `{% assign phrase = "Product version 1.0.5 has been released." %}`, try this: `{{ phrase \| regex_extract: "[\\d.]+" }}` or more specifically: `{{ phrase \| regex_extract: "version (?<ver>[\\d.]+)", "ver" }}` / `{{ phrase \| regex_extract: "version ([\\d.]+)", 1 }}` (New feature since 2023-02-19) |
-| `regex_replace` & `regex_replace_first` | replace all/first regex matching strings with a substring. Very similar to the [built in replace](https://docs.shopify.com/themes/liquid-documentation/filters/string-filters#replace).  |
+| `regex_replace` & `regex_replace_first` | replace all/first regex matching strings with a substring. Very similar to the [built in replace](https://shopify.github.io/liquid/filters/replace/).  |
 | `json` | takes the object provided and serializes it into a JSON string: `{{ data \| json }}` |
 | `as_object` | Returns a Ruby object |
 | `group_by` | groups an array of items by a a property (analogous to `array.group_by(&:property_name)` in ruby) |
