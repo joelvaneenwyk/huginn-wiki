@@ -1,5 +1,12 @@
 This is an addendum to the [Novice setup guide][novice-setup-guide] so that you can use [PostgreSQL][postgresql] in place of MySQL.
 
+### Issues ###
+Huginn has an issue where it randomly loses connection to postgres, and never recovers. This causes all jobs to stop running.
+- https://github.com/huginn/huginn/issues/3183
+- https://github.com/huginn/huginn/issues/2964
+
+Until these issues are addressed, its better to go with MySQL.
+
 ### Install PostgreSQL ###
 This will get you up and going as fast as possible, but in production you shouldn't run your application under the `postgres` user. But out of the box it's the user that can run the create scripts on application launch.
 
@@ -53,4 +60,3 @@ In this case you need to run following to auto increment id assuming you have no
     ALTER TABLE agents ALTER COLUMN id SET DEFAULT nextval('agents_id_seq')
 
 Similarly you have to run the above queries for delayed_jobs, agent_logs and events table.
-
