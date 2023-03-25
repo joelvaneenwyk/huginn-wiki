@@ -53,3 +53,4 @@ In this case you need to run following to auto increment id assuming you have no
     ALTER TABLE agents ALTER COLUMN id SET DEFAULT nextval('agents_id_seq')
 
 Similarly you have to run the above queries for delayed_jobs, agent_logs and events table.
+
