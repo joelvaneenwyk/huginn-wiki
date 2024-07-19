@@ -9,4 +9,4 @@ For more about Agent gems, see <a href="https://github.com/cantino/huginn_agent"
 
 ## Agents that have been removed from Huginn
 
-* BeeperAgent (service no longer exists)
+- BeeperAgent (service no longer exists)

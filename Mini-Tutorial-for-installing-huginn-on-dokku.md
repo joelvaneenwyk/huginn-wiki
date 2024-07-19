@@ -1,11 +1,11 @@
-Mini-Tutorial for installing huginn on dokku 
+Mini-Tutorial for installing huginn on dokku
 
 > A docker-powered PaaS that helps you build and manage the lifecycle of applications http://dokku.viewdocs.io/dokku/
 
 # Prerequisites
 
-* dokku version >= v0.4.9
-* http://dokku.viewdocs.io/dokku/getting-started/installation/
+- dokku version >= v0.4.9
+- http://dokku.viewdocs.io/dokku/getting-started/installation/
 
 # Create the app
 
@@ -18,7 +18,6 @@ ssh -t root@dokku.me dokku apps:create huginn
 git remote add dokku dokku@dokku.me:huginn
 ```
 
-
 # Install and link Postgresql
 
 ```
@@ -29,8 +28,8 @@ ssh -t root@dokku.me dokku postgres:link huginn huginn
 
 # Environment Variables
 
-* Replace ```APP_SECRET_TOKEN=your-secret-token``` with something secret and sane.
-* ```RAILS_SERVE_STATIC_FILES=true``` is neccessary so lazy people do not have to create their own nginx configuration.
+- Replace `APP_SECRET_TOKEN=your-secret-token` with something secret and sane.
+- `RAILS_SERVE_STATIC_FILES=true` is neccessary so lazy people do not have to create their own nginx configuration.
 
 ```
 ssh -t root@dokku.me dokku config:set huginn DATABASE_ADAPTER=postgresql
@@ -42,7 +41,7 @@ ssh -t root@dokku.me dokku config:set huginn RAILS_SERVE_STATIC_FILES=true
 
 # Deploy the app and migrate the database
 
-* After deployment huginn needs some time to "boot". Give it 30 seconds after deployment finishes before filing a complaint.
+- After deployment huginn needs some time to "boot". Give it 30 seconds after deployment finishes before filing a complaint.
 
 ```
 git push dokku master

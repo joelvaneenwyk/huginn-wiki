@@ -1,15 +1,16 @@
 **Problem**: Certain sites have ugly source code and/or render the page using JavaScript, making it next to impossible to use the **Website Agent**. (Described in issue [#888](https://github.com/cantino/huginn/issues/888))
 
-**Solution**: Use the **Post Agent** as the source for a **Website Agent** to scrape data from these sites. Use [browserless](http://goo-gl.me/kRTPE) to emulate the browser and return a fully rendered DOM. The **Post Agent** will use the *browserless* API to get the rendered html of the site and send this to the **Website Agent**. This allows the **Website Agent** to then properly scrape dynamic content from JavaScript-heavy pages.
+**Solution**: Use the **Post Agent** as the source for a **Website Agent** to scrape data from these sites. Use [browserless](http://goo-gl.me/kRTPE) to emulate the browser and return a fully rendered DOM. The **Post Agent** will use the _browserless_ API to get the rendered html of the site and send this to the **Website Agent**. This allows the **Website Agent** to then properly scrape dynamic content from JavaScript-heavy pages.
 
-In order to use *browserless*, deploy an own instance first. See https://github.com/browserless/chrome for more installation instructions (Docker image available at https://hub.docker.com/r/browserless/chrome).
+In order to use _browserless_, deploy an own instance first. See https://github.com/browserless/chrome for more installation instructions (Docker image available at https://hub.docker.com/r/browserless/chrome).
 
-In Huginn, the **Post Agent** will request the rendered html from *browserless* for a given url through an API call (https://docs.browserless.io/docs/content.html). These are the values to set in the **Post Agent**
-* `post_url` - set to *browserless_url/content* (where *browserless_url* is wherever the instance is hosted, if using docker this will be a URL outside of both the Browserless and Huginn containers)
-* `content_type` - usually set to *json*
-* `method` - set to *post*
-* `payload` - set to `{url: site_url}` where *site_url* is the url of the site that should be rendered
-* `emit_events` - set to *true* (this will allow setting this agent as the source for the html of the desired site)
+In Huginn, the **Post Agent** will request the rendered html from _browserless_ for a given url through an API call (https://docs.browserless.io/docs/content.html). These are the values to set in the **Post Agent**
+
+- `post_url` - set to _browserless_url/content_ (where _browserless_url_ is wherever the instance is hosted, if using docker this will be a URL outside of both the Browserless and Huginn containers)
+- `content_type` - usually set to _json_
+- `method` - set to _post_
+- `payload` - set to `{url: site_url}` where _site_url_ is the url of the site that should be rendered
+- `emit_events` - set to _true_ (this will allow setting this agent as the source for the html of the desired site)
 
 The remaining keys can stay at their default values.
 

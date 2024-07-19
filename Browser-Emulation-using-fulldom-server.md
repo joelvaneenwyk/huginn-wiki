@@ -65,10 +65,10 @@ Last, you need to configure WebsiteAgent to use fulldom-server. Doing so is easy
 
 However, this isn't quite enough. fulldom-server needs a hint to help it guess when the page is finished loading. So just append `?selector=` and whatever selector you're scraping to the end of the URL, ~~and you're done!~~ and you should be done, but this doesn't actually work due to [this issue][slash-issue]. Soon though!
 
- [fulldom-server]: https://github.com/strugee/fulldom-server
- [phantomjs-cloud]: https://github.com/cantino/huginn/wiki/Browser-Emulation-Using-PhantomJS-Cloud
- [readme-config]: https://github.com/strugee/fulldom-server#running
- [dos-warning]: https://github.com/strugee/fulldom-server#warning
- [percent-encoding]: https://en.wikipedia.org/wiki/Percent-encoding
- [encoding-tool]: http://www.url-encode-decode.com/
- [slash-issue]: https://github.com/cantino/huginn/issues/1735
+[fulldom-server]: https://github.com/strugee/fulldom-server
+[phantomjs-cloud]: https://github.com/cantino/huginn/wiki/Browser-Emulation-Using-PhantomJS-Cloud
+[readme-config]: https://github.com/strugee/fulldom-server#running
+[dos-warning]: https://github.com/strugee/fulldom-server#warning
+[percent-encoding]: https://en.wikipedia.org/wiki/Percent-encoding
+[encoding-tool]: http://www.url-encode-decode.com/
+[slash-issue]: https://github.com/cantino/huginn/issues/1735

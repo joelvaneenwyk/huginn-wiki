@@ -18,7 +18,7 @@ OK
 Uploading huginn...
 Uploading app files from: .
 Uploading 3.3M, 880 files
-Done uploading               
+Done uploading
 OK
 Binding service huginn-db to app huginn in org test@test.com / space dev as test@test.com...
 OK
@@ -62,12 +62,12 @@ usage: 512M x 1 instances
 urls: test.mybluemix.net
 last uploaded: Sat Mar 21 10:44:26 +0000 2015
 
-     state     since                    cpu    memory           disk   
-#0   running   2015-03-21 11:46:27 AM   0.2%   375.2M of 512M   240.9M of 1G   
+     state     since                    cpu    memory           disk
+#0   running   2015-03-21 11:46:27 AM   0.2%   375.2M of 512M   240.9M of 1G
 ```
-1. Hurrah! Browse to http://<url>  (The default invitation code is: `try-huginn`)
+
+1. Hurrah! Browse to http://<url> (The default invitation code is: `try-huginn`)
 
 ### NOTES:
 
 1.  The initial db:migrate can take a long time, so you might need to use `cf log` to see when the migrate is done, then `cf restart`
-

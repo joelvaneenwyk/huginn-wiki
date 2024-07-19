@@ -1,6 +1,7 @@
 **Note: These are simply notes from a multiple worker per dyno setup on Heroku, not exact instructions**
 
 ### Gemfile
+
     group :production do
       gem 'rack', '> 1.5.0'
       gem 'unicorn', '~> 4.9.0'
@@ -11,6 +12,7 @@
     end
 
 ### Procfile
+
 Change `web` process if not using heroku.
 
     web: bundle exec unicorn -p $PORT -c ./deployment/heroku/unicorn.rb
@@ -20,6 +22,7 @@ Change `web` process if not using heroku.
     resque_pool_02: bundle exec resque-pool
 
 ### WorkerStatusController
+
 Display jobs queue and failed counts on the navigation bar.
 
 Replace this
@@ -48,8 +51,8 @@ With this
       compute_time: Time.now - start
     }
 
-
 ### lib/tasks/resque.rake
+
     require 'resque/tasks' if Rails.env.production?
     require 'resque/pool/tasks' if Rails.env.production?
 
@@ -69,10 +72,12 @@ With this
     end
 
 ### config/resque-pool.yml
+
     ---
     '*': <%= WORKER_CONCURRENCY %>
 
 ### config/routes.rb
+
 Replace huginn job queue with `resque-web` gem. TODO: update huginn job queue so that it is resque compatible.
 
 Make the top of the routes file look like this:
@@ -93,14 +98,17 @@ Make the top of the routes file look like this:
       ...
 
 ### config/environments/production.rb
+
 Add this line:
-    
+
     config.active_job.queue_adapter = :resque
 
 ### config/initializers/resque.rb
+
     if Rails.env.production?
       Resque.redis = ENV["REDIS_URL"]
     end
 
 ### config/initializers/resque-pool.rb
+
     WORKER_CONCURRENCY = Integer(ENV["WORKER_CONCURRENCY"] || 2)

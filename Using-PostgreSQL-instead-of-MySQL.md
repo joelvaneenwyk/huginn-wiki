@@ -1,13 +1,16 @@
 This is an addendum to the [Novice setup guide][novice-setup-guide] so that you can use [PostgreSQL][postgresql] in place of MySQL.
 
-### Issues ###
+### Issues
+
 Huginn has an issue where it randomly loses connection to postgres, and never recovers. This causes all jobs to stop running.
+
 - https://github.com/huginn/huginn/issues/3183
 - https://github.com/huginn/huginn/issues/2964
 
 Until these issues are addressed, its better to go with MySQL.
 
-### Install PostgreSQL ###
+### Install PostgreSQL
+
 This will get you up and going as fast as possible, but in production you shouldn't run your application under the `postgres` user. But out of the box it's the user that can run the create scripts on application launch.
 
     sudo apt-get install postgresql libpq-dev
@@ -16,7 +19,7 @@ This will get you up and going as fast as possible, but in production you should
     # by default postgres user doesn't have one.
     sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'yourpassword';"
 
-### Change Compilation Dependencies from MySQL to PostgreSQL ###
+### Change Compilation Dependencies from MySQL to PostgreSQL
 
 Option 1:
 
@@ -29,7 +32,7 @@ Option 2:
 
 Set `DATABASE_ADAPTER=postgresql` in your `.env` file, which switches the Gemfile to use `pg`.
 
-### Update Environment with Postgres Connection Info ###
+### Update Environment with Postgres Connection Info
 
 In the `.env`, change the database setup section to the following:
 
@@ -39,11 +42,12 @@ In the `.env`, change the database setup section to the following:
     DATABASE_NAME=huginn_development
     DATABASE_POOL=5
     DATABASE_USERNAME=postgres
-    DATABASE_PASSWORD="yourpassword" 
+    DATABASE_PASSWORD="yourpassword"
     DATABASE_HOST="127.0.0.1"
     DATABASE_PORT=5432
 
-### Continue With Install ###
+### Continue With Install
+
 Everything else should continue as normal.
 
 [novice-setup-guide]: https://github.com/cantino/huginn/wiki/Novice-setup-guide
@@ -51,7 +55,7 @@ Everything else should continue as normal.
 
 If you are developing new agent gem, after installation and subsequently when creating a new agent you may get following error:
 
-Agent#8: Exception during check. PG::NotNullViolation: ERROR:  null value in column "id" violates not-null constraint
+Agent#8: Exception during check. PG::NotNullViolation: ERROR: null value in column "id" violates not-null constraint
 
 In this case you need to run following to auto increment id assuming you have no agents in the table:
 

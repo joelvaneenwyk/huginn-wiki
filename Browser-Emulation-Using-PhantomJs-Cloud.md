@@ -13,7 +13,7 @@ There are two ways to generate URLS for PhantomJs Cloud:
 
 Before you begin, you will need to sign up for an account at https://phantomjscloud.com/. Then you can copy your API key and add it in your Huginn credentials
 
-``` json
+```json
 [
   {
     "id": 1,
@@ -24,7 +24,6 @@ Before you begin, you will need to sign up for an account at https://phantomjscl
   }
 ]
 ```
-
 
 ## Option 1: PhantomJs Cloud Agent
 
@@ -39,11 +38,11 @@ The workflow to fetch the page is as follows:
 
 Full scenario can be found [here](http://pastebin.com/1GJNkLMU)
 
-
 ### 1. RssAgent
 
-_Name_: PhantomJS Cloud - In - RSS  
-``` json
+_Name_: PhantomJS Cloud - In - RSS
+
+```json
 {
   "expected_update_period_in_days": "5",
   "clean": "true",
@@ -51,13 +50,13 @@ _Name_: PhantomJS Cloud - In - RSS
 }
 ```
 
-### 2. PhantomJsCloudAgent 
+### 2. PhantomJsCloudAgent
 
-_Name_: PhantomJS Cloud - Process - Options    
-_Event sources_: PhantomJS Cloud - In - RSS   
-_Propagate immediately_: Yes  
+_Name_: PhantomJS Cloud - Process - Options  
+_Event sources_: PhantomJS Cloud - In - RSS  
+_Propagate immediately_: Yes
 
-``` json
+```json
 {
   "mode": "clean",
   "api_key": "{% credential phantomjs_cloud %}",
@@ -72,12 +71,13 @@ _Propagate immediately_: Yes
 }
 ```
 
-### 3. WebsiteAgent 
+### 3. WebsiteAgent
 
 _Name_: PhantomJS Cloud - Process - Fetch Page  
-_Event sources_: PhantomJS Cloud - Process - Options   
-_Propagate immediately_: Yes  
-``` json
+_Event sources_: PhantomJS Cloud - Process - Options  
+_Propagate immediately_: Yes
+
+```json
 {
   "expected_update_period_in_days": "2",
   "url_from_event": "{{url}}",
@@ -96,16 +96,15 @@ _Propagate immediately_: Yes
 }
 ```
 
-### 4. DataOutputAgent 
+### 4. DataOutputAgent
 
 _Name_: PhantomJS Cloud - Out - RSS  
-_Event sources_: PhantomJS Cloud - Process - Fetch Page    
-_Propagate immediately_: Yes  
-``` json
+_Event sources_: PhantomJS Cloud - Process - Fetch Page  
+_Propagate immediately_: Yes
+
+```json
 {
-  "secrets": [
-    "phantom"
-  ],
+  "secrets": ["phantom"],
   "expected_receive_period_in_days": 2,
   "template": {
     "title": "XKCD comics as a feed",
@@ -117,7 +116,6 @@ _Propagate immediately_: Yes
   }
 }
 ```
-
 
 ## Option 2: Manually
 
@@ -133,8 +131,9 @@ Full scenario can be found [here](http://pastebin.com/baRFN44H)
 
 ### 1. RssAgent
 
-_Name_: PhantomJS Cloud - In - RSS  
-``` json
+_Name_: PhantomJS Cloud - In - RSS
+
+```json
 {
   "expected_update_period_in_days": "5",
   "clean": "true",
@@ -142,13 +141,13 @@ _Name_: PhantomJS Cloud - In - RSS
 }
 ```
 
-### 2. EventFormattingAgent 
+### 2. EventFormattingAgent
 
-_Name_: PhantomJS Cloud - Process - Format    
-_Event sources_: PhantomJS Cloud - In - RSS   
-_Propagate immediately_: Yes  
+_Name_: PhantomJS Cloud - Process - Format  
+_Event sources_: PhantomJS Cloud - In - RSS  
+_Propagate immediately_: Yes
 
-``` json
+```json
 {
   "instructions": {
     "message": {
@@ -165,13 +164,13 @@ _Propagate immediately_: Yes
 
 For more options, refer to the [Official API](https://phantomjscloud.com/docs/http-api/)
 
-### 3. JavascriptAgent 
+### 3. JavascriptAgent
 
 _Name_: PhantomJS Cloud - Process - JS Escape  
 _Event sources_: PhantomJS Cloud - Process - Format  
-_Propagate immediately_: Yes  
+_Propagate immediately_: Yes
 
-``` json
+```json
 {
   "language": "JavaScript",
   "code": "Agent.receive = function() {\r\n  var events = this.incomingEvents();\r\n  for(var i = 0; i < events.length; i++) {\r\n    var js = JSON.stringify(events[i].payload.message);\r\n    this.log('Message to escape: ' + js);\r\n    this.createEvent({ 'url': encodeURIComponent(js) });\r\n    var callCount = this.memory('callCount') || 0;\r\n    this.memory('callCount', callCount + 1);\r\n  }\r\n}",
@@ -180,15 +179,15 @@ _Propagate immediately_: Yes
 }
 ```
 
-> __Note__: Huginn's [`uri_escape`](https://github.com/cantino/huginn/wiki/Formatting-Events-using-Liquid) doesn't escape same as Javascript `encodeURIComponent`
+> **Note**: Huginn's [`uri_escape`](https://github.com/cantino/huginn/wiki/Formatting-Events-using-Liquid) doesn't escape same as Javascript `encodeURIComponent`
 
-
-### 4. WebsiteAgent 
+### 4. WebsiteAgent
 
 _Name_: PhantomJS Cloud - Process - Fetch Page  
 _Event sources_: PhantomJS Cloud - Process - JS Escape  
-_Propagate immediately_: Yes  
-``` json
+_Propagate immediately_: Yes
+
+```json
 {
   "expected_update_period_in_days": "2",
   "url_from_event": "https://PhantomJsCloud.com/api/browser/v2/{%credential phantomjs_cloud%}/?request={{url}}",
@@ -207,17 +206,15 @@ _Propagate immediately_: Yes
 }
 ```
 
-
-### 5. DataOutputAgent 
+### 5. DataOutputAgent
 
 _Name_: PhantomJS Cloud - Out - RSS  
-_Event sources_: PhantomJS Cloud - Process - Fetch Page    
-_Propagate immediately_: Yes  
-``` json
+_Event sources_: PhantomJS Cloud - Process - Fetch Page  
+_Propagate immediately_: Yes
+
+```json
 {
-  "secrets": [
-    "phantom"
-  ],
+  "secrets": ["phantom"],
   "expected_receive_period_in_days": 2,
   "template": {
     "title": "XKCD comics as a feed",

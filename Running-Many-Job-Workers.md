@@ -1,10 +1,10 @@
 # The recommended way to run multiple DelayedJob workers is now documented in the [Procfile](https://github.com/cantino/huginn/blob/master/Procfile#L33-L50)
-  
+
 This Page is a **rough** documentation with a focus on parallelized delay_job workers.
 
 ## Background
 
-With the default config, only one `delayed_job` worker is running, which limits you to one (virtual) core.  If you have a lot of agents that run frequently, or the `delayed_job` worker is too busy, and you have a multi-core or multi-CPU setup, you can parallelize the `delayed_job` workers for more performance.
+With the default config, only one `delayed_job` worker is running, which limits you to one (virtual) core. If you have a lot of agents that run frequently, or the `delayed_job` worker is too busy, and you have a multi-core or multi-CPU setup, you can parallelize the `delayed_job` workers for more performance.
 
 ## Resources
 
@@ -21,18 +21,18 @@ The Procfile I'm using has the following content
     # Procfile for development using the new threaded worker (scheduler, twitter stream and delayed job)
     #web: bundle exec rails server
     #jobs: bundle exec rails runner bin/threaded.rb
-    
+
     # Possible Profile configuration for production:
     # web: bundle exec unicorn -c config/unicorn/production.rb
     # jobs: bundle exec rails runner bin/threaded.rb
-    
+
     # Old version with separate processes (use this if you have issues with the threaded version)
     web: bundle exec rails server
     schedule: bundle exec rails runner bin/schedule.rb
     twitter: bundle exec rails runner bin/twitter_stream.rb
     #dj: bundle exec script/delayed_job run
 
-Note that this has commented out the threaded jobs process and enabled the "old version", with only web, schedule, and twitter enabled.  (You can disable twitter too if you don't want to use any TwitterStreamAgents.)
+Note that this has commented out the threaded jobs process and enabled the "old version", with only web, schedule, and twitter enabled. (You can disable twitter too if you don't want to use any TwitterStreamAgents.)
 
 Run
 
@@ -50,12 +50,12 @@ That's it, you have are now capable to run multiple agents the same time.
 
     #!/bin/bash
     cd /home/k1773r/git/huginn
-    
+
     CORES=`nproc`
     WORKERS=`expr ${CORES} \* 2`
-    
+
     sudo -u k1773r screen -dmS foreman foreman start
-    
+
     for i in `seq 1 ${WORKERS}`;
     do
             sudo -u k1773r screen -dmS worker${i} bundle exec rake jobs:work

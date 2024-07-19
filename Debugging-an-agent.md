@@ -7,4 +7,5 @@ You can also use a ManualEvent agent to craft an event by hand and force an enti
 Finally, an accumulation of all logged messages and errors can be found in `huginn/log/development.log`, but this is usually harder to sift through than the Logs tab of an individual agent.
 
 TODO:
-* Explain the difference between `log()` and `errors.add()`
+
+- Explain the difference between `log()` and `errors.add()`

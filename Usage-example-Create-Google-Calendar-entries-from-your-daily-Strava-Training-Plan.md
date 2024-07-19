@@ -18,7 +18,7 @@ And combined the needed agents in one scenario:
 
 I use the IMAP Folder agent to check gmail several times a day for a new mail from Strava:
 
-````
+```
 {
   "expected_update_period_in_days": "1",
   "host": "imap.gmail.com",
@@ -35,23 +35,23 @@ I use the IMAP Folder agent to check gmail several times a day for a new mail fr
 
 This agent generates an event payload with the important data of the fetched mail: subject and body.
 
-````
+```
 
 ### Step 02 - Extract the information out of the body and create a google calendar message
 
-Now the things become somewhat nasty. The needed information about the training is buried in the body of the mail. I have to extract the information via regular expressions and must create a message structure, which is consumable from the [Google Calendar Api](https://developers.google.com/google-apps/calendar/v3/reference/events/insert) 
+Now the things become somewhat nasty. The needed information about the training is buried in the body of the mail. I have to extract the information via regular expressions and must create a message structure, which is consumable from the [Google Calendar Api](https://developers.google.com/google-apps/calendar/v3/reference/events/insert)
 
-#### First Idea, using a trigger agent, failed :-1: 
+#### First Idea, using a trigger agent, failed :-1:
 
-My first idea failed. I want to use the Trigger Agent to extract and reformat data. Unfortunately, the needed date was formatted as long german text and the Google Calendar Publisher Agent needs a date formatted in RFC 3339.  I would have needed some very special liquid filter functions to achieve this way.
+My first idea failed. I want to use the Trigger Agent to extract and reformat data. Unfortunately, the needed date was formatted as long german text and the Google Calendar Publisher Agent needs a date formatted in RFC 3339. I would have needed some very special liquid filter functions to achieve this way.
 
 ### Second try: JavaScript.
 
-But _Huginn_ has a nice JavaScript agent, a swiss knife for all more complex requirements. 
+But _Huginn_ has a nice JavaScript agent, a swiss knife for all more complex requirements.
 
 The JavaScript looks like this:
 
-````
+```
 function ISODateString(d){
  function pad(n){return n<10 ? '0'+n : n}
  return d.getUTCFullYear()+'-'
@@ -65,7 +65,7 @@ var monthArray = [ "Januar", "Februar", "März", "April", "Mai",
   "Juni", "Juli", "August", "September", "Oktober",
   "November", "Dezember" ]
 
-Agent.receive = function() { 
+Agent.receive = function() {
    var events = this.incomingEvents();
    for(var i = 0; i < events.length; i++) {
     var body = events[i].payload['body']
@@ -76,9 +76,9 @@ Agent.receive = function() {
     var year = germanDate[3]
     var startDate = new Date(year, month, day, 18, 0, 0, 0)
     var endDate = new Date(year, month, day, 21, 0, 0, 0)
-    
+
     this.createEvent(
-      { 'message': 
+      { 'message':
         { 'summary': summary,
           'visibility': 'default',
           'description': body,
@@ -93,9 +93,9 @@ Agent.receive = function() {
     );
   }
 }
-````
+```
 
-This code fetches the data out of the body of the email and create a data structure consumable from the Google Calendar Publisher Agent. By the way, I love the log statement in JavaScript. This made debugging the script very comfortable. 
+This code fetches the data out of the body of the email and create a data structure consumable from the Google Calendar Publisher Agent. By the way, I love the log statement in JavaScript. This made debugging the script very comfortable.
 
 ### Step 3 - Publish the calendar entry with the Google Calendar Publisher Agent
 
@@ -103,9 +103,9 @@ I have to admit. The Google Calendar Publisher Agent is a tiny shell about the G
 
 Unfortunately, this Agent doesn't support liquid, so I couldn't separate my credentials from the logic:
 
-I needed a long time, to get the following configuration working. Gently hint: Please authorize the google service email account for modifying your calendar. 
+I needed a long time, to get the following configuration working. Gently hint: Please authorize the google service email account for modifying your calendar.
 
-````
+```
 {
   "expected_update_period_in_days": "10",
   "calendar_id": "joe@gmail.com",
@@ -115,8 +115,8 @@ I needed a long time, to get the following configuration working. Gently hint: P
     "service_account_email": "hugin-443@huginn-43434.iam.gserviceaccount.com"
   }
 }
-````
+```
+
 ### Finally - Every training day I have an event scheduled in my Google Calendar made by _Huginn_
 
 ![Event in Google Calendar](https://farm2.staticflickr.com/1482/24635867331_74fd3a8fb9_o.png)
-

@@ -3,18 +3,19 @@
 **Be aware that `bundle install` can take several hours!**
 
 It is possible to run Huginn on lower performance hardware such as small ARM boards or older x86 hardware. The minimum requirements are yet to be specified.
-For example, you can serve a single user with:  huginn + sysvinit + unicorn + mysql + nginx can be at your service on e.g. a Raspberry Pi - model B - revision 2 - 256 MB RAM - 4GB SDHC class 10 - overclocked @900 MHz
+For example, you can serve a single user with: huginn + sysvinit + unicorn + mysql + nginx can be at your service on e.g. a Raspberry Pi - model B - revision 2 - 256 MB RAM - 4GB SDHC class 10 - overclocked @900 MHz
 
 Before deploying Huginn make sure you use a suitable "lightweight" OS distribution for your minimal server. For the RPi Raspbian works quite responsive after some optimization.
 Also remove all unnecessary packages and services and tweak the system to free as much RAM & CPU.
-Please help improve these instructions. The goal for use on such minimum machines - the mysql and nginx settings are experimental and for using huginn to serve only to one or a "few" users - 
+Please help improve these instructions. The goal for use on such minimum machines - the mysql and nginx settings are experimental and for using huginn to serve only to one or a "few" users -
 please share your experience.
 
 ### Tuning Huginn for low out of the box Memory usage
 
-To free up memory disable any unused optional Agent in huginn/Gemfile (read the inside comments for instructions). 
+To free up memory disable any unused optional Agent in huginn/Gemfile (read the inside comments for instructions).
 
 ### Reducing the agents activity rate
+
 It is also possible to lower the refresh activity of huginn/lib/huginn_scheduler.rb - by default the frequency is set to 0.3s. You can change and experiment by adding (frequency: x) to the Scheduler.new ([hint at where to decrease the huginn activity](https://github.com/cantino/huginn/issues/534#issuecomment-56652152))
 
 On the RPi a value of 3 is working well.
@@ -30,11 +31,11 @@ end
 .
 ```
 
+### Assign and setup a static IP for your server and disable the DHCP entries
 
-
-### Assign and setup a static IP for your server and disable the DHCP entries 
 for faster startup, memory and cpu savings edit your /etc/network/interfaces
 e.g.:
+
 ```
 auto lo
 iface lo inet loopback
@@ -46,17 +47,17 @@ network 192.168.1.0
 broadcast 192.168.1.255
 ```
 
-
-
 ### Use Init Script instead of Upstart on Raspbian (Debian)
 
-If you want to deploy via the [Capistrano Tutorial](https://github.com/cantino/huginn/wiki/Deployment-with-Capistrano,-Unicorn,-nginx,-Foreman,-and-Upstart) but want to use SysVinit instead of upstart - then 
+If you want to deploy via the [Capistrano Tutorial](https://github.com/cantino/huginn/wiki/Deployment-with-Capistrano,-Unicorn,-nginx,-Foreman,-and-Upstart) but want to use SysVinit instead of upstart - then
 include the following foreman export gem in your Gemfile.
+
 ```
 gem 'foreman-export-initscript'
 ```
 
 and then also adjust the deploy.rb file to make changes from upstart to initscript to the namespace :foreman do section accordingly
+
 ```
 .
 .
@@ -88,10 +89,10 @@ end
 .
 ```
 
-
 ### Optimizing Mysql - Switch to MyIsam + using Tuning Scripts
+
 On MySQL 5.5 you can do the following:
-Use /usr/share/doc/mysql-server-5.5/examples/my-small.cnf  to replace (make backup beforehand) /etc/mysql/my.cnf and add/edit the following to disable InnoDB and switch to MyIsam. Do this before you run any deploy, rake db scripts on your server.
+Use /usr/share/doc/mysql-server-5.5/examples/my-small.cnf to replace (make backup beforehand) /etc/mysql/my.cnf and add/edit the following to disable InnoDB and switch to MyIsam. Do this before you run any deploy, rake db scripts on your server.
 
 ```
 #Disable InnoDB and switch to MyISAM to save RAM
@@ -105,14 +106,15 @@ After this restart your mysql server
 sudo service mysql restart
 '''
 
-Now you can deploy / create the database for your huginn installation. It is possible to fine tune the database using e.g. a script like [MySQLTuner](https://github.com/major/MySQLTuner-perl),  or [MySQL Performance Tuning Primer Script](http://www.day32.com/MySQL/). These scripts will help you determine possible optimizations for your database. **These scripts will read the database usage history and therefor it is best to leave the freshly replaced my.cnf + MyIsam  as is and do the fine tuning after huginn has been running for some time (recommended >= 48 hours)** Mysql tuning should be regularly repeated after a period of time and depending on the amount of Agents and data usage such scripts will keep you updated on possible optimizations. This is a [nice collection](http://helidigizen.com/blog/mysql-server-optimization-blogshot/) of Mysql optimization information
+Now you can deploy / create the database for your huginn installation. It is possible to fine tune the database using e.g. a script like [MySQLTuner](https://github.com/major/MySQLTuner-perl), or [MySQL Performance Tuning Primer Script](http://www.day32.com/MySQL/). These scripts will help you determine possible optimizations for your database. **These scripts will read the database usage history and therefor it is best to leave the freshly replaced my.cnf + MyIsam as is and do the fine tuning after huginn has been running for some time (recommended >= 48 hours)** Mysql tuning should be regularly repeated after a period of time and depending on the amount of Agents and data usage such scripts will keep you updated on possible optimizations. This is a [nice collection](http://helidigizen.com/blog/mysql-server-optimization-blogshot/) of Mysql optimization information
 
 ### Optimizing Nginx
+
 This is supposed to be a bare minimum configuration for a single user huginn deployment set inside the /etc/nginx/conf.d/default.conf and /etc/nginx/nginx.conf and using unicorn as the upstream
 please adjust to your needs and share updates - the goal is to get the most out of low end boxes.
 
-change you into your user name and adjust  server_name and the root accordingly in file
- /etc/nginx/conf.d/default.conf
+change you into your user name and adjust server_name and the root accordingly in file
+/etc/nginx/conf.d/default.conf
 
 ```
 upstream huginn_server {
@@ -139,10 +141,8 @@ upstream huginn_server {
 
 ```
 
-
-change you into your user name and adjust  server_name and the root accordingly in file 
+change you into your user name and adjust server_name and the root accordingly in file
 /etc/nginx/nginx.conf
-
 
 ```
 user www-data;
@@ -220,6 +220,6 @@ http {
 }
 ```
 
-
 ### Disable OpenSSH Server and enable Dropbear
+
 so far OpenSSH Server is used for deployment but once huginn is running it can be disabled and e.g. Dropbear + openssh-client used as a "lightweight" replacement freeing up to 10MB RAM. If you want to redeploy then you just enable OpenSSH + disable Dropbear temporarily.

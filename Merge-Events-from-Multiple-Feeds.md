@@ -1,21 +1,25 @@
 ## Background
-One approach to merging the data from events coming from multiple feeds is to use "[Credentials as a form of shared memory](https://github.com/huginn/huginn/issues/1022)", or global variables.  The Java Script agent can be used to read data from one event stream, and to store a selection of that data to a credential.  Note that the credential has nothing to do with authorization of authentication in this usage, it is merely used as a place to write data to and read data from.  A second Java Script agent can be used to read data from a credential, and [create event data](https://github.com/huginn/huginn/issues/2166) in a second event stream.
 
-The example scenario reads deals from a Slickdeals RSS feed, as well as from the European Central Bank's (ECB) feed of Euro to US dollar exchange rates.  The output feed that is desired will show the title (including USD price) of Slickdeals deal items, as well as the most recent EUR/USD rate.  In effect the output feed provides "for each deal in Slickdeals, include last night's EUR/USD rate".  This is similar to an approach to using a [a static list of items to iterate over](https://github.com/huginn/huginn/issues/2469), but might allow for additional flexibility.  The task of multiplying the deal price by the exchange rateto determine if the item is, in fact, a deal is left to the reader ;)
+One approach to merging the data from events coming from multiple feeds is to use "[Credentials as a form of shared memory](https://github.com/huginn/huginn/issues/1022)", or global variables. The Java Script agent can be used to read data from one event stream, and to store a selection of that data to a credential. Note that the credential has nothing to do with authorization of authentication in this usage, it is merely used as a place to write data to and read data from. A second Java Script agent can be used to read data from a credential, and [create event data](https://github.com/huginn/huginn/issues/2166) in a second event stream.
+
+The example scenario reads deals from a Slickdeals RSS feed, as well as from the European Central Bank's (ECB) feed of Euro to US dollar exchange rates. The output feed that is desired will show the title (including USD price) of Slickdeals deal items, as well as the most recent EUR/USD rate. In effect the output feed provides "for each deal in Slickdeals, include last night's EUR/USD rate". This is similar to an approach to using a [a static list of items to iterate over](https://github.com/huginn/huginn/issues/2469), but might allow for additional flexibility. The task of multiplying the deal price by the exchange rateto determine if the item is, in fact, a deal is left to the reader ;)
 
 ![image](https://user-images.githubusercontent.com/3229013/169708241-ba0ba00d-6616-458a-a418-45ad623895f8.png)
 
 ## Prerequisite
+
 The scenario requires that the credential ecb_rate exists before running.
 
 ![image](https://user-images.githubusercontent.com/3229013/169708253-7d56258c-60f0-4238-85e7-01dc634807ed.png)
 
 ## Accessing Credentials via Java Script
+
 The first stream gets the most recent ECB rate via RSS, extracts the data of interest via an Event Formatting Agent, which is passed to a Java Script Agent that uses `this.credential('ecb_rate', events[i].payload.ecb_rate);` to **set** the value of ecb_rate arriving as event data to a credential of the same name.
 
 The second stream gets Slickdeals feed items, passed to a second Java Script Agent to **get** the value of the credential that was set by the first Java Script Agent, and add a key to the event with the retrieved value via `events[i].payload.ecb_rate = this.credential('ecb_rate');`.
 
 ## Scenario Code
+
 ```
 {
   "schema_version": 1,
